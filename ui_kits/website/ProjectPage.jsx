@@ -15,11 +15,12 @@
   const I = window.JWT_IMG;
 
   /* Full-viewport project hero. The image sits full-bleed with the title and
-     meta overlaid; as the section scrolls up out of view the image darkens
-     gradually and resolves into the brand's dark grey (the logo mono,
-     --char-900) — the HBA-style fade from photo to solid colour. Scroll is
-     read with a rAF-throttled rect check (the same approach as useInView),
-     never IntersectionObserver. */
+     meta overlaid. The frame is PINNED (sticky) inside a taller wrapper, so as
+     you scroll it stays in place and darkens gradually, resolving into the
+     brand's dark grey (the logo mono, --char-900) — the HBA-style fade from
+     photo to solid colour, then release into the story below. Scroll is read
+     with a rAF-throttled rect check (the same approach as useInView), never
+     IntersectionObserver. */
   function ProjectHero({ src, title, meta, tag, onBack }) {
     const ref = React.useRef(null);
     const [dark, setDark] = React.useState(0); // 0 = full photo, 1 = solid grey
@@ -32,11 +33,13 @@
           const el = ref.current;
           if (!el) return;
           const rect = el.getBoundingClientRect();
-          const h = rect.height || window.innerHeight;
-          /* 0 while the top is at/above the viewport top, ramping to 1 once a
-             full viewport-height has scrolled past. The ×1.15 lets it settle
-             on solid grey a little before the section has fully left. */
-          const p = Math.min(1, Math.max(0, -rect.top / h));
+          /* The wrapper is taller than the viewport and the inner frame is
+             pinned (sticky) while we scroll through that extra height. Progress
+             runs 0 → 1 across that pinned distance, so the image darkens IN
+             PLACE instead of sliding away. ×1.15 settles on solid grey a touch
+             before the release. */
+          const span = el.offsetHeight - window.innerHeight;
+          const p = span > 0 ? Math.min(1, Math.max(0, -rect.top / span)) : 0;
           setDark(Math.min(1, p * 1.15));
         });
       };
@@ -51,7 +54,10 @@
     }, []);
 
     return (
-      <div ref={ref} style={{ position: 'relative', height: '100vh', overflow: 'hidden', background: 'var(--char-900)' }}>
+      /* Outer wrapper is 200vh; the inner frame sticks to the top and stays
+         pinned for one extra viewport of scroll while the veil deepens. */
+      <div ref={ref} style={{ position: 'relative', height: '200vh' }}>
+        <div style={{ position: 'sticky', top: 0, height: '100vh', overflow: 'hidden', background: 'var(--char-900)' }}>
         <img src={src} alt={title} style={{
           position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover',
         }} />
@@ -98,6 +104,7 @@
               }}>{m}</span>
             ))}
           </div>
+        </div>
         </div>
       </div>
     );
