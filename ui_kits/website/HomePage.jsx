@@ -20,7 +20,7 @@
        three navigation dots, not one per gallery image). */
     const stageSlides = lead
       ? (D.galleries[lead.slug] || []).slice(0, 3).map((g, i) => ({
-          src: I[g.key],
+          src: g.src || I[g.key],
           title: lead.title,
           meta: [
             lead.region === 'Beirut' ? 'JWT Beirut' : 'JWT Dubai',

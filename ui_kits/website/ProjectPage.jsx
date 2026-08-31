@@ -129,7 +129,7 @@
     const p = D.projects[idx];
 
     const gallery = (D.galleries[p.slug] || [])
-      .map((g) => ({ src: I[g.key], caption: g.caption }));
+      .map((g) => ({ src: g.src || I[g.key], caption: g.caption }));
     const hasGallery = gallery.length > 0;
     const portrait = hasGallery;
 

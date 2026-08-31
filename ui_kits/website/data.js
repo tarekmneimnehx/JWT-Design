@@ -222,4 +222,51 @@
       { index: '04', title: 'Delivery', body: 'We coordinate the trades, commission the light and style the final layer, then hand over.' },
     ],
   };
+
+  /* ── Project imagery ──────────────────────────────────────────────────────
+     Five optimised 3D visualisations per project (web-sized ~1600px). Attaching
+     them here flips each project from an "Imagery in preparation" tile into a
+     full project with a cover and gallery. Paths are relative to
+     ui_kits/website/. RONALDO is not listed — it keeps its own gallery above. */
+  const PROJ_BASE = '../../assets/projects/';
+  const PROJECT_MEDIA = {
+    'al-wathba-majlis': ['01-cover-majlis-hall.jpg', '02-majlis-seating.jpg', '03-dining.jpg', '04-majlis-window.jpg', '05-majlis-lounge.jpg'],
+    'bs-project': ['01-cover-living.jpg', '02-dining.jpg', '03-kitchen-bar.jpg', '04-kitchen.jpg', '05-entry.jpg'],
+    'gg-project': ['01-cover-living.jpg', '02-dining.jpg', '03-bedroom.jpg', '04-bathroom.jpg', '05-corridor.jpg'],
+    'h-a-m-external-majlis': ['01-cover-majlis.jpg', '02-prayer-room.jpg', '03-bar-lounge.jpg', '04-bedroom.jpg', '05-bathroom.jpg'],
+    'jadeel-project': ['01-cover-living.jpg', '02-kitchen.jpg', '03-bedroom.jpg', '04-bathroom.jpg', '05-walk-in-closet.jpg'],
+    'jpl-landscape': ['01-cover-pool-villa.jpg', '02-facade-entrance.jpg', '03-garden-path.jpg', '04-palm-walk.jpg', '05-pergola-lounge.jpg'],
+    'jw-project': ['01-cover-living-dining.jpg', '02-living.jpg', '03-living-piano.jpg', '04-lounge-tv.jpg', '05-entry.jpg'],
+    'mr-project': ['01-cover-living.jpg', '02-dining.jpg', '03-kitchen.jpg', '04-bedroom.jpg', '05-bathroom.jpg'],
+    'mirel-experience-center': ['01-cover-showroom-lounge.jpg', '02-demo-room.jpg', '03-cinema-room.jpg', '04-meeting-room.jpg', '05-product-corridor.jpg'],
+    'na-project': ['01-cover-living.jpg', '02-dining.jpg', '03-bedroom.jpg', '04-bathroom.jpg', '05-powder-room.jpg'],
+    'ng-project': ['01-cover-living-kitchen.jpg', '02-living.jpg', '03-kitchen.jpg', '04-bedroom.jpg', '05-entry-hall.jpg'],
+    'nr-project': ['01-cover-living.jpg', '02-dining-piano.jpg', '03-dining.jpg', '04-entry-lobby.jpg', '05-stair-hall.jpg'],
+    'rc-project': ['01-cover-living.jpg', '02-kitchen-dining.jpg', '03-terrace.jpg', '04-bedroom-dressing.jpg', '05-bathroom.jpg'],
+    'serenity-secret': ['01-cover-reception.jpg', '02-styling-stations.jpg', '03-nail-bar.jpg', '04-mural-lounge.jpg', '05-retail-lounge.jpg'],
+    'sh-butti-villa': ['01-cover-entrance-driveway.jpg', '02-facade.jpg', '03-pool-terrace.jpg', '04-pool-aerial.jpg', '05-cabana-terrace.jpg'],
+    'shikhana': ['01-cover-living.jpg', '02-kitchen.jpg', '03-majlis.jpg', '04-bedroom.jpg', '05-dressing-area.jpg'],
+    'sobha-villas': ['01-cover-living.jpg', '02-dining.jpg', '03-kitchen.jpg', '04-bedroom.jpg', '05-bathroom.jpg'],
+    'sp-project': ['01-cover-living-dining.jpg', '02-dining.jpg', '03-kitchen-bar.jpg', '04-bedroom.jpg', '05-dressing-room.jpg'],
+    'vk-project': ['01-cover-living.jpg', '02-living-dining.jpg', '03-lounge-bar.jpg', '04-fireplace-lounge.jpg', '05-entry.jpg'],
+    'the-village-mall': ['01-cover-concourse.jpg', '02-food-hall.jpg', '03-office-boardroom.jpg', '04-prayer-hall.jpg', '05-atrium-skylight.jpg'],
+    'zbm-project': ['01-cover-majlis.jpg', '02-entry-stair.jpg', '03-gym.jpg', '04-living.jpg', '05-dining-bar.jpg'],
+  };
+  /* "02-majlis-seating.jpg" → "Majlis seating" */
+  const mediaCaption = (f) => f
+    .replace(/^\d+-(cover-)?/, '')
+    .replace(/\.[a-z0-9]+$/i, '')
+    .replace(/-/g, ' ')
+    .replace(/\b\w/g, (ch) => ch.toUpperCase());
+  window.JWT_DATA.projects.forEach((p) => {
+    const files = PROJECT_MEDIA[p.slug];
+    if (!files || !files.length) return;
+    p.hasImagery = true;
+    p.img = PROJ_BASE + p.slug + '/' + files[0];
+    if (!p.ratio) p.ratio = '16 / 9';
+    window.JWT_DATA.galleries[p.slug] = files.map((f) => ({
+      src: PROJ_BASE + p.slug + '/' + f,
+      caption: mediaCaption(f),
+    }));
+  });
 })();
