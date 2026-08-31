@@ -14,59 +14,14 @@
   const D = window.JWT_DATA;
   const I = window.JWT_IMG;
 
-  /* Full-viewport project hero. The image sits full-bleed with the title and
-     meta overlaid. The frame is PINNED (sticky) inside a taller wrapper, so as
-     you scroll it stays in place and darkens gradually, resolving into the
-     brand's dark grey (the logo mono, --char-900) — the HBA-style fade from
-     photo to solid colour, then release into the story below. Scroll is read
-     with a rAF-throttled rect check (the same approach as useInView), never
-     IntersectionObserver. */
+  /* Project hero — a static, full-viewport image with the title and meta
+     overlaid. No scroll effect (deliberately: the darken-on-scroll lives only
+     on the home page's projects stage, not here). */
   function ProjectHero({ src, title, meta, tag, onBack }) {
-    const ref = React.useRef(null);
-    const [dark, setDark] = React.useState(0); // 0 = full photo, 1 = solid grey
-    React.useEffect(() => {
-      let raf = 0;
-      const onScroll = () => {
-        if (raf) return;
-        raf = requestAnimationFrame(() => {
-          raf = 0;
-          const el = ref.current;
-          if (!el) return;
-          const rect = el.getBoundingClientRect();
-          /* The wrapper is taller than the viewport and the inner frame is
-             pinned (sticky) while we scroll through that extra height. Progress
-             runs 0 → 1 across that pinned distance, so the image darkens IN
-             PLACE instead of sliding away. ×1.15 settles on solid grey a touch
-             before the release. */
-          const span = el.offsetHeight - window.innerHeight;
-          const p = span > 0 ? Math.min(1, Math.max(0, -rect.top / span)) : 0;
-          setDark(Math.min(1, p * 1.15));
-        });
-      };
-      onScroll();
-      window.addEventListener('scroll', onScroll, { passive: true });
-      window.addEventListener('resize', onScroll);
-      return () => {
-        window.removeEventListener('scroll', onScroll);
-        window.removeEventListener('resize', onScroll);
-        if (raf) cancelAnimationFrame(raf);
-      };
-    }, []);
-
     return (
-      /* Outer wrapper is 200vh; the inner frame sticks to the top and stays
-         pinned for one extra viewport of scroll while the veil deepens. */
-      <div ref={ref} style={{ position: 'relative', height: '200vh' }}>
-        <div style={{ position: 'sticky', top: 0, height: '100vh', overflow: 'hidden', background: 'var(--char-900)' }}>
+      <div style={{ position: 'relative', height: '100vh', overflow: 'hidden', background: 'var(--char-900)' }}>
         <img src={src} alt={title} style={{
           position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover',
-        }} />
-        {/* Darkening veil in the logo grey: transparent at rest, opaque as the
-            hero scrolls away, so the photo dims and then becomes solid colour. */}
-        <div style={{
-          position: 'absolute', inset: 0, pointerEvents: 'none',
-          background: 'var(--char-900)', opacity: dark,
-          transition: 'opacity 80ms linear',
         }} />
         {/* Scrim: darker top and bottom so white chrome stays legible. */}
         <div style={{
@@ -104,7 +59,6 @@
               }}>{m}</span>
             ))}
           </div>
-        </div>
         </div>
       </div>
     );
