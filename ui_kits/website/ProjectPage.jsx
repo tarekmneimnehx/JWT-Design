@@ -1,16 +1,102 @@
 /* JWT website kit — single project case study.
-   Structure follows the HBA project-page order: title-first on cream with
-   stacked meta, lead image, portrait, large statement paragraphs, credit table
-   + share, captioned carousel, team, awards, related projects. */
+   Structure follows the HBA project-page order: a full-bleed hero with the
+   title and meta overlaid on the image (blurring gradually on scroll), then
+   portrait, large statement paragraphs, credit table + share, captioned
+   carousel, team, awards, related projects.
+   Projects without imagery fall back to a title-first cream masthead. */
 (function () {
   const NS = window.JWTDesignStudioDesignSystem_593c65 || {};
   const {
     Navbar, Eyebrow, Button, Divider, Carousel, FactTable, ShareRow,
     PersonCard, AwardList, ProjectCard, Reveal, RevealImage,
   } = NS;
-  const { Container, Section, Lede, NavSpacer, navLinks, logoCharcoal } = window.JWT_KIT || {};
+  const { Container, Section, Lede, NavSpacer, navLinks, logoCharcoal, logoWhite } = window.JWT_KIT || {};
   const D = window.JWT_DATA;
   const I = window.JWT_IMG;
+
+  /* Full-viewport project hero. The image sits full-bleed with the title and
+     meta overlaid; as the section scrolls up out of view the image blurs
+     gradually — subtle near the top, deeper as you go — so the eye moves on
+     to the story below. Scroll is read with a rAF-throttled rect check (the
+     same approach as useInView), never IntersectionObserver. */
+  function ProjectHero({ src, title, meta, tag, onBack }) {
+    const ref = React.useRef(null);
+    const [blur, setBlur] = React.useState(0);
+    React.useEffect(() => {
+      let raf = 0;
+      const onScroll = () => {
+        if (raf) return;
+        raf = requestAnimationFrame(() => {
+          raf = 0;
+          const el = ref.current;
+          if (!el) return;
+          const rect = el.getBoundingClientRect();
+          const h = rect.height || window.innerHeight;
+          /* 0 while the top is at/above the viewport top, ramping to 1 once a
+             full viewport-height has scrolled past. */
+          const p = Math.min(1, Math.max(0, -rect.top / h));
+          setBlur(p * 16);
+        });
+      };
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll);
+      return () => {
+        window.removeEventListener('scroll', onScroll);
+        window.removeEventListener('resize', onScroll);
+        if (raf) cancelAnimationFrame(raf);
+      };
+    }, []);
+
+    return (
+      <div ref={ref} style={{ position: 'relative', height: '100vh', overflow: 'hidden', background: 'var(--char-900)' }}>
+        {/* The image blurs and eases back; a slight scale hides the soft edge
+            the blur would otherwise reveal at the frame border. */}
+        <img src={src} alt={title} style={{
+          position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover',
+          filter: blur ? `blur(${blur}px)` : 'none', transform: `scale(${1.06 + blur * 0.004})`,
+          transition: 'filter 80ms linear',
+        }} />
+        {/* Scrim: darker top and bottom so white chrome stays legible. */}
+        <div style={{
+          position: 'absolute', inset: 0, pointerEvents: 'none',
+          background: 'linear-gradient(180deg, rgba(44,46,53,0.45) 0%, rgba(44,46,53,0) 26%, rgba(44,46,53,0) 52%, rgba(44,46,53,0.66) 100%)',
+        }} />
+        {/* Back link, overlaid top-left. */}
+        <button onClick={onBack} style={{
+          position: 'absolute', top: 'calc(72px + var(--space-4))', left: 'var(--gutter)',
+          background: 'none', border: 'none', cursor: 'pointer', color: 'rgba(255,255,255,0.85)',
+          font: 'var(--text-sm)', padding: 0, zIndex: 2,
+        }}>← All projects</button>
+        {/* Title + meta, overlaid bottom-left. */}
+        <div style={{
+          position: 'absolute', inset: 0, zIndex: 2, pointerEvents: 'none',
+          display: 'flex', flexDirection: 'column', justifyContent: 'flex-end',
+          padding: 'var(--gutter)', gap: 'var(--space-5)',
+        }}>
+          {tag && (
+            <span style={{
+              alignSelf: 'flex-start', font: 'var(--label-sm)', letterSpacing: 'var(--track-label)',
+              textTransform: 'uppercase', color: 'var(--paper)', background: 'rgba(44,46,53,0.55)',
+              padding: '0.35rem 0.7rem', borderRadius: 'var(--radius-xs)', backdropFilter: 'blur(3px)',
+            }}>{tag}</span>
+          )}
+          <h1 style={{
+            font: 'var(--display-2xl)', color: '#FFFFFF', letterSpacing: 'var(--track-display)',
+            margin: 0, maxWidth: '18ch', textWrap: 'balance',
+          }}>{title}</h1>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem 2.5rem', paddingRight: 'var(--fab-safe, 0px)' }}>
+            {meta.filter(Boolean).map((m, i) => (
+              <span key={i} style={{
+                font: 'var(--label)', letterSpacing: 'var(--track-label)', textTransform: 'uppercase',
+                color: i === 0 ? 'rgba(255,255,255,0.95)' : 'rgba(255,255,255,0.7)',
+              }}>{m}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   /* Stacked meta lines, as HBA renders them under the project title. */
   function MetaStack({ items }) {
@@ -41,51 +127,52 @@
       .sort((a, b) => (b.sector === p.sector) - (a.sector === p.sector))
       .slice(0, 4);
 
+    const hasHero = !!p.img;
+    const metaItems = [p.discipline, p.classified ? p.sector : null, p.region, p.year];
+
     return (
       <div style={{ background: 'var(--bg-page)' }}>
-        <Navbar variant="solid" sticky logoSrc={logoCharcoal} links={navLinks} activeHref="#projects"
+        {/* With a hero image the nav floats over it (white logo, condensing to
+            charcoal on scroll); without one it stays solid on cream. */}
+        <Navbar variant={hasHero ? 'overlay' : 'solid'} sticky
+          logoSrc={hasHero ? logoWhite : logoCharcoal} logoSrcCondensed={logoCharcoal}
+          links={navLinks} activeHref="#projects"
           cta="Start a project" ctaHref="#contact" onNavigate={navigate} />
-        <NavSpacer />
 
-        {/* Back link, then the image — the work leads, not the label. */}
-        <Section bg="page" pad="sm" style={{ paddingTop: 'var(--space-5)', paddingBottom: 'var(--space-5)' }}>
-          <Reveal>
-            <button onClick={() => navigate('#projects')} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text-secondary)', font: 'var(--text-sm)', padding: 0 }}>
-              ← All projects
-            </button>
-          </Reveal>
-        </Section>
-
-        {/* Lead image — full-bleed and tall. Only when we hold real imagery. */}
-        {p.img && (
-          <RevealImage style={{ width: '100%', height: '82vh' }}>
-            <img src={p.img} alt={p.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-            <span style={{
-              position: 'absolute', bottom: '1rem', left: 'var(--gutter)',
-              font: 'var(--label-sm)', letterSpacing: 'var(--track-label)', textTransform: 'uppercase',
-              color: 'var(--paper)', background: 'rgba(44,46,53,0.55)',
-              padding: '0.35rem 0.7rem', borderRadius: 'var(--radius-xs)', backdropFilter: 'blur(3px)',
-            }}>Visualisation</span>
-          </RevealImage>
+        {hasHero ? (
+          /* Full-viewport hero: title + meta overlaid, image blurs on scroll. */
+          <ProjectHero src={p.img} title={p.title} meta={metaItems}
+            tag="Visualisation" onBack={() => navigate('#projects')} />
+        ) : (
+          /* No imagery — a quiet cream masthead carries the title instead. */
+          <React.Fragment>
+            <NavSpacer />
+            <Section bg="page" pad="sm" style={{ paddingTop: 'var(--space-5)', paddingBottom: 'var(--space-5)' }}>
+              <Reveal>
+                <button onClick={() => navigate('#projects')} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text-secondary)', font: 'var(--text-sm)', padding: 0 }}>
+                  ← All projects
+                </button>
+              </Reveal>
+            </Section>
+            <Section bg="page" pad="sm">
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: 'var(--space-6)', flexWrap: 'wrap' }}>
+                <Reveal>
+                  <h1 style={{ font: 'var(--display-lg)', letterSpacing: 'var(--track-display)', maxWidth: '20ch', textWrap: 'balance', margin: 0 }}>
+                    {p.title}
+                  </h1>
+                </Reveal>
+                <Reveal delay={90}>
+                  <MetaStack items={metaItems} />
+                </Reveal>
+              </div>
+            </Section>
+          </React.Fragment>
         )}
 
-        {/* Title and meta sit under the image, quieter than it. */}
-        <Section bg="page" pad="sm">
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: 'var(--space-6)', flexWrap: 'wrap' }}>
-            <Reveal>
-              <h1 style={{ font: 'var(--display-lg)', letterSpacing: 'var(--track-display)', maxWidth: '20ch', textWrap: 'balance', margin: 0 }}>
-                {p.title}
-              </h1>
-            </Reveal>
-            <Reveal delay={90}>
-              <MetaStack items={[p.discipline, p.sector, p.region, p.year]} />
-            </Reveal>
-          </div>
-        </Section>
-
-        {/* Portrait + statement paragraphs */}
-        <Section bg="page" pad="md">
-          <div className="jwt-rg" style={{ display: 'grid', gridTemplateColumns: portrait ? '0.8fr 1.2fr' : '1fr', gap: 'var(--space-8)', alignItems: 'start' }}>
+        {/* Portrait + statement paragraphs. Portrait runs a little larger than
+            the text column so the imagery carries more weight. */}
+        <Section bg="page" pad="md" style={hasHero ? { paddingTop: 'var(--space-9)' } : undefined}>
+          <div className="jwt-rg" style={{ display: 'grid', gridTemplateColumns: portrait ? '1fr 1fr' : '1fr', gap: 'var(--space-8)', alignItems: 'start' }}>
             {portrait && (
               <RevealImage style={{ aspectRatio: '3 / 4', borderRadius: 'var(--radius-md)' }}>
                 <img src={gallery[0].src} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />

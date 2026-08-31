@@ -1,0 +1,8 @@
+# Working documents (kept locally / shared directly, not part of the site)
+JWT-Project-Content-Questionnaire.xlsx
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
