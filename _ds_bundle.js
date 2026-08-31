@@ -570,7 +570,8 @@ injectOnce('jwt-heroshow-css', `
 .jwt-hero__layer img { width: 100%; height: 100%; object-fit: cover; display: block; }
 /* Inset frames rest centred over the backdrop at the same aspect ratio. */
 .jwt-hero__layer--rest { box-shadow: var(--shadow-image); }
-.jwt-hero__layer--backdrop { will-change: filter, transform; }
+.jwt-hero__layer--backdrop { will-change: opacity; }
+.jwt-hero__darken { position: absolute; inset: 0; background: var(--char-900); pointer-events: none; }
 .jwt-hero__layer--rest, .jwt-hero__layer--incoming { will-change: opacity, transform, inset; }
 .jwt-hero__scrim {
   position: absolute; inset: 0; z-index: 4; pointer-events: none;
@@ -728,10 +729,10 @@ function HeroShowcase({
   const nextIsMain = !!(next && next !== base && !next.inset);
 
   /* How deep we are into this project's secondary frames — drives the backdrop
-     blur, so the main image recedes as its details come forward. */
+     darken, so the main image dims to a solid brand-grey (the logo mono) as its
+     detail frames come forward, then clears again on the next project. */
   const intoProject = Math.min(1, Math.max(0, f - backdropIdx));
-  const blurPx = intoProject * 16;
-  const backdropScale = 1 + intoProject * 0.03;
+  const darken = Math.min(1, intoProject * 1.15);
 
   /* The two secondaries share one resting box and cross-fade in place. A frame
      that has not decoded yet stays at 0 opacity, so we never animate a blank
@@ -764,15 +765,16 @@ function HeroShowcase({
   }, restProps), /*#__PURE__*/React.createElement("div", {
     className: "jwt-hero__sticky"
   }, /*#__PURE__*/React.createElement("div", {
-    className: "jwt-hero__layer jwt-hero__layer--backdrop",
-    style: {
-      filter: blurPx ? `blur(${blurPx}px)` : 'none',
-      transform: `scale(${backdropScale})`
-    }
+    className: "jwt-hero__layer jwt-hero__layer--backdrop"
   }, /*#__PURE__*/React.createElement("img", {
     src: backdrop.src,
     alt: backdrop.title || ''
-  })), base !== backdrop && /*#__PURE__*/React.createElement("div", {
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "jwt-hero__darken",
+    style: {
+      opacity: darken
+    }
+  }), base !== backdrop && /*#__PURE__*/React.createElement("div", {
     className: "jwt-hero__layer jwt-hero__layer--rest",
     style: {
       inset: `${baseRest}%`,
