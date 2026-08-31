@@ -15,13 +15,14 @@
   const I = window.JWT_IMG;
 
   /* Full-viewport project hero. The image sits full-bleed with the title and
-     meta overlaid; as the section scrolls up out of view the image blurs
-     gradually — subtle near the top, deeper as you go — so the eye moves on
-     to the story below. Scroll is read with a rAF-throttled rect check (the
-     same approach as useInView), never IntersectionObserver. */
+     meta overlaid; as the section scrolls up out of view the image darkens
+     gradually and resolves into the brand's dark grey (the logo mono,
+     --char-900) — the HBA-style fade from photo to solid colour. Scroll is
+     read with a rAF-throttled rect check (the same approach as useInView),
+     never IntersectionObserver. */
   function ProjectHero({ src, title, meta, tag, onBack }) {
     const ref = React.useRef(null);
-    const [blur, setBlur] = React.useState(0);
+    const [dark, setDark] = React.useState(0); // 0 = full photo, 1 = solid grey
     React.useEffect(() => {
       let raf = 0;
       const onScroll = () => {
@@ -33,9 +34,10 @@
           const rect = el.getBoundingClientRect();
           const h = rect.height || window.innerHeight;
           /* 0 while the top is at/above the viewport top, ramping to 1 once a
-             full viewport-height has scrolled past. */
+             full viewport-height has scrolled past. The ×1.15 lets it settle
+             on solid grey a little before the section has fully left. */
           const p = Math.min(1, Math.max(0, -rect.top / h));
-          setBlur(p * 16);
+          setDark(Math.min(1, p * 1.15));
         });
       };
       onScroll();
@@ -50,12 +52,15 @@
 
     return (
       <div ref={ref} style={{ position: 'relative', height: '100vh', overflow: 'hidden', background: 'var(--char-900)' }}>
-        {/* The image blurs and eases back; a slight scale hides the soft edge
-            the blur would otherwise reveal at the frame border. */}
         <img src={src} alt={title} style={{
           position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover',
-          filter: blur ? `blur(${blur}px)` : 'none', transform: `scale(${1.06 + blur * 0.004})`,
-          transition: 'filter 80ms linear',
+        }} />
+        {/* Darkening veil in the logo grey: transparent at rest, opaque as the
+            hero scrolls away, so the photo dims and then becomes solid colour. */}
+        <div style={{
+          position: 'absolute', inset: 0, pointerEvents: 'none',
+          background: 'var(--char-900)', opacity: dark,
+          transition: 'opacity 80ms linear',
         }} />
         {/* Scrim: darker top and bottom so white chrome stays legible. */}
         <div style={{
