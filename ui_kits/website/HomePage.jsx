@@ -15,10 +15,11 @@
     const lead = D.projects.find((p) => p.hasImagery);
     const featured = D.projects.filter((p) => p !== lead && p.classified).slice(0, 3);
 
-    /* Stage slides — per project, a main full-bleed frame followed by two that
-       rest inset over it; the next project restarts the sequence. */
+    /* Stage slides — per project, exactly THREE frames: a main full-bleed frame
+       followed by two that rest inset over it (so each primary project shows
+       three navigation dots, not one per gallery image). */
     const stageSlides = lead
-      ? (D.galleries[lead.slug] || []).map((g, i) => ({
+      ? (D.galleries[lead.slug] || []).slice(0, 3).map((g, i) => ({
           src: I[g.key],
           title: lead.title,
           meta: [
