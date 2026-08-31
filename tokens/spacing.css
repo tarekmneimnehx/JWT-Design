@@ -1,0 +1,56 @@
+/* JWT Design Studio — Spacing, radii, shadow, layout
+   Airy by default. Spacing scale is a soft 4px base with generous jumps. */
+:root {
+  /* ---- Spacing scale ---- */
+  --space-1: 0.25rem;   /* 4 */
+  --space-2: 0.5rem;    /* 8 */
+  --space-3: 0.75rem;   /* 12 */
+  --space-4: 1rem;      /* 16 */
+  --space-5: 1.5rem;    /* 24 */
+  --space-6: 2rem;      /* 32 */
+  --space-7: 3rem;      /* 48 */
+  --space-8: 4rem;      /* 64 */
+  --space-9: 6rem;      /* 96 */
+  --space-10: 8rem;     /* 128 */
+  --space-11: 11rem;    /* 176 — section rhythm */
+
+  /* ---- Radii (soft, restrained) ---- */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+  --radius-xl: 22px;
+  --radius-pill: 999px;
+
+  /* ---- Borders ---- */
+  --border-hairline: 1px solid var(--line-subtle);
+  --border-default:  1px solid var(--line);
+
+  /* ---- Shadows (warm-tinted, soft, low) ---- */
+  --shadow-xs: 0 1px 2px rgba(44,46,53,0.05);
+  --shadow-sm: 0 2px 8px rgba(44,46,53,0.06);
+  --shadow-md: 0 10px 30px rgba(44,46,53,0.08);
+  --shadow-lg: 0 24px 60px rgba(44,46,53,0.12);
+  --shadow-image: 0 30px 70px rgba(44,46,53,0.18);
+
+  /* ---- Layout ---- */
+  --content-max: 1440px; /* @kind spacing */
+  --content-narrow: 760px; /* @kind spacing */
+  --gutter: clamp(1.5rem, 5vw, 6rem); /* @kind spacing */
+
+  /* Fixed bottom-right action button (WhatsApp). Size and offset live here, and
+     --fab-safe is DERIVED from them, so the reserved corner can never drift out
+     of sync with the button that occupies it. Any bottom-right pinned chrome
+     must inset by --fab-safe. The button is icon-only precisely so its footprint
+     is a known constant rather than a function of its label text. */
+  --fab-size: 56px; /* @kind spacing */
+  --fab-offset: 22px; /* @kind spacing */
+  --fab-safe: calc(var(--fab-offset) + var(--fab-size) + var(--space-4)); /* @kind spacing */
+
+  /* ---- Motion ---- */
+  --ease-soft: cubic-bezier(0.22, 0.61, 0.36, 1); /* @kind other */
+  --ease-inout: cubic-bezier(0.65, 0, 0.35, 1); /* @kind other */
+  --dur-fast: 180ms; /* @kind other */
+  --dur-med: 320ms; /* @kind other */
+  --dur-slow: 600ms; /* @kind other */
+}

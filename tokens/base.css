@@ -1,0 +1,44 @@
+/* JWT Design Studio — Base element resets & defaults.
+   Lightweight: sets page background, body type, and sensible element defaults
+   so specimens and kits inherit the brand feel without extra classes. */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg-page);
+  color: var(--text-primary);
+  font: var(--text-base);
+  letter-spacing: var(--track-normal);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Display headings run Ultra Light; h3/h4 step up so small headings stay legible. */
+h1, h2, h3, h4 {
+  margin: 0;
+  font-family: var(--font-display);
+  color: var(--text-primary);
+  letter-spacing: var(--track-display);
+}
+
+h1, h2 { font-weight: var(--fw-ultralight); }
+h3, h4 { font-weight: var(--fw-light); letter-spacing: var(--track-tight); }
+
+p { margin: 0; }
+
+a { color: inherit; text-decoration: none; }
+a:hover { color: var(--text-accent); }
+
+img { display: block; max-width: 100%; }
+
+::selection { background: var(--accent-tint); color: var(--char-900); }
+
+/* Brand eyebrow helper — small tracked label used across surfaces */
+.jwt-eyebrow {
+  font: var(--label);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--text-accent);
+}

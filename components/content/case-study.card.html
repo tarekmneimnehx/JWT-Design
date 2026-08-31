@@ -1,0 +1,72 @@
+<!-- @dsCard group="Components" viewport="700x620" name="Case Study — Carousel, Facts, Share, Team, Awards" subtitle="The project-page building blocks" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; padding: 26px 30px; background: var(--bg-page); }
+  .lbl { font: var(--label); letter-spacing: var(--track-eyebrow); text-transform: uppercase; color: var(--text-muted); margin: 0 0 12px; }
+  section { margin-bottom: 30px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start; }
+  .team { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel">
+  const { Carousel, FactTable, ShareRow, PersonCard, AwardList } = window.JWTDesignStudioDesignSystem_593c65;
+  const u = (id) => `https://images.unsplash.com/photo-${id}?w=700&q=70&auto=format&fit=crop`;
+  function Demo() {
+    return (
+      <div>
+        <section>
+          <p className="lbl">Carousel — captioned, with counter</p>
+          <Carousel ratio="16 / 9" slides={[
+            { src: u('1583847268964-b28dc8f51f92'), caption: 'Formal living' },
+            { src: u('1565182999561-18d7dc61c393'), caption: 'Entrance stair' },
+            { src: u('1616594039964-ae9021a400a0'), caption: 'Principal bedroom' },
+          ]} />
+        </section>
+        <div className="two">
+          <section>
+            <p className="lbl">FactTable</p>
+            <FactTable labelWidth="8rem" rows={[
+              { label: 'Client', value: 'Private' },
+              { label: 'Location', value: 'Dubai' },
+              { label: 'Expertise', value: ['Interiors', 'Lighting'] },
+              { label: 'Sector', value: 'Residential' },
+              { label: 'Completed', value: 2024 },
+            ]} />
+          </section>
+          <section>
+            <p className="lbl">ShareRow</p>
+            <ShareRow url="https://example.com/projects/marsa-villa" title="Marsa Villa" />
+            <p className="lbl" style={{ marginTop: '26px' }}>AwardList</p>
+            <AwardList items={[
+              { result: 'Winner', project: 'Marsa Villa, Dubai', award: 'CID Awards — Residential', year: 2025 },
+              { result: 'Shortlisted', project: 'The Dunes Hotel', award: 'AHEAD MEA — Newbuild', year: 2025 },
+            ]} />
+          </section>
+        </div>
+        <section>
+          <p className="lbl">PersonCard — greyscale until hover</p>
+          <div className="team">
+            <PersonCard src={u('1556909114-f6e7ad7d3136')} studio="Interiors | Dubai" name="Studio Director" role="Founding Partner" />
+            <PersonCard src={u('1522708323590-d24dbb6b0267')} studio="Architectural | Beirut" name="Studio Director" role="Founding Partner" />
+            <PersonCard src={u('1524758631624-e2822e304c36')} studio="Interiors | Dubai" name="Senior Designer" role="Associate" />
+            <PersonCard src={u('1502005229762-cf1b2da7c5d6')} studio="Lighting | Dubai" name="Lighting Lead" role="Associate" />
+          </div>
+        </section>
+      </div>
+    );
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script>
+</body>
+</html>

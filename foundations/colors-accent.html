@@ -1,0 +1,24 @@
+<!-- @dsCard group="Colors" viewport="700x180" name="Brand Tan" subtitle="The camel/blush family — the primary brand colour" -->
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; padding: 22px 26px; background: var(--bg-page); }
+  .swatches { display: grid; grid-template-columns: repeat(7, 1fr); gap: 14px; }
+  .sw { display: flex; flex-direction: column; gap: 8px; }
+  .chip { height: 76px; border-radius: var(--radius-md); border: 1px solid var(--line-subtle); position: relative; }
+  .star { position:absolute; top:8px; right:8px; font-family:var(--font-mono); font-size:0.58rem; letter-spacing:0.08em; color:#fff; background:rgba(44,46,53,.6); padding:2px 6px; border-radius:99px; }
+  .name { font: var(--text-xs); color: var(--text-primary); }
+  .hex { font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); letter-spacing: 0.02em; }
+</style></head>
+<body>
+  <div class="swatches">
+    <div class="sw"><div class="chip" style="background:var(--tan-100)"></div><span class="name">Tan 100</span><span class="hex">#F2E4DA</span></div>
+    <div class="sw"><div class="chip" style="background:var(--tan-200)"></div><span class="name">Tan 200 · blush</span><span class="hex">#E9C7BC</span></div>
+    <div class="sw"><div class="chip" style="background:var(--tan-300)"></div><span class="name">Tan 300</span><span class="hex">#DCBAAA</span></div>
+    <div class="sw"><div class="chip" style="background:var(--tan-400)"></div><span class="name">Tan 400</span><span class="hex">#D5B49D</span></div>
+    <div class="sw"><div class="chip" style="background:var(--tan-500)"><span class="star">LOGO</span></div><span class="name">Tan 500 · the dot</span><span class="hex">#D1AD96</span></div>
+    <div class="sw"><div class="chip" style="background:var(--tan-600)"><span class="star">BRAND</span></div><span class="name">Tan 600 · primary</span><span class="hex">#C9A892</span></div>
+    <div class="sw"><div class="chip" style="background:var(--tan-700)"></div><span class="name">Tan 700</span><span class="hex">#B08F78</span></div>
+  </div>
+</body></html>

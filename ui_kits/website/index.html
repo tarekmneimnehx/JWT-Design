@@ -1,0 +1,107 @@
+<!-- @dsCard group="Website" viewport="1280x860" name="Marketing Website" subtitle="Interactive: home, about, expertise, projects (filterable), project, contact" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JWT Design Studio</title>
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; background: var(--bg-page); }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script src="data.js"></script>
+<script type="text/babel" src="kit-ui.jsx"></script>
+<script type="text/babel" src="HomePage.jsx"></script>
+<script type="text/babel" src="AboutPage.jsx"></script>
+<script type="text/babel" src="ExpertisePage.jsx"></script>
+<script type="text/babel" src="ProjectsPage.jsx"></script>
+<script type="text/babel" src="ProjectPage.jsx"></script>
+<script type="text/babel" src="ContactPage.jsx"></script>
+
+<script type="text/babel">
+  const NS = window.JWTDesignStudioDesignSystem_593c65;
+  const { Footer, BackToTop, WhatsAppButton } = NS;
+  const S = window.JWT_SCREENS;
+  const { logoWhite } = window.JWT_KIT;
+  const D = window.JWT_DATA;
+  const { useState, useEffect } = React;
+
+  function parseRoute() {
+    const h = (window.location.hash || '#home').replace(/^#/, '');
+    const [name, param] = h.split('/');
+    return { name: name || 'home', param };
+  }
+
+  function App() {
+    const [route, setRoute] = useState(parseRoute());
+
+    useEffect(() => {
+      const onHash = () => { setRoute(parseRoute()); window.scrollTo(0, 0); };
+      window.addEventListener('hashchange', onHash);
+      return () => window.removeEventListener('hashchange', onHash);
+    }, []);
+
+    const navigate = (href) => {
+      const target = href.replace(/^#/, '');
+      const current = route.name + (route.param ? '/' + route.param : '');
+      if (target === current) { window.scrollTo(0, 0); return; }
+      window.location.hash = href;
+    };
+
+    let screen;
+    switch (route.name) {
+      case 'about':     screen = <S.AboutPage navigate={navigate} />; break;
+      case 'expertise': screen = <S.ExpertisePage navigate={navigate} param={route.param} />; break;
+      case 'projects':  screen = <S.ProjectsPage navigate={navigate} param={route.param} />; break;
+      case 'project':   screen = <S.ProjectPage navigate={navigate} param={route.param} />; break;
+      case 'contact':   screen = <S.ContactPage navigate={navigate} />; break;
+      default:          screen = <S.HomePage navigate={navigate} />;
+    }
+
+    return (
+      <div>
+        {screen}
+        <Footer
+          logoSrc={logoWhite}
+          tagline={D.studio.tagline}
+          email={D.studio.email}
+          location={D.studio.locations}
+          onNavigate={navigate}
+          columns={[
+            { title: 'Expertise', links: [
+              { label: 'Interiors', href: '#expertise/interiors' },
+              { label: 'Architectural', href: '#expertise/architectural' },
+              { label: 'Lighting', href: '#expertise/lighting' },
+              { label: 'Landscape', href: '#expertise/landscape' },
+            ]},
+            { title: 'Sectors', links: [
+              { label: 'Residential', href: '#projects/residential' },
+              { label: 'Hospitality', href: '#projects/hospitality' },
+              { label: 'Offices', href: '#projects/offices' },
+              { label: 'Spa & Wellness', href: '#projects/spa-wellness' },
+            ]},
+            { title: 'Studio', links: [
+              { label: 'About', href: '#about' },
+              { label: 'Projects', href: '#projects' },
+              { label: 'Contact', href: '#contact' },
+            ]},
+          ]}
+          social={[{ label: 'Instagram', href: 'https://www.instagram.com/jwtdesignstudio/' }]} />
+        <BackToTop />
+        <WhatsAppButton phone={D.studio.whatsapp} />
+      </div>
+    );
+  }
+
+  ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!-- @dsCard group="Components" viewport="700x520" name="Eyebrow, MetaList, Filters, Tag, Badge, Divider" subtitle="Labels, project meta runs, the filter rail and section marks" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; padding: 26px 30px; background: var(--bg-page); }
+  .row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 24px; }
+  .lbl { font: var(--label); letter-spacing: var(--track-eyebrow); text-transform: uppercase; color: var(--text-muted); width: 100%; margin-bottom: 2px; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel">
+  const { Eyebrow, MetaList, FilterBar, Tag, Badge, Divider } = window.JWTDesignStudioDesignSystem_593c65;
+  const { useState } = React;
+  function Demo() {
+    const [exp, setExp] = useState('All');
+    const [sec, setSec] = useState('All');
+    return (
+      <div>
+        <div className="row"><span className="lbl">Eyebrow</span>
+          <Eyebrow dot>Our Expertise</Eyebrow>
+          <Eyebrow tone="muted">01 — Discovery</Eyebrow>
+        </div>
+        <div className="row"><span className="lbl">MetaList — the project meta run</span>
+          <div style={{ width:'100%', display:'flex', flexDirection:'column', gap:'10px' }}>
+            <MetaList items={['Interiors', 'Hospitality', 'Dubai', 2024]} />
+            <MetaList size="lg" items={['Lighting', 'Spa & Wellness', 'Beirut', 'In progress']} />
+          </div>
+        </div>
+        <div className="row"><span className="lbl">FilterBar</span>
+          <div style={{ width: '100%' }}>
+            <FilterBar count={sec !== 'All' || exp !== 'All' ? 4 : 12} total={12}
+              onClear={() => { setExp('All'); setSec('All'); }}
+              filters={[
+                { name: 'Expertise', value: exp, options: ['Interiors','Architectural','Lighting'], onChange: setExp },
+                { name: 'Sector', value: sec, options: ['Residential','Hospitality','Offices','Spa & Wellness'], onChange: setSec },
+              ]} />
+          </div>
+        </div>
+        <div className="row"><span className="lbl">Tags / Badges / Dividers</span>
+          <Tag active count={12} onClick={()=>{}}>All</Tag>
+          <Tag onClick={()=>{}} count={5}>Residential</Tag>
+          <Badge tone="accent">Featured</Badge>
+          <Badge tone="ink">2024</Badge>
+          <Badge tone="outline">In progress</Badge>
+          <div style={{ width: '100%', display:'flex', flexDirection:'column', gap:'12px', marginTop:'10px' }}>
+            <Divider dot />
+            <Divider label="Next project" />
+          </div>
+        </div>
+      </div>
+    );
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script>
+</body>
+</html>

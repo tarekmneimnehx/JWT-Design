@@ -1,0 +1,51 @@
+<!-- @dsCard group="Components" viewport="700x440" name="Buttons & Form Fields" subtitle="CTAs, inputs, selects — the enquiry toolkit" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; padding: 28px 30px; background: var(--bg-page); }
+  .row { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-bottom: 22px; }
+  .lbl { font: var(--label); letter-spacing: var(--track-eyebrow); text-transform: uppercase; color: var(--text-muted); width: 100%; margin-bottom: 2px; }
+  .fields { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 28px; max-width: 560px; margin-top: 6px; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel">
+  const { Button, Input, Textarea, Select } = window.JWTDesignStudioDesignSystem_593c65;
+  function Demo() {
+    return (
+      <div>
+        <div className="row"><span className="lbl">Variants</span>
+          <Button variant="primary" withArrow>Start your project</Button>
+          <Button variant="accent">Enquire</Button>
+          <Button variant="outline">View portfolio</Button>
+          <Button variant="ghost">Learn more</Button>
+          <Button variant="link">Read the story</Button>
+        </div>
+        <div className="row"><span className="lbl">Sizes &amp; states</span>
+          <Button size="sm">Small</Button>
+          <Button size="md">Medium</Button>
+          <Button size="lg">Large</Button>
+          <Button uppercase>Micro CTA</Button>
+          <Button disabled>Disabled</Button>
+        </div>
+        <div className="fields">
+          <Input label="Full name" placeholder="Jane Doe" />
+          <Select label="Service" defaultValue=""><option value="" disabled>Select…</option><option>Full home interiors</option><option>Styling</option></Select>
+          <Textarea label="About your space" placeholder="Tell us a little…" style={{ gridColumn: '1 / -1' }} rows={3} />
+        </div>
+      </div>
+    );
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script>
+</body>
+</html>

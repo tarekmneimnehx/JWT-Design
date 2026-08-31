@@ -1,0 +1,73 @@
+/* JWT Design Studio — Color tokens
+   THE REAL BRAND PALETTE. Sampled directly from the studio's own brand sheet
+   (uploads/Screen Shot 2022-02-14 at 12.59.45 PM.png) and the vector logo
+   (uploads/JWT-FINAL LOGO.pdf). Do not invent additions to this palette.
+
+   The identity pairs a warm camel/tan family against a COOL grey-charcoal
+   family — that cool/warm tension is the whole brand. Note the neutrals are
+   grey-blue, not warm charcoal. */
+:root {
+  /* ---- Brand tan / camel (the primary brand colour) ---- */
+  --tan-100: #F2E4DA;  /* palest wash */
+  --tan-200: #E9C7BC;  /* blush, from the brand sheet */
+  --tan-300: #DCBAAA;  /* blush deep */
+  --tan-400: #D5B49D;  /* light camel */
+  --tan-500: #D1AD96;  /* the logo dot */
+  --tan-600: #C9A892;  /* PRIMARY brand tan — business card, envelope */
+  --tan-700: #B08F78;  /* pressed / deep */
+
+  /* ---- Cool grey-charcoal (the brand's neutral) ---- */
+  --char-900: #2C2E35;  /* logo mono / darkest ink */
+  --char-800: #3A3D44;
+  --char-700: #494F55;  /* brand charcoal — dark card */
+  --char-600: #5A5C61;  /* logo wordmark slate */
+  --char-500: #63656B;
+  --char-400: #707272;
+  --char-300: #7B7D81;
+  --char-200: #A8AAAD;
+  --char-100: #D2D3D5;
+
+  /* ---- Warm brown (brand sheet, used sparingly) ---- */
+  --brown-600: #6F6359;
+
+  /* ---- Neutrals / paper ---- */
+  --paper:   #FFFFFF;   /* letterhead white */
+  --paper-2: #FAF8F6;   /* warm off-white page */
+  --paper-3: #F4F1ED;   /* sunken */
+  --paper-4: #EAE5E0;   /* fill */
+  --white:   #FFFFFF;
+
+  /* ---- Semantic surfaces ---- */
+  --bg-page:      var(--paper-2);
+  --bg-elevated:  var(--paper);
+  --bg-sunken:    var(--paper-3);
+  --bg-fill:      var(--paper-4);
+  --bg-contrast:  var(--char-700);   /* dark sections — the brand charcoal */
+  --bg-contrast-deep: var(--char-900);
+  --bg-tan:       var(--tan-600);    /* tan brand ground */
+
+  /* ---- Semantic text ---- */
+  --text-primary:   var(--char-900);
+  --text-secondary: var(--char-600);
+  --text-muted:     var(--char-300);
+  --text-inverse:   var(--paper);
+  --text-accent:    var(--tan-700);
+
+  /* ---- Lines & borders ---- */
+  --line-subtle:  #E3DED8;
+  --line:         #D2CCC5;
+  --line-strong:  var(--char-900);
+  --line-inverse: rgba(255,255,255,0.20);
+
+  /* ---- Accent / interactive ---- */
+  --accent:        var(--tan-600);
+  --accent-hover:  var(--tan-700);
+  --accent-press:  var(--brown-600);
+  --accent-tint:   var(--tan-200);
+  --focus-ring:    rgba(176,143,120,0.6);
+
+  /* ---- Status (restrained, tuned to the palette) ---- */
+  --positive: #6E7F5B;
+  --notice:   #BE8A4E;
+  --critical: #A85A48;
+}

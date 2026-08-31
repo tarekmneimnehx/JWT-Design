@@ -1,0 +1,34 @@
+<!-- @dsCard group="Colors" viewport="700x200" name="Semantic Roles" subtitle="How the palette maps to surfaces, text & lines" -->
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; padding: 22px 26px; background: var(--bg-page); }
+  .wrap { display: grid; grid-template-columns: 1.1fr 1fr; gap: 24px; }
+  .panel { border-radius: var(--radius-md); padding: 16px; border: 1px solid var(--line); }
+  .rolelist { display: flex; flex-direction: column; gap: 10px; }
+  .role { display: flex; align-items: center; gap: 10px; font: var(--text-sm); }
+  .dot { width: 18px; height: 18px; border-radius: 5px; border: 1px solid var(--line-subtle); flex: 0 0 auto; }
+  .tok { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); margin-left: auto; }
+  .demo h3 { font: var(--display-md); margin: 0 0 6px; }
+  .demo p { font: var(--text-sm); color: var(--text-secondary); margin: 0; }
+  .demo .eb { font: var(--label); letter-spacing: var(--track-eyebrow); text-transform: uppercase; color: var(--text-accent); display:block; margin-bottom:8px; }
+</style></head>
+<body>
+  <div class="wrap">
+    <div class="rolelist">
+      <div class="role"><span class="dot" style="background:var(--bg-page)"></span> Page background <span class="tok">--bg-page</span></div>
+      <div class="role"><span class="dot" style="background:var(--bg-elevated)"></span> Elevated / card <span class="tok">--bg-elevated</span></div>
+      <div class="role"><span class="dot" style="background:var(--bg-sunken)"></span> Sunken fill <span class="tok">--bg-sunken</span></div>
+      <div class="role"><span class="dot" style="background:var(--bg-contrast)"></span> Contrast section <span class="tok">--bg-contrast</span></div>
+      <div class="role"><span class="dot" style="background:var(--text-primary)"></span> Primary text <span class="tok">--text-primary</span></div>
+      <div class="role"><span class="dot" style="background:var(--text-secondary)"></span> Secondary text <span class="tok">--text-secondary</span></div>
+      <div class="role"><span class="dot" style="background:var(--accent)"></span> Accent <span class="tok">--accent</span></div>
+    </div>
+    <div class="panel demo" style="background:var(--bg-elevated)">
+      <span class="eb">In use</span>
+      <h3>Calm, collected interiors</h3>
+      <p>Body copy sits in warm charcoal on a cream field, with taupe reserved for the eyebrow and small accents.</p>
+    </div>
+  </div>
+</body></html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Marketing Landing Page" description="JWT warm-minimal landing page — overlay nav with Expertise panel, full-bleed hero, disciplines, project grid and dark footer." -->
+<helmet>
+<script src="./ds-base.js"></script>
+<style>
+  body { margin: 0; background: #FAF8F6; }
+</style>
+</helmet>
+
+<div style="font-family: 'Avenir Next', 'Avenir Next LT Pro', Avenir, Mulish, 'Nunito Sans', sans-serif;">
+
+  <!-- Hero -->
+  <div style="position: relative; min-height: 92vh; display: flex; flex-direction: column;">
+    <div style="position:absolute; inset:0; background: linear-gradient(100deg, rgba(44,46,53,0.62) 0%, rgba(44,46,53,0.34) 55%, rgba(44,46,53,0.12) 100%), linear-gradient(180deg, rgba(44,46,53,0.42) 0%, rgba(44,46,53,0.34) 45%, rgba(44,46,53,0.68) 100%), url('https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=1600&q=72&auto=format&fit=crop') center/cover;"></div>
+
+    <div style="position: relative; z-index: 2;">
+      <x-import component-from-global-scope="JWTDesignStudioDesignSystem_593c65.Navbar" variant="overlay" logo-src="../../assets/logo-white.svg" active-href="#home" cta="Start a project" cta-href="#contact" hint-size="100%,80px"></x-import>
+    </div>
+
+    <div style="position: relative; z-index: 2; margin-top: auto; max-width: 1440px; width: 100%; margin-left: auto; margin-right: auto; padding: 0 clamp(1.5rem,5vw,6rem) 6rem; box-sizing: border-box;">
+      <div style="max-width: 22ch;">
+        <x-import component-from-global-scope="JWTDesignStudioDesignSystem_593c65.Eyebrow" dot="true" tone="inverse" hint-size="280px,20px">JWT Design Studio · Dubai | Beirut</x-import>
+        <h1 style="font-family: 'Avenir Next', 'Avenir Next LT Pro', Avenir, Mulish, 'Nunito Sans', sans-serif; font-weight: 200; font-size: clamp(3.5rem, 7vw, 6.5rem); line-height: 0.98; letter-spacing: -0.01em; color: #FFFFFF; margin: 1.2rem 0 1.5rem; text-wrap: balance;">Turning vision into reality.</h1>
+        <p style="font-family: 'Avenir Next', 'Avenir Next LT Pro', Avenir, Mulish, 'Nunito Sans', sans-serif; font-weight: 200; font-size: clamp(1.25rem,1.8vw,1.75rem); line-height: 1.5; color: rgba(255,255,255,0.84); max-width: 48ch; margin: 0 0 2rem;">An upscale design studio delivering tailor-made interiors, architecture and lighting — from concept to completion.</p>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <x-import component-from-global-scope="JWTDesignStudioDesignSystem_593c65.Button" variant="accent" size="lg" with-arrow="true" href="#projects" hint-size="200px,52px">View projects</x-import>
+          <x-import component-from-global-scope="JWTDesignStudioDesignSystem_593c65.Button" variant="outline-inverse" size="lg" href="#expertise" hint-size="200px,52px">Our expertise</x-import>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Positioning -->
+  <section style="max-width: 1440px; margin: 0 auto; padding: 4rem clamp(1.5rem,5vw,6rem);">
+    <div style="display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 4rem; align-items: start;">
+      <x-import component-from-global-scope="JWTDesignStudioDesignSystem_593c65.Eyebrow" dot="true" hint-size="140px,20px">The Studio</x-import>
+      <div>
+        <p style="font-family: 'Avenir Next', 'Avenir Next LT Pro', Avenir, Mulish, 'Nunito Sans', sans-serif; font-weight: 200; font-size: clamp(2.25rem,3.6vw,3.5rem); line-height: 1.06; letter-spacing: -0.01em; text-wrap: balance; margin: 0 0 1.5rem;">We are an upscale design studio, committed to delivering tailor-made projects.</p>
+        <p style="font-family: 'Avenir Next', 'Avenir Next LT Pro', Avenir, Mulish, 'Nunito Sans', sans-serif; font-weight: 200; font-size: clamp(1.25rem,1.8vw,1.75rem); line-height: 1.5; color: #6B6459; max-width: 58ch; margin: 0;">Led by two sisters across Dubai and Beirut, JWT works end to end and entirely in-house — so a project moves from first sketch to final light scene without ever losing its thread.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Three disciplines -->
+  <section style="background: #F1EADD; padding: 4rem clamp(1.5rem,5vw,6rem);">
+    <div style="max-width: 1440px; margin: 0 auto;">
+      <x-import component-from-global-scope="JWTDesignStudioDesignSystem_593c65.Eyebrow" dot="true" hint-size="140px,20px">Expertise</x-import>
+      <h2 style="font-family: 'Avenir Next', 'Avenir Next LT Pro', Avenir, Mulish, 'Nunito Sans', sans-serif; font-weight: 200; font-size: clamp(2.75rem,5vw,4.75rem); line-height: 1.02; letter-spacing: -0.01em; margin: 1rem 0 3rem; max-width: 22ch;">Three disciplines, one team.</h2>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+        <div>
+          <div style="aspect-ratio: 4/3; overflow: hidden; border-radius: 8px; margin-bottom: 1.2rem;"><img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=700&q=72&auto=format&fit=crop" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+          <h3 style="font-family: 'Avenir Next', 'Avenir Next LT Pro', Avenir, Mulish, 'Nunito Sans', sans-serif; font-weight: 300; font-size: 1.75rem; line-height: 1.12; margin: 0 0 0.6rem;">Interiors</h3>
+          <p style="font-family: 'Avenir Next', 'Avenir Next LT Pro', Avenir, Mulish, 'Nunito Sans', sans-serif; font-weight: 400; font-size: 1rem; line-height: 1.7; color: #6B6459; margin: 0; max-width: 34ch;">Tailor-made interiors, resolved to the last detail — from the first spatial move to the final styled layer.</p>
+        </div>
+        <div>
+          <div style="aspect-ratio: 4/3; overflow: hidden; border-radius: 8px; margin-bottom: 1.2rem;"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=700&q=72&auto=format&fit=crop" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+          <h3 style="font-family: 'Avenir Next', 'Avenir Next LT Pro', Avenir, Mulish, 'Nunito Sans', sans-serif; font-weight: 300; font-size: 1.75rem; line-height: 1.12; margin: 0 0 0.6rem;">Architectural</h3>
+          <p style="font-family: 'Avenir Next', 'Avenir Next LT Pro', Avenir, Mulish, 'Nunito Sans', sans-serif; font-weight: 400; font-size: 1rem; line-height: 1.7; color: #6B6459; margin: 0; max-width: 34ch;">Structure, envelope and light — the architectural groundwork that lets an interior work effortlessly.</p>
+        </div>
+        <div>
+          <div style="aspect-ratio: 4/3; overflow: hidden; border-radius: 8px; margin-bottom: 1.2rem;"><img src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=700&q=72&auto=format&fit=crop" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+          <h3 style="font-family: 'Avenir Next', 'Avenir Next LT Pro', Avenir, Mulish, 'Nunito Sans', sans-serif; font-weight: 300; font-size: 1.75rem; line-height: 1.12; margin: 0 0 0.6rem;">Lighting</h3>
+          <p style="font-family: 'Avenir Next', 'Avenir Next LT Pro', Avenir, Mulish, 'Nunito Sans', sans-serif; font-weight: 400; font-size: 1rem; line-height: 1.7; color: #6B6459; margin: 0; max-width: 34ch;">Light as a material. Layered, dimmable, and designed for how a room is used at every hour.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selected projects -->
+  <section id="projects" style="max-width: 1440px; margin: 0 auto; padding: 4rem clamp(1.5rem,5vw,6rem) 6rem;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem; margin-bottom: 3rem;">
+      <div>
+        <x-import component-from-global-scope="JWTDesignStudioDesignSystem_593c65.Eyebrow" dot="true" hint-size="200px,20px">Selected projects</x-import>
+        <h2 style="font-family: 'Avenir Next', 'Avenir Next LT Pro', Avenir, Mulish, 'Nunito Sans', sans-serif; font-weight: 200; font-size: clamp(2.25rem,3.6vw,3.5rem); line-height: 1.06; letter-spacing: -0.01em; margin: 1rem 0 0; max-width: 18ch;">Recently delivered</h2>
+      </div>
+      <x-import component-from-global-scope="JWTDesignStudioDesignSystem_593c65.Button" variant="link" with-arrow="true" href="#projects" hint-size="150px,40px">All projects</x-import>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+      <x-import component-from-global-scope="JWTDesignStudioDesignSystem_593c65.ProjectCard" src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=800&q=72&auto=format&fit=crop" title="Marsa Villa" discipline="Interiors" sector="Residential" region="Dubai" year="2024" hint-size="100%,480px"></x-import>
+      <x-import component-from-global-scope="JWTDesignStudioDesignSystem_593c65.ProjectCard" src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=800&q=72&auto=format&fit=crop" title="Jumeirah Penthouse" discipline="Interiors" sector="Residential" region="Dubai" year="2024" hint-size="100%,480px"></x-import>
+      <x-import component-from-global-scope="JWTDesignStudioDesignSystem_593c65.ProjectCard" src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=800&q=72&auto=format&fit=crop" title="The Dunes Hotel" discipline="Interiors" sector="Hospitality" region="Dubai" year="2025" hint-size="100%,480px"></x-import>
+    </div>
+  </section>
+
+  <!-- CTA band -->
+  <section id="contact" style="background: #2C2E35; padding: 6rem clamp(1.5rem,5vw,6rem);">
+    <div style="max-width: 1440px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
+      <x-import component-from-global-scope="JWTDesignStudioDesignSystem_593c65.Eyebrow" dot="true" tone="inverse" hint-size="200px,20px">Start a project</x-import>
+      <h2 style="font-family: 'Avenir Next', 'Avenir Next LT Pro', Avenir, Mulish, 'Nunito Sans', sans-serif; font-weight: 200; font-size: clamp(2.75rem,5vw,4.75rem); line-height: 1.02; letter-spacing: -0.01em; color: #FFFFFF; max-width: 22ch; text-wrap: balance; margin: 0;">Tell us what you're building.</h2>
+      <x-import component-from-global-scope="JWTDesignStudioDesignSystem_593c65.Button" variant="accent" size="lg" with-arrow="true" href="#contact" hint-size="220px,56px">Get in touch</x-import>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <x-import component-from-global-scope="JWTDesignStudioDesignSystem_593c65.Footer" logo-src="../../assets/logo-white.svg" email="studio@jwtdesignstudio.com" location="Dubai | Beirut" hint-size="100%,380px"></x-import>
+
+</div>
+</x-dc>
+</body>
+</html>

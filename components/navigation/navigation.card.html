@@ -1,0 +1,40 @@
+<!-- @dsCard group="Components" viewport="700x470" name="Navbar & Footer" subtitle="Top bar with Expertise panel, and the dark footer" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; background: var(--bg-page); }
+  .lbl { font: var(--label); letter-spacing: var(--track-eyebrow); text-transform: uppercase; color: var(--text-muted); padding: 18px 30px 0; }
+  .hero { position: relative; height: 140px; background: linear-gradient(180deg, rgba(44,46,53,.2), rgba(44,46,53,.55)), url("https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=1000&q=70") center/cover; }
+  .stack { display: flex; flex-direction: column; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel">
+  const { Navbar, Footer } = window.JWTDesignStudioDesignSystem_593c65;
+  const LOGO_W = "../../assets/logo-white.svg";
+  const LOGO_C = "../../assets/logo-charcoal.svg";
+  function Demo() {
+    return (
+      <div className="stack">
+        <p className="lbl">Overlay (over hero)</p>
+        <div className="hero"><Navbar variant="overlay" logoSrc={LOGO_W} activeHref="#home" cta="Start a project" /></div>
+        <p className="lbl">Solid (inner pages) — click Expertise to open the panel</p>
+        <Navbar variant="solid" logoSrc={LOGO_C} activeHref="#projects" />
+        <div style={{ height: '150px' }} />
+        <Footer logoSrc={LOGO_W} />
+      </div>
+    );
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script>
+</body>
+</html>

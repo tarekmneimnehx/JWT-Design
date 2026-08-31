@@ -1,0 +1,15 @@
+/* JWT Design Studio — Webfonts
+
+   PRIMARY: Avenir Next (Ultra Light / 200) — the studio's chosen typeface.
+   Avenir Next ships with macOS and is licensed commercially by Linotype/Monotype.
+   It CANNOT be self-hosted from a system install, so it resolves natively for
+   Apple visitors only — but unlike a pure system face it IS legitimately
+   web-licensable: it is available for web use on Adobe Fonts (Creative Cloud).
+   If JWT has a CC subscription, add the Adobe Fonts kit <link> above these
+   imports and the stack in typography.css needs no change.
+
+   WEB FALLBACK: Mulish — the closest free match for Avenir Next's geometric
+   humanist proportions, with a true 200 ExtraLight. This is what non-Apple
+   visitors see.
+   SECOND FALLBACK: Nunito Sans — same genre, slightly rounder terminals. */
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600&family=Nunito+Sans:wght@200;300;400;500&display=swap');

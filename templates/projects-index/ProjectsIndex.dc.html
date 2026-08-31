@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Projects Index" description="Filterable projects grid — Expertise / Sector / Region dropdowns, live result count and Load More. The signature JWT portfolio screen." -->
+<helmet>
+<script src="./ds-base.js"></script>
+<style>
+  body { margin: 0; background: #FAF8F6; }
+</style>
+</helmet>
+
+<div style="font-family: 'Avenir Next', 'Avenir Next LT Pro', Avenir, Mulish, 'Nunito Sans', sans-serif; background: #FAF8F6; min-height: 100vh;">
+
+  <x-import component-from-global-scope="JWTDesignStudioDesignSystem_593c65.Navbar" variant="solid" sticky="{{ true }}" logo-src="../../assets/logo-charcoal.svg" active-href="#projects" cta="Start a project" cta-href="#contact" hint-size="100%,74px"></x-import>
+  <div style="height: 72px;"></div>
+
+  <!-- Masthead -->
+  <section style="max-width: 1440px; margin: 0 auto; padding: 4rem clamp(1.5rem,5vw,6rem) 2.5rem;">
+    <x-import component-from-global-scope="JWTDesignStudioDesignSystem_593c65.Eyebrow" dot="{{ true }}" hint-size="130px,20px">Projects</x-import>
+    <h1 style="font-weight: 200; font-size: clamp(3.25rem, 6.8vw, 6rem); line-height: 1.04; letter-spacing: -0.025em; margin: 1.25rem 0 1.25rem; max-width: 16ch;">Projects</h1>
+    <p style="font-weight: 300; font-size: clamp(1.1875rem,1.7vw,1.625rem); line-height: 1.55; color: #6B6459; max-width: 56ch; margin: 0; text-wrap: pretty;">We know great design is meaningless without exceptional delivery. From concept to completion, our clients know that a tailor-made idea can be brought to life exactly as it was drawn.</p>
+  </section>
+
+  <!-- Filter rail -->
+  <div style="max-width: 1440px; margin: 0 auto; padding: 0 clamp(1.5rem,5vw,6rem);">
+    <x-import component-from-global-scope="JWTDesignStudioDesignSystem_593c65.FilterBar" filters="{{ filters }}" count="{{ count }}" total="{{ total }}" onClear="{{ clearAll }}" hint-size="100%,86px"></x-import>
+  </div>
+
+  <!-- Grid -->
+  <section style="max-width: 1440px; margin: 0 auto; padding: 3rem clamp(1.5rem,5vw,6rem) 6rem;">
+    <sc-if value="{{ hasResults }}" hint-placeholder-val="{{ true }}">
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem 2rem;">
+        <sc-for list="{{ visible }}" as="p" hint-placeholder-count="6">
+          <x-import component-from-global-scope="JWTDesignStudioDesignSystem_593c65.ProjectCard" src="{{ p.img }}" title="{{ p.title }}" discipline="{{ p.discipline }}" sector="{{ p.sector }}" region="{{ p.region }}" year="{{ p.year }}" href="#project" hint-size="100%,480px"></x-import>
+        </sc-for>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isEmpty }}">
+      <div style="padding: 6rem 0; text-align: center;">
+        <p style="font-weight: 300; font-size: clamp(1.5rem,2.2vw,1.875rem); line-height: 1.28; margin: 0 0 1.25rem;">No projects match that combination.</p>
+        <x-import component-from-global-scope="JWTDesignStudioDesignSystem_593c65.Button" variant="outline" onClick="{{ clearAll }}" hint-size="160px,48px">Clear filters</x-import>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ hasMore }}">
+      <div style="display: flex; justify-content: center; margin-top: 4rem;">
+        <x-import component-from-global-scope="JWTDesignStudioDesignSystem_593c65.Button" variant="outline" size="lg" uppercase="{{ true }}" onClick="{{ loadMore }}" hint-size="180px,54px">Load more</x-import>
+      </div>
+    </sc-if>
+  </section>
+
+  <x-import component-from-global-scope="JWTDesignStudioDesignSystem_593c65.Footer" logo-src="../../assets/logo-white.svg" email="studio@jwtdesignstudio.com" location="Dubai | Beirut" hint-size="100%,380px"></x-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const PAGE = 6;
+
+const IMG = (id) => `https://images.unsplash.com/photo-${id}?w=800&q=72&auto=format&fit=crop`;
+
+/* Replace these with the studio's real projects and photography. */
+const PROJECTS = [
+  { title: 'Marsa Villa', discipline: 'Interiors', sector: 'Residential', region: 'Dubai', year: 2024, img: IMG('1631679706909-1844bbd07221') },
+  { title: 'Saifi Residence', discipline: 'Interiors', sector: 'Residential', region: 'Beirut', year: 2023, img: IMG('1583847268964-b28dc8f51f92') },
+  { title: 'Jumeirah Penthouse', discipline: 'Interiors', sector: 'Residential', region: 'Dubai', year: 2024, img: IMG('1505691938895-1758d7feb511') },
+  { title: 'Café Mar', discipline: 'Interiors', sector: 'Hospitality', region: 'Beirut', year: 2023, img: IMG('1618221195710-dd6b41faaea6') },
+  { title: 'The Dunes Hotel', discipline: 'Interiors', sector: 'Hospitality', region: 'Dubai', year: 2025, img: IMG('1598300042247-d088f8ab3a91') },
+  { title: 'Levant Dining Room', discipline: 'Interiors', sector: 'Hospitality', region: 'Dubai', year: 2024, img: IMG('1586023492125-27b2c045efd7') },
+  { title: 'Atelier Workspace', discipline: 'Interiors', sector: 'Offices', region: 'Dubai', year: 2023, img: IMG('1538688525198-9b88f6f53126') },
+  { title: 'Harbour Offices', discipline: 'Architectural', sector: 'Offices', region: 'Beirut', year: 2022, img: IMG('1524758631624-e2822e304c36') },
+  { title: 'Quiet House', discipline: 'Architectural', sector: 'Residential', region: 'Dubai', year: 'In progress', img: IMG('1600585154340-be6161a56a0c') },
+  { title: 'Stone Hammam', discipline: 'Interiors', sector: 'Spa & Wellness', region: 'Beirut', year: 2024, img: IMG('1567538096630-e0c55bd6374c') },
+  { title: 'Serai Spa', discipline: 'Lighting', sector: 'Spa & Wellness', region: 'Dubai', year: 2025, img: IMG('1615875605825-5eb9bb5d52ac') },
+  { title: 'Gallery Stair', discipline: 'Lighting', sector: 'Residential', region: 'Dubai', year: 2023, img: IMG('1565182999561-18d7dc61c393') },
+];
+
+const DISCIPLINES = ['Interiors', 'Architectural', 'Lighting'];
+const SECTORS = ['Residential', 'Hospitality', 'Offices', 'Spa & Wellness'];
+const REGIONS = ['Dubai', 'Beirut'];
+
+class Component extends DCLogic {
+  state = { discipline: 'All', sector: 'All', region: 'All', shown: PAGE };
+
+  set(key) {
+    return (v) => this.setState({ [key]: v, shown: PAGE });
+  }
+
+  renderVals() {
+    const { discipline, sector, region, shown } = this.state;
+
+    const results = PROJECTS.filter((p) =>
+      (discipline === 'All' || p.discipline === discipline) &&
+      (sector === 'All' || p.sector === sector) &&
+      (region === 'All' || p.region === region));
+
+    const visible = results.slice(0, shown);
+
+    return {
+      filters: [
+        { name: 'Expertise', value: discipline, options: DISCIPLINES, onChange: this.set('discipline') },
+        { name: 'Sector', value: sector, options: SECTORS, onChange: this.set('sector') },
+        { name: 'Region', value: region, options: REGIONS, onChange: this.set('region') },
+      ],
+      visible,
+      count: results.length,
+      total: PROJECTS.length,
+      hasResults: results.length > 0,
+      isEmpty: results.length === 0,
+      hasMore: shown < results.length,
+      loadMore: () => this.setState((s) => ({ shown: s.shown + PAGE })),
+      clearAll: () => this.setState({ discipline: 'All', sector: 'All', region: 'All', shown: PAGE }),
+    };
+  }
+}
+</script>
+</body>
+</html>

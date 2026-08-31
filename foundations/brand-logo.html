@@ -1,0 +1,31 @@
+<!-- @dsCard group="Brand" viewport="700x300" name="Logo Lockups" subtitle="The vector wordmark on its four brand grounds" -->
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; padding: 22px 26px; background: var(--bg-page); }
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .tile { border-radius: var(--radius-md); height: 104px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--line-subtle); }
+  img { width: 210px; height: auto; }
+  .cap { font-family: var(--font-mono); font-size: 0.66rem; color: var(--text-muted); margin-top: 7px; letter-spacing: 0.03em; }
+</style></head>
+<body>
+  <div class="grid">
+    <div>
+      <div class="tile" style="background:var(--paper)"><img src="../assets/logo.svg" alt="JWT primary"></div>
+      <div class="cap">Primary · slate + tan dot, on paper</div>
+    </div>
+    <div>
+      <div class="tile" style="background:var(--paper)"><img src="../assets/logo-charcoal.svg" alt="JWT charcoal"></div>
+      <div class="cap">Mono charcoal · one-colour use</div>
+    </div>
+    <div>
+      <div class="tile" style="background:var(--char-700)"><img src="../assets/logo-white.svg" alt="JWT reversed"></div>
+      <div class="cap">Reversed · white + tan dot, on charcoal</div>
+    </div>
+    <div>
+      <div class="tile" style="background:var(--tan-600)"><img src="../assets/logo-white-solid.svg" alt="JWT on tan"></div>
+      <div class="cap">Solid white · on brand tan</div>
+    </div>
+  </div>
+</body></html>

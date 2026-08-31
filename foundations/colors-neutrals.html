@@ -1,0 +1,24 @@
+<!-- @dsCard group="Colors" viewport="700x180" name="Paper & Line" subtitle="Letterhead white through to the fill and rule tones" -->
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; padding: 22px 26px; background: var(--bg-page); }
+  .swatches { display: grid; grid-template-columns: repeat(7, 1fr); gap: 14px; }
+  .sw { display: flex; flex-direction: column; gap: 8px; }
+  .chip { height: 76px; border-radius: var(--radius-md); border: 1px solid var(--line-subtle); position: relative; }
+  .star { position:absolute; top:8px; right:8px; font-family:var(--font-mono); font-size:0.58rem; letter-spacing:0.08em; color:#fff; background:rgba(44,46,53,.6); padding:2px 6px; border-radius:99px; }
+  .name { font: var(--text-xs); color: var(--text-primary); }
+  .hex { font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); letter-spacing: 0.02em; }
+</style></head>
+<body>
+  <div class="swatches">
+    <div class="sw"><div class="chip" style="background:var(--paper)"></div><span class="name">Paper</span><span class="hex">#FFFFFF</span></div>
+    <div class="sw"><div class="chip" style="background:var(--paper-2)"></div><span class="name">Paper 2 · page</span><span class="hex">#FAF8F6</span></div>
+    <div class="sw"><div class="chip" style="background:var(--paper-3)"></div><span class="name">Paper 3 · sunken</span><span class="hex">#F4F1ED</span></div>
+    <div class="sw"><div class="chip" style="background:var(--paper-4)"></div><span class="name">Paper 4 · fill</span><span class="hex">#EAE5E0</span></div>
+    <div class="sw"><div class="chip" style="background:var(--line-subtle)"></div><span class="name">Line subtle</span><span class="hex">#E3DED8</span></div>
+    <div class="sw"><div class="chip" style="background:var(--line)"></div><span class="name">Line</span><span class="hex">#D2CCC5</span></div>
+    <div class="sw"><div class="chip" style="background:var(--brown-600)"></div><span class="name">Brown 600</span><span class="hex">#6F6359</span></div>
+  </div>
+</body></html>
