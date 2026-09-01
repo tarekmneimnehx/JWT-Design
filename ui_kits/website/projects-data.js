@@ -1,0 +1,3094 @@
+/* GENERATED from projects.json — the portfolio source of truth (27 projects, 535 images).
+   Do not hand-edit; regenerate from projects.json when it changes. */
+window.JWT_PROJECTS = {
+  "studio": "JWT Design Studio",
+  "generated": "2026-09-01",
+  "image_base": "images/<slug>/<file>",
+  "thumb_base": "thumbs/<slug>/<file>",
+  "image_max_edge": 1600,
+  "thumb_max_edge": 800,
+  "jpeg_quality": 82,
+  "expertises": [
+    "Residential",
+    "Commercial",
+    "Hospitality",
+    "Landscape"
+  ],
+  "statuses": [
+    "Concept",
+    "Concept to Completion"
+  ],
+  "project_count": 27,
+  "image_count": 535,
+  "projects": [
+    {
+      "slug": "al-wathba-2",
+      "title": "Al Wathba 2",
+      "expertise": "Residential",
+      "status": "Concept",
+      "cover": "al-wathba-2-01-aerial-masterplan.jpg",
+      "image_count": 5,
+      "images": [
+        "al-wathba-2-01-aerial-masterplan.jpg",
+        "al-wathba-2-02-courtyard-garden.jpg",
+        "al-wathba-2-03-entrance-approach-dusk.jpg",
+        "al-wathba-2-04-entrance-doorway-dusk.jpg",
+        "al-wathba-2-05-stone-facade-dusk.jpg"
+      ],
+      "dimensions": {
+        "al-wathba-2-01-aerial-masterplan.jpg": [
+          1600,
+          958
+        ],
+        "al-wathba-2-02-courtyard-garden.jpg": [
+          1600,
+          917
+        ],
+        "al-wathba-2-03-entrance-approach-dusk.jpg": [
+          1600,
+          900
+        ],
+        "al-wathba-2-04-entrance-doorway-dusk.jpg": [
+          1600,
+          900
+        ],
+        "al-wathba-2-05-stone-facade-dusk.jpg": [
+          1600,
+          900
+        ]
+      }
+    },
+    {
+      "slug": "al-wathba-majlis",
+      "title": "Al Wathba Majlis",
+      "expertise": "Residential",
+      "status": "Concept",
+      "cover": "al-wathba-majlis-01-majlis-hall.jpg",
+      "image_count": 8,
+      "images": [
+        "al-wathba-majlis-01-majlis-hall.jpg",
+        "al-wathba-majlis-02-majlis-seating.jpg",
+        "al-wathba-majlis-03-majlis-lounge.jpg",
+        "al-wathba-majlis-04-majlis-seating-tv.jpg",
+        "al-wathba-majlis-05-majlis-window-wall.jpg",
+        "al-wathba-majlis-06-dining-table.jpg",
+        "al-wathba-majlis-07-dining-table-side.jpg",
+        "al-wathba-majlis-08-dining-hall.jpg"
+      ],
+      "dimensions": {
+        "al-wathba-majlis-01-majlis-hall.jpg": [
+          1600,
+          1200
+        ],
+        "al-wathba-majlis-02-majlis-seating.jpg": [
+          1600,
+          1200
+        ],
+        "al-wathba-majlis-03-majlis-lounge.jpg": [
+          1600,
+          1200
+        ],
+        "al-wathba-majlis-04-majlis-seating-tv.jpg": [
+          1600,
+          1200
+        ],
+        "al-wathba-majlis-05-majlis-window-wall.jpg": [
+          1600,
+          1200
+        ],
+        "al-wathba-majlis-06-dining-table.jpg": [
+          1600,
+          1200
+        ],
+        "al-wathba-majlis-07-dining-table-side.jpg": [
+          1600,
+          1200
+        ],
+        "al-wathba-majlis-08-dining-hall.jpg": [
+          1600,
+          1200
+        ]
+      }
+    },
+    {
+      "slug": "bs-residence",
+      "title": "BS Residence",
+      "expertise": "Residential",
+      "status": "Concept",
+      "cover": "bs-residence-01-living-dining.jpg",
+      "image_count": 8,
+      "images": [
+        "bs-residence-01-living-dining.jpg",
+        "bs-residence-02-living-lounge.jpg",
+        "bs-residence-03-kitchen-bar.jpg",
+        "bs-residence-04-dining-bar.jpg",
+        "bs-residence-05-living-terrace-view.jpg",
+        "bs-residence-06-lounge-seating.jpg",
+        "bs-residence-07-living-kitchen.jpg",
+        "bs-residence-08-entry-corridor.jpg"
+      ],
+      "dimensions": {
+        "bs-residence-01-living-dining.jpg": [
+          1600,
+          900
+        ],
+        "bs-residence-02-living-lounge.jpg": [
+          1600,
+          900
+        ],
+        "bs-residence-03-kitchen-bar.jpg": [
+          1600,
+          900
+        ],
+        "bs-residence-04-dining-bar.jpg": [
+          1600,
+          900
+        ],
+        "bs-residence-05-living-terrace-view.jpg": [
+          1600,
+          900
+        ],
+        "bs-residence-06-lounge-seating.jpg": [
+          1600,
+          900
+        ],
+        "bs-residence-07-living-kitchen.jpg": [
+          1600,
+          900
+        ],
+        "bs-residence-08-entry-corridor.jpg": [
+          1600,
+          900
+        ]
+      }
+    },
+    {
+      "slug": "fbh-offices",
+      "title": "FBH Offices",
+      "expertise": "Commercial",
+      "status": "Concept",
+      "cover": "fbh-offices-01-reception.jpg",
+      "image_count": 15,
+      "images": [
+        "fbh-offices-01-reception.jpg",
+        "fbh-offices-02-reception-desk.jpg",
+        "fbh-offices-03-reception-counter.jpg",
+        "fbh-offices-04-entrance-lobby.jpg",
+        "fbh-offices-05-lift-lobby.jpg",
+        "fbh-offices-06-lift-lobby-crest.jpg",
+        "fbh-offices-07-lift-lobby-wide.jpg",
+        "fbh-offices-08-corridor.jpg",
+        "fbh-offices-09-corridor-marble.jpg",
+        "fbh-offices-10-corridor-lounge.jpg",
+        "fbh-offices-11-corridor-sconces.jpg",
+        "fbh-offices-12-boardroom.jpg",
+        "fbh-offices-13-boardroom-crest.jpg",
+        "fbh-offices-14-meeting-room-window.jpg",
+        "fbh-offices-15-executive-office.jpg"
+      ],
+      "dimensions": {
+        "fbh-offices-01-reception.jpg": [
+          1600,
+          1200
+        ],
+        "fbh-offices-02-reception-desk.jpg": [
+          1600,
+          1200
+        ],
+        "fbh-offices-03-reception-counter.jpg": [
+          1600,
+          1200
+        ],
+        "fbh-offices-04-entrance-lobby.jpg": [
+          1600,
+          1200
+        ],
+        "fbh-offices-05-lift-lobby.jpg": [
+          1600,
+          1200
+        ],
+        "fbh-offices-06-lift-lobby-crest.jpg": [
+          1600,
+          1200
+        ],
+        "fbh-offices-07-lift-lobby-wide.jpg": [
+          1600,
+          1200
+        ],
+        "fbh-offices-08-corridor.jpg": [
+          1600,
+          1200
+        ],
+        "fbh-offices-09-corridor-marble.jpg": [
+          1600,
+          1200
+        ],
+        "fbh-offices-10-corridor-lounge.jpg": [
+          1600,
+          1200
+        ],
+        "fbh-offices-11-corridor-sconces.jpg": [
+          1600,
+          1200
+        ],
+        "fbh-offices-12-boardroom.jpg": [
+          1600,
+          1200
+        ],
+        "fbh-offices-13-boardroom-crest.jpg": [
+          1600,
+          1200
+        ],
+        "fbh-offices-14-meeting-room-window.jpg": [
+          1600,
+          1200
+        ],
+        "fbh-offices-15-executive-office.jpg": [
+          1600,
+          1200
+        ]
+      }
+    },
+    {
+      "slug": "gg-residence",
+      "title": "GG Residence",
+      "expertise": "Residential",
+      "status": "Concept",
+      "cover": "gg-residence-01-living-lounge.jpg",
+      "image_count": 16,
+      "images": [
+        "gg-residence-01-living-lounge.jpg",
+        "gg-residence-02-living-bar.jpg",
+        "gg-residence-03-living-media-wall.jpg",
+        "gg-residence-04-living-seating.jpg",
+        "gg-residence-05-living-terrace.jpg",
+        "gg-residence-06-living-fireplace.jpg",
+        "gg-residence-07-corridor-gallery.jpg",
+        "gg-residence-08-bedroom-arch-headboard.jpg",
+        "gg-residence-09-bedroom-vanity.jpg",
+        "gg-residence-10-bedroom-wardrobe.jpg",
+        "gg-residence-11-bedroom-wardrobe-alt.jpg",
+        "gg-residence-12-bedroom-boy.jpg",
+        "gg-residence-13-master-bedroom.jpg",
+        "gg-residence-14-master-bedroom-tv.jpg",
+        "gg-residence-15-bathroom-arch-vanity.jpg",
+        "gg-residence-16-bathroom-terrazzo.jpg"
+      ],
+      "dimensions": {
+        "gg-residence-01-living-lounge.jpg": [
+          1600,
+          900
+        ],
+        "gg-residence-02-living-bar.jpg": [
+          1600,
+          900
+        ],
+        "gg-residence-03-living-media-wall.jpg": [
+          1600,
+          900
+        ],
+        "gg-residence-04-living-seating.jpg": [
+          1600,
+          900
+        ],
+        "gg-residence-05-living-terrace.jpg": [
+          1600,
+          900
+        ],
+        "gg-residence-06-living-fireplace.jpg": [
+          1600,
+          900
+        ],
+        "gg-residence-07-corridor-gallery.jpg": [
+          1600,
+          900
+        ],
+        "gg-residence-08-bedroom-arch-headboard.jpg": [
+          1600,
+          1201
+        ],
+        "gg-residence-09-bedroom-vanity.jpg": [
+          1600,
+          1201
+        ],
+        "gg-residence-10-bedroom-wardrobe.jpg": [
+          1600,
+          1200
+        ],
+        "gg-residence-11-bedroom-wardrobe-alt.jpg": [
+          1600,
+          1201
+        ],
+        "gg-residence-12-bedroom-boy.jpg": [
+          1600,
+          1200
+        ],
+        "gg-residence-13-master-bedroom.jpg": [
+          587,
+          440
+        ],
+        "gg-residence-14-master-bedroom-tv.jpg": [
+          587,
+          440
+        ],
+        "gg-residence-15-bathroom-arch-vanity.jpg": [
+          1280,
+          1600
+        ],
+        "gg-residence-16-bathroom-terrazzo.jpg": [
+          1280,
+          1600
+        ]
+      }
+    },
+    {
+      "slug": "grow-offices",
+      "title": "GROW Offices",
+      "expertise": "Commercial",
+      "status": "Concept to Completion",
+      "cover": "grow-offices-14-reception-desk-completed.jpg",
+      "image_count": 46,
+      "images": [
+        "grow-offices-14-reception-desk-completed.jpg",
+        "grow-offices-15-reception-logo-completed.jpg",
+        "grow-offices-16-reception-counter-completed.jpg",
+        "grow-offices-17-corridor-glass-completed.jpg",
+        "grow-offices-18-corridor-signage-completed.jpg",
+        "grow-offices-19-corridor-logo-completed.jpg",
+        "grow-offices-20-corridor-logo-alt-completed.jpg",
+        "grow-offices-21-collaboration-zone-completed.jpg",
+        "grow-offices-22-collaboration-lounge-completed.jpg",
+        "grow-offices-23-collaboration-seating-completed.jpg",
+        "grow-offices-24-collaboration-tables-completed.jpg",
+        "grow-offices-25-lounge-seating-completed.jpg",
+        "grow-offices-26-workspace-desks-completed.jpg",
+        "grow-offices-27-workspace-open-completed.jpg",
+        "grow-offices-28-meeting-pod-completed.jpg",
+        "grow-offices-29-meeting-pod-screen-completed.jpg",
+        "grow-offices-30-meeting-pod-interior-completed.jpg",
+        "grow-offices-31-boardroom-completed.jpg",
+        "grow-offices-32-boardroom-table-completed.jpg",
+        "grow-offices-33-boardroom-screen-completed.jpg",
+        "grow-offices-34-meeting-room-glass-completed.jpg",
+        "grow-offices-35-meeting-room-completed.jpg",
+        "grow-offices-36-executive-office-window-completed.jpg",
+        "grow-offices-37-executive-office-desk-completed.jpg",
+        "grow-offices-38-private-office-completed.jpg",
+        "grow-offices-39-private-office-alt-completed.jpg",
+        "grow-offices-40-office-lounge-completed.jpg",
+        "grow-offices-41-office-lounge-alt-completed.jpg",
+        "grow-offices-42-window-lounge-completed.jpg",
+        "grow-offices-43-window-lounge-alt-completed.jpg",
+        "grow-offices-44-display-shelving-completed.jpg",
+        "grow-offices-45-display-shelving-alt-completed.jpg",
+        "grow-offices-46-display-shelf-detail-completed.jpg",
+        "grow-offices-01-reception-concept.jpg",
+        "grow-offices-02-collaboration-zone-concept.jpg",
+        "grow-offices-03-collaboration-lounge-concept.jpg",
+        "grow-offices-04-workspace-pods-concept.jpg",
+        "grow-offices-05-meeting-pod-concept.jpg",
+        "grow-offices-06-meeting-room-concept.jpg",
+        "grow-offices-07-meeting-room-table-concept.jpg",
+        "grow-offices-08-signage-corridor-concept.jpg",
+        "grow-offices-09-private-office-concept.jpg",
+        "grow-offices-10-executive-office-concept.jpg",
+        "grow-offices-11-office-window-lounge-concept.jpg",
+        "grow-offices-12-office-shelving-concept.jpg",
+        "grow-offices-13-office-desk-concept.jpg"
+      ],
+      "concept": [
+        "grow-offices-01-reception-concept.jpg",
+        "grow-offices-02-collaboration-zone-concept.jpg",
+        "grow-offices-03-collaboration-lounge-concept.jpg",
+        "grow-offices-04-workspace-pods-concept.jpg",
+        "grow-offices-05-meeting-pod-concept.jpg",
+        "grow-offices-06-meeting-room-concept.jpg",
+        "grow-offices-07-meeting-room-table-concept.jpg",
+        "grow-offices-08-signage-corridor-concept.jpg",
+        "grow-offices-09-private-office-concept.jpg",
+        "grow-offices-10-executive-office-concept.jpg",
+        "grow-offices-11-office-window-lounge-concept.jpg",
+        "grow-offices-12-office-shelving-concept.jpg",
+        "grow-offices-13-office-desk-concept.jpg"
+      ],
+      "completed": [
+        "grow-offices-14-reception-desk-completed.jpg",
+        "grow-offices-15-reception-logo-completed.jpg",
+        "grow-offices-16-reception-counter-completed.jpg",
+        "grow-offices-17-corridor-glass-completed.jpg",
+        "grow-offices-18-corridor-signage-completed.jpg",
+        "grow-offices-19-corridor-logo-completed.jpg",
+        "grow-offices-20-corridor-logo-alt-completed.jpg",
+        "grow-offices-21-collaboration-zone-completed.jpg",
+        "grow-offices-22-collaboration-lounge-completed.jpg",
+        "grow-offices-23-collaboration-seating-completed.jpg",
+        "grow-offices-24-collaboration-tables-completed.jpg",
+        "grow-offices-25-lounge-seating-completed.jpg",
+        "grow-offices-26-workspace-desks-completed.jpg",
+        "grow-offices-27-workspace-open-completed.jpg",
+        "grow-offices-28-meeting-pod-completed.jpg",
+        "grow-offices-29-meeting-pod-screen-completed.jpg",
+        "grow-offices-30-meeting-pod-interior-completed.jpg",
+        "grow-offices-31-boardroom-completed.jpg",
+        "grow-offices-32-boardroom-table-completed.jpg",
+        "grow-offices-33-boardroom-screen-completed.jpg",
+        "grow-offices-34-meeting-room-glass-completed.jpg",
+        "grow-offices-35-meeting-room-completed.jpg",
+        "grow-offices-36-executive-office-window-completed.jpg",
+        "grow-offices-37-executive-office-desk-completed.jpg",
+        "grow-offices-38-private-office-completed.jpg",
+        "grow-offices-39-private-office-alt-completed.jpg",
+        "grow-offices-40-office-lounge-completed.jpg",
+        "grow-offices-41-office-lounge-alt-completed.jpg",
+        "grow-offices-42-window-lounge-completed.jpg",
+        "grow-offices-43-window-lounge-alt-completed.jpg",
+        "grow-offices-44-display-shelving-completed.jpg",
+        "grow-offices-45-display-shelving-alt-completed.jpg",
+        "grow-offices-46-display-shelf-detail-completed.jpg"
+      ],
+      "dimensions": {
+        "grow-offices-14-reception-desk-completed.jpg": [
+          1600,
+          1067
+        ],
+        "grow-offices-15-reception-logo-completed.jpg": [
+          1600,
+          1067
+        ],
+        "grow-offices-16-reception-counter-completed.jpg": [
+          1600,
+          1067
+        ],
+        "grow-offices-17-corridor-glass-completed.jpg": [
+          1600,
+          1067
+        ],
+        "grow-offices-18-corridor-signage-completed.jpg": [
+          1600,
+          1067
+        ],
+        "grow-offices-19-corridor-logo-completed.jpg": [
+          1600,
+          1067
+        ],
+        "grow-offices-20-corridor-logo-alt-completed.jpg": [
+          1600,
+          1067
+        ],
+        "grow-offices-21-collaboration-zone-completed.jpg": [
+          1600,
+          1067
+        ],
+        "grow-offices-22-collaboration-lounge-completed.jpg": [
+          1600,
+          1067
+        ],
+        "grow-offices-23-collaboration-seating-completed.jpg": [
+          1600,
+          1067
+        ],
+        "grow-offices-24-collaboration-tables-completed.jpg": [
+          1600,
+          1067
+        ],
+        "grow-offices-25-lounge-seating-completed.jpg": [
+          1600,
+          1067
+        ],
+        "grow-offices-26-workspace-desks-completed.jpg": [
+          1600,
+          1067
+        ],
+        "grow-offices-27-workspace-open-completed.jpg": [
+          1600,
+          1067
+        ],
+        "grow-offices-28-meeting-pod-completed.jpg": [
+          1600,
+          1067
+        ],
+        "grow-offices-29-meeting-pod-screen-completed.jpg": [
+          1600,
+          1067
+        ],
+        "grow-offices-30-meeting-pod-interior-completed.jpg": [
+          1600,
+          1067
+        ],
+        "grow-offices-31-boardroom-completed.jpg": [
+          1600,
+          1067
+        ],
+        "grow-offices-32-boardroom-table-completed.jpg": [
+          1600,
+          1067
+        ],
+        "grow-offices-33-boardroom-screen-completed.jpg": [
+          1600,
+          1067
+        ],
+        "grow-offices-34-meeting-room-glass-completed.jpg": [
+          1600,
+          1067
+        ],
+        "grow-offices-35-meeting-room-completed.jpg": [
+          1600,
+          1067
+        ],
+        "grow-offices-36-executive-office-window-completed.jpg": [
+          1600,
+          1067
+        ],
+        "grow-offices-37-executive-office-desk-completed.jpg": [
+          1600,
+          1067
+        ],
+        "grow-offices-38-private-office-completed.jpg": [
+          1600,
+          1067
+        ],
+        "grow-offices-39-private-office-alt-completed.jpg": [
+          1600,
+          1067
+        ],
+        "grow-offices-40-office-lounge-completed.jpg": [
+          1600,
+          1067
+        ],
+        "grow-offices-41-office-lounge-alt-completed.jpg": [
+          1600,
+          1067
+        ],
+        "grow-offices-42-window-lounge-completed.jpg": [
+          1600,
+          1067
+        ],
+        "grow-offices-43-window-lounge-alt-completed.jpg": [
+          1600,
+          1067
+        ],
+        "grow-offices-44-display-shelving-completed.jpg": [
+          1600,
+          1067
+        ],
+        "grow-offices-45-display-shelving-alt-completed.jpg": [
+          1600,
+          1067
+        ],
+        "grow-offices-46-display-shelf-detail-completed.jpg": [
+          1600,
+          1067
+        ],
+        "grow-offices-01-reception-concept.jpg": [
+          1600,
+          1200
+        ],
+        "grow-offices-02-collaboration-zone-concept.jpg": [
+          1600,
+          1200
+        ],
+        "grow-offices-03-collaboration-lounge-concept.jpg": [
+          1600,
+          1200
+        ],
+        "grow-offices-04-workspace-pods-concept.jpg": [
+          1600,
+          1200
+        ],
+        "grow-offices-05-meeting-pod-concept.jpg": [
+          1600,
+          1200
+        ],
+        "grow-offices-06-meeting-room-concept.jpg": [
+          1600,
+          1200
+        ],
+        "grow-offices-07-meeting-room-table-concept.jpg": [
+          1600,
+          1200
+        ],
+        "grow-offices-08-signage-corridor-concept.jpg": [
+          1600,
+          1200
+        ],
+        "grow-offices-09-private-office-concept.jpg": [
+          1600,
+          1200
+        ],
+        "grow-offices-10-executive-office-concept.jpg": [
+          1600,
+          1200
+        ],
+        "grow-offices-11-office-window-lounge-concept.jpg": [
+          1600,
+          1200
+        ],
+        "grow-offices-12-office-shelving-concept.jpg": [
+          1600,
+          1200
+        ],
+        "grow-offices-13-office-desk-concept.jpg": [
+          1600,
+          1200
+        ]
+      }
+    },
+    {
+      "slug": "ham-external-majlis",
+      "title": "H.A.M External Majlis",
+      "expertise": "Residential",
+      "status": "Concept",
+      "cover": "ham-external-majlis-01-majlis-hall.jpg",
+      "image_count": 12,
+      "images": [
+        "ham-external-majlis-01-majlis-hall.jpg",
+        "ham-external-majlis-02-majlis-seating-tv.jpg",
+        "ham-external-majlis-03-prayer-hall.jpg",
+        "ham-external-majlis-04-prayer-hall-mihrab.jpg",
+        "ham-external-majlis-05-bar-lounge.jpg",
+        "ham-external-majlis-06-entrance-hall.jpg",
+        "ham-external-majlis-07-gym.jpg",
+        "ham-external-majlis-08-bedroom-green-marble.jpg",
+        "ham-external-majlis-09-bedroom-media-wall.jpg",
+        "ham-external-majlis-10-bathroom-green-marble.jpg",
+        "ham-external-majlis-11-bathroom-vanity.jpg",
+        "ham-external-majlis-12-powder-room.jpg"
+      ],
+      "dimensions": {
+        "ham-external-majlis-01-majlis-hall.jpg": [
+          1600,
+          900
+        ],
+        "ham-external-majlis-02-majlis-seating-tv.jpg": [
+          1600,
+          900
+        ],
+        "ham-external-majlis-03-prayer-hall.jpg": [
+          1600,
+          900
+        ],
+        "ham-external-majlis-04-prayer-hall-mihrab.jpg": [
+          1600,
+          900
+        ],
+        "ham-external-majlis-05-bar-lounge.jpg": [
+          1600,
+          900
+        ],
+        "ham-external-majlis-06-entrance-hall.jpg": [
+          1600,
+          1200
+        ],
+        "ham-external-majlis-07-gym.jpg": [
+          1600,
+          900
+        ],
+        "ham-external-majlis-08-bedroom-green-marble.jpg": [
+          1600,
+          900
+        ],
+        "ham-external-majlis-09-bedroom-media-wall.jpg": [
+          1600,
+          900
+        ],
+        "ham-external-majlis-10-bathroom-green-marble.jpg": [
+          1600,
+          1200
+        ],
+        "ham-external-majlis-11-bathroom-vanity.jpg": [
+          1600,
+          1200
+        ],
+        "ham-external-majlis-12-powder-room.jpg": [
+          1600,
+          1200
+        ]
+      }
+    },
+    {
+      "slug": "haj-abdo-cafe-aleppo",
+      "title": "Haj Abdo Cafe, Aleppo",
+      "expertise": "Hospitality",
+      "status": "Concept",
+      "cover": "haj-abdo-cafe-aleppo-01-facade-exterior.jpg",
+      "image_count": 7,
+      "images": [
+        "haj-abdo-cafe-aleppo-01-facade-exterior.jpg",
+        "haj-abdo-cafe-aleppo-02-facade-entrance.jpg",
+        "haj-abdo-cafe-aleppo-03-terrace-seating.jpg",
+        "haj-abdo-cafe-aleppo-04-cafe-dining.jpg",
+        "haj-abdo-cafe-aleppo-05-cafe-banquette.jpg",
+        "haj-abdo-cafe-aleppo-06-cafe-entrance-feature.jpg",
+        "haj-abdo-cafe-aleppo-07-bakery-counter.jpg"
+      ],
+      "dimensions": {
+        "haj-abdo-cafe-aleppo-01-facade-exterior.jpg": [
+          1600,
+          900
+        ],
+        "haj-abdo-cafe-aleppo-02-facade-entrance.jpg": [
+          1600,
+          900
+        ],
+        "haj-abdo-cafe-aleppo-03-terrace-seating.jpg": [
+          1600,
+          1200
+        ],
+        "haj-abdo-cafe-aleppo-04-cafe-dining.jpg": [
+          1600,
+          1200
+        ],
+        "haj-abdo-cafe-aleppo-05-cafe-banquette.jpg": [
+          1600,
+          1200
+        ],
+        "haj-abdo-cafe-aleppo-06-cafe-entrance-feature.jpg": [
+          1600,
+          1200
+        ],
+        "haj-abdo-cafe-aleppo-07-bakery-counter.jpg": [
+          1600,
+          1200
+        ]
+      }
+    },
+    {
+      "slug": "jpl-landscape",
+      "title": "JPL Landscape",
+      "expertise": "Landscape",
+      "status": "Concept",
+      "cover": "jpl-landscape-01-entrance-facade.jpg",
+      "image_count": 6,
+      "images": [
+        "jpl-landscape-01-entrance-facade.jpg",
+        "jpl-landscape-02-entrance-driveway.jpg",
+        "jpl-landscape-03-pool-garden.jpg",
+        "jpl-landscape-04-courtyard-planting.jpg",
+        "jpl-landscape-05-pergola-lounge.jpg",
+        "jpl-landscape-06-pergola-terrace.jpg"
+      ],
+      "dimensions": {
+        "jpl-landscape-01-entrance-facade.jpg": [
+          1600,
+          941
+        ],
+        "jpl-landscape-02-entrance-driveway.jpg": [
+          1600,
+          1200
+        ],
+        "jpl-landscape-03-pool-garden.jpg": [
+          1600,
+          941
+        ],
+        "jpl-landscape-04-courtyard-planting.jpg": [
+          1600,
+          1200
+        ],
+        "jpl-landscape-05-pergola-lounge.jpg": [
+          1600,
+          941
+        ],
+        "jpl-landscape-06-pergola-terrace.jpg": [
+          1600,
+          941
+        ]
+      }
+    },
+    {
+      "slug": "jw-residence",
+      "title": "JW Residence",
+      "expertise": "Residential",
+      "status": "Concept",
+      "cover": "jw-residence-01-living-dining.jpg",
+      "image_count": 7,
+      "images": [
+        "jw-residence-01-living-dining.jpg",
+        "jw-residence-02-living-lounge.jpg",
+        "jw-residence-03-living-seating.jpg",
+        "jw-residence-04-living-media-wall.jpg",
+        "jw-residence-05-living-piano.jpg",
+        "jw-residence-06-entry-corridor.jpg",
+        "jw-residence-07-entry-hall.jpg"
+      ],
+      "dimensions": {
+        "jw-residence-01-living-dining.jpg": [
+          1600,
+          1200
+        ],
+        "jw-residence-02-living-lounge.jpg": [
+          1600,
+          1200
+        ],
+        "jw-residence-03-living-seating.jpg": [
+          1600,
+          1200
+        ],
+        "jw-residence-04-living-media-wall.jpg": [
+          1600,
+          1200
+        ],
+        "jw-residence-05-living-piano.jpg": [
+          1600,
+          1200
+        ],
+        "jw-residence-06-entry-corridor.jpg": [
+          1600,
+          1200
+        ],
+        "jw-residence-07-entry-hall.jpg": [
+          1600,
+          1200
+        ]
+      }
+    },
+    {
+      "slug": "jadeel-residence",
+      "title": "Jadeel Residence",
+      "expertise": "Residential",
+      "status": "Concept",
+      "cover": "jadeel-residence-01-living-lounge.jpg",
+      "image_count": 23,
+      "images": [
+        "jadeel-residence-01-living-lounge.jpg",
+        "jadeel-residence-02-living-media-wall.jpg",
+        "jadeel-residence-03-living-dining.jpg",
+        "jadeel-residence-04-living-tv.jpg",
+        "jadeel-residence-05-living-seating.jpg",
+        "jadeel-residence-06-dining.jpg",
+        "jadeel-residence-07-kitchen.jpg",
+        "jadeel-residence-08-kitchen-island.jpg",
+        "jadeel-residence-09-master-bedroom.jpg",
+        "jadeel-residence-10-master-bedroom-alt.jpg",
+        "jadeel-residence-11-master-bedroom-window.jpg",
+        "jadeel-residence-12-master-bedroom-coral.jpg",
+        "jadeel-residence-13-master-bedroom-mirror.jpg",
+        "jadeel-residence-14-master-bedroom-pink.jpg",
+        "jadeel-residence-15-bedroom.jpg",
+        "jadeel-residence-16-bedroom-vanity.jpg",
+        "jadeel-residence-17-walk-in-closet.jpg",
+        "jadeel-residence-18-master-bathroom.jpg",
+        "jadeel-residence-19-bathroom-shower.jpg",
+        "jadeel-residence-20-bathroom-ensuite.jpg",
+        "jadeel-residence-21-powder-room.jpg",
+        "jadeel-residence-22-wc-marble.jpg",
+        "jadeel-residence-23-corridor.jpg"
+      ],
+      "dimensions": {
+        "jadeel-residence-01-living-lounge.jpg": [
+          1600,
+          941
+        ],
+        "jadeel-residence-02-living-media-wall.jpg": [
+          1600,
+          941
+        ],
+        "jadeel-residence-03-living-dining.jpg": [
+          1600,
+          941
+        ],
+        "jadeel-residence-04-living-tv.jpg": [
+          1600,
+          941
+        ],
+        "jadeel-residence-05-living-seating.jpg": [
+          1600,
+          941
+        ],
+        "jadeel-residence-06-dining.jpg": [
+          1600,
+          941
+        ],
+        "jadeel-residence-07-kitchen.jpg": [
+          1600,
+          941
+        ],
+        "jadeel-residence-08-kitchen-island.jpg": [
+          1600,
+          941
+        ],
+        "jadeel-residence-09-master-bedroom.jpg": [
+          1600,
+          1200
+        ],
+        "jadeel-residence-10-master-bedroom-alt.jpg": [
+          1600,
+          1200
+        ],
+        "jadeel-residence-11-master-bedroom-window.jpg": [
+          1600,
+          1200
+        ],
+        "jadeel-residence-12-master-bedroom-coral.jpg": [
+          1600,
+          1200
+        ],
+        "jadeel-residence-13-master-bedroom-mirror.jpg": [
+          1600,
+          1200
+        ],
+        "jadeel-residence-14-master-bedroom-pink.jpg": [
+          1600,
+          1200
+        ],
+        "jadeel-residence-15-bedroom.jpg": [
+          1600,
+          1200
+        ],
+        "jadeel-residence-16-bedroom-vanity.jpg": [
+          1600,
+          1200
+        ],
+        "jadeel-residence-17-walk-in-closet.jpg": [
+          1600,
+          1200
+        ],
+        "jadeel-residence-18-master-bathroom.jpg": [
+          1600,
+          1200
+        ],
+        "jadeel-residence-19-bathroom-shower.jpg": [
+          1600,
+          1200
+        ],
+        "jadeel-residence-20-bathroom-ensuite.jpg": [
+          1600,
+          1200
+        ],
+        "jadeel-residence-21-powder-room.jpg": [
+          1600,
+          1200
+        ],
+        "jadeel-residence-22-wc-marble.jpg": [
+          1600,
+          1200
+        ],
+        "jadeel-residence-23-corridor.jpg": [
+          1600,
+          1200
+        ]
+      }
+    },
+    {
+      "slug": "mr-residence",
+      "title": "MR Residence",
+      "expertise": "Residential",
+      "status": "Concept",
+      "cover": "mr-residence-01-living-hall.jpg",
+      "image_count": 26,
+      "images": [
+        "mr-residence-01-living-hall.jpg",
+        "mr-residence-02-living-media-wall.jpg",
+        "mr-residence-03-living-shelving.jpg",
+        "mr-residence-04-living-lounge.jpg",
+        "mr-residence-05-living-seating.jpg",
+        "mr-residence-06-living-tv.jpg",
+        "mr-residence-07-living-kitchen.jpg",
+        "mr-residence-08-living-corridor.jpg",
+        "mr-residence-09-dining-kitchen.jpg",
+        "mr-residence-10-dining.jpg",
+        "mr-residence-11-kitchen.jpg",
+        "mr-residence-12-entry-stair.jpg",
+        "mr-residence-13-entry-planting.jpg",
+        "mr-residence-14-master-bedroom.jpg",
+        "mr-residence-15-master-bedroom-alt.jpg",
+        "mr-residence-16-bedroom.jpg",
+        "mr-residence-17-bedroom-alt.jpg",
+        "mr-residence-18-girls-room.jpg",
+        "mr-residence-19-girls-room-bunk.jpg",
+        "mr-residence-20-master-bathroom.jpg",
+        "mr-residence-21-master-bathroom-alt.jpg",
+        "mr-residence-22-master-bathroom-vanity.jpg",
+        "mr-residence-23-master-shower.jpg",
+        "mr-residence-24-master-wc.jpg",
+        "mr-residence-25-girls-bathroom.jpg",
+        "mr-residence-26-girls-bathroom-vanity.jpg"
+      ],
+      "dimensions": {
+        "mr-residence-01-living-hall.jpg": [
+          1600,
+          898
+        ],
+        "mr-residence-02-living-media-wall.jpg": [
+          1600,
+          898
+        ],
+        "mr-residence-03-living-shelving.jpg": [
+          1600,
+          900
+        ],
+        "mr-residence-04-living-lounge.jpg": [
+          1600,
+          1202
+        ],
+        "mr-residence-05-living-seating.jpg": [
+          1600,
+          1202
+        ],
+        "mr-residence-06-living-tv.jpg": [
+          1600,
+          1202
+        ],
+        "mr-residence-07-living-kitchen.jpg": [
+          1600,
+          900
+        ],
+        "mr-residence-08-living-corridor.jpg": [
+          1600,
+          898
+        ],
+        "mr-residence-09-dining-kitchen.jpg": [
+          1600,
+          898
+        ],
+        "mr-residence-10-dining.jpg": [
+          1600,
+          900
+        ],
+        "mr-residence-11-kitchen.jpg": [
+          1600,
+          898
+        ],
+        "mr-residence-12-entry-stair.jpg": [
+          1600,
+          898
+        ],
+        "mr-residence-13-entry-planting.jpg": [
+          1600,
+          898
+        ],
+        "mr-residence-14-master-bedroom.jpg": [
+          1600,
+          1203
+        ],
+        "mr-residence-15-master-bedroom-alt.jpg": [
+          1600,
+          1203
+        ],
+        "mr-residence-16-bedroom.jpg": [
+          1600,
+          1202
+        ],
+        "mr-residence-17-bedroom-alt.jpg": [
+          1600,
+          1202
+        ],
+        "mr-residence-18-girls-room.jpg": [
+          1600,
+          1143
+        ],
+        "mr-residence-19-girls-room-bunk.jpg": [
+          1600,
+          1143
+        ],
+        "mr-residence-20-master-bathroom.jpg": [
+          1200,
+          1600
+        ],
+        "mr-residence-21-master-bathroom-alt.jpg": [
+          1200,
+          1600
+        ],
+        "mr-residence-22-master-bathroom-vanity.jpg": [
+          1600,
+          1203
+        ],
+        "mr-residence-23-master-shower.jpg": [
+          1200,
+          1600
+        ],
+        "mr-residence-24-master-wc.jpg": [
+          1600,
+          1203
+        ],
+        "mr-residence-25-girls-bathroom.jpg": [
+          1600,
+          1600
+        ],
+        "mr-residence-26-girls-bathroom-vanity.jpg": [
+          1600,
+          1600
+        ]
+      }
+    },
+    {
+      "slug": "mirel-experience-center",
+      "title": "Mirel Experience Center",
+      "expertise": "Commercial",
+      "status": "Concept to Completion",
+      "cover": "mirel-experience-center-07-showroom-overview-completed.jpg",
+      "image_count": 16,
+      "images": [
+        "mirel-experience-center-07-showroom-overview-completed.jpg",
+        "mirel-experience-center-08-demo-lounge-completed.jpg",
+        "mirel-experience-center-09-demo-room-completed.jpg",
+        "mirel-experience-center-10-demo-room-guests-completed.jpg",
+        "mirel-experience-center-11-demo-room-seated-completed.jpg",
+        "mirel-experience-center-12-meeting-room-completed.jpg",
+        "mirel-experience-center-13-brand-wall-corridor-completed.jpg",
+        "mirel-experience-center-14-product-corridor-completed.jpg",
+        "mirel-experience-center-15-headphone-display-completed.jpg",
+        "mirel-experience-center-16-cinema-room-completed.jpg",
+        "mirel-experience-center-01-demo-room-stair-concept.jpg",
+        "mirel-experience-center-02-demo-room-concept.jpg",
+        "mirel-experience-center-03-product-display-concept.jpg",
+        "mirel-experience-center-04-speaker-display-concept.jpg",
+        "mirel-experience-center-05-storefront-concept.jpg",
+        "mirel-experience-center-06-entrance-denon-concept.jpg"
+      ],
+      "concept": [
+        "mirel-experience-center-01-demo-room-stair-concept.jpg",
+        "mirel-experience-center-02-demo-room-concept.jpg",
+        "mirel-experience-center-03-product-display-concept.jpg",
+        "mirel-experience-center-04-speaker-display-concept.jpg",
+        "mirel-experience-center-05-storefront-concept.jpg",
+        "mirel-experience-center-06-entrance-denon-concept.jpg"
+      ],
+      "completed": [
+        "mirel-experience-center-07-showroom-overview-completed.jpg",
+        "mirel-experience-center-08-demo-lounge-completed.jpg",
+        "mirel-experience-center-09-demo-room-completed.jpg",
+        "mirel-experience-center-10-demo-room-guests-completed.jpg",
+        "mirel-experience-center-11-demo-room-seated-completed.jpg",
+        "mirel-experience-center-12-meeting-room-completed.jpg",
+        "mirel-experience-center-13-brand-wall-corridor-completed.jpg",
+        "mirel-experience-center-14-product-corridor-completed.jpg",
+        "mirel-experience-center-15-headphone-display-completed.jpg",
+        "mirel-experience-center-16-cinema-room-completed.jpg"
+      ],
+      "dimensions": {
+        "mirel-experience-center-07-showroom-overview-completed.jpg": [
+          1600,
+          1067
+        ],
+        "mirel-experience-center-08-demo-lounge-completed.jpg": [
+          1600,
+          1067
+        ],
+        "mirel-experience-center-09-demo-room-completed.jpg": [
+          1600,
+          1067
+        ],
+        "mirel-experience-center-10-demo-room-guests-completed.jpg": [
+          1600,
+          1065
+        ],
+        "mirel-experience-center-11-demo-room-seated-completed.jpg": [
+          1600,
+          1065
+        ],
+        "mirel-experience-center-12-meeting-room-completed.jpg": [
+          1600,
+          1067
+        ],
+        "mirel-experience-center-13-brand-wall-corridor-completed.jpg": [
+          1600,
+          1067
+        ],
+        "mirel-experience-center-14-product-corridor-completed.jpg": [
+          1600,
+          1067
+        ],
+        "mirel-experience-center-15-headphone-display-completed.jpg": [
+          1600,
+          1067
+        ],
+        "mirel-experience-center-16-cinema-room-completed.jpg": [
+          1600,
+          1067
+        ],
+        "mirel-experience-center-01-demo-room-stair-concept.jpg": [
+          1600,
+          1143
+        ],
+        "mirel-experience-center-02-demo-room-concept.jpg": [
+          1600,
+          1143
+        ],
+        "mirel-experience-center-03-product-display-concept.jpg": [
+          1600,
+          1143
+        ],
+        "mirel-experience-center-04-speaker-display-concept.jpg": [
+          1600,
+          1143
+        ],
+        "mirel-experience-center-05-storefront-concept.jpg": [
+          1600,
+          1143
+        ],
+        "mirel-experience-center-06-entrance-denon-concept.jpg": [
+          1600,
+          1143
+        ]
+      }
+    },
+    {
+      "slug": "na-residence",
+      "title": "NA Residence",
+      "expertise": "Residential",
+      "status": "Concept",
+      "cover": "na-residence-01-living-lounge.jpg",
+      "image_count": 74,
+      "images": [
+        "na-residence-01-living-lounge.jpg",
+        "na-residence-02-living-fireplace.jpg",
+        "na-residence-03-living-patterned-floor.jpg",
+        "na-residence-04-living-seating.jpg",
+        "na-residence-05-living-wide.jpg",
+        "na-residence-06-living-garden-view.jpg",
+        "na-residence-07-living-garden-view-alt.jpg",
+        "na-residence-08-living-night.jpg",
+        "na-residence-09-living-night-alt.jpg",
+        "na-residence-10-living-fireplace-night.jpg",
+        "na-residence-11-living-night-wide.jpg",
+        "na-residence-12-living-night-seating.jpg",
+        "na-residence-13-lounge-night.jpg",
+        "na-residence-14-lounge-night-alt.jpg",
+        "na-residence-15-dining.jpg",
+        "na-residence-16-dining-marble.jpg",
+        "na-residence-17-dining-night.jpg",
+        "na-residence-18-dining-night-alt.jpg",
+        "na-residence-19-entry-stair-arch.jpg",
+        "na-residence-20-stair-hall.jpg",
+        "na-residence-21-entry-corridor.jpg",
+        "na-residence-22-stair-marble.jpg",
+        "na-residence-23-ceiling-detail.jpg",
+        "na-residence-24-powder-room.jpg",
+        "na-residence-25-powder-room-alt.jpg",
+        "na-residence-26-corridor-gallery.jpg",
+        "na-residence-27-lounge-upper.jpg",
+        "na-residence-28-corridor-stair.jpg",
+        "na-residence-29-corridor-artwork.jpg",
+        "na-residence-30-corridor-chevron-floor.jpg",
+        "na-residence-31-corridor-marble-floor.jpg",
+        "na-residence-32-master-bedroom.jpg",
+        "na-residence-33-master-bedroom-alt.jpg",
+        "na-residence-34-master-bedroom-vanity.jpg",
+        "na-residence-35-master-bedroom-window.jpg",
+        "na-residence-36-master-bedroom-sea-view.jpg",
+        "na-residence-37-master-bedroom-suite.jpg",
+        "na-residence-38-master-bedroom-sea-view-alt.jpg",
+        "na-residence-39-master-bedroom-dressing.jpg",
+        "na-residence-40-bedroom-yellow-chair.jpg",
+        "na-residence-41-bedroom-vanity.jpg",
+        "na-residence-42-girls-bedroom.jpg",
+        "na-residence-43-girls-bedroom-alt.jpg",
+        "na-residence-44-girls-bedroom-suite.jpg",
+        "na-residence-45-girls-bedroom-vanity.jpg",
+        "na-residence-46-boys-bedroom.jpg",
+        "na-residence-47-boys-bedroom-alt.jpg",
+        "na-residence-48-boys-bedroom-vanity.jpg",
+        "na-residence-49-boys-bedroom-tv.jpg",
+        "na-residence-50-walk-in-closet.jpg",
+        "na-residence-51-walk-in-closet-alt.jpg",
+        "na-residence-52-walk-in-closet-window.jpg",
+        "na-residence-53-dressing-vanity.jpg",
+        "na-residence-54-dressing-room.jpg",
+        "na-residence-55-study-lounge.jpg",
+        "na-residence-56-living-lounge-upper.jpg",
+        "na-residence-57-corridor-lighting.jpg",
+        "na-residence-58-corridor-artwork-alt.jpg",
+        "na-residence-59-master-bathroom.jpg",
+        "na-residence-60-master-bathroom-tub.jpg",
+        "na-residence-61-master-shower.jpg",
+        "na-residence-62-master-bathroom-tub-alt.jpg",
+        "na-residence-63-master-bathroom-double-vanity.jpg",
+        "na-residence-64-master-shower-alt.jpg",
+        "na-residence-65-bathroom-black-marble.jpg",
+        "na-residence-66-bathroom-white.jpg",
+        "na-residence-67-bathroom-black-marble-alt.jpg",
+        "na-residence-68-bathroom-round-mirror.jpg",
+        "na-residence-69-bathroom-stone.jpg",
+        "na-residence-70-roof-bedroom.jpg",
+        "na-residence-71-roof-bedroom-alt.jpg",
+        "na-residence-72-roof-bedroom-vanity.jpg",
+        "na-residence-73-roof-bedroom-dark.jpg",
+        "na-residence-74-roof-bedroom-dark-alt.jpg"
+      ],
+      "dimensions": {
+        "na-residence-01-living-lounge.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-02-living-fireplace.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-03-living-patterned-floor.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-04-living-seating.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-05-living-wide.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-06-living-garden-view.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-07-living-garden-view-alt.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-08-living-night.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-09-living-night-alt.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-10-living-fireplace-night.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-11-living-night-wide.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-12-living-night-seating.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-13-lounge-night.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-14-lounge-night-alt.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-15-dining.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-16-dining-marble.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-17-dining-night.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-18-dining-night-alt.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-19-entry-stair-arch.jpg": [
+          1600,
+          1600
+        ],
+        "na-residence-20-stair-hall.jpg": [
+          1600,
+          1600
+        ],
+        "na-residence-21-entry-corridor.jpg": [
+          1600,
+          1600
+        ],
+        "na-residence-22-stair-marble.jpg": [
+          1600,
+          1600
+        ],
+        "na-residence-23-ceiling-detail.jpg": [
+          1600,
+          1600
+        ],
+        "na-residence-24-powder-room.jpg": [
+          1600,
+          1200
+        ],
+        "na-residence-25-powder-room-alt.jpg": [
+          1600,
+          1200
+        ],
+        "na-residence-26-corridor-gallery.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-27-lounge-upper.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-28-corridor-stair.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-29-corridor-artwork.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-30-corridor-chevron-floor.jpg": [
+          1600,
+          1600
+        ],
+        "na-residence-31-corridor-marble-floor.jpg": [
+          1600,
+          1600
+        ],
+        "na-residence-32-master-bedroom.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-33-master-bedroom-alt.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-34-master-bedroom-vanity.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-35-master-bedroom-window.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-36-master-bedroom-sea-view.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-37-master-bedroom-suite.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-38-master-bedroom-sea-view-alt.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-39-master-bedroom-dressing.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-40-bedroom-yellow-chair.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-41-bedroom-vanity.jpg": [
+          1280,
+          720
+        ],
+        "na-residence-42-girls-bedroom.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-43-girls-bedroom-alt.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-44-girls-bedroom-suite.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-45-girls-bedroom-vanity.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-46-boys-bedroom.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-47-boys-bedroom-alt.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-48-boys-bedroom-vanity.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-49-boys-bedroom-tv.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-50-walk-in-closet.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-51-walk-in-closet-alt.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-52-walk-in-closet-window.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-53-dressing-vanity.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-54-dressing-room.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-55-study-lounge.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-56-living-lounge-upper.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-57-corridor-lighting.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-58-corridor-artwork-alt.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-59-master-bathroom.jpg": [
+          1600,
+          1200
+        ],
+        "na-residence-60-master-bathroom-tub.jpg": [
+          1600,
+          1200
+        ],
+        "na-residence-61-master-shower.jpg": [
+          1600,
+          1200
+        ],
+        "na-residence-62-master-bathroom-tub-alt.jpg": [
+          1600,
+          1200
+        ],
+        "na-residence-63-master-bathroom-double-vanity.jpg": [
+          1600,
+          1200
+        ],
+        "na-residence-64-master-shower-alt.jpg": [
+          1600,
+          1200
+        ],
+        "na-residence-65-bathroom-black-marble.jpg": [
+          1600,
+          1200
+        ],
+        "na-residence-66-bathroom-white.jpg": [
+          1600,
+          1200
+        ],
+        "na-residence-67-bathroom-black-marble-alt.jpg": [
+          1600,
+          1200
+        ],
+        "na-residence-68-bathroom-round-mirror.jpg": [
+          1600,
+          1200
+        ],
+        "na-residence-69-bathroom-stone.jpg": [
+          1600,
+          1200
+        ],
+        "na-residence-70-roof-bedroom.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-71-roof-bedroom-alt.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-72-roof-bedroom-vanity.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-73-roof-bedroom-dark.jpg": [
+          1600,
+          900
+        ],
+        "na-residence-74-roof-bedroom-dark-alt.jpg": [
+          1600,
+          900
+        ]
+      }
+    },
+    {
+      "slug": "ng-residence",
+      "title": "NG Residence",
+      "expertise": "Residential",
+      "status": "Concept",
+      "cover": "ng-residence-01-living-kitchen.jpg",
+      "image_count": 14,
+      "images": [
+        "ng-residence-01-living-kitchen.jpg",
+        "ng-residence-02-living-lounge.jpg",
+        "ng-residence-03-living-seating.jpg",
+        "ng-residence-04-kitchen.jpg",
+        "ng-residence-05-kitchen-island.jpg",
+        "ng-residence-06-entry-hall.jpg",
+        "ng-residence-07-entry-arch.jpg",
+        "ng-residence-08-bedroom-feature-wall.jpg",
+        "ng-residence-09-bedroom-feature-wall-alt.jpg",
+        "ng-residence-10-bedroom-vanity.jpg",
+        "ng-residence-11-bedroom-dressing.jpg",
+        "ng-residence-12-bathroom-marble.jpg",
+        "ng-residence-13-bathroom-bedroom.jpg",
+        "ng-residence-14-bathroom-green.jpg"
+      ],
+      "dimensions": {
+        "ng-residence-01-living-kitchen.jpg": [
+          1600,
+          941
+        ],
+        "ng-residence-02-living-lounge.jpg": [
+          1600,
+          941
+        ],
+        "ng-residence-03-living-seating.jpg": [
+          1600,
+          941
+        ],
+        "ng-residence-04-kitchen.jpg": [
+          1600,
+          941
+        ],
+        "ng-residence-05-kitchen-island.jpg": [
+          1600,
+          941
+        ],
+        "ng-residence-06-entry-hall.jpg": [
+          1600,
+          941
+        ],
+        "ng-residence-07-entry-arch.jpg": [
+          1600,
+          941
+        ],
+        "ng-residence-08-bedroom-feature-wall.jpg": [
+          1600,
+          942
+        ],
+        "ng-residence-09-bedroom-feature-wall-alt.jpg": [
+          1600,
+          942
+        ],
+        "ng-residence-10-bedroom-vanity.jpg": [
+          1600,
+          942
+        ],
+        "ng-residence-11-bedroom-dressing.jpg": [
+          1600,
+          942
+        ],
+        "ng-residence-12-bathroom-marble.jpg": [
+          1600,
+          942
+        ],
+        "ng-residence-13-bathroom-bedroom.jpg": [
+          1600,
+          942
+        ],
+        "ng-residence-14-bathroom-green.jpg": [
+          1600,
+          942
+        ]
+      }
+    },
+    {
+      "slug": "rc-residence",
+      "title": "RC Residence",
+      "expertise": "Residential",
+      "status": "Concept",
+      "cover": "rc-residence-01-living-lounge.jpg",
+      "image_count": 24,
+      "images": [
+        "rc-residence-01-living-lounge.jpg",
+        "rc-residence-02-living-dining.jpg",
+        "rc-residence-03-kitchen-dining.jpg",
+        "rc-residence-04-living-kitchen-upper.jpg",
+        "rc-residence-05-living-upper.jpg",
+        "rc-residence-06-living-tv-upper.jpg",
+        "rc-residence-07-stair-hall.jpg",
+        "rc-residence-08-corridor-stair.jpg",
+        "rc-residence-09-corridor-shelving.jpg",
+        "rc-residence-10-bedroom.jpg",
+        "rc-residence-11-bedroom-upper.jpg",
+        "rc-residence-12-bedroom-window.jpg",
+        "rc-residence-13-bedroom-media-wall.jpg",
+        "rc-residence-14-dressing-room.jpg",
+        "rc-residence-15-bathroom-ensuite.jpg",
+        "rc-residence-16-bathroom-shower.jpg",
+        "rc-residence-17-bathroom-marble.jpg",
+        "rc-residence-18-bathroom-vanity.jpg",
+        "rc-residence-19-bathroom-double-vanity.jpg",
+        "rc-residence-20-bathroom-shower-marble.jpg",
+        "rc-residence-21-powder-room.jpg",
+        "rc-residence-22-terrace-villa.jpg",
+        "rc-residence-23-terrace-city-view.jpg",
+        "rc-residence-24-terrace-dusk.jpg"
+      ],
+      "dimensions": {
+        "rc-residence-01-living-lounge.jpg": [
+          1600,
+          1067
+        ],
+        "rc-residence-02-living-dining.jpg": [
+          1600,
+          1067
+        ],
+        "rc-residence-03-kitchen-dining.jpg": [
+          1600,
+          1067
+        ],
+        "rc-residence-04-living-kitchen-upper.jpg": [
+          1600,
+          1200
+        ],
+        "rc-residence-05-living-upper.jpg": [
+          1600,
+          1200
+        ],
+        "rc-residence-06-living-tv-upper.jpg": [
+          1600,
+          1200
+        ],
+        "rc-residence-07-stair-hall.jpg": [
+          1600,
+          1067
+        ],
+        "rc-residence-08-corridor-stair.jpg": [
+          1600,
+          1067
+        ],
+        "rc-residence-09-corridor-shelving.jpg": [
+          1600,
+          1067
+        ],
+        "rc-residence-10-bedroom.jpg": [
+          1600,
+          1067
+        ],
+        "rc-residence-11-bedroom-upper.jpg": [
+          1600,
+          1200
+        ],
+        "rc-residence-12-bedroom-window.jpg": [
+          1600,
+          1200
+        ],
+        "rc-residence-13-bedroom-media-wall.jpg": [
+          1600,
+          1200
+        ],
+        "rc-residence-14-dressing-room.jpg": [
+          1600,
+          1072
+        ],
+        "rc-residence-15-bathroom-ensuite.jpg": [
+          1600,
+          1067
+        ],
+        "rc-residence-16-bathroom-shower.jpg": [
+          1600,
+          1067
+        ],
+        "rc-residence-17-bathroom-marble.jpg": [
+          1600,
+          1200
+        ],
+        "rc-residence-18-bathroom-vanity.jpg": [
+          1600,
+          1200
+        ],
+        "rc-residence-19-bathroom-double-vanity.jpg": [
+          1600,
+          1200
+        ],
+        "rc-residence-20-bathroom-shower-marble.jpg": [
+          1600,
+          1200
+        ],
+        "rc-residence-21-powder-room.jpg": [
+          1600,
+          1465
+        ],
+        "rc-residence-22-terrace-villa.jpg": [
+          1600,
+          1200
+        ],
+        "rc-residence-23-terrace-city-view.jpg": [
+          1600,
+          1200
+        ],
+        "rc-residence-24-terrace-dusk.jpg": [
+          1600,
+          1200
+        ]
+      }
+    },
+    {
+      "slug": "ronaldo-muchawar",
+      "title": "Ronaldo Muchawar",
+      "expertise": "Residential",
+      "status": "Concept",
+      "cover": "ronaldo-muchawar-01-exterior-facade.jpg",
+      "image_count": 83,
+      "images": [
+        "ronaldo-muchawar-01-exterior-facade.jpg",
+        "ronaldo-muchawar-02-exterior-facade-alt.jpg",
+        "ronaldo-muchawar-03-roof-pool-terrace.jpg",
+        "ronaldo-muchawar-04-roof-lounge.jpg",
+        "ronaldo-muchawar-05-roof-lounge-guests.jpg",
+        "ronaldo-muchawar-06-roof-bar.jpg",
+        "ronaldo-muchawar-07-roof-pool.jpg",
+        "ronaldo-muchawar-08-roof-pool-guests.jpg",
+        "ronaldo-muchawar-09-roof-pool-daybed.jpg",
+        "ronaldo-muchawar-10-roof-pergola.jpg",
+        "ronaldo-muchawar-11-roof-terrace-view.jpg",
+        "ronaldo-muchawar-12-roof-living-room.jpg",
+        "ronaldo-muchawar-13-roof-living-lounge.jpg",
+        "ronaldo-muchawar-14-entry-gallery.jpg",
+        "ronaldo-muchawar-15-living-lounge.jpg",
+        "ronaldo-muchawar-16-living-seating.jpg",
+        "ronaldo-muchawar-17-living-tv.jpg",
+        "ronaldo-muchawar-18-living-wide.jpg",
+        "ronaldo-muchawar-19-living-lounge-wide.jpg",
+        "ronaldo-muchawar-20-living-planting.jpg",
+        "ronaldo-muchawar-21-living-shelving.jpg",
+        "ronaldo-muchawar-22-living-media-wall.jpg",
+        "ronaldo-muchawar-23-living-planting-alt.jpg",
+        "ronaldo-muchawar-24-stair-atrium.jpg",
+        "ronaldo-muchawar-25-corridor-screen.jpg",
+        "ronaldo-muchawar-26-dining-kitchen.jpg",
+        "ronaldo-muchawar-27-dining-lounge.jpg",
+        "ronaldo-muchawar-28-dining-table.jpg",
+        "ronaldo-muchawar-29-kitchen-island.jpg",
+        "ronaldo-muchawar-30-kitchen.jpg",
+        "ronaldo-muchawar-31-kitchen-dining.jpg",
+        "ronaldo-muchawar-32-dining-living.jpg",
+        "ronaldo-muchawar-33-dining-marble.jpg",
+        "ronaldo-muchawar-34-powder-room.jpg",
+        "ronaldo-muchawar-35-club-lounge.jpg",
+        "ronaldo-muchawar-36-club-bar.jpg",
+        "ronaldo-muchawar-37-club-bar-counter.jpg",
+        "ronaldo-muchawar-38-club-wine-display.jpg",
+        "ronaldo-muchawar-39-club-lounge-guests.jpg",
+        "ronaldo-muchawar-40-club-lounge-dark.jpg",
+        "ronaldo-muchawar-41-club-bar-seating.jpg",
+        "ronaldo-muchawar-42-club-dj-booth.jpg",
+        "ronaldo-muchawar-43-club-dj-lounge-purple.jpg",
+        "ronaldo-muchawar-44-club-purple-ceiling.jpg",
+        "ronaldo-muchawar-45-club-lounge-seating.jpg",
+        "ronaldo-muchawar-46-club-media-wall.jpg",
+        "ronaldo-muchawar-47-club-bar-wide.jpg",
+        "ronaldo-muchawar-48-club-dj-booth-alt.jpg",
+        "ronaldo-muchawar-49-club-wine-wall.jpg",
+        "ronaldo-muchawar-50-club-bar-detail.jpg",
+        "ronaldo-muchawar-51-club-artwork-lounge.jpg",
+        "ronaldo-muchawar-52-club-stair.jpg",
+        "ronaldo-muchawar-53-club-seating-lounge.jpg",
+        "ronaldo-muchawar-54-club-entrance.jpg",
+        "ronaldo-muchawar-55-club-purple-lounge-wide.jpg",
+        "ronaldo-muchawar-56-spa-corridor.jpg",
+        "ronaldo-muchawar-57-spa-treatment-corridor.jpg",
+        "ronaldo-muchawar-58-spa-treatment-room.jpg",
+        "ronaldo-muchawar-59-spa-relaxation.jpg",
+        "ronaldo-muchawar-60-spa-shower.jpg",
+        "ronaldo-muchawar-61-spa-vanity.jpg",
+        "ronaldo-muchawar-62-spa-treatment-bed.jpg",
+        "ronaldo-muchawar-63-spa-hammam.jpg",
+        "ronaldo-muchawar-64-spa-wc.jpg",
+        "ronaldo-muchawar-65-spa-sauna.jpg",
+        "ronaldo-muchawar-66-spa-red-marble-bath.jpg",
+        "ronaldo-muchawar-67-spa-corridor-alt.jpg",
+        "ronaldo-muchawar-68-master-bedroom.jpg",
+        "ronaldo-muchawar-69-master-bedroom-tv.jpg",
+        "ronaldo-muchawar-70-bedroom-lounge.jpg",
+        "ronaldo-muchawar-71-bedroom-dressing.jpg",
+        "ronaldo-muchawar-72-bedroom-seating.jpg",
+        "ronaldo-muchawar-73-bedroom-window.jpg",
+        "ronaldo-muchawar-74-master-bedroom-suite.jpg",
+        "ronaldo-muchawar-75-master-bedroom-suite-alt.jpg",
+        "ronaldo-muchawar-76-dressing-room.jpg",
+        "ronaldo-muchawar-77-master-bathroom.jpg",
+        "ronaldo-muchawar-78-master-bathroom-vanity.jpg",
+        "ronaldo-muchawar-79-bathroom-shower.jpg",
+        "ronaldo-muchawar-80-master-bathroom-window.jpg",
+        "ronaldo-muchawar-81-master-bathroom-double-vanity.jpg",
+        "ronaldo-muchawar-82-master-bathroom-mirror.jpg",
+        "ronaldo-muchawar-83-master-bathroom-tub.jpg"
+      ],
+      "dimensions": {
+        "ronaldo-muchawar-01-exterior-facade.jpg": [
+          1600,
+          938
+        ],
+        "ronaldo-muchawar-02-exterior-facade-alt.jpg": [
+          1600,
+          899
+        ],
+        "ronaldo-muchawar-03-roof-pool-terrace.jpg": [
+          1600,
+          900
+        ],
+        "ronaldo-muchawar-04-roof-lounge.jpg": [
+          1600,
+          900
+        ],
+        "ronaldo-muchawar-05-roof-lounge-guests.jpg": [
+          1600,
+          900
+        ],
+        "ronaldo-muchawar-06-roof-bar.jpg": [
+          1600,
+          900
+        ],
+        "ronaldo-muchawar-07-roof-pool.jpg": [
+          1600,
+          900
+        ],
+        "ronaldo-muchawar-08-roof-pool-guests.jpg": [
+          1600,
+          900
+        ],
+        "ronaldo-muchawar-09-roof-pool-daybed.jpg": [
+          1600,
+          900
+        ],
+        "ronaldo-muchawar-10-roof-pergola.jpg": [
+          1600,
+          900
+        ],
+        "ronaldo-muchawar-11-roof-terrace-view.jpg": [
+          1600,
+          900
+        ],
+        "ronaldo-muchawar-12-roof-living-room.jpg": [
+          1600,
+          900
+        ],
+        "ronaldo-muchawar-13-roof-living-lounge.jpg": [
+          1600,
+          900
+        ],
+        "ronaldo-muchawar-14-entry-gallery.jpg": [
+          1600,
+          900
+        ],
+        "ronaldo-muchawar-15-living-lounge.jpg": [
+          1600,
+          900
+        ],
+        "ronaldo-muchawar-16-living-seating.jpg": [
+          1600,
+          900
+        ],
+        "ronaldo-muchawar-17-living-tv.jpg": [
+          1600,
+          900
+        ],
+        "ronaldo-muchawar-18-living-wide.jpg": [
+          1600,
+          900
+        ],
+        "ronaldo-muchawar-19-living-lounge-wide.jpg": [
+          1600,
+          900
+        ],
+        "ronaldo-muchawar-20-living-planting.jpg": [
+          1600,
+          900
+        ],
+        "ronaldo-muchawar-21-living-shelving.jpg": [
+          1600,
+          900
+        ],
+        "ronaldo-muchawar-22-living-media-wall.jpg": [
+          1600,
+          900
+        ],
+        "ronaldo-muchawar-23-living-planting-alt.jpg": [
+          1600,
+          900
+        ],
+        "ronaldo-muchawar-24-stair-atrium.jpg": [
+          1600,
+          900
+        ],
+        "ronaldo-muchawar-25-corridor-screen.jpg": [
+          1600,
+          900
+        ],
+        "ronaldo-muchawar-26-dining-kitchen.jpg": [
+          1600,
+          900
+        ],
+        "ronaldo-muchawar-27-dining-lounge.jpg": [
+          1600,
+          900
+        ],
+        "ronaldo-muchawar-28-dining-table.jpg": [
+          1600,
+          900
+        ],
+        "ronaldo-muchawar-29-kitchen-island.jpg": [
+          1600,
+          900
+        ],
+        "ronaldo-muchawar-30-kitchen.jpg": [
+          1600,
+          900
+        ],
+        "ronaldo-muchawar-31-kitchen-dining.jpg": [
+          1600,
+          900
+        ],
+        "ronaldo-muchawar-32-dining-living.jpg": [
+          1600,
+          900
+        ],
+        "ronaldo-muchawar-33-dining-marble.jpg": [
+          1600,
+          900
+        ],
+        "ronaldo-muchawar-34-powder-room.jpg": [
+          1280,
+          1600
+        ],
+        "ronaldo-muchawar-35-club-lounge.jpg": [
+          1600,
+          1200
+        ],
+        "ronaldo-muchawar-36-club-bar.jpg": [
+          1600,
+          1200
+        ],
+        "ronaldo-muchawar-37-club-bar-counter.jpg": [
+          1600,
+          1200
+        ],
+        "ronaldo-muchawar-38-club-wine-display.jpg": [
+          1600,
+          1200
+        ],
+        "ronaldo-muchawar-39-club-lounge-guests.jpg": [
+          1600,
+          1200
+        ],
+        "ronaldo-muchawar-40-club-lounge-dark.jpg": [
+          1600,
+          1200
+        ],
+        "ronaldo-muchawar-41-club-bar-seating.jpg": [
+          1600,
+          1200
+        ],
+        "ronaldo-muchawar-42-club-dj-booth.jpg": [
+          1600,
+          1200
+        ],
+        "ronaldo-muchawar-43-club-dj-lounge-purple.jpg": [
+          1600,
+          1200
+        ],
+        "ronaldo-muchawar-44-club-purple-ceiling.jpg": [
+          1600,
+          1200
+        ],
+        "ronaldo-muchawar-45-club-lounge-seating.jpg": [
+          1600,
+          1200
+        ],
+        "ronaldo-muchawar-46-club-media-wall.jpg": [
+          1600,
+          1200
+        ],
+        "ronaldo-muchawar-47-club-bar-wide.jpg": [
+          1600,
+          1200
+        ],
+        "ronaldo-muchawar-48-club-dj-booth-alt.jpg": [
+          1600,
+          1200
+        ],
+        "ronaldo-muchawar-49-club-wine-wall.jpg": [
+          1600,
+          1200
+        ],
+        "ronaldo-muchawar-50-club-bar-detail.jpg": [
+          1600,
+          1200
+        ],
+        "ronaldo-muchawar-51-club-artwork-lounge.jpg": [
+          1600,
+          1200
+        ],
+        "ronaldo-muchawar-52-club-stair.jpg": [
+          1600,
+          1200
+        ],
+        "ronaldo-muchawar-53-club-seating-lounge.jpg": [
+          1600,
+          1200
+        ],
+        "ronaldo-muchawar-54-club-entrance.jpg": [
+          1600,
+          1200
+        ],
+        "ronaldo-muchawar-55-club-purple-lounge-wide.jpg": [
+          1600,
+          1200
+        ],
+        "ronaldo-muchawar-56-spa-corridor.jpg": [
+          1600,
+          1600
+        ],
+        "ronaldo-muchawar-57-spa-treatment-corridor.jpg": [
+          1600,
+          1600
+        ],
+        "ronaldo-muchawar-58-spa-treatment-room.jpg": [
+          1600,
+          1600
+        ],
+        "ronaldo-muchawar-59-spa-relaxation.jpg": [
+          1600,
+          1600
+        ],
+        "ronaldo-muchawar-60-spa-shower.jpg": [
+          1600,
+          1600
+        ],
+        "ronaldo-muchawar-61-spa-vanity.jpg": [
+          1600,
+          1600
+        ],
+        "ronaldo-muchawar-62-spa-treatment-bed.jpg": [
+          1600,
+          1600
+        ],
+        "ronaldo-muchawar-63-spa-hammam.jpg": [
+          1600,
+          1600
+        ],
+        "ronaldo-muchawar-64-spa-wc.jpg": [
+          1600,
+          1600
+        ],
+        "ronaldo-muchawar-65-spa-sauna.jpg": [
+          1600,
+          1600
+        ],
+        "ronaldo-muchawar-66-spa-red-marble-bath.jpg": [
+          1600,
+          1600
+        ],
+        "ronaldo-muchawar-67-spa-corridor-alt.jpg": [
+          1600,
+          1600
+        ],
+        "ronaldo-muchawar-68-master-bedroom.jpg": [
+          1600,
+          900
+        ],
+        "ronaldo-muchawar-69-master-bedroom-tv.jpg": [
+          1600,
+          900
+        ],
+        "ronaldo-muchawar-70-bedroom-lounge.jpg": [
+          1600,
+          900
+        ],
+        "ronaldo-muchawar-71-bedroom-dressing.jpg": [
+          1600,
+          900
+        ],
+        "ronaldo-muchawar-72-bedroom-seating.jpg": [
+          1600,
+          900
+        ],
+        "ronaldo-muchawar-73-bedroom-window.jpg": [
+          1600,
+          900
+        ],
+        "ronaldo-muchawar-74-master-bedroom-suite.jpg": [
+          1600,
+          900
+        ],
+        "ronaldo-muchawar-75-master-bedroom-suite-alt.jpg": [
+          1600,
+          900
+        ],
+        "ronaldo-muchawar-76-dressing-room.jpg": [
+          1600,
+          900
+        ],
+        "ronaldo-muchawar-77-master-bathroom.jpg": [
+          1280,
+          1600
+        ],
+        "ronaldo-muchawar-78-master-bathroom-vanity.jpg": [
+          1280,
+          1600
+        ],
+        "ronaldo-muchawar-79-bathroom-shower.jpg": [
+          1280,
+          1600
+        ],
+        "ronaldo-muchawar-80-master-bathroom-window.jpg": [
+          1280,
+          1600
+        ],
+        "ronaldo-muchawar-81-master-bathroom-double-vanity.jpg": [
+          1280,
+          1600
+        ],
+        "ronaldo-muchawar-82-master-bathroom-mirror.jpg": [
+          1280,
+          1600
+        ],
+        "ronaldo-muchawar-83-master-bathroom-tub.jpg": [
+          1280,
+          1600
+        ]
+      }
+    },
+    {
+      "slug": "sp-residence",
+      "title": "SP Residence",
+      "expertise": "Residential",
+      "status": "Concept",
+      "cover": "sp-residence-01-living-dining.jpg",
+      "image_count": 5,
+      "images": [
+        "sp-residence-01-living-dining.jpg",
+        "sp-residence-02-living-fireplace.jpg",
+        "sp-residence-03-dining-kitchen.jpg",
+        "sp-residence-04-kitchen-bar.jpg",
+        "sp-residence-05-entry-vanity.jpg"
+      ],
+      "dimensions": {
+        "sp-residence-01-living-dining.jpg": [
+          1600,
+          900
+        ],
+        "sp-residence-02-living-fireplace.jpg": [
+          1600,
+          900
+        ],
+        "sp-residence-03-dining-kitchen.jpg": [
+          1600,
+          900
+        ],
+        "sp-residence-04-kitchen-bar.jpg": [
+          1600,
+          900
+        ],
+        "sp-residence-05-entry-vanity.jpg": [
+          1600,
+          900
+        ]
+      }
+    },
+    {
+      "slug": "serenity-secret",
+      "title": "Serenity Secret",
+      "expertise": "Hospitality",
+      "status": "Concept",
+      "cover": "serenity-secret-01-reception.jpg",
+      "image_count": 8,
+      "images": [
+        "serenity-secret-01-reception.jpg",
+        "serenity-secret-02-reception-lounge.jpg",
+        "serenity-secret-03-styling-stations.jpg",
+        "serenity-secret-04-styling-mirrors.jpg",
+        "serenity-secret-05-mural-wall-swing.jpg",
+        "serenity-secret-06-nail-bar.jpg",
+        "serenity-secret-07-retail-display.jpg",
+        "serenity-secret-08-treatment-room.jpg"
+      ],
+      "dimensions": {
+        "serenity-secret-01-reception.jpg": [
+          1600,
+          1200
+        ],
+        "serenity-secret-02-reception-lounge.jpg": [
+          1600,
+          1200
+        ],
+        "serenity-secret-03-styling-stations.jpg": [
+          1600,
+          1198
+        ],
+        "serenity-secret-04-styling-mirrors.jpg": [
+          1600,
+          1198
+        ],
+        "serenity-secret-05-mural-wall-swing.jpg": [
+          1600,
+          1200
+        ],
+        "serenity-secret-06-nail-bar.jpg": [
+          1600,
+          1200
+        ],
+        "serenity-secret-07-retail-display.jpg": [
+          1600,
+          1200
+        ],
+        "serenity-secret-08-treatment-room.jpg": [
+          1600,
+          1200
+        ]
+      }
+    },
+    {
+      "slug": "sh-butti-villa",
+      "title": "Sh. Butti Villa",
+      "expertise": "Residential",
+      "status": "Concept",
+      "cover": "sh-butti-villa-01-entrance-driveway.jpg",
+      "image_count": 11,
+      "images": [
+        "sh-butti-villa-01-entrance-driveway.jpg",
+        "sh-butti-villa-02-facade-entrance.jpg",
+        "sh-butti-villa-03-entrance-door-detail.jpg",
+        "sh-butti-villa-04-facade-side.jpg",
+        "sh-butti-villa-05-facade-side-alt.jpg",
+        "sh-butti-villa-06-facade-palms.jpg",
+        "sh-butti-villa-07-pool-terrace.jpg",
+        "sh-butti-villa-08-pool-courtyard.jpg",
+        "sh-butti-villa-09-cabana-terrace.jpg",
+        "sh-butti-villa-10-pool-aerial.jpg",
+        "sh-butti-villa-11-garden-aerial.jpg"
+      ],
+      "dimensions": {
+        "sh-butti-villa-01-entrance-driveway.jpg": [
+          1600,
+          900
+        ],
+        "sh-butti-villa-02-facade-entrance.jpg": [
+          1600,
+          900
+        ],
+        "sh-butti-villa-03-entrance-door-detail.jpg": [
+          1600,
+          900
+        ],
+        "sh-butti-villa-04-facade-side.jpg": [
+          1600,
+          900
+        ],
+        "sh-butti-villa-05-facade-side-alt.jpg": [
+          1600,
+          900
+        ],
+        "sh-butti-villa-06-facade-palms.jpg": [
+          1600,
+          900
+        ],
+        "sh-butti-villa-07-pool-terrace.jpg": [
+          1600,
+          900
+        ],
+        "sh-butti-villa-08-pool-courtyard.jpg": [
+          1600,
+          900
+        ],
+        "sh-butti-villa-09-cabana-terrace.jpg": [
+          1600,
+          900
+        ],
+        "sh-butti-villa-10-pool-aerial.jpg": [
+          1600,
+          900
+        ],
+        "sh-butti-villa-11-garden-aerial.jpg": [
+          1600,
+          900
+        ]
+      }
+    },
+    {
+      "slug": "shikhana",
+      "title": "Shikhana",
+      "expertise": "Residential",
+      "status": "Concept",
+      "cover": "shikhana-01-living-media-wall.jpg",
+      "image_count": 9,
+      "images": [
+        "shikhana-01-living-media-wall.jpg",
+        "shikhana-02-living-seating.jpg",
+        "shikhana-03-living-lounge.jpg",
+        "shikhana-04-kitchen.jpg",
+        "shikhana-05-majlis-seating.jpg",
+        "shikhana-06-majlis-lounge.jpg",
+        "shikhana-07-master-bedroom.jpg",
+        "shikhana-08-master-bedroom-alt.jpg",
+        "shikhana-09-dressing-vanity.jpg"
+      ],
+      "dimensions": {
+        "shikhana-01-living-media-wall.jpg": [
+          1600,
+          1200
+        ],
+        "shikhana-02-living-seating.jpg": [
+          1600,
+          1200
+        ],
+        "shikhana-03-living-lounge.jpg": [
+          1600,
+          1200
+        ],
+        "shikhana-04-kitchen.jpg": [
+          1600,
+          1200
+        ],
+        "shikhana-05-majlis-seating.jpg": [
+          1600,
+          900
+        ],
+        "shikhana-06-majlis-lounge.jpg": [
+          1600,
+          900
+        ],
+        "shikhana-07-master-bedroom.jpg": [
+          1600,
+          900
+        ],
+        "shikhana-08-master-bedroom-alt.jpg": [
+          1600,
+          900
+        ],
+        "shikhana-09-dressing-vanity.jpg": [
+          1600,
+          900
+        ]
+      }
+    },
+    {
+      "slug": "sobha-villas",
+      "title": "Sobha Villas",
+      "expertise": "Residential",
+      "status": "Concept",
+      "cover": "sobha-villas-01-living-lounge.jpg",
+      "image_count": 9,
+      "images": [
+        "sobha-villas-01-living-lounge.jpg",
+        "sobha-villas-02-bar-lounge.jpg",
+        "sobha-villas-03-entrance-hall.jpg",
+        "sobha-villas-04-entry-gallery.jpg",
+        "sobha-villas-05-entry-double-height.jpg",
+        "sobha-villas-06-master-bedroom.jpg",
+        "sobha-villas-07-master-bedroom-suite.jpg",
+        "sobha-villas-08-master-bathroom.jpg",
+        "sobha-villas-09-bathroom-vanity.jpg"
+      ],
+      "dimensions": {
+        "sobha-villas-01-living-lounge.jpg": [
+          1600,
+          1200
+        ],
+        "sobha-villas-02-bar-lounge.jpg": [
+          1600,
+          1200
+        ],
+        "sobha-villas-03-entrance-hall.jpg": [
+          1600,
+          1200
+        ],
+        "sobha-villas-04-entry-gallery.jpg": [
+          1600,
+          1200
+        ],
+        "sobha-villas-05-entry-double-height.jpg": [
+          1600,
+          1200
+        ],
+        "sobha-villas-06-master-bedroom.jpg": [
+          1600,
+          1216
+        ],
+        "sobha-villas-07-master-bedroom-suite.jpg": [
+          1600,
+          1216
+        ],
+        "sobha-villas-08-master-bathroom.jpg": [
+          1600,
+          1216
+        ],
+        "sobha-villas-09-bathroom-vanity.jpg": [
+          1600,
+          1216
+        ]
+      }
+    },
+    {
+      "slug": "village-mall",
+      "title": "The Village Mall",
+      "expertise": "Commercial",
+      "status": "Concept",
+      "cover": "village-mall-01-concourse.jpg",
+      "image_count": 9,
+      "images": [
+        "village-mall-01-concourse.jpg",
+        "village-mall-02-concourse-planting.jpg",
+        "village-mall-03-concourse-seating.jpg",
+        "village-mall-04-concourse-escalator.jpg",
+        "village-mall-05-concourse-papaya.jpg",
+        "village-mall-06-concourse-entrance.jpg",
+        "village-mall-07-concourse-escalator-upper.jpg",
+        "village-mall-08-concourse-skylight.jpg",
+        "village-mall-09-concourse-columns.jpg"
+      ],
+      "dimensions": {
+        "village-mall-01-concourse.jpg": [
+          1600,
+          900
+        ],
+        "village-mall-02-concourse-planting.jpg": [
+          1600,
+          900
+        ],
+        "village-mall-03-concourse-seating.jpg": [
+          1600,
+          900
+        ],
+        "village-mall-04-concourse-escalator.jpg": [
+          1600,
+          900
+        ],
+        "village-mall-05-concourse-papaya.jpg": [
+          1600,
+          900
+        ],
+        "village-mall-06-concourse-entrance.jpg": [
+          1600,
+          900
+        ],
+        "village-mall-07-concourse-escalator-upper.jpg": [
+          1600,
+          900
+        ],
+        "village-mall-08-concourse-skylight.jpg": [
+          1600,
+          900
+        ],
+        "village-mall-09-concourse-columns.jpg": [
+          1600,
+          900
+        ]
+      }
+    },
+    {
+      "slug": "village-mall-offices",
+      "title": "The Village Mall Offices",
+      "expertise": "Commercial",
+      "status": "Concept",
+      "cover": "village-mall-offices-01-reception-lounge.jpg",
+      "image_count": 7,
+      "images": [
+        "village-mall-offices-01-reception-lounge.jpg",
+        "village-mall-offices-02-reception-planting.jpg",
+        "village-mall-offices-03-reception-corridor.jpg",
+        "village-mall-offices-04-executive-lounge.jpg",
+        "village-mall-offices-05-meeting-room.jpg",
+        "village-mall-offices-06-private-office.jpg",
+        "village-mall-offices-07-office-corridor.jpg"
+      ],
+      "dimensions": {
+        "village-mall-offices-01-reception-lounge.jpg": [
+          1600,
+          900
+        ],
+        "village-mall-offices-02-reception-planting.jpg": [
+          1600,
+          900
+        ],
+        "village-mall-offices-03-reception-corridor.jpg": [
+          1600,
+          900
+        ],
+        "village-mall-offices-04-executive-lounge.jpg": [
+          1600,
+          900
+        ],
+        "village-mall-offices-05-meeting-room.jpg": [
+          1600,
+          900
+        ],
+        "village-mall-offices-06-private-office.jpg": [
+          1600,
+          900
+        ],
+        "village-mall-offices-07-office-corridor.jpg": [
+          1600,
+          900
+        ]
+      }
+    },
+    {
+      "slug": "vk-residence",
+      "title": "VK Residence",
+      "expertise": "Residential",
+      "status": "Concept",
+      "cover": "vk-residence-01-living-dining.jpg",
+      "image_count": 14,
+      "images": [
+        "vk-residence-01-living-dining.jpg",
+        "vk-residence-02-living-dining-wide.jpg",
+        "vk-residence-03-living-fireplace.jpg",
+        "vk-residence-04-living-seating.jpg",
+        "vk-residence-05-entry-corridor.jpg",
+        "vk-residence-06-living-night.jpg",
+        "vk-residence-07-entry-bar-night.jpg",
+        "vk-residence-08-living-dining-night.jpg",
+        "vk-residence-09-lounge-night.jpg",
+        "vk-residence-10-living-media-night.jpg",
+        "vk-residence-11-bar-lounge-night.jpg",
+        "vk-residence-12-dining-night.jpg",
+        "vk-residence-13-living-fireplace-night.jpg",
+        "vk-residence-14-living-seating-night.jpg"
+      ],
+      "dimensions": {
+        "vk-residence-01-living-dining.jpg": [
+          1600,
+          900
+        ],
+        "vk-residence-02-living-dining-wide.jpg": [
+          1600,
+          900
+        ],
+        "vk-residence-03-living-fireplace.jpg": [
+          1600,
+          900
+        ],
+        "vk-residence-04-living-seating.jpg": [
+          1600,
+          900
+        ],
+        "vk-residence-05-entry-corridor.jpg": [
+          1600,
+          900
+        ],
+        "vk-residence-06-living-night.jpg": [
+          1600,
+          900
+        ],
+        "vk-residence-07-entry-bar-night.jpg": [
+          1600,
+          900
+        ],
+        "vk-residence-08-living-dining-night.jpg": [
+          1600,
+          900
+        ],
+        "vk-residence-09-lounge-night.jpg": [
+          1600,
+          900
+        ],
+        "vk-residence-10-living-media-night.jpg": [
+          1600,
+          900
+        ],
+        "vk-residence-11-bar-lounge-night.jpg": [
+          1600,
+          900
+        ],
+        "vk-residence-12-dining-night.jpg": [
+          1600,
+          900
+        ],
+        "vk-residence-13-living-fireplace-night.jpg": [
+          1600,
+          900
+        ],
+        "vk-residence-14-living-seating-night.jpg": [
+          1600,
+          900
+        ]
+      }
+    },
+    {
+      "slug": "vahe-kilikian-beauty-lounge",
+      "title": "Vahe Kilikian Beauty Lounge",
+      "expertise": "Hospitality",
+      "status": "Concept",
+      "cover": "vahe-kilikian-beauty-lounge-01-salon-wide.jpg",
+      "image_count": 12,
+      "images": [
+        "vahe-kilikian-beauty-lounge-01-salon-wide.jpg",
+        "vahe-kilikian-beauty-lounge-02-styling-stations.jpg",
+        "vahe-kilikian-beauty-lounge-03-styling-mirrors.jpg",
+        "vahe-kilikian-beauty-lounge-04-styling-row.jpg",
+        "vahe-kilikian-beauty-lounge-05-styling-vanity.jpg",
+        "vahe-kilikian-beauty-lounge-06-styling-station-detail.jpg",
+        "vahe-kilikian-beauty-lounge-07-styling-chair-detail.jpg",
+        "vahe-kilikian-beauty-lounge-08-wash-stations.jpg",
+        "vahe-kilikian-beauty-lounge-09-manicure-bar.jpg",
+        "vahe-kilikian-beauty-lounge-10-manicure-tables.jpg",
+        "vahe-kilikian-beauty-lounge-11-reception-logo.jpg",
+        "vahe-kilikian-beauty-lounge-12-reception-lounge.jpg"
+      ],
+      "dimensions": {
+        "vahe-kilikian-beauty-lounge-01-salon-wide.jpg": [
+          1600,
+          900
+        ],
+        "vahe-kilikian-beauty-lounge-02-styling-stations.jpg": [
+          1600,
+          900
+        ],
+        "vahe-kilikian-beauty-lounge-03-styling-mirrors.jpg": [
+          1600,
+          900
+        ],
+        "vahe-kilikian-beauty-lounge-04-styling-row.jpg": [
+          1600,
+          900
+        ],
+        "vahe-kilikian-beauty-lounge-05-styling-vanity.jpg": [
+          1600,
+          900
+        ],
+        "vahe-kilikian-beauty-lounge-06-styling-station-detail.jpg": [
+          1600,
+          900
+        ],
+        "vahe-kilikian-beauty-lounge-07-styling-chair-detail.jpg": [
+          1600,
+          900
+        ],
+        "vahe-kilikian-beauty-lounge-08-wash-stations.jpg": [
+          1600,
+          900
+        ],
+        "vahe-kilikian-beauty-lounge-09-manicure-bar.jpg": [
+          1600,
+          900
+        ],
+        "vahe-kilikian-beauty-lounge-10-manicure-tables.jpg": [
+          1600,
+          900
+        ],
+        "vahe-kilikian-beauty-lounge-11-reception-logo.jpg": [
+          1600,
+          900
+        ],
+        "vahe-kilikian-beauty-lounge-12-reception-lounge.jpg": [
+          1600,
+          900
+        ]
+      }
+    },
+    {
+      "slug": "zbm-residence",
+      "title": "ZBM Residence",
+      "expertise": "Residential",
+      "status": "Concept",
+      "cover": "zbm-residence-01-majlis.jpg",
+      "image_count": 61,
+      "images": [
+        "zbm-residence-01-majlis.jpg",
+        "zbm-residence-02-majlis-garden-view.jpg",
+        "zbm-residence-03-majlis-symmetrical.jpg",
+        "zbm-residence-04-majlis-symmetrical-alt.jpg",
+        "zbm-residence-05-majlis-seating.jpg",
+        "zbm-residence-06-majlis-night.jpg",
+        "zbm-residence-07-majlis-night-garden.jpg",
+        "zbm-residence-08-majlis-night-symmetrical.jpg",
+        "zbm-residence-09-majlis-night-alt.jpg",
+        "zbm-residence-10-majlis-night-seating.jpg",
+        "zbm-residence-11-living-glazed-wall.jpg",
+        "zbm-residence-12-living-courtyard.jpg",
+        "zbm-residence-13-living-feature-wall.jpg",
+        "zbm-residence-14-living-pool-view.jpg",
+        "zbm-residence-15-living-corridor.jpg",
+        "zbm-residence-16-living-fireplace.jpg",
+        "zbm-residence-17-living-seating.jpg",
+        "zbm-residence-18-dining-artwork.jpg",
+        "zbm-residence-19-dining-bar.jpg",
+        "zbm-residence-20-kitchen-island.jpg",
+        "zbm-residence-21-kitchen-bar.jpg",
+        "zbm-residence-22-kitchen-bar-alt.jpg",
+        "zbm-residence-23-stair-atrium.jpg",
+        "zbm-residence-24-entry-stair.jpg",
+        "zbm-residence-25-courtyard-tree.jpg",
+        "zbm-residence-26-bathroom-vanity.jpg",
+        "zbm-residence-27-bathroom-mirror.jpg",
+        "zbm-residence-28-bathroom-shower.jpg",
+        "zbm-residence-29-bathroom-basin.jpg",
+        "zbm-residence-30-bathroom-stone.jpg",
+        "zbm-residence-31-bathroom-stone-alt.jpg",
+        "zbm-residence-32-bathroom-travertine.jpg",
+        "zbm-residence-33-bathroom-marble-basin.jpg",
+        "zbm-residence-34-bathroom-corridor.jpg",
+        "zbm-residence-35-wc-detail.jpg",
+        "zbm-residence-36-gym.jpg",
+        "zbm-residence-37-gym-alt.jpg",
+        "zbm-residence-38-gym-garden-view.jpg",
+        "zbm-residence-39-gym-garden-view-alt.jpg",
+        "zbm-residence-40-gym-equipment.jpg",
+        "zbm-residence-41-gym-mirror-wall.jpg",
+        "zbm-residence-42-gym-night.jpg",
+        "zbm-residence-43-gym-night-wide.jpg",
+        "zbm-residence-44-gym-night-alt.jpg",
+        "zbm-residence-45-gym-night-alt2.jpg",
+        "zbm-residence-46-gym-night-equipment.jpg",
+        "zbm-residence-47-gym-night-corridor.jpg",
+        "zbm-residence-48-cigar-lounge.jpg",
+        "zbm-residence-49-cigar-lounge-bar.jpg",
+        "zbm-residence-50-cigar-lounge-seating.jpg",
+        "zbm-residence-51-cigar-lounge-alt.jpg",
+        "zbm-residence-52-cigar-lounge-window.jpg",
+        "zbm-residence-53-cigar-lounge-detail.jpg",
+        "zbm-residence-54-living-lounge.jpg",
+        "zbm-residence-55-living-lounge-media.jpg",
+        "zbm-residence-56-living-lounge-seating.jpg",
+        "zbm-residence-57-living-lounge-alt.jpg",
+        "zbm-residence-58-living-lounge-shelving.jpg",
+        "zbm-residence-59-living-lounge-wide.jpg",
+        "zbm-residence-60-living-lounge-artwork.jpg",
+        "zbm-residence-61-living-lounge-corridor.jpg"
+      ],
+      "dimensions": {
+        "zbm-residence-01-majlis.jpg": [
+          1600,
+          900
+        ],
+        "zbm-residence-02-majlis-garden-view.jpg": [
+          1600,
+          900
+        ],
+        "zbm-residence-03-majlis-symmetrical.jpg": [
+          1600,
+          900
+        ],
+        "zbm-residence-04-majlis-symmetrical-alt.jpg": [
+          1600,
+          900
+        ],
+        "zbm-residence-05-majlis-seating.jpg": [
+          1600,
+          900
+        ],
+        "zbm-residence-06-majlis-night.jpg": [
+          1600,
+          900
+        ],
+        "zbm-residence-07-majlis-night-garden.jpg": [
+          1600,
+          900
+        ],
+        "zbm-residence-08-majlis-night-symmetrical.jpg": [
+          1600,
+          900
+        ],
+        "zbm-residence-09-majlis-night-alt.jpg": [
+          1600,
+          900
+        ],
+        "zbm-residence-10-majlis-night-seating.jpg": [
+          1600,
+          900
+        ],
+        "zbm-residence-11-living-glazed-wall.jpg": [
+          1600,
+          1600
+        ],
+        "zbm-residence-12-living-courtyard.jpg": [
+          1600,
+          1600
+        ],
+        "zbm-residence-13-living-feature-wall.jpg": [
+          1600,
+          1600
+        ],
+        "zbm-residence-14-living-pool-view.jpg": [
+          1600,
+          1600
+        ],
+        "zbm-residence-15-living-corridor.jpg": [
+          1600,
+          1600
+        ],
+        "zbm-residence-16-living-fireplace.jpg": [
+          1600,
+          1600
+        ],
+        "zbm-residence-17-living-seating.jpg": [
+          1600,
+          1600
+        ],
+        "zbm-residence-18-dining-artwork.jpg": [
+          1600,
+          1600
+        ],
+        "zbm-residence-19-dining-bar.jpg": [
+          1600,
+          1600
+        ],
+        "zbm-residence-20-kitchen-island.jpg": [
+          1600,
+          1600
+        ],
+        "zbm-residence-21-kitchen-bar.jpg": [
+          1024,
+          1024
+        ],
+        "zbm-residence-22-kitchen-bar-alt.jpg": [
+          1024,
+          1024
+        ],
+        "zbm-residence-23-stair-atrium.jpg": [
+          1600,
+          1600
+        ],
+        "zbm-residence-24-entry-stair.jpg": [
+          1600,
+          941
+        ],
+        "zbm-residence-25-courtyard-tree.jpg": [
+          1600,
+          1600
+        ],
+        "zbm-residence-26-bathroom-vanity.jpg": [
+          1600,
+          1600
+        ],
+        "zbm-residence-27-bathroom-mirror.jpg": [
+          1484,
+          1488
+        ],
+        "zbm-residence-28-bathroom-shower.jpg": [
+          1600,
+          1600
+        ],
+        "zbm-residence-29-bathroom-basin.jpg": [
+          1600,
+          1600
+        ],
+        "zbm-residence-30-bathroom-stone.jpg": [
+          1600,
+          1600
+        ],
+        "zbm-residence-31-bathroom-stone-alt.jpg": [
+          1600,
+          1600
+        ],
+        "zbm-residence-32-bathroom-travertine.jpg": [
+          1600,
+          1600
+        ],
+        "zbm-residence-33-bathroom-marble-basin.jpg": [
+          1600,
+          1600
+        ],
+        "zbm-residence-34-bathroom-corridor.jpg": [
+          1600,
+          1600
+        ],
+        "zbm-residence-35-wc-detail.jpg": [
+          1600,
+          1600
+        ],
+        "zbm-residence-36-gym.jpg": [
+          1600,
+          900
+        ],
+        "zbm-residence-37-gym-alt.jpg": [
+          1600,
+          900
+        ],
+        "zbm-residence-38-gym-garden-view.jpg": [
+          1600,
+          900
+        ],
+        "zbm-residence-39-gym-garden-view-alt.jpg": [
+          1600,
+          900
+        ],
+        "zbm-residence-40-gym-equipment.jpg": [
+          1600,
+          900
+        ],
+        "zbm-residence-41-gym-mirror-wall.jpg": [
+          1600,
+          900
+        ],
+        "zbm-residence-42-gym-night.jpg": [
+          1600,
+          900
+        ],
+        "zbm-residence-43-gym-night-wide.jpg": [
+          1600,
+          900
+        ],
+        "zbm-residence-44-gym-night-alt.jpg": [
+          1600,
+          900
+        ],
+        "zbm-residence-45-gym-night-alt2.jpg": [
+          1600,
+          900
+        ],
+        "zbm-residence-46-gym-night-equipment.jpg": [
+          1600,
+          900
+        ],
+        "zbm-residence-47-gym-night-corridor.jpg": [
+          1600,
+          900
+        ],
+        "zbm-residence-48-cigar-lounge.jpg": [
+          1024,
+          576
+        ],
+        "zbm-residence-49-cigar-lounge-bar.jpg": [
+          1024,
+          576
+        ],
+        "zbm-residence-50-cigar-lounge-seating.jpg": [
+          1024,
+          576
+        ],
+        "zbm-residence-51-cigar-lounge-alt.jpg": [
+          1024,
+          576
+        ],
+        "zbm-residence-52-cigar-lounge-window.jpg": [
+          1024,
+          576
+        ],
+        "zbm-residence-53-cigar-lounge-detail.jpg": [
+          1024,
+          576
+        ],
+        "zbm-residence-54-living-lounge.jpg": [
+          1024,
+          576
+        ],
+        "zbm-residence-55-living-lounge-media.jpg": [
+          1024,
+          576
+        ],
+        "zbm-residence-56-living-lounge-seating.jpg": [
+          1024,
+          576
+        ],
+        "zbm-residence-57-living-lounge-alt.jpg": [
+          1024,
+          576
+        ],
+        "zbm-residence-58-living-lounge-shelving.jpg": [
+          1024,
+          576
+        ],
+        "zbm-residence-59-living-lounge-wide.jpg": [
+          1024,
+          576
+        ],
+        "zbm-residence-60-living-lounge-artwork.jpg": [
+          1024,
+          576
+        ],
+        "zbm-residence-61-living-lounge-corridor.jpg": [
+          1024,
+          576
+        ]
+      }
+    }
+  ]
+};

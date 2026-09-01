@@ -1,4 +1,4 @@
-/* JWT website kit — Projects index with Expertise + Sector + Region filters and Load More. */
+/* JWT website kit — Projects index with an Expertise filter and Load More. */
 (function () {
   const NS = window.JWTDesignStudioDesignSystem_593c65 || {};
   const { Navbar, Button, ProjectCard, Badge, FilterBar, Reveal } = NS;
@@ -6,39 +6,29 @@
   const D = window.JWT_DATA;
   const { useState, useEffect } = React;
 
-  const PAGE = 6;
+  const PAGE = 9;
 
-  /* Map a #projects/<slug> deep link onto a sector preset. */
-  const SECTOR_FROM_SLUG = {
-    residential: 'Residential', hospitality: 'Hospitality',
-    offices: 'Offices', 'spa-wellness': 'Spa & Wellness',
+  /* Map a #projects/<slug> deep link onto an expertise preset. */
+  const EXPERTISE_FROM_SLUG = {
+    residential: 'Residential', commercial: 'Commercial',
+    hospitality: 'Hospitality', landscape: 'Landscape',
   };
 
   function ProjectsPage({ navigate, param }) {
-    const [discipline, setDiscipline] = useState('All');
-    const [sector, setSector] = useState('All');
-    const [region, setRegion] = useState('All');
+    const [expertise, setExpertise] = useState('All');
     const [shown, setShown] = useState(PAGE);
 
-    /* Honour deep links from the Expertise nav panel. A sector deep link should
-       present that sector cleanly, so clear any filters left over from before. */
+    /* Honour deep links from the footer / nav. */
     useEffect(() => {
-      setSector(SECTOR_FROM_SLUG[param] || 'All');
-      setDiscipline('All');
-      setRegion('All');
+      setExpertise(EXPERTISE_FROM_SLUG[param] || 'All');
       setShown(PAGE);
     }, [param]);
 
-    const match = (p) =>
-      (discipline === 'All' || p.discipline === discipline) &&
-      (sector === 'All' || p.sector === sector) &&
-      (region === 'All' || p.region === region);
-
-    const results = D.projects.filter(match);
+    const results = D.projects.filter((p) => expertise === 'All' || p.expertise === expertise);
     const visible = results.slice(0, shown);
 
     const reset = (fn) => (v) => { fn(v); setShown(PAGE); };
-    const clearAll = () => { setDiscipline('All'); setSector('All'); setRegion('All'); setShown(PAGE); };
+    const clearAll = () => { setExpertise('All'); setShown(PAGE); };
 
     return (
       <div style={{ background: 'var(--bg-page)' }}>
@@ -57,26 +47,24 @@
           <FilterBar
             count={results.length} total={D.projects.length} onClear={clearAll}
             filters={[
-              { name: 'Expertise', value: discipline, options: D.disciplines, onChange: reset(setDiscipline) },
-              { name: 'Sector', value: sector, options: D.sectors, onChange: reset(setSector) },
-              { name: 'Region', value: region, options: D.regions, onChange: reset(setRegion) },
+              { name: 'Expertise', value: expertise, options: D.projectExpertises, onChange: reset(setExpertise) },
             ]} />
         </Container>
 
         <Section bg="page" pad="sm">
           {visible.length === 0 ? (
             <div style={{ padding: 'var(--space-9) 0', textAlign: 'center' }}>
-              <p style={{ font: 'var(--display-md)', marginBottom: '1rem' }}>No projects match that combination.</p>
-              <Button variant="outline" onClick={clearAll}>Clear filters</Button>
+              <p style={{ font: 'var(--display-md)', marginBottom: '1rem' }}>No projects in that category yet.</p>
+              <Button variant="outline" onClick={clearAll}>Clear filter</Button>
             </div>
           ) : (
             <div className="jwt-rg jwt-rg-multi" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 'var(--space-7) var(--space-6)' }}>
               {visible.map((p, i) => (
                 <Reveal key={p.slug} delay={(i % 3) * 110}>
-                  <ProjectCard src={p.img} title={p.title}
-                    discipline={p.discipline} sector={p.sector} region={p.region} year={p.year}
-                    ratio={p.ratio || '16 / 9'} visualisation={p.visualisation && p.hasImagery}
-                    badge={p.year === 'In progress' ? <Badge tone="ink">In progress</Badge> : null}
+                  <ProjectCard src={p.thumb} title={p.title}
+                    discipline={p.expertise} ratio={p.ratio || '16 / 9'}
+                    visualisation={p.visualisation}
+                    badge={p.isC2C ? <Badge tone="ink">Concept to Completion</Badge> : null}
                     onClick={(e) => { e.preventDefault(); navigate('#project/' + p.slug); }} />
                 </Reveal>
               ))}

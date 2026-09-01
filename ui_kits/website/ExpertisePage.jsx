@@ -6,7 +6,13 @@
   const D = window.JWT_DATA;
 
   function Discipline({ e, flip, navigate }) {
-    const related = D.projects.filter((p) => p.discipline === e.title).slice(0, 3);
+    /* The portfolio is grouped by expertise, not by service discipline, so show a
+       rotating sample of projects per discipline as a teaser rather than a
+       (misleading) exact match. */
+    const start = ((parseInt(e.index, 10) || 1) - 1) * 3;
+    const related = (D.projects.slice(start, start + 3).length
+      ? D.projects.slice(start, start + 3)
+      : D.projects.slice(0, 3));
     return (
       <div id={e.slug} style={{ borderTop: '1px solid var(--line)', paddingTop: 'var(--space-7)', marginBottom: 'var(--space-9)' }}>
         <div className="jwt-rg" style={{
@@ -43,12 +49,12 @@
 
         {related.length > 0 && (
           <div style={{ marginTop: 'var(--space-8)' }}>
-            <Divider label={`${e.title} projects`} />
+            <Divider label="Selected projects" />
             <div className="jwt-rg jwt-rg-multi" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 'var(--space-6)', marginTop: 'var(--space-6)' }}>
               {related.map((p, i) => (
                 <Reveal key={p.slug} delay={i * 110}>
-                  <ProjectCard src={p.img} title={p.title} ratio="16 / 9" visualisation={p.visualisation && p.hasImagery}
-                    discipline={p.discipline} sector={p.sector} region={p.region} year={p.year}
+                  <ProjectCard src={p.thumb} title={p.title} ratio={p.ratio || '16 / 9'} visualisation={p.visualisation}
+                    discipline={p.expertise}
                     onClick={(ev) => { ev.preventDefault(); navigate('#project/' + p.slug); }} />
                 </Reveal>
               ))}

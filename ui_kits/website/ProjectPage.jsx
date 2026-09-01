@@ -8,7 +8,7 @@
   const NS = window.JWTDesignStudioDesignSystem_593c65 || {};
   const {
     Navbar, Eyebrow, Button, Divider, Carousel, FactTable, ShareRow,
-    PersonCard, AwardList, ProjectCard, Reveal, RevealImage,
+    PersonCard, AwardList, ProjectCard, Reveal, RevealImage, CompareSlider, Badge,
   } = NS;
   const { Container, Section, Lede, NavSpacer, navLinks, logoCharcoal, logoWhite } = window.JWT_KIT || {};
   const D = window.JWT_DATA;
@@ -87,14 +87,14 @@
     const hasGallery = gallery.length > 0;
     const portrait = hasGallery;
 
-    /* Related: same sector first, then anything else. */
+    /* Related: same expertise first, then anything else. */
     const related = D.projects
       .filter((x) => x.slug !== p.slug)
-      .sort((a, b) => (b.sector === p.sector) - (a.sector === p.sector))
+      .sort((a, b) => (b.expertise === p.expertise) - (a.expertise === p.expertise))
       .slice(0, 4);
 
     const hasHero = !!p.img;
-    const metaItems = [p.discipline, p.classified ? p.sector : null, p.region, p.year];
+    const metaItems = [p.expertise, p.status];
 
     return (
       <div style={{ background: 'var(--bg-page)' }}>
@@ -108,7 +108,7 @@
         {hasHero ? (
           /* Full-viewport hero: title + meta overlaid, image blurs on scroll. */
           <ProjectHero src={p.img} title={p.title} meta={metaItems}
-            tag="Visualisation" onBack={() => navigate('#projects')} />
+            tag={p.isC2C ? 'Concept to Completion' : 'Visualisation'} onBack={() => navigate('#projects')} />
         ) : (
           /* No imagery — a quiet cream masthead carries the title instead. */
           <React.Fragment>
@@ -171,13 +171,10 @@
           <div className="jwt-rg" style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: 'var(--space-9)', alignItems: 'start' }}>
             <Reveal>
               <FactTable rows={[
-                { label: 'Location', value: p.region },
-                { label: 'Studio', value: 'JWT ' + p.region },
-                { label: 'Expertise', value: p.scope },
-                { label: 'Discipline', value: p.discipline },
-                { label: 'Sector', value: p.classified ? p.sector : null },
-                { label: 'Materials', value: p.materials },
-                { label: 'Imagery', value: '3D visualisation, in-house' },
+                { label: 'Expertise', value: p.expertise },
+                { label: 'Status', value: p.status },
+                { label: 'Images', value: p.imageCount ? String(p.imageCount) : null },
+                { label: 'Imagery', value: p.isC2C ? 'Renders and photography' : '3D visualisation, in-house' },
               ].filter((r) => r.value != null && r.value !== '')} />
             </Reveal>
             <Reveal delay={120} style={{ paddingTop: 'var(--space-4)' }}>
@@ -186,11 +183,28 @@
           </div>
         </Section>
 
+        {/* Concept → Completion dragger — projects with matched render/photo pairs. */}
+        {p.isC2C && p.concept && p.completed && p.concept.length > 0 && p.completed.length > 0 && (
+        <Section bg="page" pad="sm" style={{ paddingTop: 0 }}>
+          <Reveal>
+            <Eyebrow dot>Concept to Completion</Eyebrow>
+          </Reveal>
+          <Reveal delay={100} style={{ marginTop: 'var(--space-5)' }}>
+            <div style={{ borderRadius: 'var(--radius-md)', overflow: 'hidden' }}>
+              <CompareSlider height="70vh"
+                before={p.concept[0]} after={p.completed[0]}
+                beforeLabel="Concept" afterLabel="Completed"
+                beforeAlt={p.title + ' — concept render'} afterAlt={p.title + ' — completed photograph'} />
+            </div>
+          </Reveal>
+        </Section>
+        )}
+
         {/* Captioned carousel */}
         {hasGallery && (
         <Section bg="sunken" pad="md">
           <Reveal>
-            <Eyebrow dot>Gallery — visualisations</Eyebrow>
+            <Eyebrow dot>{p.isC2C ? 'Gallery — renders & photography' : 'Gallery — visualisations'}</Eyebrow>
           </Reveal>
           <Reveal delay={100} style={{ marginTop: 'var(--space-5)' }}>
             <Carousel ratio="16 / 9" slides={gallery} />
@@ -240,8 +254,9 @@
           <div className="jwt-rg jwt-rg-multi" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 'var(--space-6)' }}>
             {related.slice(0, 3).map((r, i) => (
               <Reveal key={r.slug} delay={i * 90}>
-                <ProjectCard src={r.img} title={r.title} ratio="16 / 9" visualisation={r.visualisation && r.hasImagery}
-                  discipline={r.discipline} sector={r.sector} region={r.region} year={r.year}
+                <ProjectCard src={r.thumb} title={r.title} ratio={r.ratio || '16 / 9'} visualisation={r.visualisation}
+                  discipline={r.expertise}
+                  badge={r.isC2C ? <Badge tone="ink">Concept to Completion</Badge> : null}
                   onClick={(e) => { e.preventDefault(); navigate('#project/' + r.slug); }} />
               </Reveal>
             ))}

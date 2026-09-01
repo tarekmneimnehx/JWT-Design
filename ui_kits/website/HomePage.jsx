@@ -1,7 +1,7 @@
 /* JWT website kit — Home. */
 (function () {
   const NS = window.JWTDesignStudioDesignSystem_593c65 || {};
-  const { Navbar, Button, Eyebrow, ProjectCard, StatBlock, Quote, Divider, Reveal, RevealImage, CompareSlider, HeroShowcase, PersonCard } = NS;
+  const { Navbar, Button, Eyebrow, ProjectCard, StatBlock, Quote, Divider, Reveal, RevealImage, CompareSlider, HeroShowcase, PersonCard, Badge } = NS;
   const { Container, Section, SectionHead, Lede, navLinks, logoWhite, logoCharcoal } = window.JWT_KIT || {};
   const D = window.JWT_DATA;
   const I = window.JWT_IMG;
@@ -12,8 +12,8 @@
     const c = comparisons[cover];
 
     /* The project the stage shows, then three more as cards below it. */
-    const lead = D.projects.find((p) => p.hasImagery);
-    const featured = D.projects.filter((p) => p !== lead && p.classified).slice(0, 3);
+    const lead = D.projects.find((p) => p.slug === 'ronaldo-muchawar') || D.projects.find((p) => p.hasImagery);
+    const featured = D.projects.filter((p) => p !== lead).slice(0, 3);
 
     /* Stage slides — per project, exactly THREE frames: a main full-bleed frame
        followed by two that rest inset over it (so each primary project shows
@@ -22,12 +22,7 @@
       ? (D.galleries[lead.slug] || []).slice(0, 3).map((g, i) => ({
           src: g.src || I[g.key],
           title: lead.title,
-          meta: [
-            'JWT ' + lead.region,
-            lead.discipline,
-            lead.classified ? lead.sector : null,
-            g.caption,
-          ].filter(Boolean),
+          meta: [lead.expertise, g.caption].filter(Boolean),
           href: '#project/' + lead.slug,
           inset: i % 3 !== 0,
         }))
@@ -45,7 +40,7 @@
           <CompareSlider
             key={cover}
             height="100vh"
-            before={I[c.before]} after={I[c.after]}
+            before={c.before} after={c.after}
             beforeLabel={c.beforeLabel} afterLabel={c.afterLabel}
             beforeAlt={`${c.title} — ${c.room}, ${c.beforeLabel}`}
             afterAlt={`${c.title} — ${c.room}, ${c.afterLabel}`}
@@ -151,9 +146,9 @@
           <div className="jwt-rg jwt-rg-multi" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 'var(--space-6)' }}>
             {featured.map((p, i) => (
               <Reveal key={p.slug} delay={i * 110}>
-                <ProjectCard src={p.img} title={p.title}
-                  discipline={p.discipline} sector={p.sector} region={p.region} year={p.year}
-                  ratio={p.ratio || '16 / 9'} visualisation={p.visualisation && p.hasImagery}
+                <ProjectCard src={p.thumb} title={p.title}
+                  discipline={p.expertise} ratio={p.ratio || '16 / 9'} visualisation={p.visualisation}
+                  badge={p.isC2C ? <Badge tone="ink">Concept to Completion</Badge> : null}
                   onClick={(e) => { e.preventDefault(); navigate('#project/' + p.slug); }} />
               </Reveal>
             ))}
@@ -162,13 +157,13 @@
 
         {/* Sectors */}
         <Section bg="page" pad="md">
-          <Reveal><Divider label="Sectors we work across" /></Reveal>
+          <Reveal><Divider label="Portfolio by expertise" /></Reveal>
           <div className="jwt-rg jwt-rg-multi" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 'var(--space-6)', marginTop: 'var(--space-6)' }}>
-            {D.sectors.map((s, i) => {
-              const count = D.projects.filter((p) => p.classified && p.sector === s).length;
+            {D.projectExpertises.map((s, i) => {
+              const count = D.projects.filter((p) => p.expertise === s).length;
               return (
                 <Reveal key={s} delay={i * 90}>
-                  <button onClick={() => navigate('#projects/' + s.toLowerCase().replace(/\s*&\s*/, '-').replace(/\s+/g, '-'))}
+                  <button onClick={() => navigate('#projects/' + s.toLowerCase())}
                     style={{ background: 'none', border: 'none', borderTop: '1px solid var(--line)', padding: 'var(--space-4) 0 0', textAlign: 'left', cursor: 'pointer', width: '100%', display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: '1rem' }}>
                     <h3 style={{ font: 'var(--display-md)' }}>{s}</h3>
                     {count > 0 && (
