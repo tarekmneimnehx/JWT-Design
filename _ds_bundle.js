@@ -194,7 +194,8 @@ function Carousel({
   }, /*#__PURE__*/React.createElement("img", {
     src: s.src,
     alt: s.alt || s.caption || '',
-    loading: idx === 0 ? 'eager' : 'lazy'
+    loading: idx === 0 ? 'eager' : 'lazy',
+    onError: s.thumb ? (e) => { if (e.target.src !== s.thumb) e.target.src = s.thumb; } : undefined
   }))), n > 1 && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("button", {
     type: "button",
     "aria-label": "Previous image",

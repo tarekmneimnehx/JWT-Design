@@ -86,7 +86,8 @@ export function Carousel({ slides = [], ratio = '16 / 10', loop = true, showDots
         {slides.map((s, idx) => (
           <div key={idx} className={`jwt-carousel__slide ${idx === i ? 'jwt-carousel__slide--on' : ''}`}
             aria-hidden={idx !== i}>
-            <img src={s.src} alt={s.alt || s.caption || ''} loading={idx === 0 ? 'eager' : 'lazy'} />
+            <img src={s.src} alt={s.alt || s.caption || ''} loading={idx === 0 ? 'eager' : 'lazy'}
+              onError={s.thumb ? (e) => { if (e.target.src !== s.thumb) e.target.src = s.thumb; } : undefined} />
           </div>
         ))}
         {n > 1 && (
