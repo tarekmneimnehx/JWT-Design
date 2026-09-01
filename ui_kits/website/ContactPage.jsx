@@ -28,7 +28,7 @@
           <PageHead
             eyebrow="Contact"
             title="Start a project."
-            lede="A few details to begin. We'll reply within two working days to arrange a first conversation — in Dubai, in Beirut, or on a call." />
+            lede="A few details to begin. We'll reply within two working days to arrange a first conversation — in the UAE, in Lebanon, in Syria, or on a call." />
         </Section>
 
         <Section bg="page" pad="sm" style={{ paddingTop: 0 }}>

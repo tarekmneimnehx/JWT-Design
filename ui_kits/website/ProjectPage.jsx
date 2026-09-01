@@ -172,7 +172,7 @@
             <Reveal>
               <FactTable rows={[
                 { label: 'Location', value: p.region },
-                { label: 'Studio', value: p.region === 'Beirut' ? 'JWT Beirut' : 'JWT Dubai' },
+                { label: 'Studio', value: 'JWT ' + p.region },
                 { label: 'Expertise', value: p.scope },
                 { label: 'Discipline', value: p.discipline },
                 { label: 'Sector', value: p.classified ? p.sector : null },

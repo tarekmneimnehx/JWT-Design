@@ -23,7 +23,7 @@
           src: g.src || I[g.key],
           title: lead.title,
           meta: [
-            lead.region === 'Beirut' ? 'JWT Beirut' : 'JWT Dubai',
+            'JWT ' + lead.region,
             lead.discipline,
             lead.classified ? lead.sector : null,
             g.caption,
@@ -100,7 +100,7 @@
               </Reveal>
               <Reveal delay={120}>
                 <Lede max="58ch">
-                  Led by two sisters across Dubai and Beirut, JWT works end to end and entirely in-house — so a project moves from first sketch to final light scene without ever losing its thread.
+                  Led by two sisters across the UAE, Lebanon and Syria, JWT works end to end and entirely in-house — so a project moves from first sketch to final light scene without ever losing its thread.
                 </Lede>
               </Reveal>
               <Reveal delay={220}>

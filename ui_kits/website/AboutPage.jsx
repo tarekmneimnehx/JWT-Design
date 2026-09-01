@@ -16,7 +16,7 @@
           <PageHead
             eyebrow="About"
             title="An upscale studio, built on two points of view."
-            lede={`JWT Design Studio was founded in ${D.studio.founded} by ${D.studio.founders} — two sisters working across Dubai and Beirut. The practice still runs the way it started: closely, personally, and tailor-made to each project.`} />
+            lede={`JWT Design Studio was founded in ${D.studio.founded} by ${D.studio.founders} — two sisters working across the UAE, Lebanon and Syria. The practice still runs the way it started: closely, personally, and tailor-made to each project.`} />
         </Section>
 
         {/* Portrait + story */}
@@ -34,7 +34,7 @@
                 {D.studio.founders} founded JWT in {D.studio.founded} and still lead every project themselves — there is no account layer between you and the people drawing your space.
               </p>
               <p style={{ font: 'var(--text-base)', color: 'var(--text-secondary)', maxWidth: '50ch', marginBottom: 'var(--space-6)' }}>
-                Between Dubai and Beirut they work across interiors, architecture, lighting and landscape, keeping every discipline in-house so nothing is lost in translation between packages.
+                Across the UAE, Lebanon and Syria they work across interiors, architecture, lighting and landscape, keeping every discipline in-house so nothing is lost in translation between packages.
               </p>
               <div className="jwt-rg" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-5)', maxWidth: '380px' }}>
                 {D.team.map((t, i) => (
@@ -75,15 +75,12 @@
 
         {/* Studios */}
         <Section bg="sunken" pad="md">
-          <SectionHead eyebrow="Studios" title="Dubai | Beirut" max="20ch" />
-          <div className="jwt-rg" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-7)' }}>
-            {[
-              { city: 'Dubai', body: 'The Gulf base, leading residential and hospitality delivery across the UAE.' },
-              { city: 'Beirut', body: 'The studio\u2019s second home \u2014 residences, restaurants and wellness spaces.' },
-            ].map((s) => (
-              <div key={s.city} style={{ borderTop: '1px solid var(--line)', paddingTop: 'var(--space-5)' }}>
-                <h3 style={{ font: 'var(--display-lg)', marginBottom: '0.8rem' }}>{s.city}</h3>
-                <p style={{ font: 'var(--text-lg)', color: 'var(--text-secondary)', maxWidth: '38ch' }}>{s.body}</p>
+          <SectionHead eyebrow="Where we work" title="UAE | Lebanon | Syria" max="20ch" />
+          {/* Country markers only \u2014 no per-country claims are invented. */}
+          <div className="jwt-rg jwt-rg-multi" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 'var(--space-7)' }}>
+            {['UAE', 'Lebanon', 'Syria'].map((country) => (
+              <div key={country} style={{ borderTop: '1px solid var(--line)', paddingTop: 'var(--space-5)' }}>
+                <h3 style={{ font: 'var(--display-lg)' }}>{country}</h3>
               </div>
             ))}
           </div>
@@ -92,7 +89,7 @@
         {/* Philosophy */}
         <Section bg="page" pad="lg">
           <div style={{ maxWidth: '32ch', margin: '0 auto', textAlign: 'center' }}>
-            <Quote size="xl" author="JWT Design Studio" role="Dubai | Beirut">
+            <Quote size="xl" author="JWT Design Studio" role="UAE | Lebanon | Syria">
               Committed to delivering tailor-made projects, and turning vision into reality.
             </Quote>
           </div>

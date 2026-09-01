@@ -4,7 +4,7 @@
    REAL, confirmed by the studio:
      · founders  — Jinane and Joelle Touma (two sisters, no wider team)
      · founded   — 2017
-     · locations — Dubai | Beirut
+     · locations — UAE | Lebanon | Syria
      · character — "calm, modern, studied"
      · clients   — private homeowners, property developers, café/restaurant owners
      · projects  — the 22 names below are the studio's real project list
@@ -35,7 +35,7 @@
 
   const DISCIPLINES = ['Interiors', 'Architectural', 'Lighting', 'Landscape'];
   const SECTORS = ['Residential', 'Hospitality', 'Offices', 'Spa & Wellness'];
-  const REGIONS = ['Dubai', 'Beirut'];
+  const REGIONS = ['UAE', 'Lebanon', 'Syria'];
 
   /* Real project names, kept exactly as the studio refers to them. */
   const NAMES = [
@@ -73,7 +73,7 @@
       sector: c.s,
       /* false → classification is our assumption, not the studio's word */
       classified: c.confirmed,
-      region: 'Dubai',
+      region: 'UAE',
       /* No year claimed for projects we have no date for. */
       year: null,
       /* Visualisation, not photography — labelled site-wide. */
@@ -108,7 +108,7 @@
       email: 'studio@jwtdesignstudio.com',   // placeholder
       phone: '+971 4 000 0000',              // placeholder
       whatsapp: '971400000000',              // placeholder
-      locations: 'Dubai | Beirut',
+      locations: 'UAE | Lebanon | Syria',
       instagram: '@jwtdesignstudio',
       instagramUrl: 'https://www.instagram.com/jwtdesignstudio/',
     },
@@ -153,7 +153,7 @@
 
     stats: [
       { value: '2017', label: 'Studio founded' },
-      { value: '2', label: 'Studios — Dubai & Beirut' },
+      { value: '3', label: 'Countries — UAE, Lebanon & Syria' },
       { value: '4', label: 'Disciplines in-house' },
       { value: '100', suffix: '%', label: 'Concept to completion' },
     ],
@@ -182,21 +182,21 @@
     comparisons: [
       {
         slug: 'ronaldo-muchawar', title: 'RONALDO MUCHAWAR',
-        meta: ['JWT Dubai', 'Interiors', 'Residential'],
+        meta: ['JWT UAE', 'Interiors', 'Residential'],
         before: 'ronAtrium', after: 'ronStair',
         beforeLabel: 'Concept', afterLabel: 'Developed',
         room: 'Stair atrium', pending: true,
       },
       {
         slug: 'ronaldo-muchawar', title: 'RONALDO MUCHAWAR',
-        meta: ['JWT Dubai', 'Interiors', 'Residential'],
+        meta: ['JWT UAE', 'Interiors', 'Residential'],
         before: 'ronLiving', after: 'ronLounge',
         beforeLabel: 'Concept', afterLabel: 'Developed',
         room: 'Living', pending: true,
       },
       {
         slug: 'ronaldo-muchawar', title: 'RONALDO MUCHAWAR',
-        meta: ['JWT Dubai', 'Interiors', 'Residential'],
+        meta: ['JWT UAE', 'Interiors', 'Residential'],
         before: 'ronDining', after: 'ronKitchen',
         beforeLabel: 'Concept', afterLabel: 'Developed',
         room: 'Dining and kitchen', pending: true,
