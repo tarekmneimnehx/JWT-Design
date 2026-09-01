@@ -63,10 +63,17 @@
           <div className="jwt-rg jwt-rg-multi" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 'var(--space-6)' }}>
             {D.process.map((s, i) => (
               <Reveal key={s.index} delay={i * 90}>
-                <div style={{ borderTop: '1px solid var(--line)', paddingTop: 'var(--space-4)' }}>
-                  <Eyebrow tone="muted">{s.index}</Eyebrow>
-                  <h3 style={{ font: 'var(--display-md)', margin: '0.6rem 0' }}>{s.title}</h3>
-                  <p style={{ font: 'var(--text-base)', color: 'var(--text-secondary)' }}>{s.body}</p>
+                <div className="jwt-process">
+                  {s.img && (
+                    <div className="jwt-process__media">
+                      <img src={s.img} alt="" loading="lazy" />
+                    </div>
+                  )}
+                  <div style={{ borderTop: '1px solid var(--line)', paddingTop: 'var(--space-4)', marginTop: s.img ? 'var(--space-4)' : 0 }}>
+                    <Eyebrow tone="muted">{s.index}</Eyebrow>
+                    <h3 className="jwt-process__title" style={{ font: 'var(--display-md)', margin: '0.6rem 0' }}>{s.title}</h3>
+                    <p style={{ font: 'var(--text-base)', color: 'var(--text-secondary)' }}>{s.body}</p>
+                  </div>
                 </div>
               </Reveal>
             ))}

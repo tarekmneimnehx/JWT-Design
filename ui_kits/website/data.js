@@ -215,11 +215,12 @@
     awards: [],
     testimonials: [],
 
+    /* img is a studio render used decoratively per step (hover warms it to colour). */
     process: [
-      { index: '01', title: 'Discovery', body: 'We listen first — to how you live or trade, what you love, and what each space has to hold.' },
-      { index: '02', title: 'Concept', body: 'Plans, palettes and references resolve into one clear direction you can feel before it is built.' },
-      { index: '03', title: 'Design development', body: 'Every layer is drawn and specified — architecture, joinery, lighting and the furniture plan.' },
-      { index: '04', title: 'Delivery', body: 'We coordinate the trades, commission the light and style the final layer, then hand over.' },
+      { index: '01', title: 'Discovery', body: 'We listen first — to how you live or trade, what you love, and what each space has to hold.', img: I.ronLounge },
+      { index: '02', title: 'Concept', body: 'Plans, palettes and references resolve into one clear direction you can feel before it is built.', img: I.ronAtrium },
+      { index: '03', title: 'Design development', body: 'Every layer is drawn and specified — architecture, joinery, lighting and the furniture plan.', img: I.ronStair },
+      { index: '04', title: 'Delivery', body: 'We coordinate the trades, commission the light and style the final layer, then hand over.', img: I.ronLiving },
     ],
   };
 

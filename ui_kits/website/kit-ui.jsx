@@ -29,6 +29,29 @@
 /* Long uppercase meta rows wrap rather than force horizontal scroll. */
 @media (max-width: 720px) {
   .jwt-hero__meta, .jwt-metastack { flex-wrap: wrap !important; }
+}
+/* "How we work" process cards — image warms from grayscale to colour, gently
+   zooms and lifts on hover; the title shifts to the accent. */
+.jwt-process { display: block; transition: transform var(--dur-med) var(--ease-soft); }
+.jwt-process__media {
+  position: relative; aspect-ratio: 4 / 3; overflow: hidden;
+  border-radius: var(--radius-md); background: var(--bg-fill);
+  box-shadow: none; transition: box-shadow var(--dur-med) var(--ease-soft);
+}
+.jwt-process__media img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  filter: grayscale(1) contrast(1.02);
+  transition: transform 800ms var(--ease-soft), filter 600ms var(--ease-soft);
+}
+.jwt-process__title { transition: color var(--dur-fast) var(--ease-soft); }
+.jwt-process:hover { transform: translateY(-4px); }
+.jwt-process:hover .jwt-process__media { box-shadow: var(--shadow-image); }
+.jwt-process:hover .jwt-process__media img { filter: grayscale(0) contrast(1.02); transform: scale(1.06); }
+.jwt-process:hover .jwt-process__title { color: var(--text-accent); }
+@media (hover: none) {
+  /* Touch devices: show colour by default, no hover lift. */
+  .jwt-process__media img { filter: none; }
+  .jwt-process:hover { transform: none; }
 }`;
     document.head.appendChild(s);
   })();
