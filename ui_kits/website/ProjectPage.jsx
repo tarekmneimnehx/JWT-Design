@@ -183,23 +183,6 @@
           </div>
         </Section>
 
-        {/* Concept → Completion dragger — projects with matched render/photo pairs. */}
-        {p.isC2C && p.concept && p.completed && p.concept.length > 0 && p.completed.length > 0 && (
-        <Section bg="page" pad="sm" style={{ paddingTop: 0 }}>
-          <Reveal>
-            <Eyebrow dot>Concept to Completion</Eyebrow>
-          </Reveal>
-          <Reveal delay={100} style={{ marginTop: 'var(--space-5)' }}>
-            <div style={{ borderRadius: 'var(--radius-md)', overflow: 'hidden' }}>
-              <CompareSlider height="70vh"
-                before={p.concept[0]} after={p.completed[0]}
-                beforeLabel="Concept" afterLabel="Completed"
-                beforeAlt={p.title + ' — concept render'} afterAlt={p.title + ' — completed photograph'} />
-            </div>
-          </Reveal>
-        </Section>
-        )}
-
         {/* Captioned carousel */}
         {hasGallery && (
         <Section bg="sunken" pad="md">
@@ -254,7 +237,7 @@
           <div className="jwt-rg jwt-rg-multi" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 'var(--space-6)' }}>
             {related.slice(0, 3).map((r, i) => (
               <Reveal key={r.slug} delay={i * 90}>
-                <ProjectCard src={r.thumb} title={r.title} ratio={r.ratio || '16 / 9'} visualisation={r.visualisation}
+                <ProjectCard src={r.thumb} title={r.title} ratio="4 / 3" visualisation={r.visualisation}
                   discipline={r.expertise}
                   badge={r.isC2C ? <Badge tone="ink">Concept to Completion</Badge> : null}
                   onClick={(e) => { e.preventDefault(); navigate('#project/' + r.slug); }} />

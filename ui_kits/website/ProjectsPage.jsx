@@ -62,7 +62,7 @@
               {visible.map((p, i) => (
                 <Reveal key={p.slug} delay={(i % 3) * 110}>
                   <ProjectCard src={p.thumb} title={p.title}
-                    discipline={p.expertise} ratio={p.ratio || '16 / 9'}
+                    discipline={p.expertise} ratio="4 / 3"
                     visualisation={p.visualisation}
                     badge={p.isC2C ? <Badge tone="ink">Concept to Completion</Badge> : null}
                     onClick={(e) => { e.preventDefault(); navigate('#project/' + p.slug); }} />

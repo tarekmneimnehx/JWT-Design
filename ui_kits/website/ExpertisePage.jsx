@@ -53,7 +53,7 @@
             <div className="jwt-rg jwt-rg-multi" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 'var(--space-6)', marginTop: 'var(--space-6)' }}>
               {related.map((p, i) => (
                 <Reveal key={p.slug} delay={i * 110}>
-                  <ProjectCard src={p.thumb} title={p.title} ratio={p.ratio || '16 / 9'} visualisation={p.visualisation}
+                  <ProjectCard src={p.thumb} title={p.title} ratio="4 / 3" visualisation={p.visualisation}
                     discipline={p.expertise}
                     onClick={(ev) => { ev.preventDefault(); navigate('#project/' + p.slug); }} />
                 </Reveal>

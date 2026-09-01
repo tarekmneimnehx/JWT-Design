@@ -7,9 +7,8 @@
   const I = window.JWT_IMG;
 
   function HomePage({ navigate }) {
-    const [cover, setCover] = React.useState(0);
-    const comparisons = D.comparisons || [];
-    const c = comparisons[cover];
+    /* Hero: a single full-screen image (a strong project cover). */
+    const heroImg = (D.projects.find((p) => p.slug === 'ronaldo-muchawar') || D.projects.find((p) => p.hasImagery) || {}).img;
 
     /* The project the stage shows, then three more as cards below it. */
     const lead = D.projects.find((p) => p.slug === 'ronaldo-muchawar') || D.projects.find((p) => p.hasImagery);
@@ -35,42 +34,25 @@
           links={navLinks} activeHref="#home" cta="Start a project" ctaHref="#contact"
           onNavigate={navigate} />
 
-        {/* HERO — full-screen draggable comparison. */}
-        {c && (
-          <CompareSlider
-            key={cover}
-            height="100vh"
-            before={c.before} after={c.after}
-            beforeLabel={c.beforeLabel} afterLabel={c.afterLabel}
-            beforeAlt={`${c.title} — ${c.room}, ${c.beforeLabel}`}
-            afterAlt={`${c.title} — ${c.room}, ${c.afterLabel}`}
-            safeRight="var(--fab-safe)">
-            {/* Chrome sits above the images; pointer-events off so the whole
-                frame stays draggable, re-enabled on the controls themselves.
-                paddingBottom clears the slider's own corner tags, which are
-                pinned at 1.1rem — without it the tab row sits on top of them. */}
-            <div style={{
-              position: 'absolute', inset: 0, zIndex: 3, pointerEvents: 'none',
-              display: 'flex', flexDirection: 'column', justifyContent: 'flex-end',
-              padding: 'var(--gutter)', paddingBottom: 'calc(var(--gutter) + 46px)',
-              gap: 'var(--space-5)',
-              background: 'linear-gradient(180deg, rgba(44,46,53,0.34) 0%, rgba(44,46,53,0) 30%, rgba(44,46,53,0) 55%, rgba(44,46,53,0.62) 100%)',
-            }}>
-              <h1 style={{
-                font: 'var(--display-2xl)', color: '#FFFFFF',
-                letterSpacing: 'var(--track-display)', margin: 0,
-                maxWidth: '16ch', textWrap: 'balance',
-              }}>Turning vision into reality.</h1>
-              <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', gap: 'var(--space-6)', flexWrap: 'wrap' }}>
-                <span style={{
-                  font: 'var(--label-sm)', letterSpacing: 'var(--track-label)',
-                  textTransform: 'uppercase', color: 'rgba(255,255,255,0.62)',
-                  paddingRight: 'var(--fab-safe)',
-                }}>Drag to compare</span>
-              </div>
-            </div>
-          </CompareSlider>
-        )}
+        {/* HERO — a single full-screen image with the title overlaid. */}
+        <div style={{ position: 'relative', height: '100vh', overflow: 'hidden', background: 'var(--char-900)' }}>
+          {heroImg && (
+            <img src={heroImg} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+          )}
+          <div style={{
+            position: 'absolute', inset: 0, pointerEvents: 'none',
+            background: 'linear-gradient(180deg, rgba(44,46,53,0.34) 0%, rgba(44,46,53,0) 34%, rgba(44,46,53,0) 55%, rgba(44,46,53,0.62) 100%)',
+          }} />
+          <div style={{
+            position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end',
+            padding: 'var(--gutter)', paddingBottom: 'calc(var(--gutter) + 12px)',
+          }}>
+            <h1 style={{
+              font: 'var(--display-2xl)', color: '#FFFFFF', letterSpacing: 'var(--track-display)',
+              margin: 0, maxWidth: '16ch', textWrap: 'balance',
+            }}>Turning vision into reality.</h1>
+          </div>
+        </div>
 
         {/* Positioning statement — the two founders shown alongside it. */}
         <Section bg="page" pad="md">
@@ -147,7 +129,7 @@
             {featured.map((p, i) => (
               <Reveal key={p.slug} delay={i * 110}>
                 <ProjectCard src={p.thumb} title={p.title}
-                  discipline={p.expertise} ratio={p.ratio || '16 / 9'} visualisation={p.visualisation}
+                  discipline={p.expertise} ratio="4 / 3" visualisation={p.visualisation}
                   badge={p.isC2C ? <Badge tone="ink">Concept to Completion</Badge> : null}
                   onClick={(e) => { e.preventDefault(); navigate('#project/' + p.slug); }} />
               </Reveal>
