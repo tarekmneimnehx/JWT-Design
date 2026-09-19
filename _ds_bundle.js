@@ -4456,7 +4456,7 @@ try { (() => {
    Plain global (no module) so every Babel screen script can read window.JWT_DATA.
 
    REAL, confirmed by the studio:
-     · founders  — Jinane and Joelle Touma (two sisters, no wider team)
+     · founders  — Jinan and Joelle Touma (two sisters, no wider team)
      · founded   — 2017
      · locations — Dubai | Beirut
      · character — "calm, modern, studied"
@@ -4591,7 +4591,7 @@ try { (() => {
       positioning: 'An upscale design studio, committed to delivering tailor-made projects and turning vision into reality.',
       tagline: 'Turning vision into reality.',
       character: 'Calm, modern, studied.',
-      founders: 'Jinane and Joelle Touma',
+      founders: 'Jinan and Joelle Touma',
       founded: 2017,
       email: 'studio@jwtdesignstudio.com',
       // placeholder
@@ -4720,7 +4720,7 @@ try { (() => {
     /* The studio is the two sisters — no wider team. Portraits supplied by the
        studio; paths are relative to ui_kits/website/. */
     {
-      name: 'Jinane Touma',
+      name: 'Jinan Touma',
       role: 'Co-Founder',
       studio: 'JWT Design Studio',
       img: '../../assets/team/jinane.jpg'

@@ -242,7 +242,7 @@ into a consuming project.
 
 ## Known substitutions / caveats
 
-**Confirmed real** (from the studio, Aug 2026): founders **Jinane and Joelle Touma**;
+**Confirmed real** (from the studio, Aug 2026): founders **Jinan and Joelle Touma**;
 founded **2017**; studios **Dubai | Beirut**; the studio is **just the two sisters**, with
 no wider team; character **"calm, modern, studied"**; clients are private homeowners,
 property developers and café/restaurant owners; **English only** (no Arabic/RTL); the

@@ -18,7 +18,7 @@
 window.JWT_PRESS = [
   {
     type: 'article',
-    title: 'Jinane & Joelle Touma: “Together, we are better”',
+    title: 'Jinan & Joelle Touma: “Together, we are better”',
     outlet: 'Zahrat Al Khaleej',
     date: '',
     url: 'https://www.zahratalkhaleej.ae/article/4290594/جنان-وجويل-توما--نحن-معا-أفضل',

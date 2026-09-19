@@ -1,6 +1,6 @@
 # JWT Design Studio
 
-Brand design system + marketing-site prototype for JWT Design Studio (Jinane & Joelle
+Brand design system + marketing-site prototype for JWT Design Studio (Jinan & Joelle
 Touma) — interiors, architectural, lighting and landscape, Dubai | Beirut.
 
 ## Read these first
