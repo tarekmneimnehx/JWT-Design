@@ -102,8 +102,8 @@
 
             {/* Details + image */}
             <aside style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-6)' }}>
-              <div style={{ aspectRatio: '4 / 5', borderRadius: 'var(--radius-md)', overflow: 'hidden' }}>
-                <img src={window.JWT_IMG.ronKitchen} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <div style={{ aspectRatio: '3 / 2', borderRadius: 'var(--radius-md)', overflow: 'hidden' }}>
+                <img src={D.contactPhoto} alt={`${D.studio.founders}, JWT Design Studio`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
                 <Detail label="Email" value={<EmailValue />} />

@@ -22,7 +22,7 @@
         {/* Portrait + story */}
         <Section bg="page" pad="sm" style={{ paddingTop: 0 }}>
           <div className="jwt-rg" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-8)', alignItems: 'center' }}>
-            <RevealImage style={{ aspectRatio: '3 / 2', borderRadius: 'var(--radius-md)' }}>
+            <RevealImage style={{ aspectRatio: '4 / 5', borderRadius: 'var(--radius-md)' }}>
               <img src={D.teamPhoto} alt={`${D.studio.founders}, founders of JWT Design Studio`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </RevealImage>
             <div>

@@ -206,13 +206,15 @@
     press: PRESS,
 
     /* A wide "together" portrait of the two founders, for the About page. */
-    teamPhoto: '../../assets/team/founders.jpg?v=1',
+    teamPhoto: '../../assets/team/founders.jpg?v=2',
+    /* Wide 'together' shot for the contact page. */
+    contactPhoto: '../../assets/team/founders-table.jpg?v=1',
 
     team: [
       /* The studio is the two sisters — no wider team. Portraits supplied by the
          studio; paths are relative to ui_kits/website/. */
       { name: 'Jinane Touma', role: 'Co-Founder', studio: 'JWT Design Studio', img: '../../assets/team/jinane.jpg?v=3' },
-      { name: 'Joelle Touma', role: 'Co-Founder · Interior Architect', studio: 'JWT Design Studio', img: '../../assets/team/joelle.jpg?v=2' },
+      { name: 'Joelle Touma', role: 'Co-Founder · Interior Architect', studio: 'JWT Design Studio', img: '../../assets/team/joelle.jpg?v=3' },
     ],
 
     /* Intentionally empty — no invented awards or client quotes.
