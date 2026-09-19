@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>JWT Project Review</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800&display=swap">
+<style>
+:root{
+  --bg:#f4f2ee; --surface:#fff; --surface-2:#faf8f5; --ink:#2b2b2b; --muted:#6f6c68;
+  --line:#e6e1da; --line-2:#efeae3; --slate:#62656a; --taupe:#a9825f; --taupe-soft:#d3b59d;
+  --accent:#a9713f; --accent-soft:#f0e4d8; --good:#4a7c59; --danger:#b04a3a; --chip:#efeae3;
+  --shadow:0 1px 2px rgba(43,43,43,.05),0 8px 24px rgba(43,43,43,.06);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1b1c1e; --surface:#242527; --surface-2:#202123; --ink:#ece9e5; --muted:#a3a09b;
+  --line:#333538; --line-2:#2b2d2f; --slate:#9a9da3; --taupe:#d3b59d; --taupe-soft:#c2a488;
+  --accent:#d9a26f; --accent-soft:#3a2f26; --good:#7fb08c; --danger:#e08573; --chip:#2c2e30;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35);
+}}
+:root[data-theme="dark"]{
+  --bg:#1b1c1e; --surface:#242527; --surface-2:#202123; --ink:#ece9e5; --muted:#a3a09b;
+  --line:#333538; --line-2:#2b2d2f; --slate:#9a9da3; --taupe:#d3b59d; --taupe-soft:#c2a488;
+  --accent:#d9a26f; --accent-soft:#3a2f26; --good:#7fb08c; --danger:#e08573; --chip:#2c2e30;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:"Mulish",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.45}
+.wrap{max-width:1200px;margin:0 auto;padding-inline:20px;padding-block:0 72px}
+.tnum{font-variant-numeric:tabular-nums}
+button,input,select,textarea{font-family:inherit}
+
+header.bar{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--bg) 90%,transparent);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar .wrap{padding-block:12px;display:flex;flex-direction:column;gap:10px}
+.brandrow{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.mark{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:7px;
+  background:var(--slate);color:#fff;font-weight:800;font-size:12px;flex:0 0 auto}
+.mark::after{content:"";width:5px;height:5px;border-radius:99px;background:var(--taupe-soft);margin-left:2px;margin-top:8px}
+h1{font-size:16px;font-weight:700;margin:0;letter-spacing:-.01em}
+.sub{font-size:12px;color:var(--muted)}
+.spacer{flex:1 1 auto}
+.progress{font-size:12px;color:var(--muted);white-space:nowrap}
+.progress b{color:var(--ink);font-weight:700}
+.controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{font-size:12px;font-weight:600;padding:6px 11px;border-radius:99px;border:1px solid var(--line);
+  background:var(--surface);color:var(--muted);cursor:pointer;white-space:nowrap;transition:all .12s}
+.chip:hover{border-color:var(--taupe)}
+.chip[aria-pressed="true"]{background:var(--slate);color:#fff;border-color:var(--slate)}
+.chip .n{opacity:.6;margin-left:5px;font-weight:500}
+.grouplbl{align-self:center;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-left:8px}
+input.search{font-size:13px;padding:7px 12px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);min-width:150px;flex:1 1 150px}
+input.search:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
+.btn{font-size:12px;font-weight:700;padding:8px 13px;border-radius:8px;cursor:pointer;border:1px solid var(--slate);background:var(--slate);color:#fff;white-space:nowrap}
+.btn.ghost{background:var(--surface);color:var(--ink);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--taupe)}
+.btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted)}
+.legend b{color:var(--ink);font-weight:700}
+
+.proj{background:var(--surface);border:1px solid var(--line);border-radius:14px;margin-top:18px;box-shadow:var(--shadow);overflow:hidden}
+.proj.drag{opacity:.5}
+.proj.dropover{outline:2px dashed var(--taupe);outline-offset:2px}
+.phead{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:14px 16px;border-bottom:1px solid var(--line-2)}
+.handle{cursor:grab;color:var(--muted);font-size:16px;line-height:1;padding:2px 4px;border-radius:6px;user-select:none}
+.handle:hover{background:var(--chip)}
+.ord{display:flex;flex-direction:column;gap:2px}
+.ord button{width:22px;height:18px;border:1px solid var(--line);background:var(--surface);color:var(--muted);border-radius:5px;cursor:pointer;font-size:10px;line-height:1;padding:0}
+.ord button:disabled{opacity:.3;cursor:default}
+.pidx{font-size:12px;color:var(--muted);font-weight:700;min-width:22px}
+.ptitle{font-size:17px;font-weight:700;letter-spacing:-.01em;margin:0}
+.badge{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:4px 8px;border-radius:6px;background:var(--chip);color:var(--muted);white-space:nowrap}
+.badge.exp{background:var(--accent-soft);color:var(--accent)}
+.badge.c2c{background:color-mix(in srgb,var(--good) 16%,transparent);color:var(--good)}
+.pmeta{font-size:12px;color:var(--muted)} .pmeta b{color:var(--ink)}
+.reviewbtn{font-size:11.5px;font-weight:700;padding:6px 11px;border-radius:99px;cursor:pointer;border:1px solid var(--line);background:var(--surface);color:var(--muted)}
+.reviewbtn[aria-pressed="true"]{background:color-mix(in srgb,var(--good) 15%,transparent);color:var(--good);border-color:transparent}
+.covernote{font-size:12px;color:var(--muted);padding:10px 16px 0} .covernote b{color:var(--ink)}
+
+details.info{margin:8px 16px 0;border:1px solid var(--line-2);border-radius:10px;background:var(--surface-2)}
+details.info>summary{cursor:pointer;padding:10px 12px;font-size:12.5px;font-weight:700;color:var(--ink);list-style:none;display:flex;align-items:center;gap:8px}
+details.info>summary::-webkit-details-marker{display:none}
+details.info>summary::before{content:"▸";color:var(--muted);font-size:10px}
+details.info[open]>summary::before{content:"▾"}
+.fields{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;padding:0 12px 12px}
+.field{display:flex;flex-direction:column;gap:4px}
+.field.full{grid-column:1/-1}
+.field label{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.field input,.field select,.field textarea{font-size:13px;padding:8px 10px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+.field textarea{resize:vertical;min-height:56px}
+.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;padding:12px 16px 4px}
+.tilewrap{display:flex;flex-direction:column}
+.tile{position:relative;aspect-ratio:4/3;border-radius:9px;overflow:hidden;background:var(--surface-2);border:1px solid var(--line-2);cursor:grab;user-select:none}
+.tile img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;background:var(--line-2)}
+.tile.cover{outline:3px solid var(--accent);outline-offset:-3px}
+.tile.hidden img{filter:grayscale(1);opacity:.35}
+.tile.dragging{opacity:.4}.tile.over{outline:2px dashed var(--taupe);outline-offset:-2px}
+.pos{position:absolute;left:6px;top:6px;font-size:10px;font-weight:700;color:#fff;background:rgba(43,43,43,.6);border-radius:5px;padding:2px 6px}
+.covertag{position:absolute;left:6px;bottom:6px;font-size:9.5px;font-weight:800;letter-spacing:.06em;color:#fff;background:var(--accent);border-radius:5px;padding:3px 7px;text-transform:uppercase}
+.hiddentag{position:absolute;left:6px;bottom:6px;font-size:9.5px;font-weight:800;letter-spacing:.06em;color:#fff;background:var(--danger);border-radius:5px;padding:3px 7px;text-transform:uppercase}
+.acts{position:absolute;right:6px;top:6px;display:flex;gap:5px}
+.iconbtn{width:28px;height:28px;border-radius:7px;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.92);color:#2b2b2b;font-size:14px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.iconbtn:hover{background:#fff}.iconbtn.on{background:var(--accent);color:#fff}
+.zoom{position:absolute;inset:0;cursor:zoom-in}
+.cap{font-size:10.5px;color:var(--muted);padding:5px 2px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:center}
+.orderhint{font-size:11px;color:var(--muted);padding:0 16px}
+
+/* Lightbox */
+.lb{position:fixed;inset:0;z-index:60;background:rgba(18,18,19,.94);display:none;align-items:center;justify-content:center;flex-direction:column}
+.lb.on{display:flex}
+.lb__img{max-width:94vw;max-height:78vh;object-fit:contain;border-radius:6px;background:#111}
+.lb__bar{position:absolute;top:0;left:0;right:0;display:flex;align-items:center;gap:12px;padding:14px 18px;color:#eee;font-size:13px}
+.lb__bar .t{font-weight:700}
+.lb__bar .m{color:#b9b6b2}
+.lb__actions{display:flex;gap:8px;margin-top:14px}
+.lb__actions .btn{border-color:#444;background:#2a2b2d;color:#eee}
+.lb__actions .btn.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.lb__nav{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:99px;border:1px solid #555;background:rgba(0,0,0,.4);color:#fff;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.lb__nav.prev{left:14px}.lb__nav.next{right:14px}
+.lb__close{position:absolute;top:12px;right:16px;width:40px;height:40px;border-radius:99px;border:1px solid #555;background:rgba(0,0,0,.4);color:#fff;font-size:20px;cursor:pointer}
+.lb__count{position:absolute;bottom:16px;color:#cfccc8;font-size:12px}
+
+dialog{border:none;border-radius:14px;padding:0;max-width:660px;width:92vw;background:var(--surface);color:var(--ink);box-shadow:var(--shadow)}
+dialog::backdrop{background:rgba(20,20,20,.5)}
+.dlg{padding:20px}.dlg h2{margin:0 0 6px;font-size:16px}.dlg p{margin:0 0 12px;font-size:13px;color:var(--muted)}
+.dlg textarea{width:100%;height:240px;font-family:ui-monospace,Menlo,monospace;font-size:11.5px;border:1px solid var(--line);border-radius:8px;padding:10px;background:var(--surface-2);color:var(--ink)}
+.dlgrow{display:flex;gap:8px;justify-content:flex-end;margin-top:12px}
+.empty{padding:60px 20px;text-align:center;color:var(--muted)}
+@media (max-width:640px){.grid{grid-template-columns:repeat(auto-fill,minmax(120px,1fr))}.fields{grid-template-columns:1fr}h1{font-size:15px}}
+</style>
+</head>
+<body>
+<header class="bar"><div class="wrap">
+  <div class="brandrow">
+    <span class="mark">JWT</span>
+    <div><h1>Project Review</h1><div class="sub">Pick covers, hide weak shots, reorder images &amp; projects, fill in details — then send it back.</div></div>
+    <span class="spacer"></span>
+    <span class="progress">Reviewed <b id="revcount" class="tnum">0</b> / 27 &nbsp;·&nbsp; <b class="tnum">27</b> projects · <b class="tnum">535</b> images</span>
+  </div>
+  <div class="controls">
+    <div class="chips" id="chips"></div>
+    <span class="spacer"></span>
+    <input class="search" id="search" type="search" placeholder="Search projects…" aria-label="Search">
+    <button class="btn ghost" id="addBtn">＋ Add project</button>
+    <button class="btn ghost" id="expandBtn">Expand details</button>
+    <button class="btn" id="exportBtn">Copy decisions</button>
+  </div>
+  <div class="legend"><span>Click an image → <b>full screen</b></span><span>⋮⋮ drag / ▲▼ = <b>reorder projects</b></span><span>★ cover · ◐ hide · drag tiles = order</span><span>Saved on this device.</span></div>
+</div></header>
+
+<main class="wrap" id="list"></main>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <div class="lb__bar"><span class="t" id="lbTitle"></span><span class="m" id="lbCap"></span></div>
+  <button class="lb__close" id="lbClose" aria-label="Close">✕</button>
+  <button class="lb__nav prev" id="lbPrev" aria-label="Previous">‹</button>
+  <img class="lb__img" id="lbImg" alt="">
+  <button class="lb__nav next" id="lbNext" aria-label="Next">›</button>
+  <div class="lb__actions">
+    <button class="btn" id="lbCover">★ Set as cover</button>
+    <button class="btn" id="lbHide">◐ Hide</button>
+  </div>
+  <div class="lb__count" id="lbCount"></div>
+</div>
+
+<dialog id="exportDlg"><div class="dlg">
+  <h2>Your decisions</h2>
+  <p>Copied to your clipboard. Paste this whole block back to me in the chat and I'll apply it — project order, covers, image order, hidden shots, and all the details you filled in.</p>
+  <textarea id="exportText" readonly></textarea>
+  <div class="dlgrow"><button class="btn ghost" id="copyAgain">Copy again</button><button class="btn" id="closeDlg">Done</button></div>
+</div></dialog>
+
+<script>
+const PROJECTS = [{"slug": "al-wathba-2", "title": "Al Wathba 2", "expertise": "Residential", "status": "Concept", "cover": "al-wathba-2-01-aerial-masterplan.jpg", "images": ["al-wathba-2-01-aerial-masterplan.jpg", "al-wathba-2-02-courtyard-garden.jpg", "al-wathba-2-03-entrance-approach-dusk.jpg", "al-wathba-2-04-entrance-doorway-dusk.jpg", "al-wathba-2-05-stone-facade-dusk.jpg"]}, {"slug": "al-wathba-majlis", "title": "Al Wathba Majlis", "expertise": "Residential", "status": "Concept", "cover": "al-wathba-majlis-01-majlis-hall.jpg", "images": ["al-wathba-majlis-01-majlis-hall.jpg", "al-wathba-majlis-02-majlis-seating.jpg", "al-wathba-majlis-03-majlis-lounge.jpg", "al-wathba-majlis-04-majlis-seating-tv.jpg", "al-wathba-majlis-05-majlis-window-wall.jpg", "al-wathba-majlis-06-dining-table.jpg", "al-wathba-majlis-07-dining-table-side.jpg", "al-wathba-majlis-08-dining-hall.jpg"]}, {"slug": "bs-residence", "title": "BS Residence", "expertise": "Residential", "status": "Concept", "cover": "bs-residence-01-living-dining.jpg", "images": ["bs-residence-01-living-dining.jpg", "bs-residence-02-living-lounge.jpg", "bs-residence-03-kitchen-bar.jpg", "bs-residence-04-dining-bar.jpg", "bs-residence-05-living-terrace-view.jpg", "bs-residence-06-lounge-seating.jpg", "bs-residence-07-living-kitchen.jpg", "bs-residence-08-entry-corridor.jpg"]}, {"slug": "fbh-offices", "title": "FBH Offices", "expertise": "Commercial", "status": "Concept", "cover": "fbh-offices-01-reception.jpg", "images": ["fbh-offices-01-reception.jpg", "fbh-offices-02-reception-desk.jpg", "fbh-offices-03-reception-counter.jpg", "fbh-offices-04-entrance-lobby.jpg", "fbh-offices-05-lift-lobby.jpg", "fbh-offices-06-lift-lobby-crest.jpg", "fbh-offices-07-lift-lobby-wide.jpg", "fbh-offices-08-corridor.jpg", "fbh-offices-09-corridor-marble.jpg", "fbh-offices-10-corridor-lounge.jpg", "fbh-offices-11-corridor-sconces.jpg", "fbh-offices-12-boardroom.jpg", "fbh-offices-13-boardroom-crest.jpg", "fbh-offices-14-meeting-room-window.jpg", "fbh-offices-15-executive-office.jpg"]}, {"slug": "gg-residence", "title": "GG Residence", "expertise": "Residential", "status": "Concept", "cover": "gg-residence-01-living-lounge.jpg", "images": ["gg-residence-01-living-lounge.jpg", "gg-residence-02-living-bar.jpg", "gg-residence-03-living-media-wall.jpg", "gg-residence-04-living-seating.jpg", "gg-residence-05-living-terrace.jpg", "gg-residence-06-living-fireplace.jpg", "gg-residence-07-corridor-gallery.jpg", "gg-residence-08-bedroom-arch-headboard.jpg", "gg-residence-09-bedroom-vanity.jpg", "gg-residence-10-bedroom-wardrobe.jpg", "gg-residence-11-bedroom-wardrobe-alt.jpg", "gg-residence-12-bedroom-boy.jpg", "gg-residence-13-master-bedroom.jpg", "gg-residence-14-master-bedroom-tv.jpg", "gg-residence-15-bathroom-arch-vanity.jpg", "gg-residence-16-bathroom-terrazzo.jpg"]}, {"slug": "grow-offices", "title": "GROW Offices", "expertise": "Commercial", "status": "Concept to Completion", "cover": "grow-offices-14-reception-desk-completed.jpg", "images": ["grow-offices-14-reception-desk-completed.jpg", "grow-offices-15-reception-logo-completed.jpg", "grow-offices-16-reception-counter-completed.jpg", "grow-offices-17-corridor-glass-completed.jpg", "grow-offices-18-corridor-signage-completed.jpg", "grow-offices-19-corridor-logo-completed.jpg", "grow-offices-20-corridor-logo-alt-completed.jpg", "grow-offices-21-collaboration-zone-completed.jpg", "grow-offices-22-collaboration-lounge-completed.jpg", "grow-offices-23-collaboration-seating-completed.jpg", "grow-offices-24-collaboration-tables-completed.jpg", "grow-offices-25-lounge-seating-completed.jpg", "grow-offices-26-workspace-desks-completed.jpg", "grow-offices-27-workspace-open-completed.jpg", "grow-offices-28-meeting-pod-completed.jpg", "grow-offices-29-meeting-pod-screen-completed.jpg", "grow-offices-30-meeting-pod-interior-completed.jpg", "grow-offices-31-boardroom-completed.jpg", "grow-offices-32-boardroom-table-completed.jpg", "grow-offices-33-boardroom-screen-completed.jpg", "grow-offices-34-meeting-room-glass-completed.jpg", "grow-offices-35-meeting-room-completed.jpg", "grow-offices-36-executive-office-window-completed.jpg", "grow-offices-37-executive-office-desk-completed.jpg", "grow-offices-38-private-office-completed.jpg", "grow-offices-39-private-office-alt-completed.jpg", "grow-offices-40-office-lounge-completed.jpg", "grow-offices-41-office-lounge-alt-completed.jpg", "grow-offices-42-window-lounge-completed.jpg", "grow-offices-43-window-lounge-alt-completed.jpg", "grow-offices-44-display-shelving-completed.jpg", "grow-offices-45-display-shelving-alt-completed.jpg", "grow-offices-46-display-shelf-detail-completed.jpg", "grow-offices-01-reception-concept.jpg", "grow-offices-02-collaboration-zone-concept.jpg", "grow-offices-03-collaboration-lounge-concept.jpg", "grow-offices-04-workspace-pods-concept.jpg", "grow-offices-05-meeting-pod-concept.jpg", "grow-offices-06-meeting-room-concept.jpg", "grow-offices-07-meeting-room-table-concept.jpg", "grow-offices-08-signage-corridor-concept.jpg", "grow-offices-09-private-office-concept.jpg", "grow-offices-10-executive-office-concept.jpg", "grow-offices-11-office-window-lounge-concept.jpg", "grow-offices-12-office-shelving-concept.jpg", "grow-offices-13-office-desk-concept.jpg"]}, {"slug": "ham-external-majlis", "title": "H.A.M External Majlis", "expertise": "Residential", "status": "Concept", "cover": "ham-external-majlis-01-majlis-hall.jpg", "images": ["ham-external-majlis-01-majlis-hall.jpg", "ham-external-majlis-02-majlis-seating-tv.jpg", "ham-external-majlis-03-prayer-hall.jpg", "ham-external-majlis-04-prayer-hall-mihrab.jpg", "ham-external-majlis-05-bar-lounge.jpg", "ham-external-majlis-06-entrance-hall.jpg", "ham-external-majlis-07-gym.jpg", "ham-external-majlis-08-bedroom-green-marble.jpg", "ham-external-majlis-09-bedroom-media-wall.jpg", "ham-external-majlis-10-bathroom-green-marble.jpg", "ham-external-majlis-11-bathroom-vanity.jpg", "ham-external-majlis-12-powder-room.jpg"]}, {"slug": "haj-abdo-cafe-aleppo", "title": "Haj Abdo Cafe, Aleppo", "expertise": "Hospitality", "status": "Concept", "cover": "haj-abdo-cafe-aleppo-01-facade-exterior.jpg", "images": ["haj-abdo-cafe-aleppo-01-facade-exterior.jpg", "haj-abdo-cafe-aleppo-02-facade-entrance.jpg", "haj-abdo-cafe-aleppo-03-terrace-seating.jpg", "haj-abdo-cafe-aleppo-04-cafe-dining.jpg", "haj-abdo-cafe-aleppo-05-cafe-banquette.jpg", "haj-abdo-cafe-aleppo-06-cafe-entrance-feature.jpg", "haj-abdo-cafe-aleppo-07-bakery-counter.jpg"]}, {"slug": "jpl-landscape", "title": "JPL Landscape", "expertise": "Landscape", "status": "Concept", "cover": "jpl-landscape-01-entrance-facade.jpg", "images": ["jpl-landscape-01-entrance-facade.jpg", "jpl-landscape-02-entrance-driveway.jpg", "jpl-landscape-03-pool-garden.jpg", "jpl-landscape-04-courtyard-planting.jpg", "jpl-landscape-05-pergola-lounge.jpg", "jpl-landscape-06-pergola-terrace.jpg"]}, {"slug": "jw-residence", "title": "JW Residence", "expertise": "Residential", "status": "Concept", "cover": "jw-residence-01-living-dining.jpg", "images": ["jw-residence-01-living-dining.jpg", "jw-residence-02-living-lounge.jpg", "jw-residence-03-living-seating.jpg", "jw-residence-04-living-media-wall.jpg", "jw-residence-05-living-piano.jpg", "jw-residence-06-entry-corridor.jpg", "jw-residence-07-entry-hall.jpg"]}, {"slug": "jadeel-residence", "title": "Jadeel Residence", "expertise": "Residential", "status": "Concept", "cover": "jadeel-residence-01-living-lounge.jpg", "images": ["jadeel-residence-01-living-lounge.jpg", "jadeel-residence-02-living-media-wall.jpg", "jadeel-residence-03-living-dining.jpg", "jadeel-residence-04-living-tv.jpg", "jadeel-residence-05-living-seating.jpg", "jadeel-residence-06-dining.jpg", "jadeel-residence-07-kitchen.jpg", "jadeel-residence-08-kitchen-island.jpg", "jadeel-residence-09-master-bedroom.jpg", "jadeel-residence-10-master-bedroom-alt.jpg", "jadeel-residence-11-master-bedroom-window.jpg", "jadeel-residence-12-master-bedroom-coral.jpg", "jadeel-residence-13-master-bedroom-mirror.jpg", "jadeel-residence-14-master-bedroom-pink.jpg", "jadeel-residence-15-bedroom.jpg", "jadeel-residence-16-bedroom-vanity.jpg", "jadeel-residence-17-walk-in-closet.jpg", "jadeel-residence-18-master-bathroom.jpg", "jadeel-residence-19-bathroom-shower.jpg", "jadeel-residence-20-bathroom-ensuite.jpg", "jadeel-residence-21-powder-room.jpg", "jadeel-residence-22-wc-marble.jpg", "jadeel-residence-23-corridor.jpg"]}, {"slug": "mr-residence", "title": "MR Residence", "expertise": "Residential", "status": "Concept", "cover": "mr-residence-01-living-hall.jpg", "images": ["mr-residence-01-living-hall.jpg", "mr-residence-02-living-media-wall.jpg", "mr-residence-03-living-shelving.jpg", "mr-residence-04-living-lounge.jpg", "mr-residence-05-living-seating.jpg", "mr-residence-06-living-tv.jpg", "mr-residence-07-living-kitchen.jpg", "mr-residence-08-living-corridor.jpg", "mr-residence-09-dining-kitchen.jpg", "mr-residence-10-dining.jpg", "mr-residence-11-kitchen.jpg", "mr-residence-12-entry-stair.jpg", "mr-residence-13-entry-planting.jpg", "mr-residence-14-master-bedroom.jpg", "mr-residence-15-master-bedroom-alt.jpg", "mr-residence-16-bedroom.jpg", "mr-residence-17-bedroom-alt.jpg", "mr-residence-18-girls-room.jpg", "mr-residence-19-girls-room-bunk.jpg", "mr-residence-20-master-bathroom.jpg", "mr-residence-21-master-bathroom-alt.jpg", "mr-residence-22-master-bathroom-vanity.jpg", "mr-residence-23-master-shower.jpg", "mr-residence-24-master-wc.jpg", "mr-residence-25-girls-bathroom.jpg", "mr-residence-26-girls-bathroom-vanity.jpg"]}, {"slug": "mirel-experience-center", "title": "Mirel Experience Center", "expertise": "Commercial", "status": "Concept to Completion", "cover": "mirel-experience-center-07-showroom-overview-completed.jpg", "images": ["mirel-experience-center-07-showroom-overview-completed.jpg", "mirel-experience-center-08-demo-lounge-completed.jpg", "mirel-experience-center-09-demo-room-completed.jpg", "mirel-experience-center-10-demo-room-guests-completed.jpg", "mirel-experience-center-11-demo-room-seated-completed.jpg", "mirel-experience-center-12-meeting-room-completed.jpg", "mirel-experience-center-13-brand-wall-corridor-completed.jpg", "mirel-experience-center-14-product-corridor-completed.jpg", "mirel-experience-center-15-headphone-display-completed.jpg", "mirel-experience-center-16-cinema-room-completed.jpg", "mirel-experience-center-01-demo-room-stair-concept.jpg", "mirel-experience-center-02-demo-room-concept.jpg", "mirel-experience-center-03-product-display-concept.jpg", "mirel-experience-center-04-speaker-display-concept.jpg", "mirel-experience-center-05-storefront-concept.jpg", "mirel-experience-center-06-entrance-denon-concept.jpg"]}, {"slug": "na-residence", "title": "NA Residence", "expertise": "Residential", "status": "Concept", "cover": "na-residence-01-living-lounge.jpg", "images": ["na-residence-01-living-lounge.jpg", "na-residence-02-living-fireplace.jpg", "na-residence-03-living-patterned-floor.jpg", "na-residence-04-living-seating.jpg", "na-residence-05-living-wide.jpg", "na-residence-06-living-garden-view.jpg", "na-residence-07-living-garden-view-alt.jpg", "na-residence-08-living-night.jpg", "na-residence-09-living-night-alt.jpg", "na-residence-10-living-fireplace-night.jpg", "na-residence-11-living-night-wide.jpg", "na-residence-12-living-night-seating.jpg", "na-residence-13-lounge-night.jpg", "na-residence-14-lounge-night-alt.jpg", "na-residence-15-dining.jpg", "na-residence-16-dining-marble.jpg", "na-residence-17-dining-night.jpg", "na-residence-18-dining-night-alt.jpg", "na-residence-19-entry-stair-arch.jpg", "na-residence-20-stair-hall.jpg", "na-residence-21-entry-corridor.jpg", "na-residence-22-stair-marble.jpg", "na-residence-23-ceiling-detail.jpg", "na-residence-24-powder-room.jpg", "na-residence-25-powder-room-alt.jpg", "na-residence-26-corridor-gallery.jpg", "na-residence-27-lounge-upper.jpg", "na-residence-28-corridor-stair.jpg", "na-residence-29-corridor-artwork.jpg", "na-residence-30-corridor-chevron-floor.jpg", "na-residence-31-corridor-marble-floor.jpg", "na-residence-32-master-bedroom.jpg", "na-residence-33-master-bedroom-alt.jpg", "na-residence-34-master-bedroom-vanity.jpg", "na-residence-35-master-bedroom-window.jpg", "na-residence-36-master-bedroom-sea-view.jpg", "na-residence-37-master-bedroom-suite.jpg", "na-residence-38-master-bedroom-sea-view-alt.jpg", "na-residence-39-master-bedroom-dressing.jpg", "na-residence-40-bedroom-yellow-chair.jpg", "na-residence-41-bedroom-vanity.jpg", "na-residence-42-girls-bedroom.jpg", "na-residence-43-girls-bedroom-alt.jpg", "na-residence-44-girls-bedroom-suite.jpg", "na-residence-45-girls-bedroom-vanity.jpg", "na-residence-46-boys-bedroom.jpg", "na-residence-47-boys-bedroom-alt.jpg", "na-residence-48-boys-bedroom-vanity.jpg", "na-residence-49-boys-bedroom-tv.jpg", "na-residence-50-walk-in-closet.jpg", "na-residence-51-walk-in-closet-alt.jpg", "na-residence-52-walk-in-closet-window.jpg", "na-residence-53-dressing-vanity.jpg", "na-residence-54-dressing-room.jpg", "na-residence-55-study-lounge.jpg", "na-residence-56-living-lounge-upper.jpg", "na-residence-57-corridor-lighting.jpg", "na-residence-58-corridor-artwork-alt.jpg", "na-residence-59-master-bathroom.jpg", "na-residence-60-master-bathroom-tub.jpg", "na-residence-61-master-shower.jpg", "na-residence-62-master-bathroom-tub-alt.jpg", "na-residence-63-master-bathroom-double-vanity.jpg", "na-residence-64-master-shower-alt.jpg", "na-residence-65-bathroom-black-marble.jpg", "na-residence-66-bathroom-white.jpg", "na-residence-67-bathroom-black-marble-alt.jpg", "na-residence-68-bathroom-round-mirror.jpg", "na-residence-69-bathroom-stone.jpg", "na-residence-70-roof-bedroom.jpg", "na-residence-71-roof-bedroom-alt.jpg", "na-residence-72-roof-bedroom-vanity.jpg", "na-residence-73-roof-bedroom-dark.jpg", "na-residence-74-roof-bedroom-dark-alt.jpg"]}, {"slug": "ng-residence", "title": "NG Residence", "expertise": "Residential", "status": "Concept", "cover": "ng-residence-01-living-kitchen.jpg", "images": ["ng-residence-01-living-kitchen.jpg", "ng-residence-02-living-lounge.jpg", "ng-residence-03-living-seating.jpg", "ng-residence-04-kitchen.jpg", "ng-residence-05-kitchen-island.jpg", "ng-residence-06-entry-hall.jpg", "ng-residence-07-entry-arch.jpg", "ng-residence-08-bedroom-feature-wall.jpg", "ng-residence-09-bedroom-feature-wall-alt.jpg", "ng-residence-10-bedroom-vanity.jpg", "ng-residence-11-bedroom-dressing.jpg", "ng-residence-12-bathroom-marble.jpg", "ng-residence-13-bathroom-bedroom.jpg", "ng-residence-14-bathroom-green.jpg"]}, {"slug": "rc-residence", "title": "RC Residence", "expertise": "Residential", "status": "Concept", "cover": "rc-residence-01-living-lounge.jpg", "images": ["rc-residence-01-living-lounge.jpg", "rc-residence-02-living-dining.jpg", "rc-residence-03-kitchen-dining.jpg", "rc-residence-04-living-kitchen-upper.jpg", "rc-residence-05-living-upper.jpg", "rc-residence-06-living-tv-upper.jpg", "rc-residence-07-stair-hall.jpg", "rc-residence-08-corridor-stair.jpg", "rc-residence-09-corridor-shelving.jpg", "rc-residence-10-bedroom.jpg", "rc-residence-11-bedroom-upper.jpg", "rc-residence-12-bedroom-window.jpg", "rc-residence-13-bedroom-media-wall.jpg", "rc-residence-14-dressing-room.jpg", "rc-residence-15-bathroom-ensuite.jpg", "rc-residence-16-bathroom-shower.jpg", "rc-residence-17-bathroom-marble.jpg", "rc-residence-18-bathroom-vanity.jpg", "rc-residence-19-bathroom-double-vanity.jpg", "rc-residence-20-bathroom-shower-marble.jpg", "rc-residence-21-powder-room.jpg", "rc-residence-22-terrace-villa.jpg", "rc-residence-23-terrace-city-view.jpg", "rc-residence-24-terrace-dusk.jpg"]}, {"slug": "ronaldo-muchawar", "title": "Ronaldo Muchawar", "expertise": "Residential", "status": "Concept", "cover": "ronaldo-muchawar-01-exterior-facade.jpg", "images": ["ronaldo-muchawar-01-exterior-facade.jpg", "ronaldo-muchawar-02-exterior-facade-alt.jpg", "ronaldo-muchawar-03-roof-pool-terrace.jpg", "ronaldo-muchawar-04-roof-lounge.jpg", "ronaldo-muchawar-05-roof-lounge-guests.jpg", "ronaldo-muchawar-06-roof-bar.jpg", "ronaldo-muchawar-07-roof-pool.jpg", "ronaldo-muchawar-08-roof-pool-guests.jpg", "ronaldo-muchawar-09-roof-pool-daybed.jpg", "ronaldo-muchawar-10-roof-pergola.jpg", "ronaldo-muchawar-11-roof-terrace-view.jpg", "ronaldo-muchawar-12-roof-living-room.jpg", "ronaldo-muchawar-13-roof-living-lounge.jpg", "ronaldo-muchawar-14-entry-gallery.jpg", "ronaldo-muchawar-15-living-lounge.jpg", "ronaldo-muchawar-16-living-seating.jpg", "ronaldo-muchawar-17-living-tv.jpg", "ronaldo-muchawar-18-living-wide.jpg", "ronaldo-muchawar-19-living-lounge-wide.jpg", "ronaldo-muchawar-20-living-planting.jpg", "ronaldo-muchawar-21-living-shelving.jpg", "ronaldo-muchawar-22-living-media-wall.jpg", "ronaldo-muchawar-23-living-planting-alt.jpg", "ronaldo-muchawar-24-stair-atrium.jpg", "ronaldo-muchawar-25-corridor-screen.jpg", "ronaldo-muchawar-26-dining-kitchen.jpg", "ronaldo-muchawar-27-dining-lounge.jpg", "ronaldo-muchawar-28-dining-table.jpg", "ronaldo-muchawar-29-kitchen-island.jpg", "ronaldo-muchawar-30-kitchen.jpg", "ronaldo-muchawar-31-kitchen-dining.jpg", "ronaldo-muchawar-32-dining-living.jpg", "ronaldo-muchawar-33-dining-marble.jpg", "ronaldo-muchawar-34-powder-room.jpg", "ronaldo-muchawar-35-club-lounge.jpg", "ronaldo-muchawar-36-club-bar.jpg", "ronaldo-muchawar-37-club-bar-counter.jpg", "ronaldo-muchawar-38-club-wine-display.jpg", "ronaldo-muchawar-39-club-lounge-guests.jpg", "ronaldo-muchawar-40-club-lounge-dark.jpg", "ronaldo-muchawar-41-club-bar-seating.jpg", "ronaldo-muchawar-42-club-dj-booth.jpg", "ronaldo-muchawar-43-club-dj-lounge-purple.jpg", "ronaldo-muchawar-44-club-purple-ceiling.jpg", "ronaldo-muchawar-45-club-lounge-seating.jpg", "ronaldo-muchawar-46-club-media-wall.jpg", "ronaldo-muchawar-47-club-bar-wide.jpg", "ronaldo-muchawar-48-club-dj-booth-alt.jpg", "ronaldo-muchawar-49-club-wine-wall.jpg", "ronaldo-muchawar-50-club-bar-detail.jpg", "ronaldo-muchawar-51-club-artwork-lounge.jpg", "ronaldo-muchawar-52-club-stair.jpg", "ronaldo-muchawar-53-club-seating-lounge.jpg", "ronaldo-muchawar-54-club-entrance.jpg", "ronaldo-muchawar-55-club-purple-lounge-wide.jpg", "ronaldo-muchawar-56-spa-corridor.jpg", "ronaldo-muchawar-57-spa-treatment-corridor.jpg", "ronaldo-muchawar-58-spa-treatment-room.jpg", "ronaldo-muchawar-59-spa-relaxation.jpg", "ronaldo-muchawar-60-spa-shower.jpg", "ronaldo-muchawar-61-spa-vanity.jpg", "ronaldo-muchawar-62-spa-treatment-bed.jpg", "ronaldo-muchawar-63-spa-hammam.jpg", "ronaldo-muchawar-64-spa-wc.jpg", "ronaldo-muchawar-65-spa-sauna.jpg", "ronaldo-muchawar-66-spa-red-marble-bath.jpg", "ronaldo-muchawar-67-spa-corridor-alt.jpg", "ronaldo-muchawar-68-master-bedroom.jpg", "ronaldo-muchawar-69-master-bedroom-tv.jpg", "ronaldo-muchawar-70-bedroom-lounge.jpg", "ronaldo-muchawar-71-bedroom-dressing.jpg", "ronaldo-muchawar-72-bedroom-seating.jpg", "ronaldo-muchawar-73-bedroom-window.jpg", "ronaldo-muchawar-74-master-bedroom-suite.jpg", "ronaldo-muchawar-75-master-bedroom-suite-alt.jpg", "ronaldo-muchawar-76-dressing-room.jpg", "ronaldo-muchawar-77-master-bathroom.jpg", "ronaldo-muchawar-78-master-bathroom-vanity.jpg", "ronaldo-muchawar-79-bathroom-shower.jpg", "ronaldo-muchawar-80-master-bathroom-window.jpg", "ronaldo-muchawar-81-master-bathroom-double-vanity.jpg", "ronaldo-muchawar-82-master-bathroom-mirror.jpg", "ronaldo-muchawar-83-master-bathroom-tub.jpg"]}, {"slug": "sp-residence", "title": "SP Residence", "expertise": "Residential", "status": "Concept", "cover": "sp-residence-01-living-dining.jpg", "images": ["sp-residence-01-living-dining.jpg", "sp-residence-02-living-fireplace.jpg", "sp-residence-03-dining-kitchen.jpg", "sp-residence-04-kitchen-bar.jpg", "sp-residence-05-entry-vanity.jpg"]}, {"slug": "serenity-secret", "title": "Serenity Secret", "expertise": "Hospitality", "status": "Concept", "cover": "serenity-secret-01-reception.jpg", "images": ["serenity-secret-01-reception.jpg", "serenity-secret-02-reception-lounge.jpg", "serenity-secret-03-styling-stations.jpg", "serenity-secret-04-styling-mirrors.jpg", "serenity-secret-05-mural-wall-swing.jpg", "serenity-secret-06-nail-bar.jpg", "serenity-secret-07-retail-display.jpg", "serenity-secret-08-treatment-room.jpg"]}, {"slug": "sh-butti-villa", "title": "Sh. Butti Villa", "expertise": "Residential", "status": "Concept", "cover": "sh-butti-villa-01-entrance-driveway.jpg", "images": ["sh-butti-villa-01-entrance-driveway.jpg", "sh-butti-villa-02-facade-entrance.jpg", "sh-butti-villa-03-entrance-door-detail.jpg", "sh-butti-villa-04-facade-side.jpg", "sh-butti-villa-05-facade-side-alt.jpg", "sh-butti-villa-06-facade-palms.jpg", "sh-butti-villa-07-pool-terrace.jpg", "sh-butti-villa-08-pool-courtyard.jpg", "sh-butti-villa-09-cabana-terrace.jpg", "sh-butti-villa-10-pool-aerial.jpg", "sh-butti-villa-11-garden-aerial.jpg"]}, {"slug": "shikhana", "title": "Shikhana", "expertise": "Residential", "status": "Concept", "cover": "shikhana-01-living-media-wall.jpg", "images": ["shikhana-01-living-media-wall.jpg", "shikhana-02-living-seating.jpg", "shikhana-03-living-lounge.jpg", "shikhana-04-kitchen.jpg", "shikhana-05-majlis-seating.jpg", "shikhana-06-majlis-lounge.jpg", "shikhana-07-master-bedroom.jpg", "shikhana-08-master-bedroom-alt.jpg", "shikhana-09-dressing-vanity.jpg"]}, {"slug": "sobha-villas", "title": "Sobha Villas", "expertise": "Residential", "status": "Concept", "cover": "sobha-villas-01-living-lounge.jpg", "images": ["sobha-villas-01-living-lounge.jpg", "sobha-villas-02-bar-lounge.jpg", "sobha-villas-03-entrance-hall.jpg", "sobha-villas-04-entry-gallery.jpg", "sobha-villas-05-entry-double-height.jpg", "sobha-villas-06-master-bedroom.jpg", "sobha-villas-07-master-bedroom-suite.jpg", "sobha-villas-08-master-bathroom.jpg", "sobha-villas-09-bathroom-vanity.jpg"]}, {"slug": "village-mall", "title": "The Village Mall", "expertise": "Commercial", "status": "Concept", "cover": "village-mall-01-concourse.jpg", "images": ["village-mall-01-concourse.jpg", "village-mall-02-concourse-planting.jpg", "village-mall-03-concourse-seating.jpg", "village-mall-04-concourse-escalator.jpg", "village-mall-05-concourse-papaya.jpg", "village-mall-06-concourse-entrance.jpg", "village-mall-07-concourse-escalator-upper.jpg", "village-mall-08-concourse-skylight.jpg", "village-mall-09-concourse-columns.jpg"]}, {"slug": "village-mall-offices", "title": "The Village Mall Offices", "expertise": "Commercial", "status": "Concept", "cover": "village-mall-offices-01-reception-lounge.jpg", "images": ["village-mall-offices-01-reception-lounge.jpg", "village-mall-offices-02-reception-planting.jpg", "village-mall-offices-03-reception-corridor.jpg", "village-mall-offices-04-executive-lounge.jpg", "village-mall-offices-05-meeting-room.jpg", "village-mall-offices-06-private-office.jpg", "village-mall-offices-07-office-corridor.jpg"]}, {"slug": "vk-residence", "title": "VK Residence", "expertise": "Residential", "status": "Concept", "cover": "vk-residence-01-living-dining.jpg", "images": ["vk-residence-01-living-dining.jpg", "vk-residence-02-living-dining-wide.jpg", "vk-residence-03-living-fireplace.jpg", "vk-residence-04-living-seating.jpg", "vk-residence-05-entry-corridor.jpg", "vk-residence-06-living-night.jpg", "vk-residence-07-entry-bar-night.jpg", "vk-residence-08-living-dining-night.jpg", "vk-residence-09-lounge-night.jpg", "vk-residence-10-living-media-night.jpg", "vk-residence-11-bar-lounge-night.jpg", "vk-residence-12-dining-night.jpg", "vk-residence-13-living-fireplace-night.jpg", "vk-residence-14-living-seating-night.jpg"]}, {"slug": "vahe-kilikian-beauty-lounge", "title": "Vahe Kilikian Beauty Lounge", "expertise": "Hospitality", "status": "Concept", "cover": "vahe-kilikian-beauty-lounge-01-salon-wide.jpg", "images": ["vahe-kilikian-beauty-lounge-01-salon-wide.jpg", "vahe-kilikian-beauty-lounge-02-styling-stations.jpg", "vahe-kilikian-beauty-lounge-03-styling-mirrors.jpg", "vahe-kilikian-beauty-lounge-04-styling-row.jpg", "vahe-kilikian-beauty-lounge-05-styling-vanity.jpg", "vahe-kilikian-beauty-lounge-06-styling-station-detail.jpg", "vahe-kilikian-beauty-lounge-07-styling-chair-detail.jpg", "vahe-kilikian-beauty-lounge-08-wash-stations.jpg", "vahe-kilikian-beauty-lounge-09-manicure-bar.jpg", "vahe-kilikian-beauty-lounge-10-manicure-tables.jpg", "vahe-kilikian-beauty-lounge-11-reception-logo.jpg", "vahe-kilikian-beauty-lounge-12-reception-lounge.jpg"]}, {"slug": "zbm-residence", "title": "ZBM Residence", "expertise": "Residential", "status": "Concept", "cover": "zbm-residence-01-majlis.jpg", "images": ["zbm-residence-01-majlis.jpg", "zbm-residence-02-majlis-garden-view.jpg", "zbm-residence-03-majlis-symmetrical.jpg", "zbm-residence-04-majlis-symmetrical-alt.jpg", "zbm-residence-05-majlis-seating.jpg", "zbm-residence-06-majlis-night.jpg", "zbm-residence-07-majlis-night-garden.jpg", "zbm-residence-08-majlis-night-symmetrical.jpg", "zbm-residence-09-majlis-night-alt.jpg", "zbm-residence-10-majlis-night-seating.jpg", "zbm-residence-11-living-glazed-wall.jpg", "zbm-residence-12-living-courtyard.jpg", "zbm-residence-13-living-feature-wall.jpg", "zbm-residence-14-living-pool-view.jpg", "zbm-residence-15-living-corridor.jpg", "zbm-residence-16-living-fireplace.jpg", "zbm-residence-17-living-seating.jpg", "zbm-residence-18-dining-artwork.jpg", "zbm-residence-19-dining-bar.jpg", "zbm-residence-20-kitchen-island.jpg", "zbm-residence-21-kitchen-bar.jpg", "zbm-residence-22-kitchen-bar-alt.jpg", "zbm-residence-23-stair-atrium.jpg", "zbm-residence-24-entry-stair.jpg", "zbm-residence-25-courtyard-tree.jpg", "zbm-residence-26-bathroom-vanity.jpg", "zbm-residence-27-bathroom-mirror.jpg", "zbm-residence-28-bathroom-shower.jpg", "zbm-residence-29-bathroom-basin.jpg", "zbm-residence-30-bathroom-stone.jpg", "zbm-residence-31-bathroom-stone-alt.jpg", "zbm-residence-32-bathroom-travertine.jpg", "zbm-residence-33-bathroom-marble-basin.jpg", "zbm-residence-34-bathroom-corridor.jpg", "zbm-residence-35-wc-detail.jpg", "zbm-residence-36-gym.jpg", "zbm-residence-37-gym-alt.jpg", "zbm-residence-38-gym-garden-view.jpg", "zbm-residence-39-gym-garden-view-alt.jpg", "zbm-residence-40-gym-equipment.jpg", "zbm-residence-41-gym-mirror-wall.jpg", "zbm-residence-42-gym-night.jpg", "zbm-residence-43-gym-night-wide.jpg", "zbm-residence-44-gym-night-alt.jpg", "zbm-residence-45-gym-night-alt2.jpg", "zbm-residence-46-gym-night-equipment.jpg", "zbm-residence-47-gym-night-corridor.jpg", "zbm-residence-48-cigar-lounge.jpg", "zbm-residence-49-cigar-lounge-bar.jpg", "zbm-residence-50-cigar-lounge-seating.jpg", "zbm-residence-51-cigar-lounge-alt.jpg", "zbm-residence-52-cigar-lounge-window.jpg", "zbm-residence-53-cigar-lounge-detail.jpg", "zbm-residence-54-living-lounge.jpg", "zbm-residence-55-living-lounge-media.jpg", "zbm-residence-56-living-lounge-seating.jpg", "zbm-residence-57-living-lounge-alt.jpg", "zbm-residence-58-living-lounge-shelving.jpg", "zbm-residence-59-living-lounge-wide.jpg", "zbm-residence-60-living-lounge-artwork.jpg", "zbm-residence-61-living-lounge-corridor.jpg"]}];
+const EXPERTISES = ["Residential", "Commercial", "Hospitality", "Landscape"];
+const STATUSES = ["Concept", "Concept to Completion"];
+const BYSLUG = Object.fromEntries(PROJECTS.map(p=>[p.slug,p]));
+const IMG=(s,f)=>`assets/images/${s}/${f}`, THUMB=(s,f)=>`assets/thumbs/${s}/${f}`;
+const LS='jwt-review-v2';
+function caption(slug,file){let s=file.replace(/\.[a-z0-9]+$/i,'');if(s.indexOf(slug+'-')===0)s=s.slice(slug.length+1);
+  s=s.replace(/^\d+-?/,'').replace(/-(concept|completed)$/i,'').replace(/-/g,' ').trim();return s?s[0].toUpperCase()+s.slice(1):file;}
+let store={};try{store=JSON.parse(localStorage.getItem(LS)||'{}')||{}}catch(e){store={}}
+if(!Array.isArray(store._order)) store._order=PROJECTS.map(p=>p.slug);
+if(!Array.isArray(store._new)) store._new=[];
+store._order=store._order.filter(s=>BYSLUG[s]); PROJECTS.forEach(p=>{if(!store._order.includes(p.slug))store._order.push(p.slug)});
+function save(){try{localStorage.setItem(LS,JSON.stringify(store))}catch(e){}}
+function st(slug){const p=BYSLUG[slug];
+  if(!store[slug])store[slug]={cover:p.cover,order:p.images.slice(),hidden:{},notes:'',reviewed:false,info:{}};
+  const s=store[slug]; s.order=(s.order||p.images.slice()).filter(f=>p.images.includes(f));
+  p.images.forEach(f=>{if(!s.order.includes(f))s.order.push(f)});
+  if(!p.images.includes(s.cover))s.cover=p.images.includes(p.cover)?p.cover:s.order[0];
+  s.hidden=s.hidden||{}; s.info=s.info||{}; return s;}
+let filter='All',styleFilter='All',typeFilter='All',q='',expanded=false;
+const list=document.getElementById('list');
+const canReorder=()=>filter==='All'&&styleFilter==='All'&&typeFilter==='All'&&!q;
+
+function tagCount(k,v){return PROJECTS.filter(p=>{const s=store[p.slug];return s&&s.info&&s.info[k]===v;}).length;}
+function renderChips(){const c=document.getElementById('chips');c.innerHTML='';
+  const grp=(txt)=>{const s=document.createElement('span');s.className='grouplbl';s.textContent=txt;c.appendChild(s);};
+  const mk=(name,n,cur,setfn)=>{const b=document.createElement('button');b.className='chip';b.setAttribute('aria-pressed',cur===name);
+    b.innerHTML=name+(n!=null?` <span class="n tnum">${n}</span>`:'');b.onclick=()=>{setfn(name);render()};return b;};
+  c.appendChild(mk('All',PROJECTS.length,filter,v=>filter=v));
+  EXPERTISES.forEach(e=>c.appendChild(mk(e,PROJECTS.filter(p=>p.expertise===e).length,filter,v=>filter=v)));
+  grp('Style');['All','Classical','Modern'].forEach(v=>c.appendChild(mk(v,v==='All'?null:tagCount('style',v),styleFilter,x=>styleFilter=x)));
+  grp('Type');['All','Interior','Architecture','Both'].forEach(v=>c.appendChild(mk(v,v==='All'?null:tagCount('type',v),typeFilter,x=>typeFilter=x)));}
+function updateProgress(){document.getElementById('revcount').textContent=PROJECTS.filter(p=>store[p.slug]&&store[p.slug].reviewed).length;}
+function orderedProjects(){return store._order.map(s=>BYSLUG[s]).filter(Boolean);}
+function visible(){return orderedProjects().filter(p=>{const inf=st(p.slug).info;
+  return (filter==='All'||p.expertise===filter)
+    &&(styleFilter==='All'||inf.style===styleFilter)
+    &&(typeFilter==='All'||inf.type===typeFilter)
+    &&(!q||p.title.toLowerCase().includes(q));});}
+
+function moveProject(slug,dir){const a=store._order,i=a.indexOf(slug),j=i+dir;if(j<0||j>=a.length)return;a.splice(i,1);a.splice(j,0,slug);save();render();}
+
+function renderNewCard(n){
+  const el=document.createElement('section');el.className='proj';el.style.borderColor='var(--accent)';
+  el.innerHTML=`
+    <div class="phead">
+      <span class="badge" style="background:var(--accent);color:#fff">New project</span>
+      <input data-nk="title" placeholder="Project name…" value="${(n.title||'').replace(/"/g,'&quot;')}" style="border:none;background:transparent;font:inherit;font-size:17px;font-weight:700;color:var(--ink);flex:1;min-width:150px;outline:none">
+      <button class="reviewbtn" data-rm="1" style="color:var(--danger)">Remove</button>
+    </div>
+    <div class="fields" style="padding:12px 16px 14px">
+      <div class="field"><label>Expertise</label><select data-nk="expertise"><option value="">—</option>${EXPERTISES.map(e=>`<option ${n.expertise===e?'selected':''}>${e}</option>`).join('')}</select></div>
+      <div class="field"><label>Status</label><select data-nk="status"><option value="">—</option>${STATUSES.map(x=>`<option ${n.status===x?'selected':''}>${x}</option>`).join('')}</select></div>
+      <div class="field"><label>Style</label><select data-nk="style"><option value="">—</option><option ${n.style==='Classical'?'selected':''}>Classical</option><option ${n.style==='Modern'?'selected':''}>Modern</option></select></div>
+      <div class="field"><label>Interior / Architecture</label><select data-nk="type"><option value="">—</option><option ${n.type==='Interior'?'selected':''}>Interior</option><option ${n.type==='Architecture'?'selected':''}>Architecture</option><option ${n.type==='Both'?'selected':''}>Both</option></select></div>
+      <div class="field"><label>Year</label><input data-nk="year" placeholder="e.g. 2024" value="${(n.year||'').replace(/"/g,'&quot;')}"></div>
+      <div class="field"><label>City / location</label><input data-nk="city" placeholder="e.g. Dubai, UAE" value="${(n.city||'').replace(/"/g,'&quot;')}"></div>
+      <div class="field full"><label>Summary</label><textarea data-nk="summary" placeholder="What the space is and what makes it special…">${(n.summary||'').replace(/</g,'&lt;')}</textarea></div>
+      <div class="field full"><label>Notes — images / anything to add</label><textarea data-nk="notes" placeholder="e.g. renders coming, 8 photos to shoot…">${(n.notes||'').replace(/</g,'&lt;')}</textarea></div>
+    </div>`;
+  el.querySelectorAll('[data-nk]').forEach(inp=>inp.addEventListener('input',()=>{n[inp.dataset.nk]=inp.value;save();}));
+  el.querySelector('[data-rm]').onclick=()=>{if(!n.title||confirm('Remove this new project?')){store._new=store._new.filter(x=>x!==n);save();render();}};
+  list.appendChild(el);
+}
+function render(){
+  renderChips();updateProgress();
+  const vis=visible();list.innerHTML='';
+  if(canReorder()) store._new.forEach(renderNewCard);
+  if(!canReorder()){const h=document.createElement('div');h.className='orderhint';h.textContent='Showing a filtered view — clear the filter/search to drag or move projects.';list.appendChild(h);}
+  if(!vis.length){list.innerHTML+='<div class="empty">No projects match.</div>';return;}
+  vis.forEach((p)=>{
+    const s=st(p.slug), gi=store._order.indexOf(p.slug);
+    const el=document.createElement('section');el.className='proj';el.dataset.slug=p.slug;
+    const shown=s.order.filter(f=>!s.hidden[f]).length;
+    const info=s.info, exp=info.expertise||p.expertise, status=info.status||p.status, title=info.title||p.title;
+    el.innerHTML=`
+      <div class="phead">
+        <span class="handle" title="Drag to reorder" ${canReorder()?'draggable="true"':''}>⋮⋮</span>
+        <span class="ord"><button class="up" ${(!canReorder()||gi===0)?'disabled':''}>▲</button><button class="dn" ${(!canReorder()||gi===store._order.length-1)?'disabled':''}>▼</button></span>
+        <span class="pidx tnum">${String(gi+1).padStart(2,'0')}</span>
+        <h2 class="ptitle">${title}</h2>
+        <span class="badge exp">${exp}</span>
+        ${status==='Concept to Completion'?'<span class="badge c2c">Concept to Completion</span>':''}
+        <span class="pmeta"><b class="tnum">${shown}</b> shown · <b class="tnum">${p.images.length}</b> total</span>
+        <span class="spacer" style="flex:1"></span>
+        <button class="reviewbtn" aria-pressed="${!!s.reviewed}">${s.reviewed?'✓ Reviewed':'Mark reviewed'}</button>
+      </div>
+      <details class="info" ${expanded?'open':''}><summary>Project details${(info.summary||info.year||info.city)?' ·  filled':''}</summary>
+        <div class="fields">
+          <div class="field"><label>Title</label><input data-k="title" value="${(title||'').replace(/"/g,'&quot;')}"></div>
+          <div class="field"><label>Year</label><input data-k="year" placeholder="e.g. 2024" value="${(info.year||'').replace(/"/g,'&quot;')}"></div>
+          <div class="field"><label>Expertise</label><select data-k="expertise">${EXPERTISES.map(e=>`<option ${e===exp?'selected':''}>${e}</option>`).join('')}</select></div>
+          <div class="field"><label>Status</label><select data-k="status">${STATUSES.map(x=>`<option ${x===status?'selected':''}>${x}</option>`).join('')}</select></div>
+          <div class="field"><label>City / location</label><input data-k="city" placeholder="e.g. Dubai, UAE" value="${(info.city||'').replace(/"/g,'&quot;')}"></div>
+          <div class="field"><label>Style</label><select data-k="style"><option value="" ${!info.style?'selected':''}>—</option><option ${info.style==='Classical'?'selected':''}>Classical</option><option ${info.style==='Modern'?'selected':''}>Modern</option></select></div>
+          <div class="field"><label>Interior / Architecture</label><select data-k="type"><option value="" ${!info.type?'selected':''}>—</option><option ${info.type==='Interior'?'selected':''}>Interior</option><option ${info.type==='Architecture'?'selected':''}>Architecture</option><option ${info.type==='Both'?'selected':''}>Both</option></select></div>
+          <div class="field"><label>Cover</label><input value="${caption(p.slug,s.cover).replace(/"/g,'&quot;')}" readonly></div>
+          <div class="field full"><label>Summary (1–2 sentences shown on the project page)</label><textarea data-k="summary" placeholder="What the space is and what makes it special…">${(info.summary||'').replace(/</g,'&lt;')}</textarea></div>
+        </div>
+      </details>
+      <div class="covernote">Cover: <b>${caption(p.slug,s.cover)}</b></div>
+      <div class="grid"></div>
+      <div class="covernote"><textarea class="pn" placeholder="Quick note (priorities, missing shots)…" style="width:100%;font-size:13px;padding:9px 11px;border-radius:8px;border:1px solid var(--line);background:var(--surface-2);color:var(--ink);margin:10px 0 14px;min-height:40px">${(s.notes||'').replace(/</g,'&lt;')}</textarea></div>`;
+    // project reorder
+    if(canReorder()){
+      el.querySelector('.up').onclick=()=>moveProject(p.slug,-1);
+      el.querySelector('.dn').onclick=()=>moveProject(p.slug,1);
+      const h=el.querySelector('.handle');
+      h.addEventListener('dragstart',e=>{el.classList.add('drag');e.dataTransfer.setData('text/plain','P:'+p.slug);e.dataTransfer.effectAllowed='move';});
+      h.addEventListener('dragend',()=>el.classList.remove('drag'));
+      el.addEventListener('dragover',e=>{if((e.dataTransfer.types||[]).length){e.preventDefault();el.classList.add('dropover');}});
+      el.addEventListener('dragleave',()=>el.classList.remove('dropover'));
+      el.addEventListener('drop',e=>{const d=e.dataTransfer.getData('text/plain');el.classList.remove('dropover');
+        if(!d||d.indexOf('P:')!==0)return; e.preventDefault(); const from=d.slice(2); if(from===p.slug)return;
+        const a=store._order;a.splice(a.indexOf(from),1);a.splice(a.indexOf(p.slug),0,from);save();render();});
+    }
+    // info fields
+    el.querySelectorAll('.fields [data-k]').forEach(inp=>{inp.addEventListener('input',()=>{s.info[inp.dataset.k]=inp.value;save();});});
+    el.querySelector('.reviewbtn').onclick=(ev)=>{s.reviewed=!s.reviewed;save();updateProgress();ev.target.setAttribute('aria-pressed',!!s.reviewed);ev.target.textContent=s.reviewed?'✓ Reviewed':'Mark reviewed';};
+    el.querySelector('.pn').addEventListener('input',e=>{s.notes=e.target.value;save();});
+    // tiles
+    const grid=el.querySelector('.grid');
+    s.order.forEach(file=>{
+      const w=document.createElement('div');w.className='tilewrap';
+      const t=document.createElement('div');t.className='tile'+(file===s.cover?' cover':'')+(s.hidden[file]?' hidden':'');t.draggable=true;t.dataset.file=file;
+      const pos=s.order.filter(f=>!s.hidden[f]).indexOf(file);
+      t.innerHTML=`<img loading="lazy" src="${THUMB(p.slug,file)}" alt="">
+        ${!s.hidden[file]?`<span class="pos tnum">${pos>=0?pos+1:''}</span>`:''}
+        ${file===s.cover?'<span class="covertag">Cover</span>':(s.hidden[file]?'<span class="hiddentag">Hidden</span>':'')}
+        <div class="zoom" title="View full screen"></div>
+        <div class="acts"><button class="iconbtn${file===s.cover?' on':''}" data-a="cover" title="Set as cover">★</button>
+        <button class="iconbtn${s.hidden[file]?' on':''}" data-a="hide" title="${s.hidden[file]?'Show':'Hide'}">◐</button></div>`;
+      t.querySelector('.zoom').onclick=()=>openLB(p.slug,s.order.indexOf(file));
+      t.querySelector('[data-a="cover"]').onclick=(ev)=>{ev.stopPropagation();s.cover=file;delete s.hidden[file];save();render();};
+      t.querySelector('[data-a="hide"]').onclick=(ev)=>{ev.stopPropagation();if(s.hidden[file])delete s.hidden[file];else{s.hidden[file]=true;if(s.cover===file){const nx=s.order.find(f=>!s.hidden[f]);if(nx)s.cover=nx;}}save();render();};
+      t.addEventListener('dragstart',e=>{t.classList.add('dragging');e.dataTransfer.setData('text/plain','I:'+file);e.dataTransfer.effectAllowed='move';});
+      t.addEventListener('dragend',()=>{t.classList.remove('dragging');grid.querySelectorAll('.tile.over').forEach(x=>x.classList.remove('over'));});
+      t.addEventListener('dragover',e=>{e.preventDefault();e.stopPropagation();t.classList.add('over');});
+      t.addEventListener('dragleave',()=>t.classList.remove('over'));
+      t.addEventListener('drop',e=>{e.preventDefault();e.stopPropagation();t.classList.remove('over');const d=e.dataTransfer.getData('text/plain');
+        if(!d||d.indexOf('I:')!==0)return;const from=d.slice(2);if(from===file)return;const arr=s.order;arr.splice(arr.indexOf(from),1);arr.splice(arr.indexOf(file),0,from);save();render();});
+      w.appendChild(t);const cap=document.createElement('div');cap.className='cap';cap.textContent=caption(p.slug,file);w.appendChild(cap);grid.appendChild(w);
+    });
+    list.appendChild(el);
+  });
+}
+
+/* Lightbox */
+let LB={slug:null,idx:0};
+const lb=document.getElementById('lb'),lbImg=document.getElementById('lbImg');
+function openLB(slug,idx){LB={slug,idx};lb.classList.add('on');document.body.style.overflow='hidden';showLB();}
+function closeLB(){lb.classList.remove('on');document.body.style.overflow='';}
+function showLB(){const p=BYSLUG[LB.slug],s=st(LB.slug),files=s.order;LB.idx=(LB.idx+files.length)%files.length;
+  const file=files[LB.idx];
+  lbImg.onerror=()=>{lbImg.onerror=null;lbImg.src=THUMB(p.slug,file);};
+  lbImg.src=IMG(p.slug,file);lbImg.alt=caption(p.slug,file);
+  document.getElementById('lbTitle').textContent=(s.info.title||p.title);
+  document.getElementById('lbCap').textContent=caption(p.slug,file)+(s.hidden[file]?'  · hidden':'')+(file===s.cover?'  · cover':'');
+  document.getElementById('lbCount').textContent=(LB.idx+1)+' / '+files.length;
+  const cb=document.getElementById('lbCover');cb.classList.toggle('on',file===s.cover);cb.textContent=file===s.cover?'★ Cover':'★ Set as cover';
+  const hb=document.getElementById('lbHide');hb.classList.toggle('on',!!s.hidden[file]);hb.textContent=s.hidden[file]?'◐ Hidden — show':'◐ Hide';}
+document.getElementById('lbPrev').onclick=()=>{LB.idx--;showLB();};
+document.getElementById('lbNext').onclick=()=>{LB.idx++;showLB();};
+document.getElementById('lbClose').onclick=closeLB;
+lb.addEventListener('click',e=>{if(e.target===lb)closeLB();});
+document.getElementById('lbCover').onclick=()=>{const s=st(LB.slug),f=s.order[LB.idx];s.cover=f;delete s.hidden[f];save();showLB();render();};
+document.getElementById('lbHide').onclick=()=>{const s=st(LB.slug),f=s.order[LB.idx];if(s.hidden[f])delete s.hidden[f];else{s.hidden[f]=true;if(s.cover===f){const nx=s.order.find(x=>!s.hidden[x]);if(nx)s.cover=nx;}}save();showLB();render();};
+document.addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;
+  if(e.key==='Escape')closeLB();else if(e.key==='ArrowLeft'){LB.idx--;showLB();}else if(e.key==='ArrowRight'){LB.idx++;showLB();}
+  else if(e.key.toLowerCase()==='c')document.getElementById('lbCover').click();else if(e.key.toLowerCase()==='h')document.getElementById('lbHide').click();});
+
+document.getElementById('search').addEventListener('input',e=>{q=e.target.value.trim().toLowerCase();render();});
+document.getElementById('expandBtn').onclick=(e)=>{expanded=!expanded;e.target.textContent=expanded?'Collapse details':'Expand details';render();};
+document.getElementById('addBtn').onclick=()=>{store._new.push({id:'new-'+Date.now()});save();filter='All';styleFilter='All';typeFilter='All';q='';document.getElementById('search').value='';render();window.scrollTo({top:0,behavior:'smooth'});};
+
+function buildExport(){
+  const dflt=p=>({cover:p.cover,order:p.images.join()});
+  const decisions=orderedProjects().map(p=>{const s=st(p.slug);
+    return {slug:p.slug,title:s.info.title||p.title,cover:s.cover,order:s.order,
+      hidden:Object.keys(s.hidden).filter(f=>s.hidden[f]),notes:s.notes||'',reviewed:!!s.reviewed,
+      info:{summary:s.info.summary||'',year:s.info.year||'',city:s.info.city||'',
+        expertise:s.info.expertise||p.expertise,status:s.info.status||p.status,
+        style:s.info.style||'',type:s.info.type||''}};
+  }).filter(x=>{const p=BYSLUG[x.slug],d=dflt(p);
+    return x.reviewed||x.notes||x.hidden.length||x.cover!==d.cover||x.order.join()!==d.order||
+      x.info.summary||x.info.year||x.info.city||x.info.style||x.info.type||x.info.expertise!==p.expertise||x.info.status!==p.status||x.title!==p.title;});
+  const newProjects=(store._new||[]).filter(n=>(n.title||'').trim()).map(n=>({title:n.title,expertise:n.expertise||'',status:n.status||'',style:n.style||'',type:n.type||'',year:n.year||'',city:n.city||'',summary:n.summary||'',notes:n.notes||''}));
+  return JSON.stringify({tool:'jwt-project-review',generatedAt:new Date().toISOString(),projectOrder:store._order,newProjects,decisions},null,2);
+}
+async function copyText(t){try{await navigator.clipboard.writeText(t);return true}catch(e){return false}}
+const dlg=document.getElementById('exportDlg');
+document.getElementById('exportBtn').onclick=async()=>{const t=buildExport();document.getElementById('exportText').value=t;await copyText(t);dlg.showModal();};
+document.getElementById('copyAgain').onclick=async(e)=>{const ok=await copyText(document.getElementById('exportText').value);e.target.textContent=ok?'Copied ✓':'Select & copy';};
+document.getElementById('closeDlg').onclick=()=>dlg.close();
+render();
+</script>
+</body>
+</html>
