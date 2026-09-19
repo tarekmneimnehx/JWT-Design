@@ -590,6 +590,9 @@ injectOnce('jwt-heroshow-css', `
   letter-spacing: var(--track-display); color: #FFFFFF; margin: 0;
   max-width: 18ch; text-wrap: balance;
 }
+.jwt-hero__titles { position: relative; }
+.jwt-hero__title { will-change: transform, opacity; }
+.jwt-hero__title--in { position: absolute; left: 0; right: 0; bottom: 0; }
 .jwt-hero__foot {
   display: flex; align-items: center; justify-content: space-between;
   gap: var(--space-6); flex-wrap: wrap;
@@ -723,7 +726,7 @@ function HeroShowcase({
   const backdrop = slides[backdropIdx] || {};
 
   /* Ease the motion so frames settle rather than tracking scroll linearly. */
-  const e = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+  const e = t; // linear: continuous motion across all frames — no settle/stop at each
   const baseRest = restOf(base);
   const nextRest = restOf(next);
   const nextIsInset = !!(next && next !== base && next.inset);
@@ -732,8 +735,10 @@ function HeroShowcase({
   /* How deep we are into this project's secondary frames — drives the backdrop
      darken, so the main image dims to a solid brand-grey (the logo mono) as its
      detail frames come forward, then clears again on the next project. */
-  const intoProject = Math.min(1, Math.max(0, f - backdropIdx));
-  const darken = Math.min(1, intoProject * 1.15);
+  const intoProject = Math.max(0, f - backdropIdx);
+  /* 0 at the main image, ~0.5 at the 2nd frame, full solid by the 3rd — then it
+     holds until the next project's main grows in over it and resets. */
+  const darken = Math.min(1, intoProject / 2);
 
   /* The two secondaries share one resting box and cross-fade in place. A frame
      that has not decoded yet stays at 0 opacity, so we never animate a blank
@@ -744,6 +749,11 @@ function HeroShowcase({
   const baseRestOpacity = nextIsInset ? 1 - ee : 1;
   const nextInsetScale = 0.985 + ee * 0.015;
   const nextMainInset = (1 - ee) * edge;
+  /* Title flows upward from the current project's name to the next as the new
+     main image grows in; within a project (inset frames) the title holds still. */
+  const titleP = nextIsMain ? ee : 0;
+  const curTitle = base.title;
+  const incTitle = nextIsMain && next ? next.title : null;
   const go = s => {
     if (onSelect && s && s.href) onSelect(s.href);
   };
@@ -814,9 +824,15 @@ function HeroShowcase({
     onClick: () => jump(i)
   }))), /*#__PURE__*/React.createElement("div", {
     className: "jwt-hero__chrome"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "jwt-hero__titles"
   }, /*#__PURE__*/React.createElement("h2", {
-    className: "jwt-hero__title"
-  }, shown.title), /*#__PURE__*/React.createElement("div", {
+    className: "jwt-hero__title",
+    style: { transform: `translateY(${-titleP * 0.7}em)`, opacity: 1 - titleP }
+  }, curTitle), incTitle && /*#__PURE__*/React.createElement("h2", {
+    className: "jwt-hero__title jwt-hero__title--in",
+    style: { transform: `translateY(${(1 - titleP) * 0.7}em)`, opacity: titleP }
+  }, incTitle)), /*#__PURE__*/React.createElement("div", {
     className: "jwt-hero__foot"
   }, /*#__PURE__*/React.createElement("button", {
     className: "jwt-hero__cta",
