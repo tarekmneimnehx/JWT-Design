@@ -140,16 +140,16 @@ const DEFAULT_LINKS = [
 
 const DEFAULT_PANEL = [
   { title: 'Disciplines', links: [
-    { label: 'Interiors', href: '#expertise/interiors' },
     { label: 'Architectural', href: '#expertise/architectural' },
+    { label: 'Interiors', href: '#expertise/interiors' },
     { label: 'Lighting', href: '#expertise/lighting' },
     { label: 'Landscape', href: '#expertise/landscape' },
   ]},
   { title: 'Sectors', links: [
     { label: 'Residential', href: '#projects/residential' },
+    { label: 'Commercial', href: '#projects/commercial' },
     { label: 'Hospitality', href: '#projects/hospitality' },
-    { label: 'Offices', href: '#projects/offices' },
-    { label: 'Spa & Wellness', href: '#projects/spa-wellness' },
+    { label: 'Landscape', href: '#projects/landscape' },
   ]},
 ];
 
