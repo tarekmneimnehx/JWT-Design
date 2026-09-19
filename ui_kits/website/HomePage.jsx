@@ -6,6 +6,29 @@
   const D = window.JWT_DATA;
   const I = window.JWT_IMG;
 
+  /* Full-screen hero video that plays each clip in turn and loops the list.
+     Muted + playsInline so it autoplays on desktop and mobile; the poster image
+     shows instantly while the first clip loads. */
+  function HeroVideo({ videos, poster }) {
+    const ref = React.useRef(null);
+    const [i, setI] = React.useState(0);
+    const single = videos.length <= 1;
+    React.useEffect(() => {
+      const v = ref.current;
+      if (!v) return;
+      v.load();
+      const p = v.play();
+      if (p && p.catch) p.catch(() => {});
+    }, [i]);
+    return (
+      <video ref={ref} autoPlay muted playsInline loop={single} poster={poster}
+        onEnded={single ? undefined : () => setI((n) => (n + 1) % videos.length)}
+        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}>
+        <source src={videos[i]} type="video/mp4" />
+      </video>
+    );
+  }
+
   function HomePage({ navigate }) {
     /* The three projects showcased on the stage, in order. Each contributes a
        group of THREE frames (one main + two secondary), chosen with the studio. */
@@ -18,7 +41,7 @@
        single full-screen image. The image also serves as the video's poster, so
        it shows instantly while the video loads (and if the video is absent). */
     const heroImg = (D.projects.find((p) => p.slug === 'ronaldo-muchawar') || D.projects.find((p) => p.hasImagery) || {}).img;
-    const heroVideo = D.studio.heroVideo;
+    const heroVideos = D.studio.heroVideos || [];
 
     /* Stage slides — per project, exactly THREE frames: a main full-bleed frame
        followed by two that rest inset over it (so each project shows three
@@ -44,11 +67,8 @@
 
         {/* HERO — a single full-screen image with the title overlaid. */}
         <div style={{ position: 'relative', height: '100vh', overflow: 'hidden', background: 'var(--char-900)' }}>
-          {heroVideo ? (
-            <video autoPlay muted loop playsInline poster={heroImg}
-              style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}>
-              <source src={heroVideo} type="video/mp4" />
-            </video>
+          {heroVideos.length > 0 ? (
+            <HeroVideo videos={heroVideos} poster={heroImg} />
           ) : heroImg ? (
             <img src={heroImg} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
           ) : null}

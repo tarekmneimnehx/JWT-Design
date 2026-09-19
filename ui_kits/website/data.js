@@ -144,9 +144,13 @@
       whatsapp: '971585397971',              // digits only, for wa.me links
       whatsappDisplay: '+971 58 539 7971',
       locations: 'UAE | Lebanon | Syria',
-      /* Home hero background video. Leave '' to use the hero image. When a video
-         is added at assets/video/hero.mp4, set this to '../../assets/video/hero.mp4'. */
-      heroVideo: '../../assets/video/hero.mp4?v=1',
+      /* Home hero background videos — played full-screen, muted, one after another
+         on a loop. Empty array falls back to the hero image. */
+      heroVideos: [
+        '../../assets/video/hero.mp4?v=1',
+        '../../assets/video/hero-2.mp4?v=1',
+        '../../assets/video/hero-3.mp4?v=1',
+      ],
       instagram: '@jwtdesignstudio',
       instagramUrl: 'https://www.instagram.com/jwtdesignstudio/',
       linkedin: 'JWT Design Studio',
