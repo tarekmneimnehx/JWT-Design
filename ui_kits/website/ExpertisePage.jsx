@@ -100,7 +100,7 @@
           <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.5rem' }}>
             <Eyebrow dot tone="inverse">Sectors</Eyebrow>
             <h2 style={{ font: 'var(--display-xl)', color: 'var(--paper)', maxWidth: '24ch', textWrap: 'balance' }}>
-              Residential, hospitality, offices, spa &amp; wellness.
+              Residential, commercial, hospitality &amp; landscape.
             </h2>
             <Button variant="accent" size="lg" withArrow onClick={() => navigate('#projects')}>Browse projects</Button>
           </div>

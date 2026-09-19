@@ -162,34 +162,37 @@
     styles: ['Classical', 'Modern'],
     types: ['Interior', 'Architecture'],
 
+    /* Architecture leads the disciplines. Each carries a representative image
+       pulled from the portfolio (an exterior for Architectural, an interior for
+       Interiors, a night scene for Lighting, an outdoor scene for Landscape). */
     expertise: [
       {
-        slug: 'interiors', index: '01', title: 'Interiors',
-        lede: 'Tailor-made interiors, resolved to the last detail — from the first spatial move to the final styled layer.',
-        body: 'We shape how a space is entered, used and remembered: planning, materials, bespoke joinery, furniture and the finishing curation. Every scheme is drawn around its owner rather than a house style.',
-        services: ['Space planning', 'Material & finish palettes', 'Bespoke joinery', 'FF&E and procurement', 'Styling & handover'],
-        img: I.ronLiving,
-      },
-      {
-        slug: 'architectural', index: '02', title: 'Architectural',
+        slug: 'architectural', index: '01', title: 'Architectural',
         lede: 'Structure, envelope and light — the architectural groundwork that lets an interior work effortlessly.',
         body: 'We rework plans, openings and volumes, coordinate the technical package and manage the trades on site, so the built result matches the drawings exactly.',
         services: ['Concept & massing', 'Technical drawings', 'Facade & envelope', 'Fit-out coordination', 'Site supervision & snagging'],
-        img: I.ronAtrium,
+        img: imgPath('sh-butti-villa', 'sh-butti-villa-01-entrance-driveway.jpg'),
+      },
+      {
+        slug: 'interiors', index: '02', title: 'Interiors',
+        lede: 'Tailor-made interiors, resolved to the last detail — from the first spatial move to the final styled layer.',
+        body: 'We shape how a space is entered, used and remembered: planning, materials, bespoke joinery, furniture and the finishing curation. Every scheme is drawn around its owner rather than a house style.',
+        services: ['Space planning', 'Material & finish palettes', 'Bespoke joinery', 'FF&E and procurement', 'Styling & handover'],
+        img: imgPath('gg-residence', 'gg-residence-04-living-seating.jpg'),
       },
       {
         slug: 'lighting', index: '03', title: 'Lighting',
         lede: 'Light as a material. Layered, dimmable, and designed for how a room is used at every hour.',
         body: 'Architectural, decorative and task layers are specified together and commissioned scene by scene — the quietest discipline with the largest effect on how a space feels.',
         services: ['Lighting concept', 'Architectural detailing', 'Decorative selection', 'Circuiting & controls', 'On-site commissioning'],
-        img: I.ronStair,
+        img: imgPath('vk-residence', 'vk-residence-06-living-night.jpg'),
       },
       {
         slug: 'landscape', index: '04', title: 'Landscape',
         lede: 'The ground, the planting and the threshold between inside and out.',
         body: 'Courtyards, terraces and planted thresholds designed with the same care as the rooms they serve — so the view out is composed, not left over.',
         services: ['Landscape concept', 'Planting design', 'Hardscape & levels', 'External lighting', 'Terrace & pool surrounds'],
-        img: I.ronAtrium,
+        img: imgPath('jpl-landscape', 'jpl-landscape-05-pergola-lounge.jpg'),
       },
     ],
 
