@@ -6,24 +6,42 @@
      type:    'article' | 'news',   // 'article' = external coverage to reshare;
                                      // 'news'    = the studio's own announcement
      title:   'Headline text',
-     outlet:  'Publication name',    // for articles (e.g. "Architectural Digest ME")
+     outlet:  'Publication name',    // for articles (e.g. "Gulf Magazine")
      date:    '2024-09',             // 'YYYY', 'YYYY-MM' or 'YYYY-MM-DD' — used to sort (newest first)
      url:     'https://…',           // link opened in a new tab (articles / source)
      image:   '../../assets/press/<file>.jpg',  // OPTIONAL thumbnail (put files in assets/press/)
      excerpt: 'One or two lines of summary.'     // OPTIONAL
    }
 
-   To add coverage: append an object below. Newest items show first automatically. */
+   To add coverage: append an object below. Newest items show first automatically
+   (add a `date` to control the order; items without a date keep the order below). */
 window.JWT_PRESS = [
-  /* Example (delete or replace):
   {
     type: 'article',
-    title: 'How two sisters are shaping calm, tailor-made interiors',
-    outlet: 'Architectural Digest Middle East',
-    date: '2024-09',
-    url: 'https://example.com/jwt-feature',
-    image: '',
-    excerpt: 'A feature on JWT Design Studio’s end-to-end approach across the UAE, Lebanon and Syria.'
+    title: 'Jinane & Joelle Touma: “Together, we are better”',
+    outlet: 'Zahrat Al Khaleej',
+    date: '',
+    url: 'https://www.zahratalkhaleej.ae/article/4290594/جنان-وجويل-توما--نحن-معا-أفضل',
   },
-  */
+  {
+    type: 'article',
+    title: 'Jinan Touma is creating spaces with identity',
+    outlet: 'Gulf Magazine',
+    date: '',
+    url: 'https://gulfmagazine.co/jinan-touma-is-creating-spaces-with-identity/',
+  },
+  {
+    type: 'article',
+    title: 'Joelle Touma is building a bold new vision',
+    outlet: 'Gulf Magazine',
+    date: '',
+    url: 'https://gulfmagazine.co/joelle-touma-is-building-a-bold-new-vision-for/',
+  },
+  {
+    type: 'article',
+    title: 'JWT Design Studio, featured in Sayidaty',
+    outlet: 'Sayidaty Magazine',
+    date: '',
+    url: 'https://magazine.sayidaty.net/books/dqqx/#p=84',
+  },
 ];

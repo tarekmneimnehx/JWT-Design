@@ -213,7 +213,7 @@
     team: [
       /* The studio is the two sisters — no wider team. Portraits supplied by the
          studio; paths are relative to ui_kits/website/. */
-      { name: 'Jinane Touma', role: 'Co-Founder', studio: 'JWT Design Studio', img: '../../assets/team/jinane.jpg?v=3' },
+      { name: 'Jinane Touma', role: 'Co-Founder', studio: 'JWT Design Studio', img: '../../assets/team/jinane.jpg?v=4' },
       { name: 'Joelle Touma', role: 'Co-Founder · Interior Architect', studio: 'JWT Design Studio', img: '../../assets/team/joelle.jpg?v=3' },
     ],
 
