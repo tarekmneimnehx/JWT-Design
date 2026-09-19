@@ -138,7 +138,7 @@
       tagline: 'Turning vision into reality.',
       character: 'Calm, modern, studied.',
       founders: 'Jinan and Joelle Touma',
-      founded: 2017,
+      founded: 2004,
       email: 'info@jwtdesignstudio.com',
       phone: '+971 4 000 0000',              // placeholder
       whatsapp: '971585397971',              // digits only, for wa.me links
@@ -197,7 +197,7 @@
     ],
 
     stats: [
-      { value: '2017', label: 'Studio founded' },
+      { value: '2004', label: 'Studio founded' },
       { value: '3', label: 'Countries — UAE, Lebanon & Syria' },
       { value: '4', label: 'Disciplines in-house' },
       { value: '100', suffix: '%', label: 'Concept to completion' },

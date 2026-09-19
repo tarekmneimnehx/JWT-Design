@@ -39,7 +39,7 @@
               <div className="jwt-rg" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-5)', maxWidth: '380px' }}>
                 {D.team.map((t, i) => (
                   <Reveal key={t.name} delay={i * 90}>
-                    <PersonCard src={t.img} name={t.name} role={t.role} studio={D.studio.locations} href="#contact"
+                    <PersonCard src={t.img} name={t.name} role={t.role} href="#contact"
                       onClick={(e) => { e.preventDefault(); navigate('#contact'); }} />
                   </Reveal>
                 ))}

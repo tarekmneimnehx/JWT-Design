@@ -68,7 +68,7 @@
                 <div className="jwt-rg" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-4)', marginTop: 'var(--space-5)' }}>
                   {D.team.map((t) => (
                     <PersonCard key={t.name} src={t.img} name={t.name} role={t.role}
-                      studio={D.studio.locations} href="#about"
+                      href="#about"
                       onClick={(ev) => { ev.preventDefault(); navigate('#about'); }} />
                   ))}
                 </div>
