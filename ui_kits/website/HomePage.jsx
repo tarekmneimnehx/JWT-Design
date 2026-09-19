@@ -14,8 +14,11 @@
       .map((s) => D.projects.find((p) => p.slug === s))
       .filter((p) => p && (D.galleries[p.slug] || []).length);
 
-    /* Hero: a single full-screen image (a strong project cover). */
+    /* Hero: a background video when one is supplied (D.studio.heroVideo), else a
+       single full-screen image. The image also serves as the video's poster, so
+       it shows instantly while the video loads (and if the video is absent). */
     const heroImg = (D.projects.find((p) => p.slug === 'ronaldo-muchawar') || D.projects.find((p) => p.hasImagery) || {}).img;
+    const heroVideo = D.studio.heroVideo;
 
     /* Stage slides — per project, exactly THREE frames: a main full-bleed frame
        followed by two that rest inset over it (so each project shows three
@@ -41,9 +44,14 @@
 
         {/* HERO — a single full-screen image with the title overlaid. */}
         <div style={{ position: 'relative', height: '100vh', overflow: 'hidden', background: 'var(--char-900)' }}>
-          {heroImg && (
+          {heroVideo ? (
+            <video autoPlay muted loop playsInline poster={heroImg}
+              style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}>
+              <source src={heroVideo} type="video/mp4" />
+            </video>
+          ) : heroImg ? (
             <img src={heroImg} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
-          )}
+          ) : null}
           <div style={{
             position: 'absolute', inset: 0, pointerEvents: 'none',
             background: 'linear-gradient(180deg, rgba(44,46,53,0.34) 0%, rgba(44,46,53,0) 34%, rgba(44,46,53,0) 55%, rgba(44,46,53,0.62) 100%)',
