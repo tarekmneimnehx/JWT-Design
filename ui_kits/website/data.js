@@ -135,12 +135,15 @@
       character: 'Calm, modern, studied.',
       founders: 'Jinane and Joelle Touma',
       founded: 2017,
-      email: 'studio@jwtdesignstudio.com',   // placeholder
+      email: 'info@jwtdesignstudio.com',
       phone: '+971 4 000 0000',              // placeholder
-      whatsapp: '971400000000',              // placeholder
+      whatsapp: '971585397971',              // digits only, for wa.me links
+      whatsappDisplay: '+971 58 539 7971',
       locations: 'UAE | Lebanon | Syria',
       instagram: '@jwtdesignstudio',
       instagramUrl: 'https://www.instagram.com/jwtdesignstudio/',
+      linkedin: 'JWT Design Studio',
+      linkedinUrl: 'https://www.linkedin.com/company/jwt-design-studio/',
     },
 
     imageryNote: 'Renders are 3D visualisation; completed projects also show photography.',
@@ -203,7 +206,7 @@
     team: [
       /* The studio is the two sisters — no wider team. Portraits supplied by the
          studio; paths are relative to ui_kits/website/. */
-      { name: 'Jinane Touma', role: 'Co-Founder', studio: 'JWT Design Studio', img: '../../assets/team/jinane.jpg?v=2' },
+      { name: 'Jinane Touma', role: 'Co-Founder', studio: 'JWT Design Studio', img: '../../assets/team/jinane.jpg?v=3' },
       { name: 'Joelle Touma', role: 'Co-Founder · Interior Architect', studio: 'JWT Design Studio', img: '../../assets/team/joelle.jpg?v=2' },
     ],
 

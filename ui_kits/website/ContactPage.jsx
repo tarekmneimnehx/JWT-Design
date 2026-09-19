@@ -6,6 +6,9 @@
   const D = window.JWT_DATA;
   const { useState } = React;
 
+  /* Contact links inherit the detail's type but stay obviously tappable. */
+  const LINK = { color: 'inherit', textDecoration: 'none', borderBottom: '1px solid var(--line)' };
+
   function Detail({ label, value }) {
     return (
       <div style={{ borderTop: '1px solid var(--line-subtle)', paddingTop: '0.9rem' }}>
@@ -84,9 +87,11 @@
                 <img src={window.JWT_IMG.ronKitchen} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
-                <Detail label="Email" value={D.studio.email} />
+                <Detail label="Email" value={<a href={`mailto:${D.studio.email}`} style={LINK}>{D.studio.email}</a>} />
+                <Detail label="WhatsApp" value={<a href={`https://wa.me/${D.studio.whatsapp}`} target="_blank" rel="noopener noreferrer" style={LINK}>{D.studio.whatsappDisplay}</a>} />
                 <Detail label="Studios" value={D.studio.locations} />
-                <Detail label="Instagram" value={D.studio.instagram} />
+                <Detail label="Instagram" value={<a href={D.studio.instagramUrl} target="_blank" rel="noopener noreferrer" style={LINK}>{D.studio.instagram}</a>} />
+                <Detail label="LinkedIn" value={<a href={D.studio.linkedinUrl} target="_blank" rel="noopener noreferrer" style={LINK}>{D.studio.linkedin}</a>} />
               </div>
             </aside>
           </div>
