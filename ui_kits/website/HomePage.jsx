@@ -199,10 +199,17 @@
                 const link = item.url ? { href: item.url, target: '_blank', rel: 'noopener noreferrer' } : {};
                 return (
                   <Reveal key={(item.url || item.title) + i} delay={(i % 3) * 110}>
-                    <a {...link} style={{ textDecoration: 'none', color: 'inherit', display: 'block', borderTop: '1px solid var(--line)', paddingTop: 'var(--space-4)' }}>
-                      <span style={{ font: 'var(--label-sm)', letterSpacing: 'var(--track-label)', textTransform: 'uppercase', color: 'var(--text-muted)' }}>{meta}</span>
-                      <h3 style={{ font: 'var(--display-sm)', margin: '0.6rem 0 0', textWrap: 'balance' }}>{item.title}</h3>
-                      {item.url && <span style={{ font: 'var(--label-md)', color: 'var(--text-accent)', display: 'inline-block', marginTop: '0.6rem' }}>Read →</span>}
+                    <a {...link} style={{ textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column', border: '1px solid var(--line)', borderRadius: 'var(--radius-md)', overflow: 'hidden', background: 'var(--bg-elevated)', height: '100%' }}>
+                      {item.image && (
+                        <div style={{ aspectRatio: '16 / 10', overflow: 'hidden', background: 'var(--bg-fill)' }}>
+                          <img src={item.image} alt="" loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: item.pos || '50% 18%' }} />
+                        </div>
+                      )}
+                      <div style={{ padding: 'var(--space-5)', display: 'flex', flexDirection: 'column', gap: '0.5rem', flex: 1 }}>
+                        <span style={{ font: 'var(--label-sm)', letterSpacing: 'var(--track-label)', textTransform: 'uppercase', color: 'var(--text-muted)' }}>{meta}</span>
+                        <h3 style={{ font: 'var(--display-sm)', margin: 0, textWrap: 'balance' }}>{item.title}</h3>
+                        {item.url && <span style={{ font: 'var(--label-md)', color: 'var(--text-accent)', marginTop: 'auto', paddingTop: '0.4rem' }}>Read →</span>}
+                      </div>
                     </a>
                   </Reveal>
                 );
