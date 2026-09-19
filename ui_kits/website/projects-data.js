@@ -1820,7 +1820,7 @@ window.JWT_PROJECTS = {
     },
     {
       "slug": "ronaldo-muchawar",
-      "title": "Ronaldo Muchawar",
+      "title": "RM Project",
       "expertise": "Residential",
       "status": "Concept",
       "cover": "ronaldo-muchawar-01-exterior-facade.jpg",

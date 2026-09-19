@@ -7,25 +7,30 @@
   const I = window.JWT_IMG;
 
   function HomePage({ navigate }) {
+    /* The three projects showcased on the stage, in order. Each contributes a
+       group of THREE frames (one main + two secondary), chosen with the studio. */
+    const SHOWCASE = ['zbm-residence', 'ronaldo-muchawar', 'sh-butti-villa'];
+    const stageProjects = SHOWCASE
+      .map((s) => D.projects.find((p) => p.slug === s))
+      .filter((p) => p && (D.galleries[p.slug] || []).length);
+
     /* Hero: a single full-screen image (a strong project cover). */
     const heroImg = (D.projects.find((p) => p.slug === 'ronaldo-muchawar') || D.projects.find((p) => p.hasImagery) || {}).img;
 
-    /* The project the stage shows, then three more as cards below it. */
-    const lead = D.projects.find((p) => p.slug === 'ronaldo-muchawar') || D.projects.find((p) => p.hasImagery);
-    const featured = D.projects.filter((p) => p !== lead).slice(0, 3);
-
     /* Stage slides — per project, exactly THREE frames: a main full-bleed frame
-       followed by two that rest inset over it (so each primary project shows
-       three navigation dots, not one per gallery image). */
-    const stageSlides = lead
-      ? (D.galleries[lead.slug] || []).slice(0, 3).map((g, i) => ({
-          src: g.src || I[g.key],
-          title: lead.title,
-          meta: [lead.expertise, g.caption].filter(Boolean),
-          href: '#project/' + lead.slug,
-          inset: i % 3 !== 0,
-        }))
-      : [];
+       followed by two that rest inset over it (so each project shows three
+       navigation dots), the projects running in SHOWCASE order. */
+    const stageSlides = stageProjects.flatMap((p) =>
+      (D.galleries[p.slug] || []).slice(0, 3).map((g, i) => ({
+        src: g.src || I[g.key],
+        title: p.title,
+        meta: [p.expertise, g.caption].filter(Boolean),
+        href: '#project/' + p.slug,
+        inset: i % 3 !== 0,
+      })));
+
+    /* Three more projects as cards below the stage — excluding the showcased ones. */
+    const featured = D.projects.filter((p) => SHOWCASE.indexOf(p.slug) === -1).slice(0, 3);
 
     return (
       <div>

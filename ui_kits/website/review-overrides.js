@@ -184,7 +184,7 @@ window.JWT_REVIEW = {
 "type": "Interior"
 },
 "ronaldo-muchawar": {
-"title": "Ronaldo Muchawar",
+"title": "RM Project",
 "cover": "ronaldo-muchawar-11-roof-terrace-view.jpg",
 "images": [
 "ronaldo-muchawar-11-roof-terrace-view.jpg",
