@@ -146,7 +146,7 @@
       locations: 'UAE | Lebanon | Syria',
       /* Home hero background video. Leave '' to use the hero image. When a video
          is added at assets/video/hero.mp4, set this to '../../assets/video/hero.mp4'. */
-      heroVideo: '',
+      heroVideo: '../../assets/video/hero.mp4?v=1',
       instagram: '@jwtdesignstudio',
       instagramUrl: 'https://www.instagram.com/jwtdesignstudio/',
       linkedin: 'JWT Design Studio',
