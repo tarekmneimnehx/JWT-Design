@@ -96,7 +96,7 @@
         {/* Philosophy */}
         <Section bg="page" pad="lg">
           <div style={{ maxWidth: '32ch', margin: '0 auto', textAlign: 'center' }}>
-            <Quote size="xl" author="JWT Design Studio" role="UAE | Lebanon | Syria">
+            <Quote size="md" author="JWT Design Studio" role="UAE | Lebanon | Syria">
               Committed to delivering tailor-made projects, and turning vision into reality.
             </Quote>
           </div>
