@@ -16,19 +16,25 @@
 
   function ProjectsPage({ navigate, param }) {
     const [expertise, setExpertise] = useState('All');
+    const [style, setStyle] = useState('All');
+    const [type, setType] = useState('All');
     const [shown, setShown] = useState(PAGE);
 
     /* Honour deep links from the footer / nav. */
     useEffect(() => {
       setExpertise(EXPERTISE_FROM_SLUG[param] || 'All');
+      setStyle('All'); setType('All');
       setShown(PAGE);
     }, [param]);
 
-    const results = D.projects.filter((p) => expertise === 'All' || p.expertise === expertise);
+    const results = D.projects.filter((p) =>
+      (expertise === 'All' || p.expertise === expertise) &&
+      (style === 'All' || p.style === style) &&
+      (type === 'All' || p.type === type || p.type === 'Both'));
     const visible = results.slice(0, shown);
 
     const reset = (fn) => (v) => { fn(v); setShown(PAGE); };
-    const clearAll = () => { setExpertise('All'); setShown(PAGE); };
+    const clearAll = () => { setExpertise('All'); setStyle('All'); setType('All'); setShown(PAGE); };
 
     return (
       <div style={{ background: 'var(--bg-page)' }}>
@@ -48,6 +54,8 @@
             count={results.length} total={D.projects.length} onClear={clearAll}
             filters={[
               { name: 'Expertise', value: expertise, options: D.projectExpertises, onChange: reset(setExpertise) },
+              { name: 'Style', value: style, options: D.styles, onChange: reset(setStyle) },
+              { name: 'Type', value: type, options: D.types, onChange: reset(setType) },
             ]} />
         </Container>
 

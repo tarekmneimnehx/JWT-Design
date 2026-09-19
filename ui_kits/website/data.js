@@ -46,12 +46,22 @@
     return d ? d[0] + ' / ' + d[1] : '16 / 9';
   };
 
+  /* Per-project Style (Classical|Modern) and Type (Interior|Architecture|Both),
+     assigned in the studio review. Fill from the review export as they come in;
+     until then a project is simply untagged and the style/type filters skip it. */
+  const PROJECT_TAGS = {
+    // 'shikhana': { style: 'Modern', type: 'Interior' },
+  };
+
   const projects = MANIFEST.projects.map((p) => {
     const isC2C = p.status === 'Concept to Completion';
+    const tag = PROJECT_TAGS[p.slug] || {};
     return {
       slug: p.slug,
       title: p.title,
       expertise: p.expertise,        // Residential | Commercial | Hospitality | Landscape
+      style: tag.style || null,      // Classical | Modern
+      type: tag.type || null,        // Interior | Architecture | Both
       status: p.status,              // Concept | Concept to Completion
       isC2C,
       imageCount: p.image_count,
@@ -127,6 +137,9 @@
     /* Portfolio filter categories + statuses, straight from the manifest. */
     projectExpertises: MANIFEST.expertises,
     statuses: MANIFEST.statuses,
+    /* Additional filter dimensions assigned in the review. */
+    styles: ['Classical', 'Modern'],
+    types: ['Interior', 'Architecture'],
 
     expertise: [
       {
