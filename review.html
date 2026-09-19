@@ -133,6 +133,21 @@ dialog::backdrop{background:rgba(20,20,20,.5)}
 .dlg textarea{width:100%;height:240px;font-family:ui-monospace,Menlo,monospace;font-size:11.5px;border:1px solid var(--line);border-radius:8px;padding:10px;background:var(--surface-2);color:var(--ink)}
 .dlgrow{display:flex;gap:8px;justify-content:flex-end;margin-top:12px}
 .empty{padding:60px 20px;text-align:center;color:var(--muted)}
+.arrlist{max-height:62vh;overflow:auto;margin:4px 0 2px;border:1px solid var(--line);border-radius:10px}
+.arow{display:flex;align-items:center;gap:10px;padding:7px 10px;border-bottom:1px solid var(--line-2);background:var(--surface)}
+.arow:last-child{border-bottom:none}
+.arow.drag{opacity:.4}.arow.over{outline:2px dashed var(--taupe);outline-offset:-2px;background:var(--surface-2)}
+.arow .ahandle{cursor:grab;color:var(--muted);font-size:15px;user-select:none;padding:0 2px}
+.arow .posin{width:46px;text-align:center;font-weight:700;font-size:13px;padding:6px 4px;border-radius:7px;border:1px solid var(--line);background:var(--surface-2);color:var(--ink);font-variant-numeric:tabular-nums}
+.arow .posin:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
+.arow .athumb{width:44px;height:33px;border-radius:6px;object-fit:cover;background:var(--surface-2);border:1px solid var(--line-2);flex:0 0 auto}
+.arow .atitle{font-size:13.5px;font-weight:700;color:var(--ink);flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.arow .aexp{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--accent);background:var(--accent-soft);padding:3px 7px;border-radius:5px;white-space:nowrap}
+.arow .astep{display:flex;flex-direction:column;gap:2px}
+.arow .astep button{width:22px;height:16px;border:1px solid var(--line);background:var(--surface);color:var(--muted);border-radius:5px;cursor:pointer;font-size:9px;line-height:1;padding:0}
+.arow .astep button:disabled{opacity:.3;cursor:default}
+.arrtip{font-size:12px;color:var(--muted);margin:0 0 10px}
+.arrtip b{color:var(--ink)}
 @media (max-width:640px){.grid{grid-template-columns:repeat(auto-fill,minmax(120px,1fr))}.fields{grid-template-columns:1fr}h1{font-size:15px}}
 </style>
 </head>
@@ -148,6 +163,7 @@ dialog::backdrop{background:rgba(20,20,20,.5)}
     <div class="chips" id="chips"></div>
     <span class="spacer"></span>
     <input class="search" id="search" type="search" placeholder="Search projects…" aria-label="Search">
+    <button class="btn ghost" id="arrangeBtn">⇅ Arrange order</button>
     <button class="btn ghost" id="addBtn">＋ Add project</button>
     <button class="btn ghost" id="expandBtn">Expand details</button>
     <button class="btn" id="exportBtn">Copy decisions</button>
@@ -169,6 +185,13 @@ dialog::backdrop{background:rgba(20,20,20,.5)}
   </div>
   <div class="lb__count" id="lbCount"></div>
 </div>
+
+<dialog id="arrangeDlg"><div class="dlg">
+  <h2>Arrange project order</h2>
+  <p class="arrtip">Two easy ways: <b>type a number</b> in the box to send a project to that position (1 = first), or <b>drag the ⋮⋮ handle</b> up and down. Changes save instantly.</p>
+  <div class="arrlist" id="arrangeList"></div>
+  <div class="dlgrow"><button class="btn" id="arrangeDone">Done</button></div>
+</div></dialog>
 
 <dialog id="exportDlg"><div class="dlg">
   <h2>Your decisions</h2>
@@ -229,6 +252,38 @@ function visible(){return orderedProjects().filter(p=>{const inf=st(p.slug).info
     &&(!q||p.title.toLowerCase().includes(q));});}
 
 function moveProject(slug,dir){const a=store._order,i=a.indexOf(slug),j=i+dir;if(j<0||j>=a.length)return;a.splice(i,1);a.splice(j,0,slug);save();render();}
+
+/* ── Easy "Arrange order" panel ─────────────────────────────────────────── */
+function arrMove(slug,dir){const a=store._order,i=a.indexOf(slug),j=i+dir;if(j<0||j>=a.length)return;a.splice(i,1);a.splice(j,0,slug);save();renderArrange();}
+function arrMoveTo(slug,pos){const a=store._order,i=a.indexOf(slug);if(i<0)return;let j=Math.max(0,Math.min(a.length-1,(parseInt(pos,10)||1)-1));if(j===i){renderArrange();return;}a.splice(i,1);a.splice(j,0,slug);save();renderArrange();}
+function renderArrange(){
+  const box=document.getElementById('arrangeList');if(!box)return;box.innerHTML='';
+  const order=store._order.filter(s=>BYSLUG[s]);
+  order.forEach((slug,idx)=>{
+    const p=BYSLUG[slug],s=st(slug),title=(s.info&&s.info.title)||p.title,exp=(s.info&&s.info.expertise)||p.expertise;
+    const row=document.createElement('div');row.className='arow';row.dataset.slug=slug;
+    row.innerHTML=`<span class="ahandle" draggable="true" title="Drag to reorder">⋮⋮</span>
+      <input class="posin tnum" type="number" min="1" max="${order.length}" value="${idx+1}" aria-label="Position of ${title.replace(/"/g,'&quot;')}">
+      <span class="astep"><button class="aup" ${idx===0?'disabled':''} aria-label="Move up">▲</button><button class="adn" ${idx===order.length-1?'disabled':''} aria-label="Move down">▼</button></span>
+      <img class="athumb" src="${THUMB(slug,s.cover)}" alt="" loading="lazy">
+      <span class="atitle">${title}</span>
+      <span class="aexp">${exp}</span>`;
+    row.querySelector('.aup').onclick=()=>arrMove(slug,-1);
+    row.querySelector('.adn').onclick=()=>arrMove(slug,1);
+    const pin=row.querySelector('.posin');
+    pin.addEventListener('change',()=>arrMoveTo(slug,pin.value));
+    pin.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();arrMoveTo(slug,pin.value);}});
+    const h=row.querySelector('.ahandle');
+    h.addEventListener('dragstart',e=>{row.classList.add('drag');e.dataTransfer.setData('text/plain','A:'+slug);e.dataTransfer.effectAllowed='move';});
+    h.addEventListener('dragend',()=>row.classList.remove('drag'));
+    row.addEventListener('dragover',e=>{if((e.dataTransfer.types||[]).length){e.preventDefault();row.classList.add('over');}});
+    row.addEventListener('dragleave',()=>row.classList.remove('over'));
+    row.addEventListener('drop',e=>{const d=e.dataTransfer.getData('text/plain');row.classList.remove('over');
+      if(!d||d.indexOf('A:')!==0)return;e.preventDefault();const from=d.slice(2);if(from===slug)return;
+      const a=store._order;a.splice(a.indexOf(from),1);a.splice(a.indexOf(slug),0,from);save();renderArrange();});
+    box.appendChild(row);
+  });
+}
 
 function renderNewCard(n){
   const el=document.createElement('section');el.className='proj';el.style.borderColor='var(--accent)';
@@ -362,6 +417,11 @@ document.addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;
 document.getElementById('search').addEventListener('input',e=>{q=e.target.value.trim().toLowerCase();render();});
 document.getElementById('expandBtn').onclick=(e)=>{expanded=!expanded;e.target.textContent=expanded?'Collapse details':'Expand details';render();};
 document.getElementById('addBtn').onclick=()=>{store._new.push({id:'new-'+Date.now()});save();filter='All';styleFilter='All';typeFilter='All';q='';document.getElementById('search').value='';render();window.scrollTo({top:0,behavior:'smooth'});};
+
+const arrangeDlg=document.getElementById('arrangeDlg');
+document.getElementById('arrangeBtn').onclick=()=>{renderArrange();arrangeDlg.showModal();};
+document.getElementById('arrangeDone').onclick=()=>arrangeDlg.close();
+arrangeDlg.addEventListener('close',()=>render());
 
 function buildExport(){
   const dflt=p=>({cover:p.cover,order:p.images.join()});
