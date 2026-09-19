@@ -26,14 +26,16 @@
 <script src="../../_ds_bundle.js?v=4"></script>
 <script src="projects-data.js?v=3"></script>
 <script src="review-overrides.js?v=2"></script>
-<script src="data.js?v=13"></script>
+<script src="press-data.js?v=1"></script>
+<script src="data.js?v=14"></script>
 <script type="text/babel" src="kit-ui.jsx?v=3"></script>
-<script type="text/babel" src="HomePage.jsx?v=8"></script>
+<script type="text/babel" src="HomePage.jsx?v=9"></script>
 <script type="text/babel" src="AboutPage.jsx?v=5"></script>
 <script type="text/babel" src="ExpertisePage.jsx?v=4"></script>
 <script type="text/babel" src="ProjectsPage.jsx?v=5"></script>
 <script type="text/babel" src="ProjectPage.jsx?v=9"></script>
 <script type="text/babel" src="ContactPage.jsx?v=6"></script>
+<script type="text/babel" src="PressPage.jsx?v=1"></script>
 
 <script type="text/babel">
   const NS = window.JWTDesignStudioDesignSystem_593c65;
@@ -72,6 +74,7 @@
       case 'projects':  screen = <S.ProjectsPage navigate={navigate} param={route.param} />; break;
       case 'project':   screen = <S.ProjectPage navigate={navigate} param={route.param} />; break;
       case 'contact':   screen = <S.ContactPage navigate={navigate} />; break;
+      case 'press':     screen = <S.PressPage navigate={navigate} />; break;
       default:          screen = <S.HomePage navigate={navigate} />;
     }
 
@@ -100,6 +103,7 @@
             { title: 'Studio', links: [
               { label: 'About', href: '#about' },
               { label: 'Projects', href: '#projects' },
+              { label: 'Press', href: '#press' },
               { label: 'Contact', href: '#contact' },
             ]},
           ]}

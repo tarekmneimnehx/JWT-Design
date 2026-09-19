@@ -184,6 +184,39 @@
           </Reveal>
         </Section>
 
+        {/* Press */}
+        <Section bg="page" pad="md">
+          <Reveal>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '1rem', marginBottom: 'var(--space-6)' }}>
+              <Eyebrow dot>Press</Eyebrow>
+              <Button variant="link" withArrow onClick={() => navigate('#press')}>All press</Button>
+            </div>
+          </Reveal>
+          {D.press && D.press.length > 0 ? (
+            <div className="jwt-rg jwt-rg-multi" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 'var(--space-6)' }}>
+              {D.press.slice(0, 3).map((item, i) => {
+                const meta = [item.outlet, (String(item.date || '').split('-')[0])].filter(Boolean).join('  ·  ');
+                const link = item.url ? { href: item.url, target: '_blank', rel: 'noopener noreferrer' } : {};
+                return (
+                  <Reveal key={(item.url || item.title) + i} delay={(i % 3) * 110}>
+                    <a {...link} style={{ textDecoration: 'none', color: 'inherit', display: 'block', borderTop: '1px solid var(--line)', paddingTop: 'var(--space-4)' }}>
+                      <span style={{ font: 'var(--label-sm)', letterSpacing: 'var(--track-label)', textTransform: 'uppercase', color: 'var(--text-muted)' }}>{meta}</span>
+                      <h3 style={{ font: 'var(--display-sm)', margin: '0.6rem 0 0', textWrap: 'balance' }}>{item.title}</h3>
+                      {item.url && <span style={{ font: 'var(--label-md)', color: 'var(--text-accent)', display: 'inline-block', marginTop: '0.6rem' }}>Read →</span>}
+                    </a>
+                  </Reveal>
+                );
+              })}
+            </div>
+          ) : (
+            <Reveal>
+              <p style={{ font: 'var(--text-lg)', color: 'var(--text-secondary)', maxWidth: '48ch' }}>
+                Selected coverage, features and studio news — coming soon.
+              </p>
+            </Reveal>
+          )}
+        </Section>
+
         {/* CTA */}
         <Section bg="sunken" pad="lg">
           <Reveal>

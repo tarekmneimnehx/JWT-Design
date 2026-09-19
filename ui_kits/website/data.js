@@ -126,6 +126,10 @@
       }
     });
 
+  /* Press & news — from press-data.js (window.JWT_PRESS), newest first. */
+  const PRESS = (window.JWT_PRESS || []).slice()
+    .sort((a, b) => String(b.date || '').localeCompare(String(a.date || '')));
+
   window.JWT_DATA = {
     studio: {
       name: 'JWT',
@@ -199,6 +203,7 @@
     projects,
     galleries,
     comparisons,
+    press: PRESS,
 
     /* A wide "together" portrait of the two founders, for the About page. */
     teamPhoto: '../../assets/team/founders.jpg?v=1',
