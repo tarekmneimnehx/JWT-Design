@@ -23,6 +23,7 @@ window.JWT_PRESS = [
     date: '',
     url: 'https://www.zahratalkhaleej.ae/article/4290594/جنان-وجويل-توما--نحن-معا-أفضل',
     image: '../../assets/team/founders-table.jpg?v=1',
+    pos: '50% 34%',
   },
   {
     type: 'article',
