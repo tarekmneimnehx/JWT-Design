@@ -51,6 +51,7 @@ h1{font-size:16px;font-weight:700;margin:0;letter-spacing:-.01em}
 .chip:hover{border-color:var(--taupe)}
 .chip[aria-pressed="true"]{background:var(--slate);color:#fff;border-color:var(--slate)}
 .chip .n{opacity:.6;margin-left:5px;font-weight:500}
+.grouplbl{align-self:center;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-left:8px}
 input.search{font-size:13px;padding:7px 12px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);min-width:150px;flex:1 1 150px}
 input.search:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
 .btn{font-size:12px;font-weight:700;padding:8px 13px;border-radius:8px;cursor:pointer;border:1px solid var(--slate);background:var(--slate);color:#fff;white-space:nowrap}
@@ -192,17 +193,26 @@ function st(slug){const p=BYSLUG[slug];
   p.images.forEach(f=>{if(!s.order.includes(f))s.order.push(f)});
   if(!p.images.includes(s.cover))s.cover=p.images.includes(p.cover)?p.cover:s.order[0];
   s.hidden=s.hidden||{}; s.info=s.info||{}; return s;}
-let filter='All',q='',expanded=false;
+let filter='All',styleFilter='All',typeFilter='All',q='',expanded=false;
 const list=document.getElementById('list');
-const canReorder=()=>filter==='All'&&!q;
+const canReorder=()=>filter==='All'&&styleFilter==='All'&&typeFilter==='All'&&!q;
 
+function tagCount(k,v){return PROJECTS.filter(p=>{const s=store[p.slug];return s&&s.info&&s.info[k]===v;}).length;}
 function renderChips(){const c=document.getElementById('chips');c.innerHTML='';
-  const mk=(name,n)=>{const b=document.createElement('button');b.className='chip';b.setAttribute('aria-pressed',filter===name);
-    b.innerHTML=name+(n!=null?` <span class="n tnum">${n}</span>`:'');b.onclick=()=>{filter=name;render()};return b;};
-  c.appendChild(mk('All',PROJECTS.length));EXPERTISES.forEach(e=>c.appendChild(mk(e,PROJECTS.filter(p=>p.expertise===e).length)));}
+  const grp=(txt)=>{const s=document.createElement('span');s.className='grouplbl';s.textContent=txt;c.appendChild(s);};
+  const mk=(name,n,cur,setfn)=>{const b=document.createElement('button');b.className='chip';b.setAttribute('aria-pressed',cur===name);
+    b.innerHTML=name+(n!=null?` <span class="n tnum">${n}</span>`:'');b.onclick=()=>{setfn(name);render()};return b;};
+  c.appendChild(mk('All',PROJECTS.length,filter,v=>filter=v));
+  EXPERTISES.forEach(e=>c.appendChild(mk(e,PROJECTS.filter(p=>p.expertise===e).length,filter,v=>filter=v)));
+  grp('Style');['All','Classical','Modern'].forEach(v=>c.appendChild(mk(v,v==='All'?null:tagCount('style',v),styleFilter,x=>styleFilter=x)));
+  grp('Type');['All','Interior','Architecture','Both'].forEach(v=>c.appendChild(mk(v,v==='All'?null:tagCount('type',v),typeFilter,x=>typeFilter=x)));}
 function updateProgress(){document.getElementById('revcount').textContent=PROJECTS.filter(p=>store[p.slug]&&store[p.slug].reviewed).length;}
 function orderedProjects(){return store._order.map(s=>BYSLUG[s]).filter(Boolean);}
-function visible(){return orderedProjects().filter(p=>(filter==='All'||p.expertise===filter)&&(!q||p.title.toLowerCase().includes(q)));}
+function visible(){return orderedProjects().filter(p=>{const inf=st(p.slug).info;
+  return (filter==='All'||p.expertise===filter)
+    &&(styleFilter==='All'||inf.style===styleFilter)
+    &&(typeFilter==='All'||inf.type===typeFilter)
+    &&(!q||p.title.toLowerCase().includes(q));});}
 
 function moveProject(slug,dir){const a=store._order,i=a.indexOf(slug),j=i+dir;if(j<0||j>=a.length)return;a.splice(i,1);a.splice(j,0,slug);save();render();}
 
@@ -235,6 +245,8 @@ function render(){
           <div class="field"><label>Expertise</label><select data-k="expertise">${EXPERTISES.map(e=>`<option ${e===exp?'selected':''}>${e}</option>`).join('')}</select></div>
           <div class="field"><label>Status</label><select data-k="status">${STATUSES.map(x=>`<option ${x===status?'selected':''}>${x}</option>`).join('')}</select></div>
           <div class="field"><label>City / location</label><input data-k="city" placeholder="e.g. Dubai, UAE" value="${(info.city||'').replace(/"/g,'&quot;')}"></div>
+          <div class="field"><label>Style</label><select data-k="style"><option value="" ${!info.style?'selected':''}>—</option><option ${info.style==='Classical'?'selected':''}>Classical</option><option ${info.style==='Modern'?'selected':''}>Modern</option></select></div>
+          <div class="field"><label>Interior / Architecture</label><select data-k="type"><option value="" ${!info.type?'selected':''}>—</option><option ${info.type==='Interior'?'selected':''}>Interior</option><option ${info.type==='Architecture'?'selected':''}>Architecture</option><option ${info.type==='Both'?'selected':''}>Both</option></select></div>
           <div class="field"><label>Cover</label><input value="${caption(p.slug,s.cover).replace(/"/g,'&quot;')}" readonly></div>
           <div class="field full"><label>Summary (1–2 sentences shown on the project page)</label><textarea data-k="summary" placeholder="What the space is and what makes it special…">${(info.summary||'').replace(/</g,'&lt;')}</textarea></div>
         </div>
@@ -319,10 +331,11 @@ function buildExport(){
     return {slug:p.slug,title:s.info.title||p.title,cover:s.cover,order:s.order,
       hidden:Object.keys(s.hidden).filter(f=>s.hidden[f]),notes:s.notes||'',reviewed:!!s.reviewed,
       info:{summary:s.info.summary||'',year:s.info.year||'',city:s.info.city||'',
-        expertise:s.info.expertise||p.expertise,status:s.info.status||p.status}};
+        expertise:s.info.expertise||p.expertise,status:s.info.status||p.status,
+        style:s.info.style||'',type:s.info.type||''}};
   }).filter(x=>{const p=BYSLUG[x.slug],d=dflt(p);
     return x.reviewed||x.notes||x.hidden.length||x.cover!==d.cover||x.order.join()!==d.order||
-      x.info.summary||x.info.year||x.info.city||x.info.expertise!==p.expertise||x.info.status!==p.status||x.title!==p.title;});
+      x.info.summary||x.info.year||x.info.city||x.info.style||x.info.type||x.info.expertise!==p.expertise||x.info.status!==p.status||x.title!==p.title;});
   return JSON.stringify({tool:'jwt-project-review',generatedAt:new Date().toISOString(),projectOrder:store._order,decisions},null,2);
 }
 async function copyText(t){try{await navigator.clipboard.writeText(t);return true}catch(e){return false}}
