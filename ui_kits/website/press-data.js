@@ -47,6 +47,7 @@ window.JWT_PRESS = [
     outlet: 'Sayidaty Magazine',
     date: '',
     url: 'https://magazine.sayidaty.net/books/dqqx/#p=84',
-    image: '../../assets/team/founders.jpg?v=2',
+    image: '../../assets/press/sayidaty.jpg?v=1',
+    pos: 'center',
   },
 ];
