@@ -122,6 +122,8 @@
     imageryNote: 'Renders are 3D visualisation; completed projects also show photography.',
 
     disciplines: DISCIPLINES,
+    /* Studio geography — used by the contact form. */
+    regions: ['UAE', 'Lebanon', 'Syria'],
     /* Portfolio filter categories + statuses, straight from the manifest. */
     projectExpertises: MANIFEST.expertises,
     statuses: MANIFEST.statuses,

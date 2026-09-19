@@ -55,17 +55,17 @@
                   <Input label="Phone" placeholder="+971 50 000 0000" />
                   <Select label="Region" defaultValue="">
                     <option value="" disabled>Select…</option>
-                    {D.regions.map((r) => <option key={r}>{r}</option>)}
+                    {(D.regions || []).map((r) => <option key={r}>{r}</option>)}
                     <option>Elsewhere</option>
                   </Select>
                   <Select label="Expertise required" defaultValue="">
                     <option value="" disabled>Select…</option>
-                    {D.disciplines.map((d) => <option key={d}>{d}</option>)}
-                    <option>All three</option>
+                    {(D.disciplines || []).map((d) => <option key={d}>{d}</option>)}
+                    <option>Not sure yet</option>
                   </Select>
-                  <Select label="Sector" defaultValue="">
+                  <Select label="Project type" defaultValue="">
                     <option value="" disabled>Select…</option>
-                    {D.sectors.map((s) => <option key={s}>{s}</option>)}
+                    {(D.projectExpertises || []).map((s) => <option key={s}>{s}</option>)}
                   </Select>
                   <div style={{ gridColumn: '1 / -1' }}>
                     <Textarea label="About your project" rows={4}
