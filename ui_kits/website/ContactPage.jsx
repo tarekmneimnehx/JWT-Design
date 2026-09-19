@@ -9,6 +9,25 @@
   /* Contact links inherit the detail's type but stay obviously tappable. */
   const LINK = { color: 'inherit', textDecoration: 'none', borderBottom: '1px solid var(--line)' };
 
+  /* Email: opens the default mail app via mailto where one exists, and always
+     copies the address to the clipboard as a fallback (with a brief confirmation)
+     so it works even on desktops with no mail client configured. */
+  function EmailValue() {
+    const [copied, setCopied] = useState(false);
+    const onClick = () => {
+      try {
+        if (navigator.clipboard) navigator.clipboard.writeText(D.studio.email);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 1600);
+      } catch (e) { /* clipboard unavailable — mailto still fires */ }
+    };
+    return (
+      <a href={`mailto:${D.studio.email}`} style={LINK} onClick={onClick}>
+        {D.studio.email}{copied ? '  ·  ✓ copied' : ''}
+      </a>
+    );
+  }
+
   function Detail({ label, value }) {
     return (
       <div style={{ borderTop: '1px solid var(--line-subtle)', paddingTop: '0.9rem' }}>
@@ -87,7 +106,7 @@
                 <img src={window.JWT_IMG.ronKitchen} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
-                <Detail label="Email" value={<a href={`mailto:${D.studio.email}`} style={LINK}>{D.studio.email}</a>} />
+                <Detail label="Email" value={<EmailValue />} />
                 <Detail label="WhatsApp" value={<a href={`https://wa.me/${D.studio.whatsapp}`} target="_blank" rel="noopener noreferrer" style={LINK}>{D.studio.whatsappDisplay}</a>} />
                 <Detail label="Studios" value={D.studio.locations} />
                 <Detail label="Instagram" value={<a href={D.studio.instagramUrl} target="_blank" rel="noopener noreferrer" style={LINK}>{D.studio.instagram}</a>} />
