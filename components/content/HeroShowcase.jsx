@@ -32,7 +32,7 @@ injectOnce('jwt-heroshow-css', `
 }
 .jwt-hero__title {
   font-family: var(--font-display); font-weight: var(--fw-ultralight);
-  font-size: clamp(2.5rem, 5.4vw, 5rem); line-height: 1.02;
+  font-size: clamp(2.1rem, 4.4vw, 3.9rem); line-height: 1.04;
   letter-spacing: var(--track-display); color: #FFFFFF; margin: 0;
   max-width: 18ch; text-wrap: balance;
 }
@@ -246,8 +246,8 @@ export function HeroShowcase({
 
         <div className="jwt-hero__chrome">
           <div className="jwt-hero__titles">
-            <h2 className="jwt-hero__title" style={{ transform: `translateY(${-titleP * 0.7}em)`, opacity: 1 - titleP }}>{curTitle}</h2>
-            {incTitle && <h2 className="jwt-hero__title jwt-hero__title--in" style={{ transform: `translateY(${(1 - titleP) * 0.7}em)`, opacity: titleP }}>{incTitle}</h2>}
+            <h2 className="jwt-hero__title" style={{ transform: `translateY(${-titleP * 0.4}em)`, opacity: 1 - titleP }}>{curTitle}</h2>
+            {incTitle && <h2 className="jwt-hero__title jwt-hero__title--in" style={{ transform: `translateY(${(1 - titleP) * 0.4}em)`, opacity: titleP }}>{incTitle}</h2>}
           </div>
           <div className="jwt-hero__foot">
             <button className="jwt-hero__cta" onClick={() => go(shown)}>{cta}</button>

@@ -586,7 +586,7 @@ injectOnce('jwt-heroshow-css', `
 }
 .jwt-hero__title {
   font-family: var(--font-display); font-weight: var(--fw-ultralight);
-  font-size: clamp(2.5rem, 5.4vw, 5rem); line-height: 1.02;
+  font-size: clamp(2.1rem, 4.4vw, 3.9rem); line-height: 1.04;
   letter-spacing: var(--track-display); color: #FFFFFF; margin: 0;
   max-width: 18ch; text-wrap: balance;
 }
@@ -828,10 +828,10 @@ function HeroShowcase({
     className: "jwt-hero__titles"
   }, /*#__PURE__*/React.createElement("h2", {
     className: "jwt-hero__title",
-    style: { transform: `translateY(${-titleP * 0.7}em)`, opacity: 1 - titleP }
+    style: { transform: `translateY(${-titleP * 0.4}em)`, opacity: 1 - titleP }
   }, curTitle), incTitle && /*#__PURE__*/React.createElement("h2", {
     className: "jwt-hero__title jwt-hero__title--in",
-    style: { transform: `translateY(${(1 - titleP) * 0.7}em)`, opacity: titleP }
+    style: { transform: `translateY(${(1 - titleP) * 0.4}em)`, opacity: titleP }
   }, incTitle)), /*#__PURE__*/React.createElement("div", {
     className: "jwt-hero__foot"
   }, /*#__PURE__*/React.createElement("button", {
