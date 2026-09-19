@@ -46,48 +46,62 @@
     return d ? d[0] + ' / ' + d[1] : '16 / 9';
   };
 
-  /* Per-project Style (Classical|Modern) and Type (Interior|Architecture|Both),
-     assigned in the studio review. Fill from the review export as they come in;
-     until then a project is simply untagged and the style/type filters skip it. */
-  const PROJECT_TAGS = {
-    // 'shikhana': { style: 'Modern', type: 'Interior' },
-  };
+  /* Studio review overrides — covers, curated image sets, titles, project order
+     and the Style/Type tags chosen with the studio (window.JWT_REVIEW, loaded
+     before this file). Regenerate that file from a new review export. */
+  const REVIEW = window.JWT_REVIEW || { order: [], projects: {} };
+  const MP = {}; MANIFEST.projects.forEach((p) => { MP[p.slug] = p; });
 
   const projects = MANIFEST.projects.map((p) => {
-    const isC2C = p.status === 'Concept to Completion';
-    const tag = PROJECT_TAGS[p.slug] || {};
+    const ov = (REVIEW.projects && REVIEW.projects[p.slug]) || {};
+    const status = ov.status || p.status;
+    const isC2C = status === 'Concept to Completion';
+    const images = (ov.images && ov.images.length) ? ov.images : p.images;
+    const cover = (ov.cover && images.indexOf(ov.cover) !== -1) ? ov.cover : images[0];
     return {
       slug: p.slug,
-      title: p.title,
-      expertise: p.expertise,        // Residential | Commercial | Hospitality | Landscape
-      style: tag.style || null,      // Classical | Modern
-      type: tag.type || null,        // Interior | Architecture | Both
-      status: p.status,              // Concept | Concept to Completion
+      title: ov.title || p.title,
+      expertise: ov.expertise || p.expertise,   // Residential | Commercial | Hospitality | Landscape
+      style: ov.style || null,                   // Classical | Modern
+      type: ov.type || null,                     // Interior | Architecture | Both
+      status,                                    // Concept | Concept to Completion
       isC2C,
-      imageCount: p.image_count,
+      images,                                    // curated, ordered, visible-only set
+      imageCount: images.length,
       hasImagery: true,
-      /* Pure-render projects are labelled "Visualisation"; C2C ones also hold
-         real photographs, so they are not. */
+      /* Pure-render projects are labelled "Visualisation"; C2C ones hold photos too. */
       visualisation: !isC2C,
-      cover: p.cover,
-      img: imgPath(p.slug, p.cover),
-      thumb: thumbPath(p.slug, p.cover),
-      ratio: ratioOf(p, p.cover),
+      cover,
+      img: imgPath(p.slug, cover),
+      thumb: thumbPath(p.slug, cover),
+      ratio: ratioOf(p, cover),
       concept: isC2C && p.concept ? p.concept.map((f) => imgPath(p.slug, f)) : null,
       completed: isC2C && p.completed ? p.completed.map((f) => imgPath(p.slug, f)) : null,
-      /* Legacy display fields the cards/pages may read — null so nothing stale shows. */
-      discipline: null, sector: null, region: null, year: null, summary: null,
+      discipline: null, sector: null, region: null,
+      year: ov.year || null,
+      city: ov.city || null,
+      summary: ov.summary || null,
     };
   });
 
-  /* Full galleries keyed by slug — { src, thumb, caption, ratio } per image. */
+  /* Apply the studio's project ordering. */
+  if (REVIEW.order && REVIEW.order.length) {
+    const oi = {}; REVIEW.order.forEach((s, i) => { oi[s] = i; });
+    projects.sort((a, b) => {
+      const ai = oi[a.slug] == null ? 999 : oi[a.slug];
+      const bi = oi[b.slug] == null ? 999 : oi[b.slug];
+      return ai - bi;
+    });
+  }
+
+  /* Full galleries keyed by slug — from each project's curated image set. */
   const galleries = {};
-  MANIFEST.projects.forEach((p) => {
-    galleries[p.slug] = p.images.map((f) => ({
-      src: imgPath(p.slug, f),
-      thumb: thumbPath(p.slug, f),
-      caption: captionFromFile(p.slug, f),
-      ratio: ratioOf(p, f),
+  projects.forEach((pr) => {
+    galleries[pr.slug] = pr.images.map((f) => ({
+      src: imgPath(pr.slug, f),
+      thumb: thumbPath(pr.slug, f),
+      caption: captionFromFile(pr.slug, f),
+      ratio: ratioOf(MP[pr.slug], f),
     }));
   });
 

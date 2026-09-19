@@ -94,7 +94,7 @@
       .slice(0, 4);
 
     const hasHero = !!p.img;
-    const metaItems = [p.expertise, p.status];
+    const metaItems = [p.expertise, p.style, p.year];
 
     return (
       <div style={{ background: 'var(--bg-page)' }}>
@@ -171,7 +171,11 @@
           <div className="jwt-rg" style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: 'var(--space-9)', alignItems: 'start' }}>
             <Reveal>
               <FactTable rows={[
+                { label: 'Location', value: p.city },
+                { label: 'Year', value: p.year },
                 { label: 'Expertise', value: p.expertise },
+                { label: 'Style', value: p.style },
+                { label: 'Discipline', value: p.type },
                 { label: 'Status', value: p.status },
                 { label: 'Images', value: p.imageCount ? String(p.imageCount) : null },
                 { label: 'Imagery', value: p.isC2C ? 'Renders and photography' : '3D visualisation, in-house' },
