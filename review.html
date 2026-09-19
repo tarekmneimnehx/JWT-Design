@@ -146,6 +146,7 @@ dialog::backdrop{background:rgba(20,20,20,.5)}
     <div class="chips" id="chips"></div>
     <span class="spacer"></span>
     <input class="search" id="search" type="search" placeholder="Search projects…" aria-label="Search">
+    <button class="btn ghost" id="addBtn">＋ Add project</button>
     <button class="btn ghost" id="expandBtn">Expand details</button>
     <button class="btn" id="exportBtn">Copy decisions</button>
   </div>
@@ -185,6 +186,7 @@ function caption(slug,file){let s=file.replace(/\.[a-z0-9]+$/i,'');if(s.indexOf(
   s=s.replace(/^\d+-?/,'').replace(/-(concept|completed)$/i,'').replace(/-/g,' ').trim();return s?s[0].toUpperCase()+s.slice(1):file;}
 let store={};try{store=JSON.parse(localStorage.getItem(LS)||'{}')||{}}catch(e){store={}}
 if(!Array.isArray(store._order)) store._order=PROJECTS.map(p=>p.slug);
+if(!Array.isArray(store._new)) store._new=[];
 store._order=store._order.filter(s=>BYSLUG[s]); PROJECTS.forEach(p=>{if(!store._order.includes(p.slug))store._order.push(p.slug)});
 function save(){try{localStorage.setItem(LS,JSON.stringify(store))}catch(e){}}
 function st(slug){const p=BYSLUG[slug];
@@ -216,9 +218,32 @@ function visible(){return orderedProjects().filter(p=>{const inf=st(p.slug).info
 
 function moveProject(slug,dir){const a=store._order,i=a.indexOf(slug),j=i+dir;if(j<0||j>=a.length)return;a.splice(i,1);a.splice(j,0,slug);save();render();}
 
+function renderNewCard(n){
+  const el=document.createElement('section');el.className='proj';el.style.borderColor='var(--accent)';
+  el.innerHTML=`
+    <div class="phead">
+      <span class="badge" style="background:var(--accent);color:#fff">New project</span>
+      <input data-nk="title" placeholder="Project name…" value="${(n.title||'').replace(/"/g,'&quot;')}" style="border:none;background:transparent;font:inherit;font-size:17px;font-weight:700;color:var(--ink);flex:1;min-width:150px;outline:none">
+      <button class="reviewbtn" data-rm="1" style="color:var(--danger)">Remove</button>
+    </div>
+    <div class="fields" style="padding:12px 16px 14px">
+      <div class="field"><label>Expertise</label><select data-nk="expertise"><option value="">—</option>${EXPERTISES.map(e=>`<option ${n.expertise===e?'selected':''}>${e}</option>`).join('')}</select></div>
+      <div class="field"><label>Status</label><select data-nk="status"><option value="">—</option>${STATUSES.map(x=>`<option ${n.status===x?'selected':''}>${x}</option>`).join('')}</select></div>
+      <div class="field"><label>Style</label><select data-nk="style"><option value="">—</option><option ${n.style==='Classical'?'selected':''}>Classical</option><option ${n.style==='Modern'?'selected':''}>Modern</option></select></div>
+      <div class="field"><label>Interior / Architecture</label><select data-nk="type"><option value="">—</option><option ${n.type==='Interior'?'selected':''}>Interior</option><option ${n.type==='Architecture'?'selected':''}>Architecture</option><option ${n.type==='Both'?'selected':''}>Both</option></select></div>
+      <div class="field"><label>Year</label><input data-nk="year" placeholder="e.g. 2024" value="${(n.year||'').replace(/"/g,'&quot;')}"></div>
+      <div class="field"><label>City / location</label><input data-nk="city" placeholder="e.g. Dubai, UAE" value="${(n.city||'').replace(/"/g,'&quot;')}"></div>
+      <div class="field full"><label>Summary</label><textarea data-nk="summary" placeholder="What the space is and what makes it special…">${(n.summary||'').replace(/</g,'&lt;')}</textarea></div>
+      <div class="field full"><label>Notes — images / anything to add</label><textarea data-nk="notes" placeholder="e.g. renders coming, 8 photos to shoot…">${(n.notes||'').replace(/</g,'&lt;')}</textarea></div>
+    </div>`;
+  el.querySelectorAll('[data-nk]').forEach(inp=>inp.addEventListener('input',()=>{n[inp.dataset.nk]=inp.value;save();}));
+  el.querySelector('[data-rm]').onclick=()=>{if(!n.title||confirm('Remove this new project?')){store._new=store._new.filter(x=>x!==n);save();render();}};
+  list.appendChild(el);
+}
 function render(){
   renderChips();updateProgress();
   const vis=visible();list.innerHTML='';
+  if(canReorder()) store._new.forEach(renderNewCard);
   if(!canReorder()){const h=document.createElement('div');h.className='orderhint';h.textContent='Showing a filtered view — clear the filter/search to drag or move projects.';list.appendChild(h);}
   if(!vis.length){list.innerHTML+='<div class="empty">No projects match.</div>';return;}
   vis.forEach((p)=>{
@@ -324,6 +349,7 @@ document.addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;
 
 document.getElementById('search').addEventListener('input',e=>{q=e.target.value.trim().toLowerCase();render();});
 document.getElementById('expandBtn').onclick=(e)=>{expanded=!expanded;e.target.textContent=expanded?'Collapse details':'Expand details';render();};
+document.getElementById('addBtn').onclick=()=>{store._new.push({id:'new-'+Date.now()});save();filter='All';styleFilter='All';typeFilter='All';q='';document.getElementById('search').value='';render();window.scrollTo({top:0,behavior:'smooth'});};
 
 function buildExport(){
   const dflt=p=>({cover:p.cover,order:p.images.join()});
@@ -336,7 +362,8 @@ function buildExport(){
   }).filter(x=>{const p=BYSLUG[x.slug],d=dflt(p);
     return x.reviewed||x.notes||x.hidden.length||x.cover!==d.cover||x.order.join()!==d.order||
       x.info.summary||x.info.year||x.info.city||x.info.style||x.info.type||x.info.expertise!==p.expertise||x.info.status!==p.status||x.title!==p.title;});
-  return JSON.stringify({tool:'jwt-project-review',generatedAt:new Date().toISOString(),projectOrder:store._order,decisions},null,2);
+  const newProjects=(store._new||[]).filter(n=>(n.title||'').trim()).map(n=>({title:n.title,expertise:n.expertise||'',status:n.status||'',style:n.style||'',type:n.type||'',year:n.year||'',city:n.city||'',summary:n.summary||'',notes:n.notes||''}));
+  return JSON.stringify({tool:'jwt-project-review',generatedAt:new Date().toISOString(),projectOrder:store._order,newProjects,decisions},null,2);
 }
 async function copyText(t){try{await navigator.clipboard.writeText(t);return true}catch(e){return false}}
 const dlg=document.getElementById('exportDlg');
