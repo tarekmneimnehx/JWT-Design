@@ -148,14 +148,12 @@
       whatsapp: '971585397971',              // digits only, for wa.me links
       whatsappDisplay: '+971 58 539 7971',
       locations: 'UAE | Lebanon | Syria',
-      /* Home hero background videos — played full-screen, muted, one after another
-         on a loop. Each has a 1080p (hd) desktop encode and a lighter 720p (sd)
-         mobile encode; the hero picks per screen size. Empty array falls back to
-         the hero image. */
+      /* Home hero background video — the three clips concatenated into ONE
+         seamless file (no gap/reload between them), played full-screen, muted and
+         looped. 1080p (hd) desktop encode + lighter 720p (sd) mobile encode; the
+         hero picks per screen size. Empty array falls back to the hero image. */
       heroVideos: [
-        { hd: '../../assets/video/hero.1080.mp4',   sd: '../../assets/video/hero.720.mp4' },
-        { hd: '../../assets/video/hero-2.1080.mp4', sd: '../../assets/video/hero-2.720.mp4' },
-        { hd: '../../assets/video/hero-3.1080.mp4', sd: '../../assets/video/hero-3.720.mp4' },
+        { hd: '../../assets/video/hero-all.1080.mp4', sd: '../../assets/video/hero-all.720.mp4' },
       ],
       instagram: '@jwtdesignstudio',
       instagramUrl: 'https://www.instagram.com/jwtdesignstudio/',
