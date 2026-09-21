@@ -145,11 +145,13 @@
       whatsappDisplay: '+971 58 539 7971',
       locations: 'UAE | Lebanon | Syria',
       /* Home hero background videos — played full-screen, muted, one after another
-         on a loop. Empty array falls back to the hero image. */
+         on a loop. Each has a 1080p (hd) desktop encode and a lighter 720p (sd)
+         mobile encode; the hero picks per screen size. Empty array falls back to
+         the hero image. */
       heroVideos: [
-        '../../assets/video/hero.mp4?v=1',
-        '../../assets/video/hero-2.mp4?v=1',
-        '../../assets/video/hero-3.mp4?v=1',
+        { hd: '../../assets/video/hero.1080.mp4',   sd: '../../assets/video/hero.720.mp4' },
+        { hd: '../../assets/video/hero-2.1080.mp4', sd: '../../assets/video/hero-2.720.mp4' },
+        { hd: '../../assets/video/hero-3.1080.mp4', sd: '../../assets/video/hero-3.720.mp4' },
       ],
       instagram: '@jwtdesignstudio',
       instagramUrl: 'https://www.instagram.com/jwtdesignstudio/',

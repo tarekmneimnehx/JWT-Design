@@ -13,6 +13,12 @@
     const ref = React.useRef(null);
     const [i, setI] = React.useState(0);
     const single = videos.length <= 1;
+    /* Serve the lighter 720p encode on small screens, the 1080p on larger ones.
+       Chosen once at mount (a hero clip need not re-fetch on resize). Also accepts
+       plain string sources for backward compatibility. */
+    const isMobile = typeof window !== 'undefined' && window.matchMedia
+      && window.matchMedia('(max-width: 760px)').matches;
+    const srcOf = (v) => (typeof v === 'string' ? v : (isMobile ? v.sd : v.hd));
     React.useEffect(() => {
       const v = ref.current;
       if (!v) return;
@@ -24,7 +30,7 @@
       <video ref={ref} autoPlay muted playsInline loop={single} poster={poster}
         onEnded={single ? undefined : () => setI((n) => (n + 1) % videos.length)}
         style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}>
-        <source src={videos[i]} type="video/mp4" />
+        <source src={srcOf(videos[i])} type="video/mp4" />
       </video>
     );
   }
