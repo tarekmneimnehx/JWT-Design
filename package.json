@@ -1,0 +1,19 @@
+{
+  "name": "jwt-design-studio-site",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "JWT Design Studio marketing site — production build (Vite).",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node scripts/copy-assets.mjs",
+    "preview": "vite preview --port 4173"
+  },
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "vite": "^5.4.11"
+  }
+}

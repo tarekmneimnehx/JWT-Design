@@ -22,7 +22,7 @@ window.JWT_PRESS = [
     outlet: 'Zahrat Al Khaleej',
     date: '',
     url: 'https://www.zahratalkhaleej.ae/article/4290594/جنان-وجويل-توما--نحن-معا-أفضل',
-    image: '../../assets/team/founders-table.jpg?v=1',
+    image: '../../assets/team/founders-table.webp?v=1',
     pos: '50% 34%',
   },
   {
@@ -31,7 +31,7 @@ window.JWT_PRESS = [
     outlet: 'Gulf Magazine',
     date: '',
     url: 'https://gulfmagazine.co/jinan-touma-is-creating-spaces-with-identity/',
-    image: '../../assets/team/jinane.jpg?v=4',
+    image: '../../assets/team/jinane.webp?v=4',
   },
   {
     type: 'article',
@@ -39,7 +39,7 @@ window.JWT_PRESS = [
     outlet: 'Gulf Magazine',
     date: '',
     url: 'https://gulfmagazine.co/joelle-touma-is-building-a-bold-new-vision-for/',
-    image: '../../assets/team/joelle.jpg?v=3',
+    image: '../../assets/team/joelle.webp?v=3',
   },
   {
     type: 'article',
@@ -47,7 +47,7 @@ window.JWT_PRESS = [
     outlet: 'Sayidaty Magazine',
     date: '',
     url: 'https://magazine.sayidaty.net/books/dqqx/#p=84',
-    image: '../../assets/press/sayidaty.jpg?v=1',
+    image: '../../assets/press/sayidaty.webp?v=1',
     pos: 'center',
   },
 ];

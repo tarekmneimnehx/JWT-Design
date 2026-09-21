@@ -1,0 +1,13 @@
+# Netlify build config for the JWT Design Studio site.
+# Builds the Vite production bundle and publishes ONLY the dist/ folder.
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# The site uses hash-based routing (#home, #projects/..., #project/slug), so the
+# server only ever serves "/" — no SPA history fallback is required. The old
+# _redirects rule that pointed "/" at /ui_kits/website/ is removed: dist/index.html
+# is now served at the root.

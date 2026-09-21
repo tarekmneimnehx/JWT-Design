@@ -15,12 +15,12 @@
      process cards (they live at assets/projects/ronaldo-muchawar/). */
   const R = '../../assets/projects/ronaldo-muchawar/';
   window.JWT_IMG = {
-    ronLiving:  R + '01-living.jpg',
-    ronAtrium:  R + '02-stair-atrium.jpg',
-    ronStair:   R + '03-stair-detail.jpg',
-    ronDining:  R + '04-dining.jpg',
-    ronLounge:  R + '05-lounge.jpg',
-    ronKitchen: R + '06-kitchen.jpg',
+    ronLiving:  R + '01-living.webp',
+    ronAtrium:  R + '02-stair-atrium.webp',
+    ronStair:   R + '03-stair-detail.webp',
+    ronDining:  R + '04-dining.webp',
+    ronLounge:  R + '05-lounge.webp',
+    ronKitchen: R + '06-kitchen.webp',
   };
   const I = window.JWT_IMG;
 
@@ -31,8 +31,12 @@
   /* ── Portfolio, built from the manifest ─────────────────────────────────── */
   const MANIFEST = window.JWT_PROJECTS || { projects: [], expertises: [], statuses: [] };
   const ABASE = '../../assets/';
-  const imgPath   = (slug, file) => ABASE + 'images/' + slug + '/' + file;
-  const thumbPath = (slug, file) => ABASE + 'thumbs/' + slug + '/' + file;
+  /* Images are served as WebP (converted from the source JPEGs) — ~40% lighter at
+     the same quality. The manifest still lists .jpg filenames (used for captions,
+     dimensions and lookups); only the URL swaps to .webp. */
+  const toWebp = (file) => file.replace(/\.(jpe?g|png)$/i, '.webp');
+  const imgPath   = (slug, file) => ABASE + 'images/' + slug + '/' + toWebp(file);
+  const thumbPath = (slug, file) => ABASE + 'thumbs/' + slug + '/' + toWebp(file);
 
   /* "grow-offices-14-reception-desk-completed.jpg" → "Reception desk" */
   const captionFromFile = (slug, file) => {
@@ -145,11 +149,13 @@
       whatsappDisplay: '+971 58 539 7971',
       locations: 'UAE | Lebanon | Syria',
       /* Home hero background videos — played full-screen, muted, one after another
-         on a loop. Empty array falls back to the hero image. */
+         on a loop. Each has a 1080p (hd) desktop encode and a lighter 720p (sd)
+         mobile encode; the hero picks per screen size. Empty array falls back to
+         the hero image. */
       heroVideos: [
-        '../../assets/video/hero.mp4?v=1',
-        '../../assets/video/hero-2.mp4?v=1',
-        '../../assets/video/hero-3.mp4?v=1',
+        { hd: '../../assets/video/hero.1080.mp4',   sd: '../../assets/video/hero.720.mp4' },
+        { hd: '../../assets/video/hero-2.1080.mp4', sd: '../../assets/video/hero-2.720.mp4' },
+        { hd: '../../assets/video/hero-3.1080.mp4', sd: '../../assets/video/hero-3.720.mp4' },
       ],
       instagram: '@jwtdesignstudio',
       instagramUrl: 'https://www.instagram.com/jwtdesignstudio/',
@@ -216,15 +222,15 @@
     press: PRESS,
 
     /* A wide "together" portrait of the two founders, for the About page. */
-    teamPhoto: '../../assets/team/founders.jpg?v=2',
+    teamPhoto: '../../assets/team/founders.webp?v=2',
     /* Wide 'together' shot for the contact page. */
-    contactPhoto: '../../assets/team/founders-table.jpg?v=1',
+    contactPhoto: '../../assets/team/founders-table.webp?v=1',
 
     team: [
       /* The studio is the two sisters — no wider team. Portraits supplied by the
          studio; paths are relative to ui_kits/website/. */
-      { name: 'Jinan Touma', role: 'Co-Founder', studio: 'JWT Design Studio', img: '../../assets/team/jinane.jpg?v=4' },
-      { name: 'Joelle Touma', role: 'Co-Founder', studio: 'JWT Design Studio', img: '../../assets/team/joelle.jpg?v=3' },
+      { name: 'Jinan Touma', role: 'Co-Founder', studio: 'JWT Design Studio', img: '../../assets/team/jinane.webp?v=4' },
+      { name: 'Joelle Touma', role: 'Co-Founder', studio: 'JWT Design Studio', img: '../../assets/team/joelle.webp?v=3' },
     ],
 
     /* Intentionally empty — no invented awards or client quotes.

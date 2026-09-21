@@ -3,3 +3,7 @@
 Thumbs.db
 *.swp
 .vscode/
+
+# Production build
+node_modules/
+dist/

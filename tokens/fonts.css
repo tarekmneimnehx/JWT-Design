@@ -12,4 +12,7 @@
    humanist proportions, with a true 200 ExtraLight. This is what non-Apple
    visitors see.
    SECOND FALLBACK: Nunito Sans — same genre, slightly rounder terminals. */
-@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600&family=Nunito+Sans:wght@200;300;400;500&display=swap');
+/* The Google Fonts stylesheet is loaded via <link rel="preconnect"> + <link
+   rel="stylesheet"> in index.html instead of a CSS @import — a <link> with
+   preconnect starts the font download earlier and doesn't block the rest of the
+   stylesheet, which a CSS @import would. */
