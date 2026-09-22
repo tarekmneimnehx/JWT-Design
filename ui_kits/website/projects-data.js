@@ -3095,58 +3095,58 @@ window.JWT_PROJECTS = {
       "title": "ZBM Architecture",
       "expertise": "Residential",
       "status": "Concept",
-      "cover": "zbm-architecture-01-1.jpg",
+      "cover": "zbm-architecture-01.jpg",
       "image_count": 10,
       "images": [
-        "zbm-architecture-01-1.jpg",
-        "zbm-architecture-02-2.jpg",
-        "zbm-architecture-03-3.jpg",
-        "zbm-architecture-04-4.jpg",
-        "zbm-architecture-05-7.jpg",
-        "zbm-architecture-06-10.jpg",
-        "zbm-architecture-07-11.jpg",
-        "zbm-architecture-08-12.jpg",
-        "zbm-architecture-09-13.jpg",
-        "zbm-architecture-10-14.jpg"
+        "zbm-architecture-01.jpg",
+        "zbm-architecture-02.jpg",
+        "zbm-architecture-03.jpg",
+        "zbm-architecture-04.jpg",
+        "zbm-architecture-05.jpg",
+        "zbm-architecture-06.jpg",
+        "zbm-architecture-07.jpg",
+        "zbm-architecture-08.jpg",
+        "zbm-architecture-09.jpg",
+        "zbm-architecture-10.jpg"
       ],
       "dimensions": {
-        "zbm-architecture-01-1.jpg": [
+        "zbm-architecture-01.jpg": [
           1600,
           900
         ],
-        "zbm-architecture-02-2.jpg": [
+        "zbm-architecture-02.jpg": [
           1600,
           900
         ],
-        "zbm-architecture-03-3.jpg": [
+        "zbm-architecture-03.jpg": [
           1600,
           900
         ],
-        "zbm-architecture-04-4.jpg": [
+        "zbm-architecture-04.jpg": [
           1600,
           900
         ],
-        "zbm-architecture-05-7.jpg": [
+        "zbm-architecture-05.jpg": [
           1600,
           900
         ],
-        "zbm-architecture-06-10.jpg": [
+        "zbm-architecture-06.jpg": [
           1600,
           900
         ],
-        "zbm-architecture-07-11.jpg": [
+        "zbm-architecture-07.jpg": [
           1600,
           900
         ],
-        "zbm-architecture-08-12.jpg": [
+        "zbm-architecture-08.jpg": [
           1600,
           900
         ],
-        "zbm-architecture-09-13.jpg": [
+        "zbm-architecture-09.jpg": [
           1600,
           900
         ],
-        "zbm-architecture-10-14.jpg": [
+        "zbm-architecture-10.jpg": [
           1600,
           900
         ]
@@ -3157,78 +3157,78 @@ window.JWT_PROJECTS = {
       "title": "Lord Flagstone KSA",
       "expertise": "Commercial",
       "status": "Concept",
-      "cover": "lord-flagstone-ksa-01-ext-01.jpg",
+      "cover": "lord-flagstone-ksa-01.jpg",
       "image_count": 14,
       "images": [
-        "lord-flagstone-ksa-01-ext-01.jpg",
-        "lord-flagstone-ksa-02-ext-02.jpg",
-        "lord-flagstone-ksa-03-ext-03.jpg",
-        "lord-flagstone-ksa-04-kiosk-01.jpg",
-        "lord-flagstone-ksa-05-kiosk-02.jpg",
-        "lord-flagstone-ksa-06-lord-flagstone-01.jpg",
-        "lord-flagstone-ksa-07-lord-flagstone-02.jpg",
-        "lord-flagstone-ksa-08-lord-flagstone-03.jpg",
-        "lord-flagstone-ksa-09-lord-flagstone-04.jpg",
-        "lord-flagstone-ksa-10-lord-flagstone-05.jpg",
-        "lord-flagstone-ksa-11-lord-flagstone-06.jpg",
-        "lord-flagstone-ksa-12-lord-flagstone-09.jpg",
-        "lord-flagstone-ksa-13-lord-flagstone-010.jpg",
-        "lord-flagstone-ksa-14-lord-flagstone-011.jpg"
+        "lord-flagstone-ksa-01.jpg",
+        "lord-flagstone-ksa-02.jpg",
+        "lord-flagstone-ksa-03.jpg",
+        "lord-flagstone-ksa-04.jpg",
+        "lord-flagstone-ksa-05.jpg",
+        "lord-flagstone-ksa-06.jpg",
+        "lord-flagstone-ksa-07.jpg",
+        "lord-flagstone-ksa-08.jpg",
+        "lord-flagstone-ksa-09.jpg",
+        "lord-flagstone-ksa-10.jpg",
+        "lord-flagstone-ksa-11.jpg",
+        "lord-flagstone-ksa-12.jpg",
+        "lord-flagstone-ksa-13.jpg",
+        "lord-flagstone-ksa-14.jpg"
       ],
       "dimensions": {
-        "lord-flagstone-ksa-01-ext-01.jpg": [
+        "lord-flagstone-ksa-01.jpg": [
           1394,
           1600
         ],
-        "lord-flagstone-ksa-02-ext-02.jpg": [
+        "lord-flagstone-ksa-02.jpg": [
           1394,
           1600
         ],
-        "lord-flagstone-ksa-03-ext-03.jpg": [
+        "lord-flagstone-ksa-03.jpg": [
           1394,
           1600
         ],
-        "lord-flagstone-ksa-04-kiosk-01.jpg": [
+        "lord-flagstone-ksa-04.jpg": [
           1600,
           1600
         ],
-        "lord-flagstone-ksa-05-kiosk-02.jpg": [
+        "lord-flagstone-ksa-05.jpg": [
           1600,
           1600
         ],
-        "lord-flagstone-ksa-06-lord-flagstone-01.jpg": [
+        "lord-flagstone-ksa-06.jpg": [
           1600,
           1200
         ],
-        "lord-flagstone-ksa-07-lord-flagstone-02.jpg": [
+        "lord-flagstone-ksa-07.jpg": [
           1600,
           1200
         ],
-        "lord-flagstone-ksa-08-lord-flagstone-03.jpg": [
+        "lord-flagstone-ksa-08.jpg": [
           1600,
           1200
         ],
-        "lord-flagstone-ksa-09-lord-flagstone-04.jpg": [
+        "lord-flagstone-ksa-09.jpg": [
           1600,
           1200
         ],
-        "lord-flagstone-ksa-10-lord-flagstone-05.jpg": [
+        "lord-flagstone-ksa-10.jpg": [
           1600,
           1200
         ],
-        "lord-flagstone-ksa-11-lord-flagstone-06.jpg": [
+        "lord-flagstone-ksa-11.jpg": [
           1600,
           1200
         ],
-        "lord-flagstone-ksa-12-lord-flagstone-09.jpg": [
+        "lord-flagstone-ksa-12.jpg": [
           1600,
           1200
         ],
-        "lord-flagstone-ksa-13-lord-flagstone-010.jpg": [
+        "lord-flagstone-ksa-13.jpg": [
           1600,
           1200
         ],
-        "lord-flagstone-ksa-14-lord-flagstone-011.jpg": [
+        "lord-flagstone-ksa-14.jpg": [
           1600,
           1200
         ]
@@ -3239,68 +3239,68 @@ window.JWT_PROJECTS = {
       "title": "Quatro Hotel, Syria",
       "expertise": "Hospitality",
       "status": "Concept",
-      "cover": "quatro-hotel-syria-01-bedroom-cshading-lightmix-view01.jpg",
+      "cover": "quatro-hotel-syria-01.jpg",
       "image_count": 12,
       "images": [
-        "quatro-hotel-syria-01-bedroom-cshading-lightmix-view01.jpg",
-        "quatro-hotel-syria-02-bedroom-cshading-lightmix-view07.jpg",
-        "quatro-hotel-syria-03-bedroom-cshading-lightmix-view16.jpg",
-        "quatro-hotel-syria-04-bedroom-cshading-lightmix-view17.jpg",
-        "quatro-hotel-syria-05-bedroom-cshading-lightmix-view18.jpg",
-        "quatro-hotel-syria-06-bedroom-cshading-lightmix-view21.jpg",
-        "quatro-hotel-syria-07-ext-daylight-01.jpg",
-        "quatro-hotel-syria-08-ext-daylight-02.jpg",
-        "quatro-hotel-syria-09-hotel-cshading-lightmix-view01.jpg",
-        "quatro-hotel-syria-10-hotel-view01-cshading-lightmix-view05.jpg",
-        "quatro-hotel-syria-11-hotel-view01-cshading-lightmix-view06.jpg",
-        "quatro-hotel-syria-12-hotel-view01-cshading-lightmix-view10.jpg"
+        "quatro-hotel-syria-01.jpg",
+        "quatro-hotel-syria-02.jpg",
+        "quatro-hotel-syria-03.jpg",
+        "quatro-hotel-syria-04.jpg",
+        "quatro-hotel-syria-05.jpg",
+        "quatro-hotel-syria-06.jpg",
+        "quatro-hotel-syria-07.jpg",
+        "quatro-hotel-syria-08.jpg",
+        "quatro-hotel-syria-09.jpg",
+        "quatro-hotel-syria-10.jpg",
+        "quatro-hotel-syria-11.jpg",
+        "quatro-hotel-syria-12.jpg"
       ],
       "dimensions": {
-        "quatro-hotel-syria-01-bedroom-cshading-lightmix-view01.jpg": [
+        "quatro-hotel-syria-01.jpg": [
           1600,
           1200
         ],
-        "quatro-hotel-syria-02-bedroom-cshading-lightmix-view07.jpg": [
+        "quatro-hotel-syria-02.jpg": [
           1600,
           1200
         ],
-        "quatro-hotel-syria-03-bedroom-cshading-lightmix-view16.jpg": [
+        "quatro-hotel-syria-03.jpg": [
           1600,
           1200
         ],
-        "quatro-hotel-syria-04-bedroom-cshading-lightmix-view17.jpg": [
+        "quatro-hotel-syria-04.jpg": [
           1600,
           1200
         ],
-        "quatro-hotel-syria-05-bedroom-cshading-lightmix-view18.jpg": [
+        "quatro-hotel-syria-05.jpg": [
           1600,
           1200
         ],
-        "quatro-hotel-syria-06-bedroom-cshading-lightmix-view21.jpg": [
+        "quatro-hotel-syria-06.jpg": [
           1600,
           1200
         ],
-        "quatro-hotel-syria-07-ext-daylight-01.jpg": [
+        "quatro-hotel-syria-07.jpg": [
           1600,
           1200
         ],
-        "quatro-hotel-syria-08-ext-daylight-02.jpg": [
+        "quatro-hotel-syria-08.jpg": [
           1600,
           1200
         ],
-        "quatro-hotel-syria-09-hotel-cshading-lightmix-view01.jpg": [
+        "quatro-hotel-syria-09.jpg": [
           1600,
           1200
         ],
-        "quatro-hotel-syria-10-hotel-view01-cshading-lightmix-view05.jpg": [
+        "quatro-hotel-syria-10.jpg": [
           1600,
           1200
         ],
-        "quatro-hotel-syria-11-hotel-view01-cshading-lightmix-view06.jpg": [
+        "quatro-hotel-syria-11.jpg": [
           1600,
           1200
         ],
-        "quatro-hotel-syria-12-hotel-view01-cshading-lightmix-view10.jpg": [
+        "quatro-hotel-syria-12.jpg": [
           1600,
           1200
         ]
@@ -3311,88 +3311,88 @@ window.JWT_PROJECTS = {
       "title": "Los Cielo Palace",
       "expertise": "Residential",
       "status": "Concept",
-      "cover": "los-cielo-palace-02-wathba-01z.jpg",
+      "cover": "los-cielo-palace-01.jpg",
       "image_count": 16,
       "images": [
-        "los-cielo-palace-02-wathba-01z.jpg",
-        "los-cielo-palace-03-wathba-05z.jpg",
-        "los-cielo-palace-04-wathba-06z.jpg",
-        "los-cielo-palace-05-wathba-08z.jpg",
-        "los-cielo-palace-06-wathba-09z.jpg",
-        "los-cielo-palace-07-wathba-010z.jpg",
-        "los-cielo-palace-08-wathba-011z.jpg",
-        "los-cielo-palace-09-wathba-012z.jpg",
-        "los-cielo-palace-10-wathba-17-night.jpg",
-        "los-cielo-palace-11-wathba-18.jpg",
-        "los-cielo-palace-12-wathba-end-001-post.jpg",
-        "los-cielo-palace-13-wathba-end-010-post.jpg",
-        "los-cielo-palace-14-wathba-end-011-post.jpg",
-        "los-cielo-palace-15-wathba-end-012-post.jpg",
-        "los-cielo-palace-16-wathba-end-013-post.jpg",
-        "los-cielo-palace-01-plan.jpg"
+        "los-cielo-palace-01.jpg",
+        "los-cielo-palace-02.jpg",
+        "los-cielo-palace-03.jpg",
+        "los-cielo-palace-04.jpg",
+        "los-cielo-palace-05.jpg",
+        "los-cielo-palace-06.jpg",
+        "los-cielo-palace-07.jpg",
+        "los-cielo-palace-08.jpg",
+        "los-cielo-palace-09.jpg",
+        "los-cielo-palace-10.jpg",
+        "los-cielo-palace-11.jpg",
+        "los-cielo-palace-12.jpg",
+        "los-cielo-palace-13.jpg",
+        "los-cielo-palace-14.jpg",
+        "los-cielo-palace-15.jpg",
+        "los-cielo-palace-16.jpg"
       ],
       "dimensions": {
-        "los-cielo-palace-01-plan.jpg": [
+        "los-cielo-palace-16.jpg": [
           1600,
           900
         ],
-        "los-cielo-palace-02-wathba-01z.jpg": [
+        "los-cielo-palace-01.jpg": [
           1600,
           900
         ],
-        "los-cielo-palace-03-wathba-05z.jpg": [
+        "los-cielo-palace-02.jpg": [
           1600,
           900
         ],
-        "los-cielo-palace-04-wathba-06z.jpg": [
+        "los-cielo-palace-03.jpg": [
           1600,
           900
         ],
-        "los-cielo-palace-05-wathba-08z.jpg": [
+        "los-cielo-palace-04.jpg": [
           1600,
           900
         ],
-        "los-cielo-palace-06-wathba-09z.jpg": [
+        "los-cielo-palace-05.jpg": [
           1600,
           900
         ],
-        "los-cielo-palace-07-wathba-010z.jpg": [
+        "los-cielo-palace-06.jpg": [
           1600,
           900
         ],
-        "los-cielo-palace-08-wathba-011z.jpg": [
+        "los-cielo-palace-07.jpg": [
           1600,
           900
         ],
-        "los-cielo-palace-09-wathba-012z.jpg": [
+        "los-cielo-palace-08.jpg": [
           1600,
           900
         ],
-        "los-cielo-palace-10-wathba-17-night.jpg": [
+        "los-cielo-palace-09.jpg": [
           1600,
           900
         ],
-        "los-cielo-palace-11-wathba-18.jpg": [
+        "los-cielo-palace-10.jpg": [
           1600,
           900
         ],
-        "los-cielo-palace-12-wathba-end-001-post.jpg": [
+        "los-cielo-palace-11.jpg": [
           1600,
           900
         ],
-        "los-cielo-palace-13-wathba-end-010-post.jpg": [
+        "los-cielo-palace-12.jpg": [
           1600,
           900
         ],
-        "los-cielo-palace-14-wathba-end-011-post.jpg": [
+        "los-cielo-palace-13.jpg": [
           1600,
           900
         ],
-        "los-cielo-palace-15-wathba-end-012-post.jpg": [
+        "los-cielo-palace-14.jpg": [
           1600,
           900
         ],
-        "los-cielo-palace-16-wathba-end-013-post.jpg": [
+        "los-cielo-palace-15.jpg": [
           1600,
           900
         ]
