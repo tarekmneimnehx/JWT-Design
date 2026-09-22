@@ -3153,82 +3153,82 @@ window.JWT_PROJECTS = {
       }
     },
     {
-      "slug": "lord-flagstone-ksa",
-      "title": "Lord Flagstone KSA",
+      "slug": "lord-flagship-store-ksa",
+      "title": "Lord Flagship Store KSA",
       "expertise": "Commercial",
       "status": "Concept",
-      "cover": "lord-flagstone-ksa-01.jpg",
+      "cover": "lord-flagship-store-ksa-01.jpg",
       "image_count": 14,
       "images": [
-        "lord-flagstone-ksa-01.jpg",
-        "lord-flagstone-ksa-02.jpg",
-        "lord-flagstone-ksa-03.jpg",
-        "lord-flagstone-ksa-04.jpg",
-        "lord-flagstone-ksa-05.jpg",
-        "lord-flagstone-ksa-06.jpg",
-        "lord-flagstone-ksa-07.jpg",
-        "lord-flagstone-ksa-08.jpg",
-        "lord-flagstone-ksa-09.jpg",
-        "lord-flagstone-ksa-10.jpg",
-        "lord-flagstone-ksa-11.jpg",
-        "lord-flagstone-ksa-12.jpg",
-        "lord-flagstone-ksa-13.jpg",
-        "lord-flagstone-ksa-14.jpg"
+        "lord-flagship-store-ksa-01.jpg",
+        "lord-flagship-store-ksa-02.jpg",
+        "lord-flagship-store-ksa-03.jpg",
+        "lord-flagship-store-ksa-04.jpg",
+        "lord-flagship-store-ksa-05.jpg",
+        "lord-flagship-store-ksa-06.jpg",
+        "lord-flagship-store-ksa-07.jpg",
+        "lord-flagship-store-ksa-08.jpg",
+        "lord-flagship-store-ksa-09.jpg",
+        "lord-flagship-store-ksa-10.jpg",
+        "lord-flagship-store-ksa-11.jpg",
+        "lord-flagship-store-ksa-12.jpg",
+        "lord-flagship-store-ksa-13.jpg",
+        "lord-flagship-store-ksa-14.jpg"
       ],
       "dimensions": {
-        "lord-flagstone-ksa-01.jpg": [
+        "lord-flagship-store-ksa-01.jpg": [
           1394,
           1600
         ],
-        "lord-flagstone-ksa-02.jpg": [
+        "lord-flagship-store-ksa-02.jpg": [
           1394,
           1600
         ],
-        "lord-flagstone-ksa-03.jpg": [
+        "lord-flagship-store-ksa-03.jpg": [
           1394,
           1600
         ],
-        "lord-flagstone-ksa-04.jpg": [
+        "lord-flagship-store-ksa-04.jpg": [
           1600,
           1600
         ],
-        "lord-flagstone-ksa-05.jpg": [
+        "lord-flagship-store-ksa-05.jpg": [
           1600,
           1600
         ],
-        "lord-flagstone-ksa-06.jpg": [
+        "lord-flagship-store-ksa-06.jpg": [
           1600,
           1200
         ],
-        "lord-flagstone-ksa-07.jpg": [
+        "lord-flagship-store-ksa-07.jpg": [
           1600,
           1200
         ],
-        "lord-flagstone-ksa-08.jpg": [
+        "lord-flagship-store-ksa-08.jpg": [
           1600,
           1200
         ],
-        "lord-flagstone-ksa-09.jpg": [
+        "lord-flagship-store-ksa-09.jpg": [
           1600,
           1200
         ],
-        "lord-flagstone-ksa-10.jpg": [
+        "lord-flagship-store-ksa-10.jpg": [
           1600,
           1200
         ],
-        "lord-flagstone-ksa-11.jpg": [
+        "lord-flagship-store-ksa-11.jpg": [
           1600,
           1200
         ],
-        "lord-flagstone-ksa-12.jpg": [
+        "lord-flagship-store-ksa-12.jpg": [
           1600,
           1200
         ],
-        "lord-flagstone-ksa-13.jpg": [
+        "lord-flagship-store-ksa-13.jpg": [
           1600,
           1200
         ],
-        "lord-flagstone-ksa-14.jpg": [
+        "lord-flagship-store-ksa-14.jpg": [
           1600,
           1200
         ]
