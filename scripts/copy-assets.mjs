@@ -30,13 +30,23 @@ for (const d of dirs) {
   cpSync(join(assetsSrc, d), join(assetsOut, d), { recursive: true, filter: noJpeg });
 }
 
-// Individual root files the site references (favicons + the two logos in use).
+// Individual root files the site references (favicons + the two logos in use +
+// the social-share preview image referenced by the Open Graph tags).
 const files = [
   'favicon.ico', 'favicon-16.png', 'favicon-32.png', 'apple-touch-icon.png',
   'logo-white.svg', 'logo-charcoal.svg',
+  'og-cover.jpg',
 ];
 for (const f of files) {
   cpSync(join(assetsSrc, f), join(assetsOut, f));
 }
 
-console.log('copy-assets: copied', dirs.length, 'dirs and', files.length, 'files into dist/assets/');
+// SEO files that must sit at the SITE ROOT (not under /assets): robots.txt and
+// sitemap.xml. Sources live at the repo root.
+const distRoot = join(root, 'dist');
+for (const f of ['robots.txt', 'sitemap.xml']) {
+  cpSync(join(root, f), join(distRoot, f));
+}
+
+console.log('copy-assets: copied', dirs.length, 'dirs and', files.length,
+  'files into dist/assets/, plus robots.txt + sitemap.xml at the site root');
