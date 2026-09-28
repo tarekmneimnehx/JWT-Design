@@ -1,4 +1,4 @@
-/* JWT website kit — Contact / enquiry with a mock-submitting form. */
+/* JWT website kit — Contact / enquiry form wired to Netlify Forms. */
 (function () {
   const NS = window.JWTDesignStudioDesignSystem_593c65 || {};
   const { Navbar, Eyebrow, Button, Input, Textarea, Select, Divider } = NS;
@@ -40,6 +40,19 @@
   function ContactPage({ navigate }) {
     const [sent, setSent] = useState(false);
 
+    /* Real submit: post the form's fields to Netlify Forms (URL-encoded to "/"),
+       which stores the enquiry and emails a notification. We show the thank-you
+       screen regardless so the visitor is never left hanging on a network hiccup. */
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      const body = new URLSearchParams(new FormData(e.target)).toString();
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body,
+      }).then(() => setSent(true)).catch(() => setSent(true));
+    };
+
     return (
       <div style={{ background: 'var(--bg-page)' }}>
         <Navbar variant="solid" sticky logoSrc={logoCharcoal} links={navLinks} activeHref="#contact"
@@ -70,27 +83,32 @@
                   </div>
                 </div>
               ) : (
-                <form onSubmit={(e) => { e.preventDefault(); setSent(true); }}
+                <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field"
+                  onSubmit={handleSubmit}
                   className="jwt-rg" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-6)' }}>
-                  <Input label="Full name" placeholder="Your name" required />
-                  <Input label="Email" type="email" placeholder="you@email.com" required />
-                  <Input label="Phone" placeholder="+971 50 000 0000" />
-                  <Select label="Region" defaultValue="">
+                  {/* Netlify Forms plumbing: identifies which form this is, and a hidden
+                      honeypot field that silently catches spam bots. */}
+                  <input type="hidden" name="form-name" value="contact" />
+                  <p hidden><label>Leave this empty: <input name="bot-field" /></label></p>
+                  <Input label="Full name" name="name" placeholder="Your name" required />
+                  <Input label="Email" name="email" type="email" placeholder="you@email.com" required />
+                  <Input label="Phone" name="phone" placeholder="+971 50 000 0000" />
+                  <Select label="Region" name="region" defaultValue="">
                     <option value="" disabled>Select…</option>
                     {(D.regions || []).map((r) => <option key={r}>{r}</option>)}
                     <option>Elsewhere</option>
                   </Select>
-                  <Select label="Expertise required" defaultValue="">
+                  <Select label="Expertise required" name="expertise" defaultValue="">
                     <option value="" disabled>Select…</option>
                     {(D.disciplines || []).map((d) => <option key={d}>{d}</option>)}
                     <option>Not sure yet</option>
                   </Select>
-                  <Select label="Project type" defaultValue="">
+                  <Select label="Project type" name="project-type" defaultValue="">
                     <option value="" disabled>Select…</option>
                     {(D.projectExpertises || []).map((s) => <option key={s}>{s}</option>)}
                   </Select>
                   <div style={{ gridColumn: '1 / -1' }}>
-                    <Textarea label="About your project" rows={4}
+                    <Textarea label="About your project" name="message" rows={4}
                       placeholder="Where is it, what stage are you at, and when would you like to start?" />
                   </div>
                   <div style={{ gridColumn: '1 / -1', marginTop: '0.5rem' }}>
