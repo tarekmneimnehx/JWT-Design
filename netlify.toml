@@ -8,6 +8,15 @@
   NODE_VERSION = "20"
 
 # The site uses hash-based routing (#home, #projects/..., #project/slug), so the
-# server only ever serves "/" — no SPA history fallback is required. The old
-# _redirects rule that pointed "/" at /ui_kits/website/ is removed: dist/index.html
-# is now served at the root.
+# server only ever serves "/" — no SPA history fallback is required for navigation.
+# The old _redirects rule that pointed "/" at /ui_kits/website/ is removed:
+# dist/index.html is now served at the root.
+
+# Catch-all rewrite: serve our own index.html (the app) for ANY path that isn't a
+# real file, instead of letting Netlify show its default, Netlify-branded 404 page.
+# Netlify serves existing files (assets, images, videos) first and only applies
+# this rewrite for paths with no matching file, so real assets are unaffected.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
