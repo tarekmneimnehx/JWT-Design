@@ -220,15 +220,15 @@
     press: PRESS,
 
     /* A wide "together" portrait of the two founders, for the About page. */
-    teamPhoto: '../../assets/team/founders.webp?v=2',
+    teamPhoto: '../../assets/team/founders.webp?v=6',
     /* Wide 'together' shot for the contact page. */
-    contactPhoto: '../../assets/team/founders-table.webp?v=1',
+    contactPhoto: '../../assets/team/founders-table.webp?v=6',
 
     team: [
       /* The studio is the two sisters — no wider team. Portraits supplied by the
          studio; paths are relative to ui_kits/website/. */
-      { name: 'Jinan Touma', role: 'Co-Founder', studio: 'JWT Design Studio', img: '../../assets/team/jinane.webp?v=4' },
-      { name: 'Joelle Touma', role: 'Co-Founder', studio: 'JWT Design Studio', img: '../../assets/team/joelle.webp?v=3' },
+      { name: 'Jinan Touma', role: 'Co-Founder', studio: 'JWT Design Studio', img: '../../assets/team/jinane.webp?v=6' },
+      { name: 'Joelle Touma', role: 'Co-Founder', studio: 'JWT Design Studio', img: '../../assets/team/joelle.webp?v=6' },
     ],
 
     /* Intentionally empty — no invented awards or client quotes.
