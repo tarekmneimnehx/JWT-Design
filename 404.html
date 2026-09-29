@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found — JWT Design Studio</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/assets/favicon.ico" sizes="any">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500&family=Nunito+Sans:wght@300;400&display=swap">
+<style>
+  :root { --paper: #FAF8F6; --ink: #2C2E35; --muted: #63656B; --line: #D2CCC5; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: "Nunito Sans", system-ui, -apple-system, sans-serif;
+    display: flex; align-items: center; justify-content: center;
+    min-height: 100vh; padding: 24px; text-align: center;
+  }
+  .wrap { max-width: 34rem; }
+  .logo { height: 40px; margin-bottom: 2.5rem; opacity: 0.9; }
+  .code {
+    font-family: "Mulish", sans-serif; font-weight: 300;
+    letter-spacing: 0.02em; font-size: clamp(3rem, 9vw, 5rem);
+    line-height: 1; margin: 0 0 1rem;
+  }
+  h1 {
+    font-family: "Mulish", sans-serif; font-weight: 400;
+    font-size: clamp(1.25rem, 3.5vw, 1.6rem); margin: 0 0 0.9rem;
+  }
+  p { color: var(--muted); font-size: 1.02rem; line-height: 1.6; margin: 0 auto 2rem; max-width: 30rem; }
+  a.btn {
+    display: inline-block; text-decoration: none; color: var(--ink);
+    border: 1px solid var(--ink); border-radius: 999px;
+    padding: 0.75rem 1.6rem; font-family: "Mulish", sans-serif;
+    font-size: 0.95rem; letter-spacing: 0.03em; transition: background .2s, color .2s;
+  }
+  a.btn:hover { background: var(--ink); color: var(--paper); }
+</style>
+</head>
+<body>
+  <main class="wrap">
+    <img class="logo" src="/assets/logo-charcoal.svg" alt="JWT Design Studio">
+    <div class="code">404</div>
+    <h1>This page could not be found.</h1>
+    <p>The page you're looking for may have moved, or the link may be incomplete. Let's take you back to the studio.</p>
+    <a class="btn" href="/">Return home</a>
+  </main>
+</body>
+</html>

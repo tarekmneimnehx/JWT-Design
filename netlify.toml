@@ -11,12 +11,8 @@
 # server only ever serves "/" — no SPA history fallback is required for navigation.
 # The old _redirects rule that pointed "/" at /ui_kits/website/ is removed:
 # dist/index.html is now served at the root.
-
-# Catch-all rewrite: serve our own index.html (the app) for ANY path that isn't a
-# real file, instead of letting Netlify show its default, Netlify-branded 404 page.
-# Netlify serves existing files (assets, images, videos) first and only applies
-# this rewrite for paths with no matching file, so real assets are unaffected.
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+#
+# For unknown paths we ship a custom dist/404.html (branded, no "Powered by
+# Netlify"). We deliberately do NOT use a catch-all `/* -> /index.html 200`
+# rewrite: a custom 404 page achieves the same brand goal without any rule that
+# sits in front of static asset serving.

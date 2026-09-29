@@ -44,7 +44,7 @@ for (const f of files) {
 // SEO files that must sit at the SITE ROOT (not under /assets): robots.txt and
 // sitemap.xml. Sources live at the repo root.
 const distRoot = join(root, 'dist');
-for (const f of ['robots.txt', 'sitemap.xml']) {
+for (const f of ['robots.txt', 'sitemap.xml', '404.html']) {
   cpSync(join(root, f), join(distRoot, f));
 }
 
