@@ -206,8 +206,9 @@ const EXPERTISES = ["Residential", "Commercial", "Hospitality", "Landscape"];
 const STATUSES = ["Concept", "Concept to Completion"];
 const BYSLUG = Object.fromEntries(PROJECTS.map(p=>[p.slug,p]));
 const toWebp=(f)=>f.replace(/\.(jpe?g|png)$/i,'.webp');
-const ASSET_BASE='https://jwtdesignstudio.com/assets/';
-const IMG=(s,f)=>`${ASSET_BASE}images/${s}/${toWebp(f)}`, THUMB=(s,f)=>`${ASSET_BASE}thumbs/${s}/${toWebp(f)}`;
+/* Relative, same-origin paths: this page is served from the site root
+   (jwtdesignstudio.com/review.html), so images load from /assets alongside it. */
+const IMG=(s,f)=>`assets/images/${s}/${toWebp(f)}`, THUMB=(s,f)=>`assets/thumbs/${s}/${toWebp(f)}`;
 const LS='jwt-review-v2';
 function caption(slug,file){let s=file.replace(/\.[a-z0-9]+$/i,'');if(s.indexOf(slug+'-')===0)s=s.slice(slug.length+1);
   s=s.replace(/^\d+-?/,'').replace(/-(concept|completed)$/i,'').replace(/-/g,' ').trim();return s?s[0].toUpperCase()+s.slice(1):file;}

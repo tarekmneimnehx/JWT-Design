@@ -48,5 +48,10 @@ for (const f of ['robots.txt', 'sitemap.xml', '404.html']) {
   cpSync(join(root, f), join(distRoot, f));
 }
 
+// The internal review dashboard is served at /review.html so it sits same-origin
+// with /assets and can load the project images. It is marked noindex and
+// Disallow'd in robots.txt so it is not a public/indexed part of the site.
+cpSync(join(root, 'review.html'), join(distRoot, 'review.html'));
+
 console.log('copy-assets: copied', dirs.length, 'dirs and', files.length,
   'files into dist/assets/, plus robots.txt + sitemap.xml at the site root');
