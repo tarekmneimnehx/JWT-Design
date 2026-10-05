@@ -5,35 +5,35 @@ window.JWT_REVIEW = {
   "order": [
     "zbm-architecture",
     "zbm-residence",
-    "sh-butti-villa",
-    "quatro-hotel-syria",
-    "ronaldo-muchawar",
-    "los-cielo-palace",
-    "shikhana",
-    "village-mall",
     "mirel-experience-center",
-    "village-mall-offices",
-    "lord-flagship-store-ksa",
+    "ronaldo-muchawar",
+    "jadeel-residence",
+    "quatro-hotel-syria",
+    "sh-butti-villa",
+    "los-cielo-palace",
+    "village-mall",
+    "vahe-kilikian-beauty-lounge",
+    "fbh-offices",
     "al-wathba-2",
     "al-wathba-majlis",
-    "bs-residence",
-    "fbh-offices",
-    "gg-residence",
     "grow-offices",
-    "serenity-secret",
+    "gg-residence",
     "ham-external-majlis",
-    "jw-residence",
-    "jadeel-residence",
     "mr-residence",
+    "shikhana",
+    "serenity-secret",
     "na-residence",
+    "village-mall-offices",
+    "lord-flagship-store-ksa",
+    "bs-residence",
     "ng-residence",
+    "jw-residence",
     "rc-residence",
     "sp-residence",
-    "sobha-villas",
     "vk-residence",
-    "jpl-landscape",
-    "vahe-kilikian-beauty-lounge",
-    "haj-abdo-cafe-aleppo"
+    "sobha-villas",
+    "haj-abdo-cafe-aleppo",
+    "jpl-landscape"
   ],
   "projects": {
     "zbm-architecture": {
@@ -50,7 +50,7 @@ window.JWT_REVIEW = {
         "zbm-architecture-10.jpg"
       ],
       "summary": "",
-      "year": "",
+      "year": "2022",
       "city": "Nad El Sheba, Dubai",
       "expertise": "Residential",
       "status": "Concept",
@@ -76,30 +76,79 @@ window.JWT_REVIEW = {
         "zbm-residence-61-living-lounge-corridor.jpg"
       ],
       "summary": "",
-      "year": "",
+      "year": "2022",
       "city": "Nad El Sheba, Dubai",
       "expertise": "Residential",
       "status": "Concept",
-      "style": "",
-      "type": ""
+      "style": "Modern",
+      "type": "Interior"
     },
-    "sh-butti-villa": {
-      "title": "BSM Villa",
-      "cover": "sh-butti-villa-01-entrance-driveway.jpg",
+    "mirel-experience-center": {
+      "title": "Mirel Experience Center",
+      "cover": "mirel-experience-center-07-showroom-overview-completed.jpg",
       "images": [
-        "sh-butti-villa-01-entrance-driveway.jpg",
-        "sh-butti-villa-07-pool-terrace.jpg",
-        "sh-butti-villa-08-pool-courtyard.jpg",
-        "sh-butti-villa-09-cabana-terrace.jpg",
-        "sh-butti-villa-10-pool-aerial.jpg"
+        "mirel-experience-center-07-showroom-overview-completed.jpg",
+        "mirel-experience-center-08-demo-lounge-completed.jpg",
+        "mirel-experience-center-09-demo-room-completed.jpg",
+        "mirel-experience-center-15-headphone-display-completed.jpg",
+        "mirel-experience-center-16-cinema-room-completed.jpg"
       ],
       "summary": "",
-      "year": "",
-      "city": "Nad El Sheba, Dubai",
+      "year": "2024",
+      "city": "Dubai",
+      "expertise": "Commercial",
+      "status": "Concept to Completion",
+      "style": "Modern",
+      "type": "Interior"
+    },
+    "ronaldo-muchawar": {
+      "title": "RM Project",
+      "cover": "ronaldo-muchawar-11-roof-terrace-view.jpg",
+      "images": [
+        "ronaldo-muchawar-11-roof-terrace-view.jpg",
+        "ronaldo-muchawar-14-entry-gallery.jpg",
+        "ronaldo-muchawar-20-living-planting.jpg",
+        "ronaldo-muchawar-32-dining-living.jpg",
+        "ronaldo-muchawar-68-master-bedroom.jpg",
+        "ronaldo-muchawar-05-roof-lounge-guests.jpg",
+        "ronaldo-muchawar-10-roof-pergola.jpg",
+        "ronaldo-muchawar-41-club-bar-seating.jpg",
+        "ronaldo-muchawar-49-club-wine-wall.jpg",
+        "ronaldo-muchawar-57-spa-treatment-corridor.jpg",
+        "ronaldo-muchawar-63-spa-hammam.jpg"
+      ],
+      "summary": "",
+      "year": "2026",
+      "city": "Jumeirah, Dubai",
       "expertise": "Residential",
       "status": "Concept",
-      "style": "",
-      "type": "Architecture"
+      "style": "Modern",
+      "type": "Interior"
+    },
+    "jadeel-residence": {
+      "title": "Jadeel Residence",
+      "cover": "jadeel-residence-01-living-lounge.jpg",
+      "images": [
+        "jadeel-residence-01-living-lounge.jpg",
+        "jadeel-residence-05-living-seating.jpg",
+        "jadeel-residence-04-living-tv.jpg",
+        "jadeel-residence-07-kitchen.jpg",
+        "jadeel-residence-08-kitchen-island.jpg",
+        "jadeel-residence-21-powder-room.jpg",
+        "jadeel-residence-09-master-bedroom.jpg",
+        "jadeel-residence-18-master-bathroom.jpg",
+        "jadeel-residence-12-master-bedroom-coral.jpg",
+        "jadeel-residence-19-bathroom-shower.jpg",
+        "jadeel-residence-15-bedroom.jpg",
+        "jadeel-residence-20-bathroom-ensuite.jpg"
+      ],
+      "summary": "",
+      "year": "2025",
+      "city": "Jumeirah, Dubai",
+      "expertise": "Residential",
+      "status": "Concept",
+      "style": "Modern",
+      "type": "Interior"
     },
     "quatro-hotel-syria": {
       "title": "Quatro Hotel",
@@ -124,29 +173,23 @@ window.JWT_REVIEW = {
       "style": "Modern",
       "type": "Interior"
     },
-    "ronaldo-muchawar": {
-      "title": "RM Project",
-      "cover": "ronaldo-muchawar-11-roof-terrace-view.jpg",
+    "sh-butti-villa": {
+      "title": "BSM Villa",
+      "cover": "sh-butti-villa-01-entrance-driveway.jpg",
       "images": [
-        "ronaldo-muchawar-11-roof-terrace-view.jpg",
-        "ronaldo-muchawar-14-entry-gallery.jpg",
-        "ronaldo-muchawar-20-living-planting.jpg",
-        "ronaldo-muchawar-32-dining-living.jpg",
-        "ronaldo-muchawar-68-master-bedroom.jpg",
-        "ronaldo-muchawar-05-roof-lounge-guests.jpg",
-        "ronaldo-muchawar-10-roof-pergola.jpg",
-        "ronaldo-muchawar-41-club-bar-seating.jpg",
-        "ronaldo-muchawar-49-club-wine-wall.jpg",
-        "ronaldo-muchawar-57-spa-treatment-corridor.jpg",
-        "ronaldo-muchawar-63-spa-hammam.jpg"
+        "sh-butti-villa-01-entrance-driveway.jpg",
+        "sh-butti-villa-07-pool-terrace.jpg",
+        "sh-butti-villa-08-pool-courtyard.jpg",
+        "sh-butti-villa-09-cabana-terrace.jpg",
+        "sh-butti-villa-10-pool-aerial.jpg"
       ],
       "summary": "",
       "year": "",
-      "city": "",
+      "city": "Nad El Sheba, Dubai",
       "expertise": "Residential",
       "status": "Concept",
       "style": "",
-      "type": ""
+      "type": "Architecture"
     },
     "los-cielo-palace": {
       "title": "Los Cielo Palace",
@@ -169,26 +212,7 @@ window.JWT_REVIEW = {
       "expertise": "Residential",
       "status": "Concept",
       "style": "",
-      "type": ""
-    },
-    "shikhana": {
-      "title": "SBH Villa",
-      "cover": "shikhana-01-living-media-wall.jpg",
-      "images": [
-        "shikhana-01-living-media-wall.jpg",
-        "shikhana-03-living-lounge.jpg",
-        "shikhana-04-kitchen.jpg",
-        "shikhana-05-majlis-seating.jpg",
-        "shikhana-06-majlis-lounge.jpg",
-        "shikhana-09-dressing-vanity.jpg"
-      ],
-      "summary": "",
-      "year": "",
-      "city": "",
-      "expertise": "Residential",
-      "status": "Concept",
-      "style": "",
-      "type": ""
+      "type": "Architecture"
     },
     "village-mall": {
       "title": "The Village Mall",
@@ -209,68 +233,47 @@ window.JWT_REVIEW = {
       "style": "",
       "type": ""
     },
-    "mirel-experience-center": {
-      "title": "Mirel Experience Center",
-      "cover": "mirel-experience-center-07-showroom-overview-completed.jpg",
+    "vahe-kilikian-beauty-lounge": {
+      "title": "Vahe Kilikian Beauty Lounge",
+      "cover": "vahe-kilikian-beauty-lounge-04-styling-row.jpg",
       "images": [
-        "mirel-experience-center-07-showroom-overview-completed.jpg",
-        "mirel-experience-center-08-demo-lounge-completed.jpg",
-        "mirel-experience-center-09-demo-room-completed.jpg",
-        "mirel-experience-center-15-headphone-display-completed.jpg",
-        "mirel-experience-center-16-cinema-room-completed.jpg"
+        "vahe-kilikian-beauty-lounge-04-styling-row.jpg",
+        "vahe-kilikian-beauty-lounge-06-styling-station-detail.jpg",
+        "vahe-kilikian-beauty-lounge-07-styling-chair-detail.jpg",
+        "vahe-kilikian-beauty-lounge-02-styling-stations.jpg",
+        "vahe-kilikian-beauty-lounge-08-wash-stations.jpg",
+        "vahe-kilikian-beauty-lounge-10-manicure-tables.jpg",
+        "vahe-kilikian-beauty-lounge-12-reception-lounge.jpg",
+        "vahe-kilikian-beauty-lounge-09-manicure-bar.jpg"
       ],
       "summary": "",
-      "year": "2024",
-      "city": "Dubai",
+      "year": "2026",
+      "city": "Wasl, Dubai",
       "expertise": "Commercial",
       "status": "Concept to Completion",
       "style": "Modern",
       "type": "Interior"
     },
-    "village-mall-offices": {
-      "title": "The Village Mall Offices",
-      "cover": "village-mall-offices-03-reception-corridor.jpg",
+    "fbh-offices": {
+      "title": "FBH Offices",
+      "cover": "fbh-offices-01-reception.jpg",
       "images": [
-        "village-mall-offices-01-reception-lounge.jpg",
-        "village-mall-offices-02-reception-planting.jpg",
-        "village-mall-offices-03-reception-corridor.jpg",
-        "village-mall-offices-04-executive-lounge.jpg",
-        "village-mall-offices-05-meeting-room.jpg",
-        "village-mall-offices-06-private-office.jpg",
-        "village-mall-offices-07-office-corridor.jpg"
+        "fbh-offices-01-reception.jpg",
+        "fbh-offices-03-reception-counter.jpg",
+        "fbh-offices-04-entrance-lobby.jpg",
+        "fbh-offices-05-lift-lobby.jpg",
+        "fbh-offices-07-lift-lobby-wide.jpg",
+        "fbh-offices-10-corridor-lounge.jpg",
+        "fbh-offices-13-boardroom-crest.jpg",
+        "fbh-offices-14-meeting-room-window.jpg"
       ],
       "summary": "",
-      "year": "",
-      "city": "",
+      "year": "2024",
+      "city": "Abu Dhabi",
       "expertise": "Commercial",
       "status": "Concept",
-      "style": "",
-      "type": ""
-    },
-    "lord-flagship-store-ksa": {
-      "title": "Lord Flagship Store KSA",
-      "cover": "lord-flagship-store-ksa-09.jpg",
-      "images": [
-        "lord-flagship-store-ksa-01.jpg",
-        "lord-flagship-store-ksa-04.jpg",
-        "lord-flagship-store-ksa-05.jpg",
-        "lord-flagship-store-ksa-06.jpg",
-        "lord-flagship-store-ksa-07.jpg",
-        "lord-flagship-store-ksa-08.jpg",
-        "lord-flagship-store-ksa-09.jpg",
-        "lord-flagship-store-ksa-10.jpg",
-        "lord-flagship-store-ksa-11.jpg",
-        "lord-flagship-store-ksa-12.jpg",
-        "lord-flagship-store-ksa-13.jpg",
-        "lord-flagship-store-ksa-14.jpg"
-      ],
-      "summary": "",
-      "year": "",
-      "city": "",
-      "expertise": "Commercial",
-      "status": "Concept",
-      "style": "",
-      "type": ""
+      "style": "Modern",
+      "type": "Interior"
     },
     "al-wathba-2": {
       "title": "Royal Mirage Residence",
@@ -309,45 +312,125 @@ window.JWT_REVIEW = {
       "style": "Classical",
       "type": "Interior"
     },
-    "fbh-offices": {
-      "title": "FBH Offices",
-      "cover": "fbh-offices-01-reception.jpg",
+    "grow-offices": {
+      "title": "GROW Offices",
+      "cover": "grow-offices-33-boardroom-screen-completed.jpg",
       "images": [
-        "fbh-offices-01-reception.jpg",
-        "fbh-offices-03-reception-counter.jpg",
-        "fbh-offices-04-entrance-lobby.jpg",
-        "fbh-offices-05-lift-lobby.jpg",
-        "fbh-offices-07-lift-lobby-wide.jpg",
-        "fbh-offices-10-corridor-lounge.jpg",
-        "fbh-offices-13-boardroom-crest.jpg",
-        "fbh-offices-14-meeting-room-window.jpg"
+        "grow-offices-17-corridor-glass-completed.jpg",
+        "grow-offices-21-collaboration-zone-completed.jpg",
+        "grow-offices-25-lounge-seating-completed.jpg",
+        "grow-offices-26-workspace-desks-completed.jpg",
+        "grow-offices-30-meeting-pod-interior-completed.jpg",
+        "grow-offices-33-boardroom-screen-completed.jpg",
+        "grow-offices-36-executive-office-window-completed.jpg",
+        "grow-offices-39-private-office-alt-completed.jpg",
+        "grow-offices-41-office-lounge-alt-completed.jpg",
+        "grow-offices-01-reception-concept.jpg",
+        "grow-offices-02-collaboration-zone-concept.jpg",
+        "grow-offices-03-collaboration-lounge-concept.jpg",
+        "grow-offices-04-workspace-pods-concept.jpg",
+        "grow-offices-05-meeting-pod-concept.jpg",
+        "grow-offices-06-meeting-room-concept.jpg",
+        "grow-offices-07-meeting-room-table-concept.jpg",
+        "grow-offices-08-signage-corridor-concept.jpg",
+        "grow-offices-09-private-office-concept.jpg",
+        "grow-offices-10-executive-office-concept.jpg",
+        "grow-offices-11-office-window-lounge-concept.jpg",
+        "grow-offices-12-office-shelving-concept.jpg",
+        "grow-offices-13-office-desk-concept.jpg"
       ],
       "summary": "",
-      "year": "2025",
-      "city": "Abu Dhabi",
+      "year": "2023",
+      "city": "Business Bay, Dubai",
       "expertise": "Commercial",
-      "status": "Concept",
+      "status": "Concept to Completion",
       "style": "Modern",
       "type": "Interior"
     },
     "gg-residence": {
       "title": "GG Residence",
-      "cover": "gg-residence-04-living-seating.jpg",
+      "cover": "gg-residence-06-living-fireplace.jpg",
       "images": [
-        "gg-residence-03-living-media-wall.jpg",
-        "gg-residence-04-living-seating.jpg",
         "gg-residence-06-living-fireplace.jpg",
+        "gg-residence-03-living-media-wall.jpg",
         "gg-residence-07-corridor-gallery.jpg",
         "gg-residence-08-bedroom-arch-headboard.jpg",
-        "gg-residence-12-bedroom-boy.jpg"
+        "gg-residence-10-bedroom-wardrobe.jpg",
+        "gg-residence-12-bedroom-boy.jpg",
+        "gg-residence-16-bathroom-terrazzo.jpg"
       ],
       "summary": "",
-      "year": "",
-      "city": "",
+      "year": "2023",
+      "city": "Beirut, Lebanon",
+      "expertise": "Residential",
+      "status": "Concept to Completion",
+      "style": "Modern",
+      "type": "Interior"
+    },
+    "ham-external-majlis": {
+      "title": "H.A.M External Majlis",
+      "cover": "ham-external-majlis-02-majlis-seating-tv.jpg",
+      "images": [
+        "ham-external-majlis-02-majlis-seating-tv.jpg",
+        "ham-external-majlis-04-prayer-hall-mihrab.jpg",
+        "ham-external-majlis-05-bar-lounge.jpg",
+        "ham-external-majlis-08-bedroom-green-marble.jpg",
+        "ham-external-majlis-11-bathroom-vanity.jpg",
+        "ham-external-majlis-12-powder-room.jpg"
+      ],
+      "summary": "",
+      "year": "2025",
+      "city": "Abu Dhabi",
       "expertise": "Residential",
       "status": "Concept",
-      "style": "",
-      "type": ""
+      "style": "Modern",
+      "type": "Interior"
+    },
+    "mr-residence": {
+      "title": "MR Residence",
+      "cover": "mr-residence-02-living-media-wall.jpg",
+      "images": [
+        "mr-residence-02-living-media-wall.jpg",
+        "mr-residence-08-living-corridor.jpg",
+        "mr-residence-13-entry-planting.jpg",
+        "mr-residence-10-dining.jpg",
+        "mr-residence-04-living-lounge.jpg",
+        "mr-residence-19-girls-room-bunk.jpg",
+        "mr-residence-18-girls-room.jpg",
+        "mr-residence-26-girls-bathroom-vanity.jpg",
+        "mr-residence-25-girls-bathroom.jpg",
+        "mr-residence-06-living-tv.jpg",
+        "mr-residence-05-living-seating.jpg",
+        "mr-residence-16-bedroom.jpg",
+        "mr-residence-17-bedroom-alt.jpg",
+        "mr-residence-21-master-bathroom-alt.jpg"
+      ],
+      "summary": "",
+      "year": "2025",
+      "city": "JVT, Dubai",
+      "expertise": "Residential",
+      "status": "Concept to Completion",
+      "style": "Modern",
+      "type": "Interior"
+    },
+    "shikhana": {
+      "title": "SBH Villa",
+      "cover": "shikhana-01-living-media-wall.jpg",
+      "images": [
+        "shikhana-01-living-media-wall.jpg",
+        "shikhana-03-living-lounge.jpg",
+        "shikhana-04-kitchen.jpg",
+        "shikhana-05-majlis-seating.jpg",
+        "shikhana-06-majlis-lounge.jpg",
+        "shikhana-09-dressing-vanity.jpg"
+      ],
+      "summary": "",
+      "year": "2026",
+      "city": "",
+      "expertise": "Residential",
+      "status": "Concept to Completion",
+      "style": "Modern",
+      "type": "Interior"
     },
     "serenity-secret": {
       "title": "Serenity Secret",
@@ -368,20 +451,181 @@ window.JWT_REVIEW = {
       "style": "",
       "type": ""
     },
-    "ham-external-majlis": {
-      "title": "H.A.M External Majlis",
-      "cover": "ham-external-majlis-02-majlis-seating-tv.jpg",
+    "na-residence": {
+      "title": "NA Residence",
+      "cover": "na-residence-07-living-garden-view-alt.jpg",
       "images": [
-        "ham-external-majlis-02-majlis-seating-tv.jpg",
-        "ham-external-majlis-04-prayer-hall-mihrab.jpg",
-        "ham-external-majlis-05-bar-lounge.jpg",
-        "ham-external-majlis-08-bedroom-green-marble.jpg",
-        "ham-external-majlis-11-bathroom-vanity.jpg",
-        "ham-external-majlis-12-powder-room.jpg"
+        "na-residence-07-living-garden-view-alt.jpg",
+        "na-residence-06-living-garden-view.jpg",
+        "na-residence-04-living-seating.jpg",
+        "na-residence-08-living-night.jpg",
+        "na-residence-15-dining.jpg",
+        "na-residence-24-powder-room.jpg",
+        "na-residence-26-corridor-gallery.jpg",
+        "na-residence-28-corridor-stair.jpg",
+        "na-residence-29-corridor-artwork.jpg",
+        "na-residence-37-master-bedroom-suite.jpg",
+        "na-residence-46-boys-bedroom.jpg",
+        "na-residence-47-boys-bedroom-alt.jpg",
+        "na-residence-73-roof-bedroom-dark.jpg",
+        "na-residence-74-roof-bedroom-dark-alt.jpg"
       ],
       "summary": "",
-      "year": "2025",
-      "city": "Abu Dhabi",
+      "year": "2020",
+      "city": "Beirut, Lebanon",
+      "expertise": "Residential",
+      "status": "Concept",
+      "style": "Modern",
+      "type": "Interior"
+    },
+    "village-mall-offices": {
+      "title": "The Village Mall Offices",
+      "cover": "village-mall-offices-03-reception-corridor.jpg",
+      "images": [
+        "village-mall-offices-01-reception-lounge.jpg",
+        "village-mall-offices-02-reception-planting.jpg",
+        "village-mall-offices-03-reception-corridor.jpg",
+        "village-mall-offices-04-executive-lounge.jpg",
+        "village-mall-offices-05-meeting-room.jpg",
+        "village-mall-offices-06-private-office.jpg",
+        "village-mall-offices-07-office-corridor.jpg"
+      ],
+      "summary": "",
+      "year": "",
+      "city": "",
+      "expertise": "Commercial",
+      "status": "Concept",
+      "style": "",
+      "type": ""
+    },
+    "lord-flagship-store-ksa": {
+      "title": "Lord Flagship Store KSA",
+      "cover": "lord-flagship-store-ksa-09.jpg",
+      "images": [
+        "lord-flagship-store-ksa-01.jpg",
+        "lord-flagship-store-ksa-08.jpg",
+        "lord-flagship-store-ksa-09.jpg",
+        "lord-flagship-store-ksa-07.jpg",
+        "lord-flagship-store-ksa-11.jpg",
+        "lord-flagship-store-ksa-04.jpg",
+        "lord-flagship-store-ksa-05.jpg"
+      ],
+      "summary": "",
+      "year": "2020",
+      "city": "Riyadh, KSA",
+      "expertise": "Commercial",
+      "status": "Concept to Completion",
+      "style": "Modern",
+      "type": "Interior"
+    },
+    "bs-residence": {
+      "title": "BS Residence",
+      "cover": "bs-residence-02-living-lounge.jpg",
+      "images": [
+        "bs-residence-02-living-lounge.jpg",
+        "bs-residence-07-living-kitchen.jpg",
+        "bs-residence-01-living-dining.jpg",
+        "bs-residence-05-living-terrace-view.jpg",
+        "bs-residence-08-entry-corridor.jpg"
+      ],
+      "summary": "",
+      "year": "",
+      "city": "",
+      "expertise": "Residential",
+      "status": "Concept",
+      "style": "",
+      "type": ""
+    },
+    "ng-residence": {
+      "title": "NG Residence",
+      "cover": "ng-residence-03-living-seating.jpg",
+      "images": [
+        "ng-residence-03-living-seating.jpg",
+        "ng-residence-07-entry-arch.jpg",
+        "ng-residence-06-entry-hall.jpg",
+        "ng-residence-02-living-lounge.jpg",
+        "ng-residence-04-kitchen.jpg",
+        "ng-residence-14-bathroom-green.jpg",
+        "ng-residence-09-bedroom-feature-wall-alt.jpg",
+        "ng-residence-10-bedroom-vanity.jpg"
+      ],
+      "summary": "",
+      "year": "2024",
+      "city": "Abu Dhabi, UAE",
+      "expertise": "Residential",
+      "status": "Concept to Completion",
+      "style": "Modern",
+      "type": "Interior"
+    },
+    "jw-residence": {
+      "title": "JW Residence",
+      "cover": "jw-residence-05-living-piano.jpg",
+      "images": [
+        "jw-residence-05-living-piano.jpg",
+        "jw-residence-04-living-media-wall.jpg",
+        "jw-residence-02-living-lounge.jpg",
+        "jw-residence-03-living-seating.jpg"
+      ],
+      "summary": "",
+      "year": "2023",
+      "city": "Dubai, UAE",
+      "expertise": "Residential",
+      "status": "Concept",
+      "style": "Modern",
+      "type": "Interior"
+    },
+    "rc-residence": {
+      "title": "RC Residence",
+      "cover": "rc-residence-07-stair-hall.jpg",
+      "images": [
+        "rc-residence-07-stair-hall.jpg",
+        "rc-residence-03-kitchen-dining.jpg",
+        "rc-residence-08-corridor-stair.jpg",
+        "rc-residence-01-living-lounge.jpg",
+        "rc-residence-04-living-kitchen-upper.jpg",
+        "rc-residence-05-living-upper.jpg",
+        "rc-residence-22-terrace-villa.jpg",
+        "rc-residence-23-terrace-city-view.jpg"
+      ],
+      "summary": "",
+      "year": "2024",
+      "city": "Beirut, Lebanon",
+      "expertise": "Residential",
+      "status": "Concept",
+      "style": "Modern",
+      "type": "Interior"
+    },
+    "sp-residence": {
+      "title": "SP Project",
+      "cover": "sp-residence-05-entry-vanity.jpg",
+      "images": [
+        "sp-residence-05-entry-vanity.jpg",
+        "sp-residence-01-living-dining.jpg",
+        "sp-residence-02-living-fireplace.jpg",
+        "sp-residence-03-dining-kitchen.jpg",
+        "sp-residence-04-kitchen-bar.jpg"
+      ],
+      "summary": "",
+      "year": "2020",
+      "city": "Waterfront, Lebanon",
+      "expertise": "Residential",
+      "status": "Concept",
+      "style": "Modern",
+      "type": "Interior"
+    },
+    "vk-residence": {
+      "title": "VK Project",
+      "cover": "vk-residence-01-living-dining.jpg",
+      "images": [
+        "vk-residence-12-dining-night.jpg",
+        "vk-residence-02-living-dining-wide.jpg",
+        "vk-residence-03-living-fireplace.jpg",
+        "vk-residence-01-living-dining.jpg",
+        "vk-residence-14-living-seating-night.jpg"
+      ],
+      "summary": "",
+      "year": "2020",
+      "city": "Beirut, Lebanon",
       "expertise": "Residential",
       "status": "Concept",
       "style": "Modern",
@@ -405,27 +649,8 @@ window.JWT_REVIEW = {
       "style": "",
       "type": ""
     },
-    "jpl-landscape": {
-      "title": "JPL Landscape",
-      "cover": "jpl-landscape-05-pergola-lounge.jpg",
-      "images": [
-        "jpl-landscape-05-pergola-lounge.jpg",
-        "jpl-landscape-01-entrance-facade.jpg",
-        "jpl-landscape-02-entrance-driveway.jpg",
-        "jpl-landscape-03-pool-garden.jpg",
-        "jpl-landscape-04-courtyard-planting.jpg",
-        "jpl-landscape-06-pergola-terrace.jpg"
-      ],
-      "summary": "",
-      "year": "",
-      "city": "",
-      "expertise": "Landscape",
-      "status": "Concept",
-      "style": "",
-      "type": ""
-    },
     "haj-abdo-cafe-aleppo": {
-      "title": "Haj Abdo Cafe, Aleppo",
+      "title": "Haj Abdo Cafe",
       "cover": "haj-abdo-cafe-aleppo-01-facade-exterior.jpg",
       "images": [
         "haj-abdo-cafe-aleppo-01-facade-exterior.jpg",
@@ -438,6 +663,25 @@ window.JWT_REVIEW = {
       "year": "2023",
       "city": "Aleppo",
       "expertise": "Hospitality",
+      "status": "Concept",
+      "style": "Modern",
+      "type": ""
+    },
+    "jpl-landscape": {
+      "title": "JPL Landscape",
+      "cover": "jpl-landscape-05-pergola-lounge.jpg",
+      "images": [
+        "jpl-landscape-05-pergola-lounge.jpg",
+        "jpl-landscape-01-entrance-facade.jpg",
+        "jpl-landscape-02-entrance-driveway.jpg",
+        "jpl-landscape-03-pool-garden.jpg",
+        "jpl-landscape-04-courtyard-planting.jpg",
+        "jpl-landscape-06-pergola-terrace.jpg"
+      ],
+      "summary": "",
+      "year": "2024",
+      "city": "Jumeirah Park, Dubai",
+      "expertise": "Landscape",
       "status": "Concept",
       "style": "Modern",
       "type": ""
